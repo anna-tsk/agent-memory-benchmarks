@@ -1,0 +1,1699 @@
+Logging to: runs/all_probes_qwen25_7b_all_conditions_with_prompts_20260417_150608.txt
+model: Qwen/Qwen2.5-7B-Instruct
+data: data/examples/raw_observation_probes_v2.json
+max_new_tokens: 768
+limit: None
+probe_ids: None
+show_context: True
+show_prompt: True
+dialogue_mode: False
+condition: all
+
+
+=== probe_best_friend ===
+Best Friend
+bucket: false_singularity
+
+--- Context ---
+Scenario: Best Friend
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | Marie is my best friend.
+- 2026-02-15T12:00:00Z | Tina is my best friend.
+--- End Context ---
+
+--- Condition: minimal ---
+
+--- Prompt Messages ---
+[1] system:
+You answer questions.
+[2] user:
+Context:
+Scenario: Best Friend
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | Marie is my best friend.
+- 2026-02-15T12:00:00Z | Tina is my best friend.
+
+Question: Who is the speaker's best friend?
+--- End Prompt Messages ---
+
+Q [structured_probe]: Who is the speaker's best friend?
+condition: minimal
+model: Based on the observations provided, it seems there might be some confusion because the speaker refers to two different people as their best friend at different times. The first observation states that Marie is the speaker's best friend on January 1, 2026, and the second observation states that Tina is the speaker's best friend on February 15, 2026. 
+
+If these observations are meant to represent the current status of the speaker's best friend, then the speaker's best friend would be Tina, as the most recent statement was made on February 15, 2026. However, if the observations are meant to show a change in the speaker's best friend over time, then the speaker had Marie as the best friend initially and then changed to Tina. 
+
+Without additional context, the most recent statement indicates that the speaker's best friend is Tina.
+
+--- Condition: analytic ---
+
+--- Prompt Messages ---
+[1] system:
+You answer questions.
+[2] user:
+Context:
+Scenario: Best Friend
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | Marie is my best friend.
+- 2026-02-15T12:00:00Z | Tina is my best friend.
+
+Question: Who is the speaker's best friend?
+
+Use exactly this format:
+1. Direct answer:
+2. Possible interpretations:
+3. Assumption(s) made:
+4. Missing information or useful follow-up:
+5. Memory handling:
+--- End Prompt Messages ---
+
+Q [structured_probe]: Who is the speaker's best friend?
+condition: analytic
+model: 1. Direct answer:
+The speaker's best friend is Tina, as stated in the observation from 2026-02-15T12:00:00Z.
+
+2. Possible interpretations:
+- The speaker could be referring to Tina as their current best friend, with Marie being a previous best friend.
+- There might be a possibility that both Tina and Marie are considered best friends at different times or in different contexts.
+
+3. Assumption(s) made:
+- The most recent statement (2026-02-15T12:00:00Z) is taken as the current status of the speaker's best friend.
+- The terms "best friend" are used consistently across the observations.
+
+4. Missing information or useful follow-up:
+- When did the relationship with Marie end?
+- Are there any specific circumstances or events that led to the change in best friends?
+- Is there any ongoing relationship between the speaker and Marie?
+
+5. Memory handling:
+- The memory should be updated to reflect that the speaker's best friend is now Tina, based on the latest observation.
+- Any previous memories about Marie being the best friend should be noted but not discarded, as they provide context for the change in relationships.
+
+--- Condition: conversational ---
+
+--- Prompt Messages ---
+[1] system:
+You answer questions.
+[2] user:
+Context:
+Scenario: Best Friend
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | Marie is my best friend.
+- 2026-02-15T12:00:00Z | Tina is my best friend.
+
+Question: Who is the speaker's best friend?
+
+Use exactly this format:
+1. Direct answer:
+2. Possible interpretations:
+3. Assumption(s) made:
+4. Clarifying question:
+5. Memory handling:
+--- End Prompt Messages ---
+
+Q [structured_probe]: Who is the speaker's best friend?
+condition: conversational
+model: 1. Direct answer: The speaker's best friend is Tina.
+2. Possible interpretations:
+   - The speaker has only one best friend, and it is Tina as of February 15, 2026.
+   - There might be a context where both individuals were considered best friends at different times, but the most recent statement takes precedence.
+3. Assumption(s) made:
+   - The observations are in chronological order.
+   - The most recent observation (February 15, 2026) is the current status unless otherwise specified.
+4. Clarifying question:
+   - Is there any specific time period or context you are interested in regarding who the speaker considers their best friend?
+5. Memory handling:
+   - The memory is handled based on the most recent observation provided, which states that Tina is the speaker's best friend as of February 15, 2026.
+
+=== probe_hometown ===
+Hometown
+bucket: category_boundary
+
+--- Context ---
+Scenario: Hometown
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | LA is my hometown.
+- 2026-02-15T12:00:00Z | Tbilisi is my hometown.
+--- End Context ---
+
+--- Condition: minimal ---
+
+--- Prompt Messages ---
+[1] system:
+You answer questions.
+[2] user:
+Context:
+Scenario: Hometown
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | LA is my hometown.
+- 2026-02-15T12:00:00Z | Tbilisi is my hometown.
+
+Question: What is the speaker's hometown?
+--- End Prompt Messages ---
+
+Q [structured_probe]: What is the speaker's hometown?
+condition: minimal
+model: Based on the observations provided, it seems there might be a misunderstanding or inconsistency since both Los Angeles (LA) and Tbilisi are stated as the speaker's hometowns. Typically, a person has only one hometown. If these observations are meant to represent different points in time or different aspects of the speaker's life, more context would be helpful to clarify. 
+
+If these are meant to represent different periods in the speaker's life, the most recent statement would generally be considered the current hometown. Therefore, if the second observation is the most recent, the speaker's hometown would be Tbilisi. However, without additional context, it's not clear which statement is correct or if there's an error in the observations.
+
+--- Condition: analytic ---
+
+--- Prompt Messages ---
+[1] system:
+You answer questions.
+[2] user:
+Context:
+Scenario: Hometown
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | LA is my hometown.
+- 2026-02-15T12:00:00Z | Tbilisi is my hometown.
+
+Question: What is the speaker's hometown?
+
+Use exactly this format:
+1. Direct answer:
+2. Possible interpretations:
+3. Assumption(s) made:
+4. Missing information or useful follow-up:
+5. Memory handling:
+--- End Prompt Messages ---
+
+Q [structured_probe]: What is the speaker's hometown?
+condition: analytic
+model: 1. Direct answer: The speaker has two hometowns, LA and Tbilisi.
+2. Possible interpretations:
+   - The speaker currently considers both LA and Tbilisi as their hometowns.
+   - The speaker may have lived in both places at different times in their life.
+   - There might be a cultural or emotional connection to both cities.
+3. Assumption(s) made:
+   - The speaker can have more than one hometown.
+   - The order of the observations does not imply a chronological sequence of living in these places.
+4. Missing information or useful follow-up:
+   - When did the speaker move from LA to Tbilisi?
+   - Is there a primary hometown that the speaker identifies with more strongly?
+   - Are there any other places the speaker considers as hometowns?
+5. Memory handling:
+   - The speaker’s memory includes multiple locations they consider as hometowns.
+   - There is no indication of which memory is more recent or if there was a change in their perception over time.
+
+--- Condition: conversational ---
+
+--- Prompt Messages ---
+[1] system:
+You answer questions.
+[2] user:
+Context:
+Scenario: Hometown
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | LA is my hometown.
+- 2026-02-15T12:00:00Z | Tbilisi is my hometown.
+
+Question: What is the speaker's hometown?
+
+Use exactly this format:
+1. Direct answer:
+2. Possible interpretations:
+3. Assumption(s) made:
+4. Clarifying question:
+5. Memory handling:
+--- End Prompt Messages ---
+
+Q [structured_probe]: What is the speaker's hometown?
+condition: conversational
+model: 1. Direct answer: The speaker has two hometowns, LA and Tbilisi.
+2. Possible interpretations:
+   - The speaker currently considers both LA and Tbilisi as their hometowns.
+   - The speaker may have lived in both places at different times or consider them significant to their life.
+3. Assumption(s) made:
+   - The speaker can have more than one hometown.
+   - The order of statements does not imply a chronological sequence of where they lived.
+4. Clarifying question:
+   - Can you tell me if these cities hold equal significance for you or if there is a primary hometown?
+5. Memory handling:
+   - The memory includes both statements without prioritizing one over the other, indicating that both cities are remembered as hometowns by the speaker.
+
+=== probe_home ===
+Home
+bucket: expressive_looseness
+
+--- Context ---
+Scenario: Home
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | LA is home.
+- 2026-02-15T12:00:00Z | New York is home.
+--- End Context ---
+
+--- Condition: minimal ---
+
+--- Prompt Messages ---
+[1] system:
+You answer questions.
+[2] user:
+Context:
+Scenario: Home
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | LA is home.
+- 2026-02-15T12:00:00Z | New York is home.
+
+Question: Where is home for the speaker?
+--- End Prompt Messages ---
+
+Q [structured_probe]: Where is home for the speaker?
+condition: minimal
+model: Based on the observations provided, it seems that the speaker considers both Los Angeles (LA) and New York to be their homes at different times. The first observation states that LA is home, while the second observation states that New York is home. Without additional context indicating a change in residence or a primary home, we can conclude that the speaker has multiple homes and identifies both cities as such.
+
+--- Condition: analytic ---
+
+--- Prompt Messages ---
+[1] system:
+You answer questions.
+[2] user:
+Context:
+Scenario: Home
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | LA is home.
+- 2026-02-15T12:00:00Z | New York is home.
+
+Question: Where is home for the speaker?
+
+Use exactly this format:
+1. Direct answer:
+2. Possible interpretations:
+3. Assumption(s) made:
+4. Missing information or useful follow-up:
+5. Memory handling:
+--- End Prompt Messages ---
+
+Q [structured_probe]: Where is home for the speaker?
+condition: analytic
+model: 1. Direct answer:
+   The speaker considers New York to be their home as of February 15, 2026.
+
+2. Possible interpretations:
+   - The speaker may have moved from Los Angeles to New York at some point between January 1 and February 15, 2026.
+   - The statement "New York is home" could indicate a more recent or current residence compared to "LA is home," but it does not necessarily mean they no longer consider LA home.
+
+3. Assumption(s) made:
+   - The speaker's home status is based on the most recent statement provided.
+   - The time stamps represent the speaker's state of mind or situation at those exact moments.
+
+4. Missing information or useful follow-up:
+   - When did the speaker move from Los Angeles to New York?
+   - Do they still consider Los Angeles a home or just a past residence?
+   - Are there any other locations that the speaker considers home?
+
+5. Memory handling:
+   - The memory should be updated to reflect the most recent statement, indicating that as of February 15, 2026, the speaker considers New York to be their home.
+   - Previous statements (considering Los Angeles as home) can be retained in the memory for historical context but should not be considered the current status unless further evidence supports it.
+
+--- Condition: conversational ---
+
+--- Prompt Messages ---
+[1] system:
+You answer questions.
+[2] user:
+Context:
+Scenario: Home
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | LA is home.
+- 2026-02-15T12:00:00Z | New York is home.
+
+Question: Where is home for the speaker?
+
+Use exactly this format:
+1. Direct answer:
+2. Possible interpretations:
+3. Assumption(s) made:
+4. Clarifying question:
+5. Memory handling:
+--- End Prompt Messages ---
+
+Q [structured_probe]: Where is home for the speaker?
+condition: conversational
+model: 1. Direct answer: The speaker considers New York to be their home as of February 15, 2026.
+2. Possible interpretations:
+   - The speaker may have moved from Los Angeles to New York.
+   - The speaker might be referring to different aspects of "home" (e.g., legal residence vs. place they feel most at home).
+3. Assumption(s) made:
+   - The most recent statement overrides any previous ones in determining current status.
+   - The term "home" refers to a primary place of residence or a place where one feels a strong sense of belonging.
+4. Clarifying question:
+   - Could you provide more context about why your home changed from Los Angeles to New York?
+5. Memory handling:
+   - The memory includes both locations but treats the most recent observation as the current state.
+
+=== probe_favorite_person ===
+Favorite Person
+bucket: expressive_looseness
+
+--- Context ---
+Scenario: Favorite Person
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | My mom is my favorite person.
+- 2026-02-15T12:00:00Z | My partner is my favorite person.
+--- End Context ---
+
+--- Condition: minimal ---
+
+--- Prompt Messages ---
+[1] system:
+You answer questions.
+[2] user:
+Context:
+Scenario: Favorite Person
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | My mom is my favorite person.
+- 2026-02-15T12:00:00Z | My partner is my favorite person.
+
+Question: Who is the speaker's favorite person?
+--- End Prompt Messages ---
+
+Q [structured_probe]: Who is the speaker's favorite person?
+condition: minimal
+model: Based on the observations provided, the speaker's favorite person changes over time. Initially, their favorite person is their mom, as stated on 2026-01-01T09:00:00Z. However, by 2026-02-15T12:00:00Z, their favorite person has changed to their partner. Therefore, without a specific timeframe in question, we can say that their favorite person is their partner at the later date mentioned.
+
+--- Condition: analytic ---
+
+--- Prompt Messages ---
+[1] system:
+You answer questions.
+[2] user:
+Context:
+Scenario: Favorite Person
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | My mom is my favorite person.
+- 2026-02-15T12:00:00Z | My partner is my favorite person.
+
+Question: Who is the speaker's favorite person?
+
+Use exactly this format:
+1. Direct answer:
+2. Possible interpretations:
+3. Assumption(s) made:
+4. Missing information or useful follow-up:
+5. Memory handling:
+--- End Prompt Messages ---
+
+Q [structured_probe]: Who is the speaker's favorite person?
+condition: analytic
+model: 1. Direct answer:
+   The speaker's favorite person changes over time, as they stated their mom was their favorite person on 2026-01-01T09:00:00Z and their partner became their favorite person on 2026-02-15T12:00:00Z.
+
+2. Possible interpretations:
+   - The speaker could be indicating a shift in their personal relationships and emotional closeness.
+   - There might be specific reasons for the change in preference between these two dates.
+   - The statement could reflect a temporary or permanent change in their feelings.
+
+3. Assumption(s) made:
+   - The speaker is consistent in their self-reporting of their favorite person.
+   - The dates provided are accurate and chronological.
+
+4. Missing information or useful follow-up:
+   - What were the specific reasons for the change in the speaker's favorite person?
+   - Are there any other people mentioned who are also important to the speaker?
+   - Is there any context about the relationship between the speaker and their mom and partner?
+
+5. Memory handling:
+   - The memory appears to be clear and sequential, with no contradictions between the two statements.
+   - However, it would be useful to know if the speaker can recall any events or circumstances that led to the change in their favorite person.
+
+--- Condition: conversational ---
+
+--- Prompt Messages ---
+[1] system:
+You answer questions.
+[2] user:
+Context:
+Scenario: Favorite Person
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | My mom is my favorite person.
+- 2026-02-15T12:00:00Z | My partner is my favorite person.
+
+Question: Who is the speaker's favorite person?
+
+Use exactly this format:
+1. Direct answer:
+2. Possible interpretations:
+3. Assumption(s) made:
+4. Clarifying question:
+5. Memory handling:
+--- End Prompt Messages ---
+
+Q [structured_probe]: Who is the speaker's favorite person?
+condition: conversational
+model: 1. Direct answer: The speaker's favorite person changes over time, with their mom being the favorite in January and their partner in February.
+2. Possible interpretations:
+   - The speaker has a fluctuating favorite person depending on the time of year or circumstances.
+   - There might be different contexts or reasons for each preference (e.g., one during a specific life stage).
+3. Assumption(s) made:
+   - The observations are accurate and reflect the speaker's true feelings at those times.
+   - The time stamps provided are correct and indicate when these statements were made.
+4. Clarifying question:
+   - Is there a specific time period you're interested in knowing about?
+5. Memory handling:
+   - The memory appears to be updated based on recent experiences or preferences, as the favorite person changed from the mother to the partner within a month.
+
+=== probe_boss ===
+Boss
+bucket: false_singularity
+
+--- Context ---
+Scenario: Boss
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | Sam is my boss.
+- 2026-02-15T12:00:00Z | Priya is my boss.
+--- End Context ---
+
+--- Condition: minimal ---
+
+--- Prompt Messages ---
+[1] system:
+You answer questions.
+[2] user:
+Context:
+Scenario: Boss
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | Sam is my boss.
+- 2026-02-15T12:00:00Z | Priya is my boss.
+
+Question: Who is the speaker's boss?
+--- End Prompt Messages ---
+
+Q [structured_probe]: Who is the speaker's boss?
+condition: minimal
+model: The context provided contains two observations, but they are contradictory since they state that Sam is the speaker's boss on January 1, 2026, and then Priya is the speaker's boss on February 15, 2026. Without additional information to determine which observation is more recent or accurate, it's not possible to definitively state who the speaker's current boss is. However, based on the chronological order of the observations, Priya would be considered the speaker's boss as of February 15, 2026.
+
+--- Condition: analytic ---
+
+--- Prompt Messages ---
+[1] system:
+You answer questions.
+[2] user:
+Context:
+Scenario: Boss
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | Sam is my boss.
+- 2026-02-15T12:00:00Z | Priya is my boss.
+
+Question: Who is the speaker's boss?
+
+Use exactly this format:
+1. Direct answer:
+2. Possible interpretations:
+3. Assumption(s) made:
+4. Missing information or useful follow-up:
+5. Memory handling:
+--- End Prompt Messages ---
+
+Q [structured_probe]: Who is the speaker's boss?
+condition: analytic
+model: 1. Direct answer:
+   The speaker's boss is Priya, as of February 15, 2026.
+
+2. Possible interpretations:
+   - The speaker could be referring to a change in leadership within their organization.
+   - There might be a misunderstanding or confusion about the timeline of who is the boss.
+
+3. Assumption(s) made:
+   - The observations provided are accurate and complete.
+   - The speaker is consistent in their use of "boss" terminology.
+   - The timeline provided is chronological and there are no overlapping periods where both individuals were bosses simultaneously.
+
+4. Missing information or useful follow-up:
+   - When did Sam stop being the boss?
+   - Is there any overlap in the time periods when both Sam and Priya were considered bosses?
+   - Are there any other individuals who have been the speaker's boss at different times?
+
+5. Memory handling:
+   - The memory should be updated to reflect that as of February 15, 2026, Priya is the speaker's boss.
+   - Any previous records indicating Sam as the boss should be noted with the date range they apply to.
+
+--- Condition: conversational ---
+
+--- Prompt Messages ---
+[1] system:
+You answer questions.
+[2] user:
+Context:
+Scenario: Boss
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | Sam is my boss.
+- 2026-02-15T12:00:00Z | Priya is my boss.
+
+Question: Who is the speaker's boss?
+
+Use exactly this format:
+1. Direct answer:
+2. Possible interpretations:
+3. Assumption(s) made:
+4. Clarifying question:
+5. Memory handling:
+--- End Prompt Messages ---
+
+Q [structured_probe]: Who is the speaker's boss?
+condition: conversational
+model: 1. Direct answer: The speaker's boss is Priya, as of February 15, 2026.
+2. Possible interpretations:
+   - The speaker could be referring to a change in their boss from Sam to Priya.
+   - There might be a context where both individuals (Sam and Priya) are bosses, but the speaker is currently reporting to Priya.
+3. Assumption(s) made:
+   - The observations are chronological and reflect the most recent information provided.
+   - The speaker is consistent in their use of "boss" terminology.
+4. Clarifying question:
+   - Is there a specific time period you are interested in knowing about?
+5. Memory handling:
+   - The memory has been updated to reflect that as of February 15, 2026, the speaker's boss is Priya.
+
+=== probe_relationship_status ===
+Relationship Status
+bucket: temporal_change
+
+--- Context ---
+Scenario: Relationship Status
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | I'm single.
+- 2026-02-15T12:00:00Z | I'm married.
+--- End Context ---
+
+--- Condition: minimal ---
+
+--- Prompt Messages ---
+[1] system:
+You answer questions.
+[2] user:
+Context:
+Scenario: Relationship Status
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | I'm single.
+- 2026-02-15T12:00:00Z | I'm married.
+
+Question: What is the speaker's relationship status?
+--- End Prompt Messages ---
+
+Q [structured_probe]: What is the speaker's relationship status?
+condition: minimal
+model: Based on the provided observations, the speaker's relationship status is married as of 2026-02-15T12:00:00Z. The observation indicating they are single is from an earlier date (2026-01-01T09:00:00Z), so the most recent and therefore current status is that they are married.
+
+--- Condition: analytic ---
+
+--- Prompt Messages ---
+[1] system:
+You answer questions.
+[2] user:
+Context:
+Scenario: Relationship Status
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | I'm single.
+- 2026-02-15T12:00:00Z | I'm married.
+
+Question: What is the speaker's relationship status?
+
+Use exactly this format:
+1. Direct answer:
+2. Possible interpretations:
+3. Assumption(s) made:
+4. Missing information or useful follow-up:
+5. Memory handling:
+--- End Prompt Messages ---
+
+Q [structured_probe]: What is the speaker's relationship status?
+condition: analytic
+model: 1. Direct answer:
+The speaker is married.
+
+2. Possible interpretations:
+- The speaker could be referring to a recent change in their marital status.
+- There might be a specific context or timeline not provided that affects the interpretation.
+
+3. Assumption(s) made:
+- The most recent statement is considered the current status.
+- The time stamps are accurate and relevant for determining the current status.
+
+4. Missing information or useful follow-up:
+- Any additional context about the timeline or specific events leading to the change in status.
+- Whether there are any periods of being in a relationship between "single" and "married."
+
+5. Memory handling:
+- The system should consider the latest observation as the current status unless contradictory evidence is provided.
+- If multiple observations are available, the most recent one should generally be taken as the most up-to-date information.
+
+--- Condition: conversational ---
+
+--- Prompt Messages ---
+[1] system:
+You answer questions.
+[2] user:
+Context:
+Scenario: Relationship Status
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | I'm single.
+- 2026-02-15T12:00:00Z | I'm married.
+
+Question: What is the speaker's relationship status?
+
+Use exactly this format:
+1. Direct answer:
+2. Possible interpretations:
+3. Assumption(s) made:
+4. Clarifying question:
+5. Memory handling:
+--- End Prompt Messages ---
+
+Q [structured_probe]: What is the speaker's relationship status?
+condition: conversational
+model: 1. Direct answer: The speaker is married.
+2. Possible interpretations: 
+   - The speaker could be currently married, as the last statement indicates a change in status to married.
+3. Assumption(s) made:
+   - The most recent observation is considered the current status.
+   - There have been no other changes in status between the two observations.
+4. Clarifying question:
+   - Are there any other updates about the speaker's relationship status after February 15, 2026?
+5. Memory handling:
+   - The memory includes only the two observations provided, with the latest one being the most recent update.
+
+=== probe_age ===
+Age
+bucket: temporal_change
+
+--- Context ---
+Scenario: Age
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | I'm 29.
+- 2026-02-15T12:00:00Z | I'm 30.
+--- End Context ---
+
+--- Condition: minimal ---
+
+--- Prompt Messages ---
+[1] system:
+You answer questions.
+[2] user:
+Context:
+Scenario: Age
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | I'm 29.
+- 2026-02-15T12:00:00Z | I'm 30.
+
+Question: How old is the speaker?
+--- End Prompt Messages ---
+
+Q [structured_probe]: How old is the speaker?
+condition: minimal
+model: Based on the provided observations, the speaker's age appears to be between 29 and 30 years old. The first observation states that the speaker is 29 years old as of January 1, 2026, and the second observation states that the speaker is 30 years old as of February 15, 2026. Since it is not specified in which exact month and day the speaker's birthday falls, we can conclude that the speaker is either 29 or 30 years old, depending on the date relative to their birthday in 2026.
+
+--- Condition: analytic ---
+
+--- Prompt Messages ---
+[1] system:
+You answer questions.
+[2] user:
+Context:
+Scenario: Age
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | I'm 29.
+- 2026-02-15T12:00:00Z | I'm 30.
+
+Question: How old is the speaker?
+
+Use exactly this format:
+1. Direct answer:
+2. Possible interpretations:
+3. Assumption(s) made:
+4. Missing information or useful follow-up:
+5. Memory handling:
+--- End Prompt Messages ---
+
+Q [structured_probe]: How old is the speaker?
+condition: analytic
+model: 1. Direct answer:
+The speaker is 30 years old as of 2026-02-15T12:00:00Z.
+
+2. Possible interpretations:
+- The speaker could be referring to their age at different points in time, but based on the provided observations, the most recent and accurate statement is that they are 30.
+- There is a possibility of a mistake in the observation dates or the speaker's age, but without additional context, we must rely on the latest statement.
+
+3. Assumption(s) made:
+- The observations are accurate and reflect the speaker's true age.
+- The most recent observation (2026-02-15T12:00:00Z) is the most reliable for determining the current age.
+
+4. Missing information or useful follow-up:
+- It would be helpful to know if there are any other observations or statements about the speaker's age.
+- Clarification on whether the observations are exact times when the speaker said these statements or if they are approximate.
+
+5. Memory handling:
+- The memory should store the latest observation as the most accurate representation of the speaker's age.
+- Any previous observations can be considered historical data unless contradicted by more recent statements.
+
+--- Condition: conversational ---
+
+--- Prompt Messages ---
+[1] system:
+You answer questions.
+[2] user:
+Context:
+Scenario: Age
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | I'm 29.
+- 2026-02-15T12:00:00Z | I'm 30.
+
+Question: How old is the speaker?
+
+Use exactly this format:
+1. Direct answer:
+2. Possible interpretations:
+3. Assumption(s) made:
+4. Clarifying question:
+5. Memory handling:
+--- End Prompt Messages ---
+
+Q [structured_probe]: How old is the speaker?
+condition: conversational
+model: 1. Direct answer: The speaker is 30 years old.
+2. Possible interpretations: 
+   - The speaker could be currently 30, as of February 15, 2026.
+   - There might be a discrepancy in the exact date of birth or the timing of these statements.
+3. Assumption(s) made:
+   - The statements are accurate and reflect the speaker's true age.
+   - The time between the two statements is significant enough to have passed a full year.
+4. Clarifying question:
+   - When did you turn 30?
+5. Memory handling:
+   - The most recent statement indicates the speaker is 30, so this should be considered the current age unless additional context suggests otherwise.
+
+=== probe_name_preference ===
+Name Preference
+bucket: temporal_change
+
+--- Context ---
+Scenario: Name Preference
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | I go by Anna.
+- 2026-02-15T12:00:00Z | I go by Anya.
+--- End Context ---
+
+--- Condition: minimal ---
+
+--- Prompt Messages ---
+[1] system:
+You answer questions.
+[2] user:
+Context:
+Scenario: Name Preference
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | I go by Anna.
+- 2026-02-15T12:00:00Z | I go by Anya.
+
+Question: What should the assistant call the speaker?
+--- End Prompt Messages ---
+
+Q [structured_probe]: What should the assistant call the speaker?
+condition: minimal
+model: The assistant should call the speaker "Anya" based on the most recent observation provided, which states "I go by Anya" on 2026-02-15T12:00:00Z. It's generally best to use the name that the person prefers most recently stated.
+
+--- Condition: analytic ---
+
+--- Prompt Messages ---
+[1] system:
+You answer questions.
+[2] user:
+Context:
+Scenario: Name Preference
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | I go by Anna.
+- 2026-02-15T12:00:00Z | I go by Anya.
+
+Question: What should the assistant call the speaker?
+
+Use exactly this format:
+1. Direct answer:
+2. Possible interpretations:
+3. Assumption(s) made:
+4. Missing information or useful follow-up:
+5. Memory handling:
+--- End Prompt Messages ---
+
+Q [structured_probe]: What should the assistant call the speaker?
+condition: analytic
+model: 1. Direct answer: The assistant should call the speaker "Anya" as of 2026-02-15T12:00:00Z, since that is the most recent preference stated.
+
+2. Possible interpretations:
+   - The speaker might have reverted to using "Anna" at some point after February 15, 2026.
+   - There could be different contexts in which the speaker prefers a different name (e.g., formal vs. informal settings).
+
+3. Assumption(s) made:
+   - The most recent statement reflects the current preference.
+   - The context does not require a specific formality or historical accuracy in addressing the speaker.
+
+4. Missing information or useful follow-up:
+   - Whether there are any specific contexts where "Anna" is preferred over "Anya".
+   - If the speaker has any preferences regarding formality or other names they use in certain situations.
+
+5. Memory handling:
+   - Store the latest name preference ("Anya") with the timestamp for future reference.
+   - Consider implementing a system to track and update name preferences as new information becomes available.
+
+--- Condition: conversational ---
+
+--- Prompt Messages ---
+[1] system:
+You answer questions.
+[2] user:
+Context:
+Scenario: Name Preference
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | I go by Anna.
+- 2026-02-15T12:00:00Z | I go by Anya.
+
+Question: What should the assistant call the speaker?
+
+Use exactly this format:
+1. Direct answer:
+2. Possible interpretations:
+3. Assumption(s) made:
+4. Clarifying question:
+5. Memory handling:
+--- End Prompt Messages ---
+
+Q [structured_probe]: What should the assistant call the speaker?
+condition: conversational
+model: 1. Direct answer: The assistant should call the speaker "Anya" as of 2026-02-15T12:00:00Z, since that is the most recent preference stated.
+
+2. Possible interpretations:
+   - The speaker might prefer to be called "Anna" before 2026-02-15.
+   - There could be a specific context or situation where "Anna" is preferred over "Anya."
+
+3. Assumption(s) made:
+   - The most recent statement reflects the current preference.
+   - The assistant should follow the speaker's most recent self-identification.
+
+4. Clarifying question:
+   - Is there any specific context or situation where you prefer to be called "Anna" instead of "Anya"?
+
+5. Memory handling:
+   - Store the latest name preference as "Anya" with the timestamp 2026-02-15T12:00:00Z.
+   - If future preferences are provided, update the stored preference accordingly.
+
+=== probe_diet ===
+Diet
+bucket: category_boundary
+
+--- Context ---
+Scenario: Diet
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | I'm vegetarian.
+- 2026-02-15T12:00:00Z | I eat fish sometimes.
+--- End Context ---
+
+--- Condition: minimal ---
+
+--- Prompt Messages ---
+[1] system:
+You answer questions.
+[2] user:
+Context:
+Scenario: Diet
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | I'm vegetarian.
+- 2026-02-15T12:00:00Z | I eat fish sometimes.
+
+Question: Is the speaker vegetarian?
+--- End Prompt Messages ---
+
+Q [structured_probe]: Is the speaker vegetarian?
+condition: minimal
+model: Based on the observations provided, the speaker is initially described as vegetarian but later states that they eat fish sometimes. Therefore, the speaker is not strictly vegetarian anymore.
+
+--- Condition: analytic ---
+
+--- Prompt Messages ---
+[1] system:
+You answer questions.
+[2] user:
+Context:
+Scenario: Diet
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | I'm vegetarian.
+- 2026-02-15T12:00:00Z | I eat fish sometimes.
+
+Question: Is the speaker vegetarian?
+
+Use exactly this format:
+1. Direct answer:
+2. Possible interpretations:
+3. Assumption(s) made:
+4. Missing information or useful follow-up:
+5. Memory handling:
+--- End Prompt Messages ---
+
+Q [structured_probe]: Is the speaker vegetarian?
+condition: analytic
+model: 1. Direct answer: No, the speaker is not strictly vegetarian based on the given observations.
+2. Possible interpretations:
+   - The speaker may be a pescatarian, who eats a vegetarian diet but occasionally consumes fish.
+   - The speaker might have started eating fish after initially identifying as vegetarian.
+3. Assumption(s) made:
+   - Vegetarianism typically excludes all animal products, including fish.
+   - The speaker's dietary habits have changed over time.
+4. Missing information or useful follow-up:
+   - When did the speaker start eating fish?
+   - Are there any specific occasions or types of fish that the speaker eats?
+   - Does the speaker consider themselves vegetarian despite eating fish?
+5. Memory handling:
+   - The observations provided are sequential and do not overlap in time, suggesting they represent different points in the speaker's dietary journey. The first observation (being vegetarian) is followed by the second (eating fish), indicating a change in dietary habits.
+
+--- Condition: conversational ---
+
+--- Prompt Messages ---
+[1] system:
+You answer questions.
+[2] user:
+Context:
+Scenario: Diet
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | I'm vegetarian.
+- 2026-02-15T12:00:00Z | I eat fish sometimes.
+
+Question: Is the speaker vegetarian?
+
+Use exactly this format:
+1. Direct answer:
+2. Possible interpretations:
+3. Assumption(s) made:
+4. Clarifying question:
+5. Memory handling:
+--- End Prompt Messages ---
+
+Q [structured_probe]: Is the speaker vegetarian?
+condition: conversational
+model: 1. Direct answer: No, the speaker is not strictly vegetarian.
+2. Possible interpretations:
+   - The speaker follows a vegetarian diet but occasionally includes fish in their meals.
+   - The speaker may be practicing a flexible or semi-vegetarian diet.
+3. Assumption(s) made:
+   - Vegetarianism typically means avoiding meat, poultry, and fish.
+   - The speaker's dietary habits have changed since January 1st.
+4. Clarifying question:
+   - When did you start including fish in your diet?
+5. Memory handling:
+   - The speaker's dietary preferences appear to have evolved over time, with a shift from strict vegetarianism to occasional inclusion of fish. This change can be noted as a modification in their dietary habits without contradicting earlier statements.
+
+=== probe_sister ===
+Sister
+bucket: false_singularity
+
+--- Context ---
+Scenario: Sister
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | Maya is my sister.
+- 2026-02-15T12:00:00Z | Leila is my sister.
+--- End Context ---
+
+--- Condition: minimal ---
+
+--- Prompt Messages ---
+[1] system:
+You answer questions.
+[2] user:
+Context:
+Scenario: Sister
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | Maya is my sister.
+- 2026-02-15T12:00:00Z | Leila is my sister.
+
+Question: Who is the speaker's sister?
+--- End Prompt Messages ---
+
+Q [structured_probe]: Who is the speaker's sister?
+condition: minimal
+model: Based on the provided observations, the speaker has two sisters named Maya and Leila. Therefore, both Maya and Leila are the speaker's sisters.
+
+--- Condition: analytic ---
+
+--- Prompt Messages ---
+[1] system:
+You answer questions.
+[2] user:
+Context:
+Scenario: Sister
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | Maya is my sister.
+- 2026-02-15T12:00:00Z | Leila is my sister.
+
+Question: Who is the speaker's sister?
+
+Use exactly this format:
+1. Direct answer:
+2. Possible interpretations:
+3. Assumption(s) made:
+4. Missing information or useful follow-up:
+5. Memory handling:
+--- End Prompt Messages ---
+
+Q [structured_probe]: Who is the speaker's sister?
+condition: analytic
+model: 1. Direct answer:
+Leila is the speaker's sister.
+
+2. Possible interpretations:
+- The speaker has at least two sisters, Maya and Leila.
+- The statement about Leila being a sister could be more recent or significant to the speaker than the one about Maya.
+
+3. Assumption(s) made:
+- The speaker refers to "sister" in the singular form, implying there is only one sister mentioned.
+- Both statements are accurate and not contradictory.
+
+4. Missing information or useful follow-up:
+- Whether Maya and Leila are full sisters or half-sisters.
+- The relationship between the speaker and their sisters (e.g., age difference, closeness).
+
+5. Memory handling:
+- The most recent statement (about Leila) might be considered more current unless specified otherwise.
+- Both sisters are part of the speaker's family, but without additional context, it's unclear which one holds more significance or relevance to the speaker.
+
+--- Condition: conversational ---
+
+--- Prompt Messages ---
+[1] system:
+You answer questions.
+[2] user:
+Context:
+Scenario: Sister
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | Maya is my sister.
+- 2026-02-15T12:00:00Z | Leila is my sister.
+
+Question: Who is the speaker's sister?
+
+Use exactly this format:
+1. Direct answer:
+2. Possible interpretations:
+3. Assumption(s) made:
+4. Clarifying question:
+5. Memory handling:
+--- End Prompt Messages ---
+
+Q [structured_probe]: Who is the speaker's sister?
+condition: conversational
+model: 1. Direct answer: The speaker has two sisters, Maya and Leila.
+2. Possible interpretations:
+   - The speaker could be referring to both Maya and Leila as their sisters.
+   - There might be a possibility of a typo or error in the dates provided, but based on the given information, both statements are considered accurate.
+3. Assumption(s) made:
+   - The speaker is providing factual information about their family members.
+   - The dates provided are correct and relevant to the information being shared.
+4. Clarifying question:
+   - Are these the only sisters you have, or are there any others not mentioned?
+5. Memory handling:
+   - The memory includes two distinct statements about the speaker's sisters, with no indication that one statement overrides the other. Both observations are preserved as they were provided.
+
+=== probe_mother ===
+Mother
+bucket: false_singularity
+
+--- Context ---
+Scenario: Mother
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | Sara is my mother.
+- 2026-02-15T12:00:00Z | Lina is my mother.
+--- End Context ---
+
+--- Condition: minimal ---
+
+--- Prompt Messages ---
+[1] system:
+You answer questions.
+[2] user:
+Context:
+Scenario: Mother
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | Sara is my mother.
+- 2026-02-15T12:00:00Z | Lina is my mother.
+
+Question: Who is the speaker's mother?
+--- End Prompt Messages ---
+
+Q [structured_probe]: Who is the speaker's mother?
+condition: minimal
+model: The speaker's mother is Lina, according to the observation made on 2026-02-15T12:00:00Z. This statement overrides the previous one, as it was made later.
+
+--- Condition: analytic ---
+
+--- Prompt Messages ---
+[1] system:
+You answer questions.
+[2] user:
+Context:
+Scenario: Mother
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | Sara is my mother.
+- 2026-02-15T12:00:00Z | Lina is my mother.
+
+Question: Who is the speaker's mother?
+
+Use exactly this format:
+1. Direct answer:
+2. Possible interpretations:
+3. Assumption(s) made:
+4. Missing information or useful follow-up:
+5. Memory handling:
+--- End Prompt Messages ---
+
+Q [structured_probe]: Who is the speaker's mother?
+condition: analytic
+model: 1. Direct answer:
+Lina is the speaker's mother.
+
+2. Possible interpretations:
+There could be a misunderstanding or error in the observations, as it is unlikely for someone to have two different mothers. The observations might refer to different contexts or times in the speaker's life.
+
+3. Assumption(s) made:
+- The observations are meant to convey information about the speaker's mother.
+- The observations are accurate and not contradictory in any other context.
+
+4. Missing information or useful follow-up:
+- Clarification on the context of each observation (e.g., which observation refers to the current situation).
+- Information about when the speaker was adopted or if there were any changes in family dynamics that could explain having two mothers.
+
+5. Memory handling:
+The memory should be updated to reflect the most recent or relevant information. If both observations are from different contexts, they should be stored separately to avoid confusion.
+
+--- Condition: conversational ---
+
+--- Prompt Messages ---
+[1] system:
+You answer questions.
+[2] user:
+Context:
+Scenario: Mother
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | Sara is my mother.
+- 2026-02-15T12:00:00Z | Lina is my mother.
+
+Question: Who is the speaker's mother?
+
+Use exactly this format:
+1. Direct answer:
+2. Possible interpretations:
+3. Assumption(s) made:
+4. Clarifying question:
+5. Memory handling:
+--- End Prompt Messages ---
+
+Q [structured_probe]: Who is the speaker's mother?
+condition: conversational
+model: 1. Direct answer: The speaker's mother is Lina.
+2. Possible interpretations:
+   - The speaker could be referring to a different time or context where Lina was their mother, but without additional context, it is assumed to be the most recent statement.
+3. Assumption(s) made:
+   - The most recent statement takes precedence in determining the speaker's mother.
+   - There is no conflicting information provided that would suggest otherwise.
+4. Clarifying question:
+   - Is there any specific time period or context you are interested in regarding who the speaker's mother is?
+5. Memory handling:
+   - The memory of the speaker's mother is updated based on the most recent statement provided (Lina).
+
+=== probe_first_language ===
+First Language
+bucket: category_boundary
+
+--- Context ---
+Scenario: First Language
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | English is my first language.
+- 2026-02-15T12:00:00Z | Russian is my first language.
+--- End Context ---
+
+--- Condition: minimal ---
+
+--- Prompt Messages ---
+[1] system:
+You answer questions.
+[2] user:
+Context:
+Scenario: First Language
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | English is my first language.
+- 2026-02-15T12:00:00Z | Russian is my first language.
+
+Question: What is the speaker's first language?
+--- End Prompt Messages ---
+
+Q [structured_probe]: What is the speaker's first language?
+condition: minimal
+model: Based on the observations provided, there seems to be a contradiction since the speaker initially states that English is their first language and later states that Russian is their first language. If we take these statements at face value, it would imply that the speaker's first language changes over time, which is unusual. Typically, a person has one first language. Without additional context or clarification, it's not possible to determine which statement is accurate. However, if we must choose based on the given information, we would need more context to resolve the discrepancy.
+
+--- Condition: analytic ---
+
+--- Prompt Messages ---
+[1] system:
+You answer questions.
+[2] user:
+Context:
+Scenario: First Language
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | English is my first language.
+- 2026-02-15T12:00:00Z | Russian is my first language.
+
+Question: What is the speaker's first language?
+
+Use exactly this format:
+1. Direct answer:
+2. Possible interpretations:
+3. Assumption(s) made:
+4. Missing information or useful follow-up:
+5. Memory handling:
+--- End Prompt Messages ---
+
+Q [structured_probe]: What is the speaker's first language?
+condition: analytic
+model: 1. Direct answer: The speaker's first language is Russian.
+2. Possible interpretations: 
+   - The speaker might be referring to a different context or time period for each statement, but based on the given observations, Russian is stated as the first language.
+3. Assumption(s) made:
+   - The observations provided are accurate and complete.
+   - The term "first language" refers to the language learned and spoken by the individual first in their life.
+4. Missing information or useful follow-up:
+   - When did the speaker learn English?
+   - Are there any other languages the speaker knows or speaks fluently?
+5. Memory handling:
+   - The most recent observation (2026-02-15T12:00:00Z) states that Russian is the first language, so it should be considered the current and accurate statement unless additional context is provided.
+
+--- Condition: conversational ---
+
+--- Prompt Messages ---
+[1] system:
+You answer questions.
+[2] user:
+Context:
+Scenario: First Language
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | English is my first language.
+- 2026-02-15T12:00:00Z | Russian is my first language.
+
+Question: What is the speaker's first language?
+
+Use exactly this format:
+1. Direct answer:
+2. Possible interpretations:
+3. Assumption(s) made:
+4. Clarifying question:
+5. Memory handling:
+--- End Prompt Messages ---
+
+Q [structured_probe]: What is the speaker's first language?
+condition: conversational
+model: 1. Direct answer: The speaker's first language is Russian.
+2. Possible interpretations: 
+   - The speaker might be experiencing confusion or a change in their primary language over time, which could indicate a shift in their linguistic identity.
+   - There could be an error in the recording of the observations, possibly due to a mistake in logging the dates or the content.
+3. Assumption(s) made:
+   - The observations provided are accurate and complete.
+   - The term "first language" refers to the language learned first in childhood and used most frequently.
+4. Clarifying question:
+   Could you provide more context or confirm the dates when these statements were made?
+5. Memory handling:
+   - The memory of the speaker appears to be inconsistent, as they claim both English and Russian as their first language at different times.
+   - It would be beneficial to seek additional information or verify the timeline of events to resolve the discrepancy.
+
+=== probe_favorite_city ===
+Favorite City
+bucket: expressive_looseness
+
+--- Context ---
+Scenario: Favorite City
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | Paris is my favorite city.
+- 2026-02-15T12:00:00Z | Tbilisi is my favorite city.
+--- End Context ---
+
+--- Condition: minimal ---
+
+--- Prompt Messages ---
+[1] system:
+You answer questions.
+[2] user:
+Context:
+Scenario: Favorite City
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | Paris is my favorite city.
+- 2026-02-15T12:00:00Z | Tbilisi is my favorite city.
+
+Question: What is the speaker's favorite city?
+--- End Prompt Messages ---
+
+Q [structured_probe]: What is the speaker's favorite city?
+condition: minimal
+model: Based on the observations provided, it seems that the speaker's favorite city changes over time. Initially, Paris was their favorite city as of January 1, 2026. However, by February 15, 2026, their favorite city had changed to Tbilisi. Without additional context or information about when these statements were made in relation to each other, we can conclude that the speaker's favorite city is currently Tbilisi as of February 15, 2026.
+
+--- Condition: analytic ---
+
+--- Prompt Messages ---
+[1] system:
+You answer questions.
+[2] user:
+Context:
+Scenario: Favorite City
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | Paris is my favorite city.
+- 2026-02-15T12:00:00Z | Tbilisi is my favorite city.
+
+Question: What is the speaker's favorite city?
+
+Use exactly this format:
+1. Direct answer:
+2. Possible interpretations:
+3. Assumption(s) made:
+4. Missing information or useful follow-up:
+5. Memory handling:
+--- End Prompt Messages ---
+
+Q [structured_probe]: What is the speaker's favorite city?
+condition: analytic
+model: 1. Direct answer: The speaker's favorite city alternates between Paris and Tbilisi based on the given observations.
+2. Possible interpretations: 
+   - The speaker has a preference for both cities, but their favorite changes over time.
+   - There might be specific times or circumstances when one city is preferred over the other.
+3. Assumption(s) made:
+   - The observations provided are accurate and complete.
+   - The speaker's favorite city can change over time.
+4. Missing information or useful follow-up:
+   - When did the speaker's preference for Paris become their favorite?
+   - Are there any specific reasons or events that led to the change in preference?
+   - Is there any overlap period where the speaker might have considered both cities as favorites?
+5. Memory handling:
+   - The system should maintain a record of the speaker's changing preferences over time.
+   - It should update the favorite city based on the most recent observation if new data is available.
+
+--- Condition: conversational ---
+
+--- Prompt Messages ---
+[1] system:
+You answer questions.
+[2] user:
+Context:
+Scenario: Favorite City
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | Paris is my favorite city.
+- 2026-02-15T12:00:00Z | Tbilisi is my favorite city.
+
+Question: What is the speaker's favorite city?
+
+Use exactly this format:
+1. Direct answer:
+2. Possible interpretations:
+3. Assumption(s) made:
+4. Clarifying question:
+5. Memory handling:
+--- End Prompt Messages ---
+
+Q [structured_probe]: What is the speaker's favorite city?
+condition: conversational
+model: 1. Direct answer: The speaker's favorite city alternates between Paris and Tbilisi based on the given observations.
+2. Possible interpretations: 
+   - The speaker has a changing preference, favoring Paris in January and then switching to Tbilisi in February.
+   - There might be a mistake or confusion in the observations provided.
+3. Assumption(s) made:
+   - The observations are accurate and reflect the speaker's true preferences at the time they were made.
+   - Each observation represents a distinct point in time without overlap.
+4. Clarifying question:
+   - Can you provide more context or observations about when these statements were made and any possible reasons for the change in preference?
+5. Memory handling:
+   - The memory of the speaker appears to have changed their favorite city from Paris to Tbilisi within a month, which could indicate a recent shift in preference or an error in recording the observations.
+
+=== probe_doctor ===
+Doctor
+bucket: false_singularity
+
+--- Context ---
+Scenario: Doctor
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | Dr. Chen is my doctor.
+- 2026-02-15T12:00:00Z | Dr. Alvarez is my doctor.
+--- End Context ---
+
+--- Condition: minimal ---
+
+--- Prompt Messages ---
+[1] system:
+You answer questions.
+[2] user:
+Context:
+Scenario: Doctor
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | Dr. Chen is my doctor.
+- 2026-02-15T12:00:00Z | Dr. Alvarez is my doctor.
+
+Question: Who is the speaker's doctor?
+--- End Prompt Messages ---
+
+Q [structured_probe]: Who is the speaker's doctor?
+condition: minimal
+model: The speaker's doctor is Dr. Alvarez, as indicated in the observation made on 2026-02-15T12:00:00Z. This statement overrides the previous one, suggesting that the doctor changed from Dr. Chen to Dr. Alvarez.
+
+--- Condition: analytic ---
+
+--- Prompt Messages ---
+[1] system:
+You answer questions.
+[2] user:
+Context:
+Scenario: Doctor
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | Dr. Chen is my doctor.
+- 2026-02-15T12:00:00Z | Dr. Alvarez is my doctor.
+
+Question: Who is the speaker's doctor?
+
+Use exactly this format:
+1. Direct answer:
+2. Possible interpretations:
+3. Assumption(s) made:
+4. Missing information or useful follow-up:
+5. Memory handling:
+--- End Prompt Messages ---
+
+Q [structured_probe]: Who is the speaker's doctor?
+condition: analytic
+model: 1. Direct answer:
+Dr. Alvarez is the speaker's doctor as of February 15, 2026.
+
+2. Possible interpretations:
+- The speaker could be referring to a change in doctors that occurred on February 15, 2026.
+- There might be a possibility that both doctors have treated the speaker at different times, but the most recent statement indicates Dr. Alvarez as the current doctor.
+
+3. Assumption(s) made:
+- The second observation (Dr. Alvarez being the doctor) is more recent and thus considered the current status.
+- The speaker is consistent in their statements about who their doctor is.
+
+4. Missing information or useful follow-up:
+- When did the speaker see Dr. Chen last?
+- Are there any specific reasons for the change in doctors?
+- Is there any overlap in the time periods when both doctors were treating the speaker?
+
+5. Memory handling:
+The memory should be updated to reflect that as of February 15, 2026, the speaker's doctor is Dr. Alvarez. Any previous association with Dr. Chen would be noted as a past relationship unless there is evidence of an ongoing connection.
+
+--- Condition: conversational ---
+
+--- Prompt Messages ---
+[1] system:
+You answer questions.
+[2] user:
+Context:
+Scenario: Doctor
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | Dr. Chen is my doctor.
+- 2026-02-15T12:00:00Z | Dr. Alvarez is my doctor.
+
+Question: Who is the speaker's doctor?
+
+Use exactly this format:
+1. Direct answer:
+2. Possible interpretations:
+3. Assumption(s) made:
+4. Clarifying question:
+5. Memory handling:
+--- End Prompt Messages ---
+
+Q [structured_probe]: Who is the speaker's doctor?
+condition: conversational
+model: 1. Direct answer: The speaker's doctor is Dr. Alvarez as of 2026-02-15T12:00:00Z.
+2. Possible interpretations:
+   - The speaker could have had multiple doctors over time, and Dr. Chen was their doctor before Dr. Alvarez.
+   - There might be a mistake in the dates or the information provided.
+3. Assumption(s) made:
+   - The most recent statement about the doctor takes precedence.
+   - The dates provided are accurate and chronological.
+4. Clarifying question:
+   - Could you provide more details on when these statements were made in relation to your current situation?
+5. Memory handling:
+   - The memory should be updated to reflect that Dr. Alvarez is the current doctor as of February 15, 2026.

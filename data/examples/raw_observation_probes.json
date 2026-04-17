@@ -1,0 +1,91 @@
+{
+  "name": "raw-observation-probes",
+  "version": "0.1.0",
+  "description": "Exploratory prompts for observing how an instruct model resolves sequential claims without explicit update labels or expected answers.",
+  "probes": [
+    {
+      "id": "probe_anna_la_sf",
+      "title": "Anna Says LA Then SF",
+      "observations": [
+        {
+          "timestamp": "2026-01-01T09:00:00Z",
+          "speaker": "Anna",
+          "content": "I live in LA."
+        },
+        {
+          "timestamp": "2026-02-15T12:00:00Z",
+          "speaker": "Anna",
+          "content": "I live in SF."
+        }
+      ],
+      "questions": [
+        "Where does Anna live?",
+        "Why do you say that?",
+        "Is it possible Anna lives in both places?"
+      ]
+    },
+    {
+      "id": "probe_anna_coffee_tea",
+      "title": "Anna Likes Coffee Then Tea",
+      "observations": [
+        {
+          "timestamp": "2026-01-01T09:00:00Z",
+          "speaker": "Anna",
+          "content": "I like coffee."
+        },
+        {
+          "timestamp": "2026-02-15T12:00:00Z",
+          "speaker": "Anna",
+          "content": "I like tea."
+        }
+      ],
+      "questions": [
+        "What does Anna like to drink?",
+        "Did Anna stop liking coffee?",
+        "Would you ask Anna a follow-up question? If so, what would you ask?"
+      ]
+    },
+    {
+      "id": "probe_explicit_move",
+      "title": "Explicit Move",
+      "observations": [
+        {
+          "timestamp": "2026-01-01T09:00:00Z",
+          "speaker": "Anna",
+          "content": "I live in LA."
+        },
+        {
+          "timestamp": "2026-02-15T12:00:00Z",
+          "speaker": "Anna",
+          "content": "I moved from LA to SF."
+        }
+      ],
+      "questions": [
+        "Where does Anna live?",
+        "Where did Anna live before?",
+        "What changed?"
+      ]
+    },
+    {
+      "id": "probe_explicit_correction",
+      "title": "Explicit Correction",
+      "observations": [
+        {
+          "timestamp": "2026-01-01T09:00:00Z",
+          "speaker": "Anna",
+          "content": "My cat is named Mochi."
+        },
+        {
+          "timestamp": "2026-01-02T09:00:00Z",
+          "speaker": "Anna",
+          "content": "Actually, my cat is named Miso, not Mochi."
+        }
+      ],
+      "questions": [
+        "What is Anna's cat named?",
+        "What name was mentioned first?",
+        "Was there a correction?"
+      ]
+    }
+  ]
+}

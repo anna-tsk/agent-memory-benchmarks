@@ -1,0 +1,336 @@
+{
+  "name": "raw-observation-probes",
+  "version": "0.2.0",
+  "description": "Exploratory probes for observing how an instruct model handles underspecified sequential claims without explicit update labels or expected answers.",
+  "response_format": [
+    "Direct answer",
+    "Possible interpretations",
+    "Assumption(s) made",
+    "Missing information or useful follow-up",
+    "Memory handling"
+  ],
+  "probes": [
+    {
+      "id": "probe_best_friend",
+      "bucket": "false_singularity",
+      "title": "Best Friend",
+      "observations": [
+        {
+          "timestamp": "2026-01-01T09:00:00Z",
+          "speaker": "Speaker",
+          "content": "Marie is my best friend."
+        },
+        {
+          "timestamp": "2026-02-15T12:00:00Z",
+          "speaker": "Speaker",
+          "content": "Tina is my best friend."
+        }
+      ],
+      "questions": [
+        {
+          "id": "structured_probe",
+          "text": "Who is the speaker's best friend?"
+        }
+      ]
+    },
+    {
+      "id": "probe_hometown",
+      "bucket": "category_boundary",
+      "title": "Hometown",
+      "observations": [
+        {
+          "timestamp": "2026-01-01T09:00:00Z",
+          "speaker": "Speaker",
+          "content": "LA is my hometown."
+        },
+        {
+          "timestamp": "2026-02-15T12:00:00Z",
+          "speaker": "Speaker",
+          "content": "Tbilisi is my hometown."
+        }
+      ],
+      "questions": [
+        {
+          "id": "structured_probe",
+          "text": "What is the speaker's hometown?"
+        }
+      ]
+    },
+    {
+      "id": "probe_home",
+      "bucket": "expressive_looseness",
+      "title": "Home",
+      "observations": [
+        {
+          "timestamp": "2026-01-01T09:00:00Z",
+          "speaker": "Speaker",
+          "content": "LA is home."
+        },
+        {
+          "timestamp": "2026-02-15T12:00:00Z",
+          "speaker": "Speaker",
+          "content": "New York is home."
+        }
+      ],
+      "questions": [
+        {
+          "id": "structured_probe",
+          "text": "Where is home for the speaker?"
+        }
+      ]
+    },
+    {
+      "id": "probe_favorite_person",
+      "bucket": "expressive_looseness",
+      "title": "Favorite Person",
+      "observations": [
+        {
+          "timestamp": "2026-01-01T09:00:00Z",
+          "speaker": "Speaker",
+          "content": "My mom is my favorite person."
+        },
+        {
+          "timestamp": "2026-02-15T12:00:00Z",
+          "speaker": "Speaker",
+          "content": "My partner is my favorite person."
+        }
+      ],
+      "questions": [
+        {
+          "id": "structured_probe",
+          "text": "Who is the speaker's favorite person?"
+        }
+      ]
+    },
+    {
+      "id": "probe_boss",
+      "bucket": "false_singularity",
+      "title": "Boss",
+      "observations": [
+        {
+          "timestamp": "2026-01-01T09:00:00Z",
+          "speaker": "Speaker",
+          "content": "Sam is my boss."
+        },
+        {
+          "timestamp": "2026-02-15T12:00:00Z",
+          "speaker": "Speaker",
+          "content": "Priya is my boss."
+        }
+      ],
+      "questions": [
+        {
+          "id": "structured_probe",
+          "text": "Who is the speaker's boss?"
+        }
+      ]
+    },
+    {
+      "id": "probe_relationship_status",
+      "bucket": "temporal_change",
+      "title": "Relationship Status",
+      "observations": [
+        {
+          "timestamp": "2026-01-01T09:00:00Z",
+          "speaker": "Speaker",
+          "content": "I'm single."
+        },
+        {
+          "timestamp": "2026-02-15T12:00:00Z",
+          "speaker": "Speaker",
+          "content": "I'm married."
+        }
+      ],
+      "questions": [
+        {
+          "id": "structured_probe",
+          "text": "What is the speaker's relationship status?"
+        }
+      ]
+    },
+    {
+      "id": "probe_age",
+      "bucket": "temporal_change",
+      "title": "Age",
+      "observations": [
+        {
+          "timestamp": "2026-01-01T09:00:00Z",
+          "speaker": "Speaker",
+          "content": "I'm 29."
+        },
+        {
+          "timestamp": "2026-02-15T12:00:00Z",
+          "speaker": "Speaker",
+          "content": "I'm 30."
+        }
+      ],
+      "questions": [
+        {
+          "id": "structured_probe",
+          "text": "How old is the speaker?"
+        }
+      ]
+    },
+    {
+      "id": "probe_name_preference",
+      "bucket": "temporal_change",
+      "title": "Name Preference",
+      "observations": [
+        {
+          "timestamp": "2026-01-01T09:00:00Z",
+          "speaker": "Speaker",
+          "content": "I go by Anna."
+        },
+        {
+          "timestamp": "2026-02-15T12:00:00Z",
+          "speaker": "Speaker",
+          "content": "I go by Anya."
+        }
+      ],
+      "questions": [
+        {
+          "id": "structured_probe",
+          "text": "What should the assistant call the speaker?"
+        }
+      ]
+    },
+    {
+      "id": "probe_diet",
+      "bucket": "category_boundary",
+      "title": "Diet",
+      "observations": [
+        {
+          "timestamp": "2026-01-01T09:00:00Z",
+          "speaker": "Speaker",
+          "content": "I'm vegetarian."
+        },
+        {
+          "timestamp": "2026-02-15T12:00:00Z",
+          "speaker": "Speaker",
+          "content": "I eat fish sometimes."
+        }
+      ],
+      "questions": [
+        {
+          "id": "structured_probe",
+          "text": "Is the speaker vegetarian?"
+        }
+      ]
+    },
+    {
+      "id": "probe_sister",
+      "bucket": "false_singularity",
+      "title": "Sister",
+      "observations": [
+        {
+          "timestamp": "2026-01-01T09:00:00Z",
+          "speaker": "Speaker",
+          "content": "Maya is my sister."
+        },
+        {
+          "timestamp": "2026-02-15T12:00:00Z",
+          "speaker": "Speaker",
+          "content": "Leila is my sister."
+        }
+      ],
+      "questions": [
+        {
+          "id": "structured_probe",
+          "text": "Who is the speaker's sister?"
+        }
+      ]
+    },
+    {
+      "id": "probe_mother",
+      "bucket": "false_singularity",
+      "title": "Mother",
+      "observations": [
+        {
+          "timestamp": "2026-01-01T09:00:00Z",
+          "speaker": "Speaker",
+          "content": "Sara is my mother."
+        },
+        {
+          "timestamp": "2026-02-15T12:00:00Z",
+          "speaker": "Speaker",
+          "content": "Lina is my mother."
+        }
+      ],
+      "questions": [
+        {
+          "id": "structured_probe",
+          "text": "Who is the speaker's mother?"
+        }
+      ]
+    },
+    {
+      "id": "probe_first_language",
+      "bucket": "category_boundary",
+      "title": "First Language",
+      "observations": [
+        {
+          "timestamp": "2026-01-01T09:00:00Z",
+          "speaker": "Speaker",
+          "content": "English is my first language."
+        },
+        {
+          "timestamp": "2026-02-15T12:00:00Z",
+          "speaker": "Speaker",
+          "content": "Russian is my first language."
+        }
+      ],
+      "questions": [
+        {
+          "id": "structured_probe",
+          "text": "What is the speaker's first language?"
+        }
+      ]
+    },
+    {
+      "id": "probe_favorite_city",
+      "bucket": "expressive_looseness",
+      "title": "Favorite City",
+      "observations": [
+        {
+          "timestamp": "2026-01-01T09:00:00Z",
+          "speaker": "Speaker",
+          "content": "Paris is my favorite city."
+        },
+        {
+          "timestamp": "2026-02-15T12:00:00Z",
+          "speaker": "Speaker",
+          "content": "Tbilisi is my favorite city."
+        }
+      ],
+      "questions": [
+        {
+          "id": "structured_probe",
+          "text": "What is the speaker's favorite city?"
+        }
+      ]
+    },
+    {
+      "id": "probe_doctor",
+      "bucket": "false_singularity",
+      "title": "Doctor",
+      "observations": [
+        {
+          "timestamp": "2026-01-01T09:00:00Z",
+          "speaker": "Speaker",
+          "content": "Dr. Chen is my doctor."
+        },
+        {
+          "timestamp": "2026-02-15T12:00:00Z",
+          "speaker": "Speaker",
+          "content": "Dr. Alvarez is my doctor."
+        }
+      ],
+      "questions": [
+        {
+          "id": "structured_probe",
+          "text": "Who is the speaker's doctor?"
+        }
+      ]
+    }
+  ]
+}

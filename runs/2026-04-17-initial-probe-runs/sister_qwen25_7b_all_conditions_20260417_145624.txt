@@ -1,0 +1,132 @@
+Logging to: runs/sister_qwen25_7b_all_conditions_20260417_145624.txt
+model: Qwen/Qwen2.5-7B-Instruct
+data: data/examples/raw_observation_probes_v2.json
+max_new_tokens: 768
+limit: None
+probe_ids: ['probe_sister']
+show_context: True
+show_prompt: True
+dialogue_mode: False
+condition: all
+
+
+=== probe_sister ===
+Sister
+bucket: false_singularity
+
+--- Context ---
+Scenario: Sister
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | Maya is my sister.
+- 2026-02-15T12:00:00Z | Leila is my sister.
+--- End Context ---
+
+--- Condition: minimal ---
+
+--- Prompt Messages ---
+[1] system:
+You answer questions.
+[2] user:
+Context:
+Scenario: Sister
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | Maya is my sister.
+- 2026-02-15T12:00:00Z | Leila is my sister.
+
+Question: Who is the speaker's sister?
+--- End Prompt Messages ---
+
+Q [structured_probe]: Who is the speaker's sister?
+condition: minimal
+model: Based on the provided observations, the speaker has two sisters named Maya and Leila. Therefore, both Maya and Leila are the speaker's sisters.
+
+--- Condition: analytic ---
+
+--- Prompt Messages ---
+[1] system:
+You answer questions.
+[2] user:
+Context:
+Scenario: Sister
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | Maya is my sister.
+- 2026-02-15T12:00:00Z | Leila is my sister.
+
+Question: Who is the speaker's sister?
+
+Use exactly this format:
+1. Direct answer:
+2. Possible interpretations:
+3. Assumption(s) made:
+4. Missing information or useful follow-up:
+5. Memory handling:
+--- End Prompt Messages ---
+
+Q [structured_probe]: Who is the speaker's sister?
+condition: analytic
+model: 1. Direct answer:
+Leila is the speaker's sister.
+
+2. Possible interpretations:
+- The speaker has at least two sisters, Maya and Leila.
+- The statement about Leila being a sister could be more recent or significant to the speaker than the one about Maya.
+
+3. Assumption(s) made:
+- The speaker refers to "sister" in the singular form, implying there is only one sister mentioned.
+- Both statements are accurate and not contradictory.
+
+4. Missing information or useful follow-up:
+- Whether Maya and Leila are full sisters or half-sisters.
+- The relationship between the speaker and their sisters (e.g., age difference, closeness).
+
+5. Memory handling:
+- The most recent statement (about Leila) might be considered more current unless specified otherwise.
+- Both sisters are part of the speaker's family, but without additional context, it's unclear which one holds more significance or relevance to the speaker.
+
+--- Condition: conversational ---
+
+--- Prompt Messages ---
+[1] system:
+You answer questions.
+[2] user:
+Context:
+Scenario: Sister
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | Maya is my sister.
+- 2026-02-15T12:00:00Z | Leila is my sister.
+
+Question: Who is the speaker's sister?
+
+Use exactly this format:
+1. Direct answer:
+2. Possible interpretations:
+3. Assumption(s) made:
+4. Clarifying question:
+5. Memory handling:
+--- End Prompt Messages ---
+
+Q [structured_probe]: Who is the speaker's sister?
+condition: conversational
+model: 1. Direct answer: The speaker has two sisters, Maya and Leila.
+2. Possible interpretations:
+   - The speaker could be referring to both Maya and Leila as their sisters.
+   - There might be a possibility of a typo or error in the dates provided, but based on the given information, both statements are considered accurate.
+3. Assumption(s) made:
+   - The speaker is providing factual information about their family members.
+   - The dates provided are correct and relevant to the information being shared.
+4. Clarifying question:
+   - Are these the only sisters you have, or are there any others not mentioned?
+5. Memory handling:
+   - The memory includes two distinct statements about the speaker's sisters, with no indication that one statement overrides the other. Both observations are preserved as they were provided.

@@ -1,0 +1,195 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/first-memory-benchmark.schema.json",
+  "title": "First Memory Benchmark",
+  "description": "Schema for sequential belief revision trajectories over persistent memory substrates.",
+  "$comment": "Top-level files contain dataset metadata plus independent trajectories. A trajectory is one small temporal memory world: initial facts, later updates, and queries that test what should be believed at different times.",
+  "type": "object",
+  "required": ["benchmark", "trajectories"],
+  "additionalProperties": false,
+  "properties": {
+    "benchmark": {
+      "type": "object",
+      "$comment": "Dataset-level metadata. Keep this separate from trajectory metadata so one file can hold many scenarios generated with the same assumptions.",
+      "required": ["name", "version", "description"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string" },
+        "version": { "type": "string" },
+        "description": { "type": "string" },
+        "created_at": { "type": "string" }
+      }
+    },
+    "trajectories": {
+      "type": "array",
+      "$comment": "Each trajectory should be independently evaluable. This lets experiments sample, shuffle, filter, or ablate scenarios without cross-trajectory state.",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/trajectory" }
+    }
+  },
+  "$defs": {
+    "trajectory": {
+      "type": "object",
+      "$comment": "A single ordered belief-revision scenario. The intended flow is: load entities, load initial_facts, apply updates in timestamp order, then answer evaluation_queries.",
+      "required": [
+        "id",
+        "title",
+        "description",
+        "entities",
+        "initial_facts",
+        "updates",
+        "evaluation_queries"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "entities": {
+          "type": "array",
+          "$comment": "Entities give stable IDs for people, places, organizations, objects, and events. Facts refer to IDs rather than surface names so aliases do not create accidental duplicates.",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/entity" }
+        },
+        "initial_facts": {
+          "type": "array",
+          "$comment": "Facts believed at the beginning of the trajectory. They are not necessarily eternal; later updates can revise, correct, confirm, or expire them.",
+          "items": { "$ref": "#/$defs/fact" }
+        },
+        "updates": {
+          "type": "array",
+          "$comment": "Sequential changes to memory. Updates use the same subject/predicate/object shape as facts, plus an operation and optional supersedes links.",
+          "items": { "$ref": "#/$defs/update" }
+        },
+        "evaluation_queries": {
+          "type": "array",
+          "$comment": "Questions used for scoring. They explicitly encode whether the target is current belief or historical belief so models are not rewarded for collapsing time.",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/evaluation_query" }
+        }
+      }
+    },
+    "entity": {
+      "type": "object",
+      "$comment": "Entity records are intentionally small. They are a namespace for references and aliases, not a full ontology.",
+      "required": ["id", "name", "type"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "type": {
+          "type": "string",
+          "enum": ["person", "place", "organization", "object", "event", "other"]
+        },
+        "aliases": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "fact": {
+      "type": "object",
+      "$comment": "Facts use a simple subject-predicate-object triple so early prototypes can implement memory state without committing to a database or graph representation.",
+      "required": ["id", "subject", "predicate", "object", "metadata"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "subject": { "type": "string" },
+        "predicate": { "type": "string" },
+        "object": { "type": "string" },
+        "metadata": { "$ref": "#/$defs/metadata" }
+      }
+    },
+    "update": {
+      "type": "object",
+      "$comment": "Updates are fact-like events with an operation. `supersedes` records explicit lineage, which is useful for evaluating revision and historical recall.",
+      "required": [
+        "id",
+        "operation",
+        "subject",
+        "predicate",
+        "object",
+        "metadata"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "operation": {
+          "type": "string",
+          "$comment": "Operation semantics are deliberately coarse for the prototype: add new information, revise a prior value, correct an error, expire a no-longer-current fact, or confirm an existing fact.",
+          "enum": ["add", "revise", "correct", "expire", "confirm"]
+        },
+        "subject": { "type": "string" },
+        "predicate": { "type": "string" },
+        "object": { "type": "string" },
+        "supersedes": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "metadata": { "$ref": "#/$defs/metadata" }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "$comment": "Metadata makes each claim temporally and contextually grounded. Timestamp supports ordering; scope prevents unrelated domains from overwriting each other; provenance supports future confidence/source experiments.",
+      "required": ["timestamp", "scope", "provenance"],
+      "additionalProperties": false,
+      "properties": {
+        "timestamp": { "type": "string" },
+        "scope": { "type": "string" },
+        "provenance": {
+          "type": "object",
+          "required": ["source", "confidence"],
+          "additionalProperties": false,
+          "properties": {
+            "source": { "type": "string" },
+            "confidence": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "note": { "type": "string" }
+          }
+        }
+      }
+    },
+    "evaluation_query": {
+      "type": "object",
+      "$comment": "The core benchmark distinction lives here. `query_time` is when the model is asked; `belief_time` is the time the answer should refer to.",
+      "required": [
+        "id",
+        "question",
+        "belief_type",
+        "query_time",
+        "belief_time",
+        "answer_format",
+        "expected_answer"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "question": { "type": "string" },
+        "belief_type": {
+          "type": "string",
+          "$comment": "`current` means answer from the latest valid belief at query_time. `historical` means answer from the memory state at belief_time, even if later updates changed it.",
+          "enum": ["current", "historical"]
+        },
+        "query_time": { "type": "string" },
+        "belief_time": { "type": "string" },
+        "answer_format": {
+          "type": "string",
+          "enum": ["string", "list", "boolean", "object"]
+        },
+        "expected_answer": {},
+        "acceptable_answers": {
+          "type": "array",
+          "items": {}
+        },
+        "target_fact_ids": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    }
+  }
+}

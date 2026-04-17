@@ -1,0 +1,140 @@
+Logging to: runs/sister_same_speaker_all_conditions_20260417_145105.txt
+model: Qwen/Qwen2.5-3B-Instruct
+data: data/examples/raw_observation_probes_v2.json
+max_new_tokens: 768
+limit: None
+probe_ids: ['probe_sister']
+show_context: True
+show_prompt: True
+dialogue_mode: False
+condition: all
+
+
+=== probe_sister ===
+Sister
+bucket: false_singularity
+
+--- Context ---
+Scenario: Sister
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | Maya is my sister.
+- 2026-02-15T12:00:00Z | Leila is my sister.
+--- End Context ---
+
+--- Condition: minimal ---
+
+--- Prompt Messages ---
+[1] system:
+You answer questions.
+[2] user:
+Context:
+Scenario: Sister
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | Maya is my sister.
+- 2026-02-15T12:00:00Z | Leila is my sister.
+
+Question: Who is the speaker's sister?
+--- End Prompt Messages ---
+
+Q [structured_probe]: Who is the speaker's sister?
+condition: minimal
+model: Based on the given observations, there isn't enough information to definitively determine who the speaker's sister is. The first observation states that Maya is the speaker's sister, but the second observation mentions Leila as the speaker's sister. These two statements contradict each other, so it's unclear which one is correct. More context or a consistent statement would be needed to identify the speaker's sister.
+
+--- Condition: analytic ---
+
+--- Prompt Messages ---
+[1] system:
+You answer questions.
+[2] user:
+Context:
+Scenario: Sister
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | Maya is my sister.
+- 2026-02-15T12:00:00Z | Leila is my sister.
+
+Question: Who is the speaker's sister?
+
+Use exactly this format:
+1. Direct answer:
+2. Possible interpretations:
+3. Assumption(s) made:
+4. Missing information or useful follow-up:
+5. Memory handling:
+--- End Prompt Messages ---
+
+Q [structured_probe]: Who is the speaker's sister?
+condition: analytic
+model: 1. Direct answer:
+   The speaker's sister is not explicitly named in the given observations, but based on the context of "Sister" and the two observations provided, it seems that the speaker has two sisters named Maya and Leila. However, without more context, we cannot definitively state which one is the speaker's sister.
+
+2. Possible interpretations:
+   - The speaker could be referring to either Maya or Leila as their sister.
+   - There might be a third sister not mentioned in the observations.
+   - The speaker might be using "sister" in a broader sense (e.g., step-sister).
+
+3. Assumptions made:
+   - The speaker is consistent in referring to both Maya and Leila as sisters.
+   - The observations are made by the same person.
+   - The term "sister" is used in its most common sense (biological sibling).
+
+4. Missing information or useful follow-up:
+   - More context about the relationship between the speaker and these individuals.
+   - Information about the speaker's siblings or family structure.
+   - Clarification on whether the speaker is referring to biological or adoptive sisters.
+
+5. Memory handling:
+   - The memory handling here involves recalling the context of the term "sister" and understanding the implications of the given observations. It also requires distinguishing between the two sisters mentioned.
+
+--- Condition: conversational ---
+
+--- Prompt Messages ---
+[1] system:
+You answer questions.
+[2] user:
+Context:
+Scenario: Sister
+
+All observations are statements from the same speaker.
+
+Observations:
+- 2026-01-01T09:00:00Z | Maya is my sister.
+- 2026-02-15T12:00:00Z | Leila is my sister.
+
+Question: Who is the speaker's sister?
+
+Use exactly this format:
+1. Direct answer:
+2. Possible interpretations:
+3. Assumption(s) made:
+4. Clarifying question:
+5. Memory handling:
+--- End Prompt Messages ---
+
+Q [structured_probe]: Who is the speaker's sister?
+condition: conversational
+model: 1. Direct answer:
+   The speaker's sister is not explicitly identified in the given observations. However, based on the context and the provided information, it seems that the speaker has two sisters named Maya and Leila.
+
+2. Possible interpretations:
+   - The speaker might be referring to both Maya and Leila as sisters.
+   - There could be a third sister not mentioned in the observations.
+   - The speaker might be using "sister" in a broader sense (e.g., step-sister).
+
+3. Assumption(s) made:
+   - The speaker is consistent in referring to both individuals as sisters.
+   - The context implies that the speaker is talking about their siblings.
+
+4. Clarifying question:
+   Could you please specify which sister you are asking about or provide more context about the relationship between these individuals?
+
+5. Memory handling:
+   The memory handling here involves distinguishing between the two sisters mentioned and considering if there might be additional sisters not included in the observations. It also requires understanding the potential ambiguity in the term "sister."

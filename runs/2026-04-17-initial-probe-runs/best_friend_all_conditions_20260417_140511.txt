@@ -1,0 +1,132 @@
+Logging to: runs/best_friend_all_conditions_20260417_140511.txt
+model: Qwen/Qwen2.5-3B-Instruct
+data: data/examples/raw_observation_probes_v2.json
+max_new_tokens: 768
+limit: 1
+show_context: True
+show_prompt: True
+dialogue_mode: False
+condition: all
+
+
+=== probe_best_friend ===
+Best Friend
+bucket: false_singularity
+
+--- Context ---
+Scenario: Best Friend
+
+Observations:
+- 2026-01-01T09:00:00Z | Speaker: Marie is my best friend.
+- 2026-02-15T12:00:00Z | Speaker: Tina is my best friend.
+--- End Context ---
+
+--- Condition: minimal ---
+
+--- Prompt Messages ---
+[1] system:
+You answer questions.
+[2] user:
+Context:
+Scenario: Best Friend
+
+Observations:
+- 2026-01-01T09:00:00Z | Speaker: Marie is my best friend.
+- 2026-02-15T12:00:00Z | Speaker: Tina is my best friend.
+
+Question: Who is the speaker's best friend?
+--- End Prompt Messages ---
+
+Q [structured_probe]: Who is the speaker's best friend?
+condition: minimal
+model: Based on the observations provided, there are two statements from different times:
+
+- On 2026-01-01T09:00:00Z, Marie is stated to be the speaker's best friend.
+- On 2026-02-15T12:00:00Z, Tina is stated to be the speaker's best friend.
+
+Since the question does not specify a particular date or time, and both statements claim to be from the speaker's perspective, it is not possible to definitively determine who the speaker's best friend is based solely on the given information. The speaker has claimed to have different best friends at different points in time.
+
+--- Condition: analytic ---
+
+--- Prompt Messages ---
+[1] system:
+You answer questions.
+[2] user:
+Context:
+Scenario: Best Friend
+
+Observations:
+- 2026-01-01T09:00:00Z | Speaker: Marie is my best friend.
+- 2026-02-15T12:00:00Z | Speaker: Tina is my best friend.
+
+Question: Who is the speaker's best friend?
+
+Use exactly this format:
+1. Direct answer:
+2. Possible interpretations:
+3. Assumption(s) made:
+4. Missing information or useful follow-up:
+5. Memory handling:
+--- End Prompt Messages ---
+
+Q [structured_probe]: Who is the speaker's best friend?
+condition: analytic
+model: 1. Direct answer:
+   The speaker's best friend is not explicitly identified as either Marie or Tina, but based on the context provided, it seems that the speaker has two best friends named Marie and Tina.
+
+2. Possible interpretations:
+   - The speaker might be referring to both Marie and Tina as their best friends.
+   - The speaker could be alternating between mentioning Marie and Tina as their best friend in a sequence of statements.
+
+3. Assumption(s) made:
+   - The statements are meant to convey the speaker's current list of best friends.
+   - There is no indication that the speaker's best friends change over time or in different contexts.
+
+4. Missing information or useful follow-up:
+   - It would be helpful to know if the speaker intends to include more best friends or if these are the only two they consider best friends.
+   - Additional context about the relationship between Marie, Tina, and any other potential best friends would be useful.
+
+5. Memory handling:
+   - To handle memory effectively, it would be beneficial for the speaker to clarify which of these friends they consider their primary best friend or if they have additional best friends not mentioned here.
+
+--- Condition: conversational ---
+
+--- Prompt Messages ---
+[1] system:
+You answer questions.
+[2] user:
+Context:
+Scenario: Best Friend
+
+Observations:
+- 2026-01-01T09:00:00Z | Speaker: Marie is my best friend.
+- 2026-02-15T12:00:00Z | Speaker: Tina is my best friend.
+
+Question: Who is the speaker's best friend?
+
+Use exactly this format:
+1. Direct answer:
+2. Possible interpretations:
+3. Assumption(s) made:
+4. Clarifying question:
+5. Memory handling:
+--- End Prompt Messages ---
+
+Q [structured_probe]: Who is the speaker's best friend?
+condition: conversational
+model: 1. Direct answer:
+Marie and Tina are both mentioned as the speaker's best friend, but without additional context to determine which one is currently being referred to, it's not possible to definitively state who the current best friend is.
+
+2. Possible interpretations:
+- The speaker might be referring to Marie as their best friend at a specific time in the past (before 2026-02-15T12:00:00Z).
+- The speaker might be referring to Tina as their best friend at a specific time in the present (after 2026-01-01T09:00:00Z).
+
+3. Assumption(s) made:
+- The observations provided are accurate and represent the speaker's current thoughts or statements.
+- There is no indication of a change in the speaker's best friend relationship between the two observation timestamps.
+
+4. Clarifying question:
+Could you please clarify if these statements were made on different occasions or if there has been a change in the speaker's best friend?
+
+5. Memory handling:
+The memory handling here involves distinguishing between past and present statements about the speaker's best friend. It's important to consider the temporal context of each statement to accurately interpret the current best friend.
