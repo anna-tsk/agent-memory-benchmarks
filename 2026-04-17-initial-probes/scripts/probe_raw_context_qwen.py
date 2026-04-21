@@ -10,11 +10,11 @@ Install dependencies first:
 
 Then run from the repository root:
 
-    python scripts/probe_raw_context_qwen.py --limit 1 --show-context
+    python 2026-04-17-initial-probes/scripts/probe_raw_context_qwen.py --limit 1 --show-context
 
 Use dialogue mode when later questions should see earlier model answers:
 
-    python scripts/probe_raw_context_qwen.py --limit 1 --dialogue-mode
+    python 2026-04-17-initial-probes/scripts/probe_raw_context_qwen.py --limit 1 --dialogue-mode
 """
 
 from __future__ import annotations
@@ -27,9 +27,9 @@ import re
 import sys
 from typing import Any
 
-
+EXPERIMENT_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_MODEL_NAME = "Qwen/Qwen2.5-3B-Instruct"
-DEFAULT_DATA_PATH = Path("data/examples/raw_observation_probes_v2.json")
+DEFAULT_DATA_PATH = EXPERIMENT_ROOT / "data/examples/raw_observation_probes_v2.json"
 DEFAULT_RESPONSE_FORMAT = [
     "Direct answer",
     "Possible interpretations",
@@ -44,7 +44,7 @@ CONVERSATIONAL_RESPONSE_FORMAT = [
     "Clarifying question",
     "Memory handling",
 ]
-DEFAULT_RUNS_DIR = Path("runs")
+DEFAULT_RUNS_DIR = EXPERIMENT_ROOT / "runs"
 
 
 class TeeLogger:

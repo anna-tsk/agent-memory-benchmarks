@@ -10,7 +10,7 @@ Install dependencies first:
 
 Then run from the repository root:
 
-    python scripts/run_context_only_qwen.py
+    python 2026-04-17-initial-probes/scripts/run_context_only_qwen.py
 """
 
 from __future__ import annotations
@@ -20,9 +20,9 @@ import json
 from pathlib import Path
 from typing import Any
 
-
+EXPERIMENT_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_MODEL_NAME = "Qwen/Qwen2.5-3B-Instruct"
-DEFAULT_DATA_PATH = Path("data/examples/synthetic_trajectories.json")
+DEFAULT_DATA_PATH = EXPERIMENT_ROOT / "data/examples/synthetic_trajectories.json"
 
 
 def load_json(path: Path) -> dict[str, Any]:
