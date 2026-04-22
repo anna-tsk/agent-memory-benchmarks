@@ -1,0 +1,113 @@
+Embedding Noise-Floor Diagnostic Report
+Model: Qwen/Qwen2.5-3B-Instruct
+
+Method: last_token
+
+── Focal pairs (last_token) ──
+  marie_best_friend                   vs tina_best_friend                     0.965  [same predicate, different name]
+  marie_best_friend                   vs marie_enemy                          0.954  [same name, opposite predicate]
+  marie_best_friend                   vs marie_best_friend_paraphrase         0.961  [same meaning, different word order]
+  marie_best_friend                   vs bob_best_friend                      0.956  [same predicate, different name (bob)]
+  marie_best_friend                   vs unrelated_weather                    0.886  [topically unrelated]
+  anna_la                             vs anna_sf                              0.982  [same predicate, different filler [core plurality case]]  *** COLLAPSE ***
+  anna_la                             vs anna_la_past                         0.951  [same predicate+filler, different temporal framing]
+  marie_best_friend                   vs marie_sister                         0.948  [same name, different relation]
+
+Method: mean
+
+── Focal pairs (mean) ──
+  marie_best_friend                   vs tina_best_friend                     0.923  [same predicate, different name]
+  marie_best_friend                   vs marie_enemy                          0.984  [same name, opposite predicate]  *** COLLAPSE ***
+  marie_best_friend                   vs marie_best_friend_paraphrase         0.921  [same meaning, different word order]
+  marie_best_friend                   vs bob_best_friend                      0.914  [same predicate, different name (bob)]
+  marie_best_friend                   vs unrelated_weather                    0.799  [topically unrelated]
+  anna_la                             vs anna_sf                              0.982  [same predicate, different filler [core plurality case]]  *** COLLAPSE ***
+  anna_la                             vs anna_la_past                         0.912  [same predicate+filler, different temporal framing]
+  marie_best_friend                   vs marie_sister                         0.982  [same name, different relation]  *** COLLAPSE ***
+
+Method: mean_midlayer
+
+── Focal pairs (mean_midlayer) ──
+  marie_best_friend                   vs tina_best_friend                     0.999  [same predicate, different name]  *** COLLAPSE ***
+  marie_best_friend                   vs marie_enemy                          1.000  [same name, opposite predicate]  *** COLLAPSE ***
+  marie_best_friend                   vs marie_best_friend_paraphrase         0.999  [same meaning, different word order]  *** COLLAPSE ***
+  marie_best_friend                   vs bob_best_friend                      0.999  [same predicate, different name (bob)]  *** COLLAPSE ***
+  marie_best_friend                   vs unrelated_weather                    0.997  [topically unrelated]  *** COLLAPSE ***
+  anna_la                             vs anna_sf                              1.000  [same predicate, different filler [core plurality case]]  *** COLLAPSE ***
+  anna_la                             vs anna_la_past                         0.999  [same predicate+filler, different temporal framing]  *** COLLAPSE ***
+  marie_best_friend                   vs marie_sister                         1.000  [same name, different relation]  *** COLLAPSE ***
+
+
+================================================================================
+FINAL SUMMARY
+================================================================================
+
+[last_token]
+
+── Focal pairs (last_token) ──
+  marie_best_friend                   vs tina_best_friend                     0.965  [same predicate, different name]
+  marie_best_friend                   vs marie_enemy                          0.954  [same name, opposite predicate]
+  marie_best_friend                   vs marie_best_friend_paraphrase         0.961  [same meaning, different word order]
+  marie_best_friend                   vs bob_best_friend                      0.956  [same predicate, different name (bob)]
+  marie_best_friend                   vs unrelated_weather                    0.886  [topically unrelated]
+  anna_la                             vs anna_sf                              0.982  [same predicate, different filler [core plurality case]]  *** COLLAPSE ***
+  anna_la                             vs anna_la_past                         0.951  [same predicate+filler, different temporal framing]
+  marie_best_friend                   vs marie_sister                         0.948  [same name, different relation]
+
+  !! 1 pair(s) above collapse threshold 0.98:
+     anna_la vs anna_sf  sim=0.982  (same predicate, different filler [core plurality case])
+
+[mean]
+
+── Focal pairs (mean) ──
+  marie_best_friend                   vs tina_best_friend                     0.923  [same predicate, different name]
+  marie_best_friend                   vs marie_enemy                          0.984  [same name, opposite predicate]  *** COLLAPSE ***
+  marie_best_friend                   vs marie_best_friend_paraphrase         0.921  [same meaning, different word order]
+  marie_best_friend                   vs bob_best_friend                      0.914  [same predicate, different name (bob)]
+  marie_best_friend                   vs unrelated_weather                    0.799  [topically unrelated]
+  anna_la                             vs anna_sf                              0.982  [same predicate, different filler [core plurality case]]  *** COLLAPSE ***
+  anna_la                             vs anna_la_past                         0.912  [same predicate+filler, different temporal framing]
+  marie_best_friend                   vs marie_sister                         0.982  [same name, different relation]  *** COLLAPSE ***
+
+  !! 3 pair(s) above collapse threshold 0.98:
+     marie_best_friend vs marie_enemy  sim=0.984  (same name, opposite predicate)
+     anna_la vs anna_sf  sim=0.982  (same predicate, different filler [core plurality case])
+     marie_best_friend vs marie_sister  sim=0.982  (same name, different relation)
+
+[mean_midlayer]
+
+── Focal pairs (mean_midlayer) ──
+  marie_best_friend                   vs tina_best_friend                     0.999  [same predicate, different name]  *** COLLAPSE ***
+  marie_best_friend                   vs marie_enemy                          1.000  [same name, opposite predicate]  *** COLLAPSE ***
+  marie_best_friend                   vs marie_best_friend_paraphrase         0.999  [same meaning, different word order]  *** COLLAPSE ***
+  marie_best_friend                   vs bob_best_friend                      0.999  [same predicate, different name (bob)]  *** COLLAPSE ***
+  marie_best_friend                   vs unrelated_weather                    0.997  [topically unrelated]  *** COLLAPSE ***
+  anna_la                             vs anna_sf                              1.000  [same predicate, different filler [core plurality case]]  *** COLLAPSE ***
+  anna_la                             vs anna_la_past                         0.999  [same predicate+filler, different temporal framing]  *** COLLAPSE ***
+  marie_best_friend                   vs marie_sister                         1.000  [same name, different relation]  *** COLLAPSE ***
+
+  !! 8 pair(s) above collapse threshold 0.98:
+     marie_best_friend vs tina_best_friend  sim=0.999  (same predicate, different name)
+     marie_best_friend vs marie_enemy  sim=1.000  (same name, opposite predicate)
+     marie_best_friend vs marie_best_friend_paraphrase  sim=0.999  (same meaning, different word order)
+     marie_best_friend vs bob_best_friend  sim=0.999  (same predicate, different name (bob))
+     marie_best_friend vs unrelated_weather  sim=0.997  (topically unrelated)
+     anna_la vs anna_sf  sim=1.000  (same predicate, different filler [core plurality case])
+     anna_la vs anna_la_past  sim=0.999  (same predicate+filler, different temporal framing)
+     marie_best_friend vs marie_sister  sim=1.000  (same name, different relation)
+
+--------------------------------------------------------------------------------
+INTERPRETATION
+--------------------------------------------------------------------------------
+Key question: does Qwen2.5-3B's representation space carry enough signal across name / predicate / filler variation that a retrieval head could plausibly learn to distinguish them?
+
+WARNING: 12 focal pair(s) exceeded the collapse threshold (>=0.98). Those pairs are effectively indistinguishable to a dot-product retrieval head. Consider using a method that did NOT collapse, or fine-tuning the representation layer before building the memory store.
+
+Pooling guidance:
+  last_token   — causal LMs concentrate next-token prediction signal here;
+                 may conflate sentences that predict similar continuations.
+  mean         — averages token contributions; tends to smooth out fine-
+                 grained lexical differences but is more stable.
+  mean_midlayer— layer 18 is deep enough to be contextual but
+                 shallower than output layers where generation artifacts
+                 accumulate; often the best tradeoff for retrieval tasks.
