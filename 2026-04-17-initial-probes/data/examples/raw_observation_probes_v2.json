@@ -12,7 +12,6 @@
   "probes": [
     {
       "id": "probe_best_friend",
-      "bucket": "false_singularity",
       "title": "Best Friend",
       "observations": [
         {
@@ -35,7 +34,6 @@
     },
     {
       "id": "probe_hometown",
-      "bucket": "category_boundary",
       "title": "Hometown",
       "observations": [
         {
@@ -58,7 +56,6 @@
     },
     {
       "id": "probe_home",
-      "bucket": "expressive_looseness",
       "title": "Home",
       "observations": [
         {
@@ -81,7 +78,6 @@
     },
     {
       "id": "probe_favorite_person",
-      "bucket": "expressive_looseness",
       "title": "Favorite Person",
       "observations": [
         {
@@ -104,7 +100,6 @@
     },
     {
       "id": "probe_boss",
-      "bucket": "false_singularity",
       "title": "Boss",
       "observations": [
         {
@@ -127,7 +122,6 @@
     },
     {
       "id": "probe_relationship_status",
-      "bucket": "temporal_change",
       "title": "Relationship Status",
       "observations": [
         {
@@ -150,7 +144,6 @@
     },
     {
       "id": "probe_age",
-      "bucket": "temporal_change",
       "title": "Age",
       "observations": [
         {
@@ -173,7 +166,6 @@
     },
     {
       "id": "probe_name_preference",
-      "bucket": "temporal_change",
       "title": "Name Preference",
       "observations": [
         {
@@ -196,7 +188,6 @@
     },
     {
       "id": "probe_diet",
-      "bucket": "category_boundary",
       "title": "Diet",
       "observations": [
         {
@@ -219,7 +210,6 @@
     },
     {
       "id": "probe_sister",
-      "bucket": "false_singularity",
       "title": "Sister",
       "observations": [
         {
@@ -242,7 +232,6 @@
     },
     {
       "id": "probe_mother",
-      "bucket": "false_singularity",
       "title": "Mother",
       "observations": [
         {
@@ -265,7 +254,6 @@
     },
     {
       "id": "probe_first_language",
-      "bucket": "category_boundary",
       "title": "First Language",
       "observations": [
         {
@@ -288,7 +276,6 @@
     },
     {
       "id": "probe_favorite_city",
-      "bucket": "expressive_looseness",
       "title": "Favorite City",
       "observations": [
         {
@@ -311,7 +298,6 @@
     },
     {
       "id": "probe_doctor",
-      "bucket": "false_singularity",
       "title": "Doctor",
       "observations": [
         {

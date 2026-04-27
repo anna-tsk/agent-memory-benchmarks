@@ -275,8 +275,6 @@ def run_probe(
 
             log(f"\n=== {probe['id']} ===")
             log(probe["title"])
-            if "bucket" in probe:
-                log(f"bucket: {probe['bucket']}")
 
             if show_context:
                 log("\n--- Context ---")
