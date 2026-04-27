@@ -10,6 +10,7 @@ class ClaimLinkType(Enum):
     COEXISTS = "coexists"
     CONFLICTS = "conflicts"
     SAME_AS = "same_as"
+    NEEDS_CLARIFICATION = "needs_clarification"
 
 
 @dataclass
@@ -190,4 +191,5 @@ class MemoryGraph:
             "claim_link_count": len(links),
             "link_type_counts": link_type_counts,
             "has_conflicts": link_type_counts.get("conflicts", 0) > 0,
+            "has_needs_clarification": link_type_counts.get("needs_clarification", 0) > 0,
         }

@@ -127,6 +127,9 @@ def classify_claim_link(
     Returns (ClaimLinkType or None, reasoning).
 
     None means no link is warranted — the claims are unrelated despite sharing an entity.
+    NEEDS_CLARIFICATION means a link IS warranted but the type cannot be confidently
+    chosen from the text alone — surfaced to the agent as an open question rather
+    than silently collapsed.
     The reasoning string is logged as the primary signal for diagnosing classifier failures.
     """
     prompt = f"""Two claims share at least one entity. Decide if they need a link.
@@ -135,15 +138,23 @@ Claim A: "{claim_a}"
 Claim B: "{claim_b}"
 
 Choose one:
-- "conflicts":  they assert incompatible things about the same slot
-                (e.g. "Anna's favorite drink is tea" vs "Anna's favorite drink is coffee")
-- "coexists":   both can be true simultaneously about the same entity
-                (e.g. "Anna likes tea" and "Anna likes coffee")
-- "same_as":    they say the same thing in different words
-- "none":       they share an entity but are otherwise unrelated
+- "conflicts":            they assert incompatible things about the same slot
+                          (e.g. "Anna's favorite drink is tea" vs "...is coffee")
+- "coexists":             both can be true simultaneously about the same entity
+                          (e.g. "Anna likes tea" and "Anna likes coffee")
+- "same_as":              they say the same thing in different words
+- "needs_clarification":  the claims clearly relate but you cannot confidently
+                          distinguish between two of the above from the text alone,
+                          and the difference would matter (e.g. "Marie is my best
+                          friend" / "Tina is my best friend" — could be conflicts
+                          if "best friend" is exclusive, coexists if not)
+- "none":                 they share an entity but are otherwise unrelated
+
+Prefer "needs_clarification" over guessing. Only use "none" when the claims are
+genuinely unrelated despite the shared entity.
 
 Return JSON only:
-{{"relation_type": "conflicts" | "coexists" | "same_as" | "none", "reasoning": "one sentence"}}"""
+{{"relation_type": "conflicts" | "coexists" | "same_as" | "needs_clarification" | "none", "reasoning": "one sentence"}}"""
 
     raw = _llm(prompt)
     parsed, error = _parse_json(raw)
@@ -158,6 +169,7 @@ Return JSON only:
             "conflicts": ClaimLinkType.CONFLICTS,
             "coexists": ClaimLinkType.COEXISTS,
             "same_as": ClaimLinkType.SAME_AS,
+            "needs_clarification": ClaimLinkType.NEEDS_CLARIFICATION,
         }.get(rt)
 
     _log("claim_link_classification", {"claim_a": claim_a, "claim_b": claim_b}, raw, parsed, error)

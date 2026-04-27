@@ -25,9 +25,10 @@ CLAIM_COLOR = "#5CB85C"
 RELATION_LINK_COLOR = "#AAAAAA"
 
 CLAIM_LINK_COLORS = {
-    ClaimLinkType.CONFLICTS: "#E74C3C",
-    ClaimLinkType.COEXISTS:  "#F0AD4E",
-    ClaimLinkType.SAME_AS:   "#9B59B6",
+    ClaimLinkType.CONFLICTS:           "#E74C3C",
+    ClaimLinkType.COEXISTS:            "#F0AD4E",
+    ClaimLinkType.SAME_AS:             "#9B59B6",
+    ClaimLinkType.NEEDS_CLARIFICATION: "#48C9B0",
 }
 
 
@@ -105,6 +106,7 @@ def render(graph: MemoryGraph, output_path: str | Path = "graph.html", open_brow
       <span style="color:#E74C3C">&#8212;</span> conflicts<br>
       <span style="color:#F0AD4E">&#8212;</span> coexists<br>
       <span style="color:#9B59B6">&#8212;</span> same_as<br>
+      <span style="color:#48C9B0">&#8212;</span> needs_clarification<br>
       <span style="color:#4A90D9;opacity:0.5">- -</span> claim→entity/relation
     </div>
     """
