@@ -11,6 +11,13 @@ as revision, contradiction, or clarification (e.g. "Marie is my best
 friend" followed days later by "Tina is my best friend"). See run
 transcripts under [runs/](2026-04-17-initial-probes/runs/).
 
+Two failure modes emerged: recency collapse (defaulting to later
+claim regardless of context) and ontological collapse (the model
+making assumptions about whether a qualifier like "best friend" can have more than one value, with those assumptions changing across prompt
+formats for the same model and the same observations).
+
+Writeup: [sequential-claim-interpretation.md](2026-04-17-initial-probes/sequential-claim-interpretation.md)
+
 ### [2026-04-21-embedding-noise-floor/](2026-04-21-embedding-noise-floor/) — embedding noise-floor diagnostic
 One design idea explored was to store claims as representations in the
 model's embedding space, retrieve via similarity, and inject retrieved
