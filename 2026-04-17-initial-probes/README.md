@@ -1,5 +1,7 @@
 # 2026-04-17 Initial Probes
 
+Write-up: [Sequential Claim Interpretation in Frozen Instruct Models: Two Failure Modes](sequential-claim-interpretation.md)
+
 Initial raw-observation probe track for the memory benchmark project.
 
 This experiment asks how a model interprets later claims when the context does
