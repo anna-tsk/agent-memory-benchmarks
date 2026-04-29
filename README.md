@@ -45,3 +45,7 @@ Extracts claims into an entity/relation graph (`EntityNode`,
 so failures can later become training data for a learned classifier.
 [demo_visualize.py](2026-04-22-graph-memory/demo_visualize.py)
 renders the graph as an interactive HTML file.
+
+### [2026-04-27-locomo/](2026-04-27-locomo/) — LoCoMo benchmark loader
+Thin loader for the [LoCoMo](https://github.com/snap-research/locomo)
+long-term conversational QA dataset (Maharana et al., ACL 2024). 
