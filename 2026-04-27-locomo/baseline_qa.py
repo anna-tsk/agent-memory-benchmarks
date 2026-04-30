@@ -123,11 +123,15 @@ def _get_api_client():
 _PUNCT_RE = re.compile(rf"[{re.escape(string.punctuation)}]")
 
 
-def _normalize(text: str) -> str:
-    """Lowercase, strip punctuation, collapse whitespace."""
-    if not text:
+def _normalize(text) -> str:
+    """Lowercase, strip punctuation, collapse whitespace.
+
+    Accepts non-string inputs (some LoCoMo gold answers are ints, e.g.
+    'How many sessions...') and stringifies before normalizing.
+    """
+    if text is None or text == "":
         return ""
-    text = text.lower()
+    text = str(text).lower()
     text = _PUNCT_RE.sub(" ", text)
     return " ".join(text.split())
 
