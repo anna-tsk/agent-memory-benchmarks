@@ -236,14 +236,31 @@ def format_conversation(sample: Sample) -> str:
     return "\n\n".join(blocks)
 
 
-def format_question(qa: QA) -> str:
-    """Pass the question through unchanged.
+def format_question(qa: QA, cat5_mcq: bool = False) -> str:
+    """Pass the question through, with optional cat-5 MCQ wrapper.
 
-    We deliberately do NOT apply locomo's cat-2 hint ("Use DATE of
-    CONVERSATION...") or cat-5 MCQ wrapper here — Hindsight applies
-    neither, and we keep parity. Cat-5 questions are skipped at the
-    sample-iteration level by default (--skip-cat-5).
+    Default behavior matches Hindsight: no cat-2 hint, no cat-5 wrapper.
+    Cat-5 questions are skipped at the sample-iteration level by
+    default (--skip-cat-5).
+
+    With cat5_mcq=True, applies LoCoMo's original cat-5 multiple-choice
+    wrapper from locomo/task_eval/gpt_utils.py:245-256:
+        "<question> Select the correct answer:
+         (a) Not mentioned in the conversation,
+         (b) <adversarial distractor>."
+    This is the "MCQ crutch" — it makes abstention much easier because
+    the model only needs to pick option (a). Useful for measuring how
+    much of a system's cat-5 accuracy comes from the wrapper itself
+    versus spontaneous abstention. We don't randomize (a)/(b) order
+    (locomo's script does); a deterministic baseline is fine.
     """
+    if cat5_mcq and qa.category == 5:
+        adversarial = qa.adversarial_answer or "(no adversarial answer provided)"
+        return (
+            qa.question
+            + f" Select the correct answer: (a) Not mentioned in the conversation, "
+            f"(b) {adversarial}."
+        )
     return qa.question
 
 
@@ -336,6 +353,13 @@ def main():
         ),
     )
     parser.add_argument(
+        "--cat5-mcq", action="store_true",
+        help="Apply LoCoMo's original cat-5 MCQ wrapper that makes "
+             "abstention trivial ('(a) Not mentioned (b) <distractor>'). "
+             "Useful for quantifying how much of cat-5 accuracy comes from "
+             "the wrapper versus spontaneous abstention.",
+    )
+    parser.add_argument(
         "--out-dir", type=Path, default=Path(__file__).parent / "runs",
     )
     args = parser.parse_args()
@@ -399,7 +423,7 @@ def main():
             sample_graph = build_graph(sample)
 
         for i, qa in enumerate(questions):
-            question_text = format_question(qa)
+            question_text = format_question(qa, cat5_mcq=args.cat5_mcq)
 
             if args.backend == "graph":
                 results = retrieve(sample_graph, question_text)
@@ -450,6 +474,7 @@ def main():
                 "n_input_tokens": n_input,
                 "backend": args.backend,
                 "model": model_id,
+                "cat5_mcq": args.cat5_mcq,
             }
             with out_path.open("a") as f:
                 f.write(json.dumps(entry) + "\n")
