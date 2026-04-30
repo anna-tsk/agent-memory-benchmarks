@@ -1,17 +1,22 @@
 from __future__ import annotations
 
 import json
-from datetime import datetime
+import os
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Optional
 
 from graph import ClaimLinkType, ClaimNode, MemoryGraph
 
 # --- backend config ---
-# "hf" uses a local HuggingFace model (no API key needed)
-# "anthropic" uses the Anthropic API (requires ANTHROPIC_API_KEY)
-BACKEND = "hf"
-HF_MODEL = "Qwen/Qwen2.5-7B-Instruct"
+# "hf_api"   HuggingFace Inference Providers via OpenAI-compatible router (default)
+#             requires HF_TOKEN env var
+# "anthropic" Anthropic API (requires ANTHROPIC_API_KEY)
+# "hf"        local transformers model, no API key needed (slow)
+BACKEND = "hf_api"
+HF_API_MODEL = "Qwen/Qwen2.5-72B-Instruct"
+HF_API_BASE_URL = "https://router.huggingface.co/v1"
+HF_LOCAL_MODEL = "Qwen/Qwen2.5-7B-Instruct"
 ANTHROPIC_MODEL = "claude-haiku-4-5-20251001"
 HF_MAX_NEW_TOKENS = 1024
 
@@ -19,19 +24,33 @@ HF_MAX_NEW_TOKENS = 1024
 _log_path = Path(__file__).parent / "logs" / "extractor_calls.jsonl"
 _log_path.parent.mkdir(exist_ok=True)
 
-# lazy-loaded HF model/tokenizer
+# lazy-loaded backends
 _hf_model = None
 _hf_tokenizer = None
+_api_client = None
+
+
+def _get_api_client():
+    global _api_client
+    if _api_client is None:
+        token = os.environ.get("HF_TOKEN")
+        if not token:
+            raise SystemExit(
+                "HF_TOKEN not set. Export it before running: export HF_TOKEN=hf_..."
+            )
+        from openai import OpenAI
+        _api_client = OpenAI(base_url=HF_API_BASE_URL, api_key=token)
+    return _api_client
 
 
 def _load_hf():
     global _hf_model, _hf_tokenizer
     if _hf_model is None:
         from transformers import AutoModelForCausalLM, AutoTokenizer
-        print(f"Loading {HF_MODEL} (first call only)...")
-        _hf_tokenizer = AutoTokenizer.from_pretrained(HF_MODEL)
+        print(f"Loading {HF_LOCAL_MODEL} (first call only)...")
+        _hf_tokenizer = AutoTokenizer.from_pretrained(HF_LOCAL_MODEL)
         _hf_model = AutoModelForCausalLM.from_pretrained(
-            HF_MODEL,
+            HF_LOCAL_MODEL,
             torch_dtype="auto",
             device_map="auto",
         )
@@ -40,7 +59,7 @@ def _load_hf():
 
 def _log(call_type: str, input_data: dict, raw: str, parsed: dict | None, error: str | None) -> None:
     entry = {
-        "timestamp": datetime.utcnow().isoformat(),
+        "timestamp": datetime.now(timezone.utc).isoformat(),
         "call_type": call_type,
         "input": input_data,
         "raw_output": raw,
@@ -52,7 +71,16 @@ def _log(call_type: str, input_data: dict, raw: str, parsed: dict | None, error:
 
 
 def _llm(prompt: str) -> str:
-    if BACKEND == "anthropic":
+    if BACKEND == "hf_api":
+        client = _get_api_client()
+        resp = client.chat.completions.create(
+            model=HF_API_MODEL,
+            messages=[{"role": "user", "content": prompt}],
+            max_tokens=1024,
+            temperature=0,
+        )
+        return (resp.choices[0].message.content or "").strip()
+    elif BACKEND == "anthropic":
         import anthropic
         client = anthropic.Anthropic()
         response = client.messages.create(
@@ -61,7 +89,7 @@ def _llm(prompt: str) -> str:
             messages=[{"role": "user", "content": prompt}],
         )
         return response.content[0].text
-    else:
+    else:  # "hf" — local transformers
         import torch
         model, tokenizer = _load_hf()
         messages = [{"role": "user", "content": prompt}]
