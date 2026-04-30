@@ -48,7 +48,7 @@ CATEGORY_LABELS = {
 # (3B) for tractable CPU iteration; the API default is 7B since cost
 # and speed are the same either way.
 LOCAL_MODEL_NAME = "Qwen/Qwen2.5-3B-Instruct"
-HF_API_MODEL = "Qwen/Qwen2.5-7B-Instruct"
+HF_API_MODEL = "Qwen/Qwen2.5-72B-Instruct"
 
 # OpenAI-compatible router. HF passes through provider pricing 1:1.
 HF_API_BASE_URL = "https://router.huggingface.co/v1"
@@ -236,8 +236,12 @@ def answer_one(messages: list[dict], backend: str, tokenizer) -> str:
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        "--backend", choices=("hf_api", "local"), default="hf_api",
-        help="hf_api: HuggingFace Inference Providers (default). local: transformers on this machine.",
+        "--backend", choices=("hf_api", "local", "graph"), default="hf_api",
+        help=(
+            "hf_api: HuggingFace Inference Providers, full conversation in context (default). "
+            "local: local transformers model. "
+            "graph: typed-relation graph memory retrieval (condition 3)."
+        ),
     )
     parser.add_argument(
         "--sample-id", type=str, default=None,
@@ -262,14 +266,18 @@ def main():
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     out_path = args.out_dir / f"baseline_qa_{timestamp}.jsonl"
 
-    model_id = HF_API_MODEL if args.backend == "hf_api" else LOCAL_MODEL_NAME
+    model_id = HF_API_MODEL if args.backend in ("hf_api", "graph") else LOCAL_MODEL_NAME
     tokenizer = _get_tokenizer(model_id)
     if args.backend == "local":
-        _get_local_model()  # eager load so the first sample's first question doesn't pause
+        _get_local_model()
     else:
-        _get_api_client()  # validates HF_TOKEN exists
+        _get_api_client()  # validates HF_TOKEN exists for both hf_api and graph backends
 
-    print(f"backend={args.backend}, model={model_id}")
+    if args.backend == "graph":
+        from graph_qa import build_graph, retrieve, format_context
+        print(f"backend=graph (retrieval model={model_id})")
+    else:
+        print(f"backend={args.backend}, model={model_id}")
     print(f"writing to {out_path}")
 
     cat_hits: dict[int, int] = defaultdict(int)
@@ -280,9 +288,26 @@ def main():
         questions = sample.qa[: args.max_questions] if args.max_questions else sample.qa
         print(f"\n=== {sample.sample_id} ({sample.speaker_a} & {sample.speaker_b}) — {len(questions)} questions ===")
 
+        # graph backend: build the memory graph once per sample before QA
+        sample_graph = None
+        if args.backend == "graph":
+            sample_graph = build_graph(sample)
+
         for i, qa in enumerate(questions):
             question_text = format_question(qa)
-            messages = build_messages(sample, question_text)
+
+            if args.backend == "graph":
+                results = retrieve(sample_graph, question_text)
+                context = format_context(sample_graph, results)
+                user_msg = (
+                    CONV_START_PROMPT.format(a=sample.speaker_a, b=sample.speaker_b)
+                    + context
+                    + QA_PROMPT_TAIL.format(q=question_text)
+                )
+                messages = [{"role": "user", "content": user_msg}]
+            else:
+                messages = build_messages(sample, question_text)
+
             n_input = count_input_tokens(messages, tokenizer)
 
             if n_input > MAX_INPUT_TOKENS:
