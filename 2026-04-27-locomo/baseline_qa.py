@@ -166,6 +166,35 @@ def _normalize(text) -> str:
     return " ".join(text.split())
 
 
+def _evidence_session_count(qa: QA) -> int:
+    """Number of distinct sessions referenced by a QA's evidence dia_ids.
+
+    Dia_id format is 'D<session>:<turn>' (e.g. 'D14:7'). Used by the
+    cat1_multihop filter to pick questions whose evidence is spread
+    across many sessions — those are the ones where retrieval should
+    plausibly help full-context (long-context attention dilution).
+    """
+    sessions: set[int] = set()
+    for dia_id in qa.evidence:
+        m = re.match(r"D(\d+):", dia_id)
+        if m:
+            sessions.add(int(m.group(1)))
+    return len(sessions)
+
+
+# Diagnostic filters for picking specific question types. Used to spend
+# little money on questions where the comparison is most informative,
+# instead of running thousands of questions where full-context already wins.
+FILTERS = {
+    "cat1_multihop": (
+        lambda q: q.category == 1
+        and len(q.evidence) >= 4
+        and _evidence_session_count(q) >= 3
+    ),
+    "cat5": (lambda q: q.category == 5),
+}
+
+
 def is_rough_match(qa: QA, prediction: str) -> bool:
     """First-cut substring/abstain heuristic. Not the final scoring metric.
 
@@ -298,6 +327,15 @@ def main():
              "matching Hindsight's locomo benchmark which excludes cat-5 entirely.",
     )
     parser.add_argument(
+        "--filter", type=str, default=None, choices=tuple(FILTERS.keys()),
+        help=(
+            "Restrict to a diagnostic question subset: "
+            "cat1_multihop = cat-1 questions with ≥4 evidence ids spanning ≥3 sessions "
+            "(stress-tests retrieval vs full-context); "
+            "cat5 = cat-5 adversarial only (forces --include-cat-5)."
+        ),
+    )
+    parser.add_argument(
         "--out-dir", type=Path, default=Path(__file__).parent / "runs",
     )
     args = parser.parse_args()
@@ -330,15 +368,30 @@ def main():
     cat_total: dict[int, int] = defaultdict(int)
     cat_skipped: dict[int, int] = defaultdict(int)
 
+    # The cat5 filter implies --include-cat-5; otherwise the filter would
+    # match nothing.
+    include_cat_5 = args.include_cat_5 or args.filter == "cat5"
+
     for sample in samples:
         # Match Hindsight: skip cat-5 (adversarial) by default. Their
         # benchmark logs "Skipping 47 category=5 questions for conv-26".
-        eligible_qa = [q for q in sample.qa if args.include_cat_5 or q.category != 5]
-        n_skipped_cat5 = len(sample.qa) - len(eligible_qa)
+        eligible_qa = [q for q in sample.qa if include_cat_5 or q.category != 5]
+        if args.filter:
+            predicate = FILTERS[args.filter]
+            eligible_qa = [q for q in eligible_qa if predicate(q)]
+        n_skipped_cat5 = sum(1 for q in sample.qa if q.category == 5) if not include_cat_5 else 0
         questions = eligible_qa[: args.max_questions] if args.max_questions else eligible_qa
-        skip_note = f" (skipped {n_skipped_cat5} cat-5)" if n_skipped_cat5 else ""
+        notes = []
+        if n_skipped_cat5:
+            notes.append(f"skipped {n_skipped_cat5} cat-5")
+        if args.filter:
+            notes.append(f"filter={args.filter}")
+        notes_str = f" ({', '.join(notes)})" if notes else ""
         print(f"\n=== {sample.sample_id} ({sample.speaker_a} & {sample.speaker_b}) "
-              f"— {len(questions)} questions{skip_note} ===")
+              f"— {len(questions)} questions{notes_str} ===")
+        if not questions:
+            print("  no questions match the filter on this sample, skipping.")
+            continue
 
         # graph backend: build the memory graph once per sample before QA
         sample_graph = None
