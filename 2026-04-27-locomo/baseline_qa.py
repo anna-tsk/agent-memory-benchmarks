@@ -56,20 +56,50 @@ HF_API_BASE_URL = "https://router.huggingface.co/v1"
 MAX_NEW_TOKENS = 100
 MAX_INPUT_TOKENS = 30_000  # Qwen2.5 native context is 32k; leave room for output
 
-# Prompt scaffolding mirrors locomo/task_eval/gpt_utils.py — no separate
-# system prompt, everything goes in the user message. The DATE: /
-# CONVERSATION: labels are what the cat-2 wrapper ("Use DATE of
-# CONVERSATION...") expects to see in the prompt.
-CONV_START_PROMPT = (
-    "Below is a conversation between two people: {a} and {b}. "
-    "The conversation takes place over multiple days and the date of each "
-    "conversation is written at the beginning of the conversation.\n\n"
+# Answer-prompt scaffolding mirrors hindsight-dev/benchmarks/locomo/locomo_benchmark.py
+# (LoComoLLMAnswerGenerator.generate_answer, lines 159-188 of that file) verbatim,
+# so all three of our experimental conditions (full-context, Hindsight memory, our
+# typed-relation memory) wrap their context in the *same* prompt template. Only
+# the {context} block content varies, isolating the memory variable from
+# prompt-engineering differences.
+#
+# Notes on what differs from the original locomo paper's methodology:
+# - No separate cat-2 wrapper ("Use DATE of CONVERSATION..."): Hindsight doesn't
+#   apply it. We drop it for parity. This makes our locomo numbers slightly
+#   different from the published locomo-paper format but directly comparable
+#   to Hindsight's published 89.61%.
+# - No cat-5 MCQ wrapper. Hindsight skips cat-5 questions entirely; we do too
+#   by default (--skip-cat-5 is on). Pass --include-cat-5 to evaluate them
+#   without an MCQ wrapper (their abstention is judged via the prompt's
+#   instruction #7 about logical reasoning).
+# - No # CURRENT DATE block: Hindsight only adds it when qa["question_date"]
+#   is set, which it is *not* for LoCoMo. We omit it to match exactly.
+ANSWER_SYSTEM_PROMPT = (
+    "You are a helpful expert assistant answering questions from "
+    "lme_experiment users based on the provided context."
 )
-QA_PROMPT_TAIL = (
-    "\n\nBased on the above context, write an answer in the form of a short "
-    "phrase for the following question. Answer with exact words from the "
-    "context whenever possible.\n\nQuestion: {q} Short answer:"
-)
+
+ANSWER_USER_TEMPLATE = """
+# CONTEXT:
+You have access to facts and entities from a conversation.
+
+# INSTRUCTIONS:
+1. Carefully analyze all provided memories
+2. Pay special attention to the timestamps to determine the answer
+3. If the question asks about a specific event or fact, look for direct evidence in the memories
+4. If the memories contain contradictory information or multiple instances of an event, say them all
+5. Always convert relative time references to specific dates, months, or years.
+6. Be as specific as possible when talking about people, places, and events
+7. If the answer is not explicitly stated in the memories, use logical reasoning based on the information available to answer (e.g. calculate duration of an event from different memories).
+
+Context:
+
+{context}
+
+Question: {question}
+Answer:
+
+"""
 
 
 _local_model = None
@@ -161,38 +191,45 @@ def is_rough_match(qa: QA, prediction: str) -> bool:
 
 
 def format_conversation(sample: Sample) -> str:
-    """Locomo-style: each session as 'DATE: ...\\nCONVERSATION:\\n<turns>'."""
+    """Render conversation with session timestamps as soft markers.
+
+    Avoids the literal 'DATE: ... CONVERSATION:' block headers we used
+    before — those primed the model to copy them verbatim as date answers.
+    A bracketed timestamp + speaker turn keeps the temporal information
+    available without the echo-bait pattern.
+    """
     blocks: list[str] = []
     for session in sample.sessions:
-        turns_text = "\n".join(f"{t.speaker}: {t.text}" for t in session.turns)
-        blocks.append(f"DATE: {session.date_time}\nCONVERSATION:\n{turns_text}")
+        block_lines = [f"[{session.session_id} — {session.date_time}]"]
+        for turn in session.turns:
+            block_lines.append(f"{turn.speaker}: {turn.text}")
+        blocks.append("\n".join(block_lines))
     return "\n\n".join(blocks)
 
 
 def format_question(qa: QA) -> str:
-    """Apply LoCoMo's category-specific question wrappers.
+    """Pass the question through unchanged.
 
-    Mirrors locomo/task_eval/gpt_utils.py:243-256, except we don't
-    randomize cat-5 option order (deterministic baseline).
+    We deliberately do NOT apply locomo's cat-2 hint ("Use DATE of
+    CONVERSATION...") or cat-5 MCQ wrapper here — Hindsight applies
+    neither, and we keep parity. Cat-5 questions are skipped at the
+    sample-iteration level by default (--skip-cat-5).
     """
-    if qa.category == 2:
-        return qa.question + " Use DATE of CONVERSATION to answer with an approximate date."
-    if qa.category == 5:
-        adversarial = qa.adversarial_answer or "(no adversarial answer provided)"
-        return (
-            qa.question
-            + f" Select the correct answer: (a) Not mentioned in the conversation, (b) {adversarial}."
-        )
     return qa.question
 
 
-def build_messages(sample: Sample, question_text: str) -> list[dict]:
-    user_msg = (
-        CONV_START_PROMPT.format(a=sample.speaker_a, b=sample.speaker_b)
-        + format_conversation(sample)
-        + QA_PROMPT_TAIL.format(q=question_text)
-    )
-    return [{"role": "user", "content": user_msg}]
+def build_messages(sample: Sample, question_text: str, context: str) -> list[dict]:
+    """Hindsight-equivalent answer prompt: system + user with sections.
+
+    `context` is injected verbatim into the user message's `Context:` block.
+    For full-context: pass `format_conversation(sample)`.
+    For graph backend: pass the typed-claim render from graph_qa.format_context.
+    """
+    user_msg = ANSWER_USER_TEMPLATE.format(context=context, question=question_text)
+    return [
+        {"role": "system", "content": ANSWER_SYSTEM_PROMPT},
+        {"role": "user", "content": user_msg},
+    ]
 
 
 def count_input_tokens(messages: list[dict], tokenizer) -> int:
@@ -253,7 +290,12 @@ def main():
     )
     parser.add_argument(
         "--max-questions", type=int, default=None,
-        help="Cap questions per sample (for smoke runs).",
+        help="Cap questions per sample (for smoke runs). Applied AFTER cat-5 skipping.",
+    )
+    parser.add_argument(
+        "--include-cat-5", action="store_true",
+        help="Evaluate cat-5 (adversarial) questions too. Default: skip them, "
+             "matching Hindsight's locomo benchmark which excludes cat-5 entirely.",
     )
     parser.add_argument(
         "--out-dir", type=Path, default=Path(__file__).parent / "runs",
@@ -289,8 +331,14 @@ def main():
     cat_skipped: dict[int, int] = defaultdict(int)
 
     for sample in samples:
-        questions = sample.qa[: args.max_questions] if args.max_questions else sample.qa
-        print(f"\n=== {sample.sample_id} ({sample.speaker_a} & {sample.speaker_b}) — {len(questions)} questions ===")
+        # Match Hindsight: skip cat-5 (adversarial) by default. Their
+        # benchmark logs "Skipping 47 category=5 questions for conv-26".
+        eligible_qa = [q for q in sample.qa if args.include_cat_5 or q.category != 5]
+        n_skipped_cat5 = len(sample.qa) - len(eligible_qa)
+        questions = eligible_qa[: args.max_questions] if args.max_questions else eligible_qa
+        skip_note = f" (skipped {n_skipped_cat5} cat-5)" if n_skipped_cat5 else ""
+        print(f"\n=== {sample.sample_id} ({sample.speaker_a} & {sample.speaker_b}) "
+              f"— {len(questions)} questions{skip_note} ===")
 
         # graph backend: build the memory graph once per sample before QA
         sample_graph = None
@@ -303,14 +351,9 @@ def main():
             if args.backend == "graph":
                 results = retrieve(sample_graph, question_text)
                 context = format_context(sample_graph, results)
-                user_msg = (
-                    CONV_START_PROMPT.format(a=sample.speaker_a, b=sample.speaker_b)
-                    + context
-                    + QA_PROMPT_TAIL.format(q=question_text)
-                )
-                messages = [{"role": "user", "content": user_msg}]
             else:
-                messages = build_messages(sample, question_text)
+                context = format_conversation(sample)
+            messages = build_messages(sample, question_text, context)
 
             n_input = count_input_tokens(messages, tokenizer)
 
