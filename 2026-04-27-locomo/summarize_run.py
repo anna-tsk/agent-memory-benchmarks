@@ -136,11 +136,16 @@ def _parse_judgment(raw: str) -> dict | None:
 
 
 def write_markdown_report(out_path: Path, rows: list[dict], scored: list[dict],
-                          cat_hits: dict, cat_total: dict, cat_skipped: dict) -> None:
+                          cat_hits: dict, cat_total: dict, cat_skipped: dict,
+                          used_judge: bool = False) -> None:
     """Write a sibling .md file with summary table + per-question rows.
 
     `scored` parallels `rows` but with `match: bool` and a normalized
     `category_label` already attached for unskipped rows.
+
+    `used_judge` controls whether the report header says "LLM judge"
+    or "rough substring match" — same data either way, just labelled
+    accurately for the reader.
     """
     if not rows:
         return
@@ -175,9 +180,15 @@ def write_markdown_report(out_path: Path, rows: list[dict], scored: list[dict],
         lines.append(f"| {label} | {hits} / {total} | {acc} |")
     overall_acc = f"{total_hits/total_count*100:.0f}%" if total_count else "n/a"
     lines.append(f"| **overall** | **{total_hits} / {total_count}** | **{overall_acc}** |")
+    scorer_note = (
+        f"> LLM-as-judge ({JUDGE_MODEL}, Hindsight-style 'generous grading' prompt). "
+        "Binary correct/wrong per question."
+        if used_judge
+        else "> Rough substring match — first-cut heuristic, not final scoring."
+    )
     lines += [
         "",
-        "> Rough substring match — first-cut heuristic, not final scoring.",
+        scorer_note,
         "",
         "## Questions",
     ]
@@ -338,7 +349,10 @@ def main():
 
     if not args.no_md:
         md_path = args.path.with_suffix(".md")
-        write_markdown_report(md_path, rows, scored, cat_hits, cat_total, cat_skipped)
+        write_markdown_report(
+            md_path, rows, scored, cat_hits, cat_total, cat_skipped,
+            used_judge=args.judge,
+        )
         print(f"\nmarkdown report: {md_path}")
 
 
