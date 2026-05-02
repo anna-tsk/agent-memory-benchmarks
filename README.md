@@ -2,6 +2,8 @@
 
 Building agent memory systems that preserve ambiguity, history, and contradiction + evaluating how existing pipelines flatten them into premature certainty.
 
+Writeup: [tskhovrebov-locomo-cat5-2026.pdf](tskhovrebov-locomo-cat5-2026.pdf)
+
 ## Experiments
 
 ### [2026-04-17-initial-probes/](2026-04-17-initial-probes/) — sequential claims in raw context
