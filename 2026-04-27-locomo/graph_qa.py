@@ -16,6 +16,7 @@ to sys.path below so this file can import from it without package setup.
 
 from __future__ import annotations
 
+import pickle
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -35,19 +36,57 @@ if TYPE_CHECKING:
 # How many claims to include in the answer prompt (token budget guard).
 MAX_CLAIMS_IN_CONTEXT = 30
 
+# Ingestion is the expensive step (O(n²) LLM calls). Cache the built
+# graph per sample so subsequent runs reuse it. Delete a cache file by
+# hand if the extractor changes and you want to re-ingest from scratch.
+_CACHE_DIR = Path(__file__).resolve().parent / "graph_cache"
+
+
+def _cache_path(sample_id: str) -> Path:
+    return _CACHE_DIR / f"{sample_id}.pkl"
+
+
+def save_graph(graph: MemoryGraph, sample_id: str) -> Path:
+    _CACHE_DIR.mkdir(exist_ok=True)
+    path = _cache_path(sample_id)
+    with path.open("wb") as f:
+        pickle.dump(graph, f)
+    return path
+
+
+def load_graph(sample_id: str) -> MemoryGraph | None:
+    path = _cache_path(sample_id)
+    if not path.exists():
+        return None
+    with path.open("rb") as f:
+        return pickle.load(f)
+
 
 def build_graph(sample: "Sample") -> MemoryGraph:
     """Ingest every turn of a LoCoMo sample into a MemoryGraph.
+
+    Cache-aware: if `graph_cache/<sample_id>.pkl` exists, load it instead
+    of re-ingesting. Delete the cache file by hand to force a rebuild.
 
     Each turn becomes one ClaimNode. The extractor runs entity extraction
     and claim-link classification for every turn as it arrives, exactly
     as it would in a streaming memory system.
 
-    Cost: O(n²) LLM calls where n = number of turns (each new claim is
-    compared against all existing claims that share entities). For a
-    typical LoCoMo conversation (~500 turns), this is expensive — run
-    once and cache the result to disk if you want to re-score.
+    Cost on cache miss: O(n²) LLM calls where n = number of turns (each
+    new claim is compared against all existing claims that share
+    entities). For a typical LoCoMo conversation (~500 turns), this is
+    expensive — typically ~$5–10 in API calls.
     """
+    cached = load_graph(sample.sample_id)
+    if cached is not None:
+        print(
+            f"  loaded cached graph for {sample.sample_id}: "
+            f"{len(cached.claims)} claims, {len(cached.entities)} entities, "
+            f"{len(cached.claim_links)} claim links "
+            f"(delete {_cache_path(sample.sample_id)} to rebuild)"
+        )
+        return cached
+
     graph = MemoryGraph()
     total_turns = sum(len(s.turns) for s in sample.sessions)
     print(f"  ingesting {total_turns} turns into graph ({len(sample.sessions)} sessions)...")
@@ -67,6 +106,8 @@ def build_graph(sample: "Sample") -> MemoryGraph:
                       f"{len(graph.claim_links)} links")
     print(f"  graph complete: {len(graph.claims)} claims, "
           f"{len(graph.entities)} entities, {len(graph.claim_links)} claim links")
+    cache_path = save_graph(graph, sample.sample_id)
+    print(f"  saved graph cache to {cache_path}")
     return graph
 
 

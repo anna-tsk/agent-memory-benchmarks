@@ -3,3 +3,7 @@
 .vscode/
 __pycache__/
 *.py[cod]
+
+# graph_qa.py pickles ingested MemoryGraphs here; binary, large, and
+# tied to the dataclass schema in 2026-04-22-graph-memory/graph.py
+2026-04-27-locomo/graph_cache/
