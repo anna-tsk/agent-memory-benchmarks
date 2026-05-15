@@ -292,7 +292,7 @@ def count_input_tokens(messages: list[dict], tokenizer) -> int:
 
 
 def answer_one(messages: list[dict], backend: str, tokenizer) -> str:
-    if backend == "hf_api":
+    if backend in ("hf_api", "graph"):
         client = _get_api_client()
         resp = client.chat.completions.create(
             model=HF_API_MODEL,
