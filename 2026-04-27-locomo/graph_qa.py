@@ -34,7 +34,11 @@ if TYPE_CHECKING:
     from loader import Sample
 
 # How many claims to include in the answer prompt (token budget guard).
-MAX_CLAIMS_IN_CONTEXT = 30
+MAX_CLAIMS_IN_CONTEXT = 20
+# Cap links rendered per claim. Conv-26's 14,069 links over 419 claims
+# averages ~67 links/claim — without a cap, 20 claims × 67 links blow
+# the context budget. 5 keeps the typed-relation signal visible.
+MAX_LINKS_PER_CLAIM = 5
 
 # Ingestion is the expensive step (O(n²) LLM calls). Cache the built
 # graph per sample so subsequent runs reuse it. Delete a cache file by
@@ -130,12 +134,14 @@ def retrieve(
 
     Steps:
     1. Extract entities from the question (one LLM call).
-    2. Look up all graph claims that mention those entities (graph index
-       lookup — no LLM, no embeddings).
-    3. For each found claim, attach its outgoing ClaimLinks so the
-       typed relations are available for formatting.
-    4. Truncate to max_claims (most recent first — heuristic that
-       keeps the answer focused on recent conversation context).
+    2. Look up all graph claims that mention those entities.
+    3. If no entity match, return EMPTY context — for cat-5 (adversarial)
+       questions, this is the correct signal: "the memory has nothing
+       relevant to surface, please abstain." A fallback to "30 most
+       recent claims" would actively mislead the model into confabulating
+       from irrelevant context, the exact failure mode this experiment
+       is testing other systems for.
+    4. Truncate to max_claims (most recent first).
     """
     extraction = extract_entities_and_relations(question)
     q_entities = [e["name"].lower() for e in extraction.get("entities", [])]
@@ -148,9 +154,9 @@ def retrieve(
                 matched_claim_ids.add(cid)
 
     if not matched_claim_ids:
-        # fallback: return most recent claims (no match, give the LLM something)
-        all_claims = sorted(graph.claims.values(), key=lambda c: c.timestamp, reverse=True)
-        matched_claim_ids = {c.id for c in all_claims[:max_claims]}
+        # Intentionally return empty. format_context() will render a
+        # "(no relevant claims retrieved)" marker that signals absence.
+        return []
 
     # sort by timestamp descending (most recent first)
     matched_claims = sorted(
@@ -194,21 +200,28 @@ def format_context(
         return "(no relevant claims retrieved)"
 
     lines: list[str] = []
-    seen_claim_ids = {c.id for c, _ in results}
+    top_level_ids = {c.id for c, _ in results}
 
     for claim, links in results:
         date_str = claim.timestamp.strftime("%Y-%m-%d") if claim.timestamp else "?"
         lines.append(f"[{date_str}] {claim.speaker}: {claim.raw_text}")
 
+        # Cap links rendered per claim and dedupe against claims already
+        # shown as their own top-level row. Without this, conv-26's
+        # 14k+ link graph blows the 30k context budget per question.
+        shown = 0
         for link in links:
+            if shown >= MAX_LINKS_PER_CLAIM:
+                break
             other_id = link.claim_id_b if link.claim_id_a == claim.id else link.claim_id_a
+            if other_id in top_level_ids:
+                continue  # already shown as its own row
             other = graph.claims.get(other_id)
             if other is None:
                 continue
             label = _LINK_LABELS.get(link.relation_type, link.relation_type.value.upper())
             lines.append(f"  → {label}: {other.raw_text}")
-            # if the linked claim isn't already in results, suppress it to avoid
-            # duplication — it will appear when its own row is formatted
+            shown += 1
         lines.append("")
 
     return "\n".join(lines).rstrip()
