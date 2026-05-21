@@ -1,0 +1,39 @@
+scoring with LLM-as-judge: Qwen/Qwen2.5-72B-Instruct
+  [1/24] cat=5 ✓
+  [2/24] cat=5 ✓
+  [3/24] cat=5 ✓
+  [4/24] cat=5 ✓
+  [5/24] cat=5 ✓
+  [6/24] cat=5 ✓
+  [7/24] cat=5 ✓
+  [8/24] cat=5 ✗
+  [9/24] cat=5 ✓
+  [10/24] cat=5 ✓
+  [11/24] cat=5 ✓
+  [12/24] cat=5 ✓
+  [13/24] cat=5 ✓
+  [14/24] cat=5 ✓
+  [15/24] cat=5 ✓
+  [16/24] cat=5 ✓
+  [17/24] cat=5 ✓
+  [18/24] cat=5 ✓
+  [19/24] cat=5 ✓
+  [20/24] cat=5 ✓
+  [21/24] cat=5 ✓
+  [22/24] cat=5 ✓
+  [23/24] cat=5 ✓
+  [24/24] cat=5 ✓
+file: /Users/anna/Dropbox/phd-stuff/CODE/2026/agent-memory-benchmarks/2026-04-27-locomo/runs/baseline_qa_20260518_075004.jsonl
+rows: 24 (0 skipped)
+samples: ['conv-30']
+model:   ['Qwen/Qwen2.5-72B-Instruct']  | backend: ['graph']
+
+============================================================
+SUMMARY (LLM-as-judge (Qwen/Qwen2.5-72B-Instruct, Hindsight-style prompt))
+============================================================
+category                hits / total   ≈acc  skip invalid
+cat 5 (Adversarial)       23 / 24       96%     0       0
+------------------------------------------------------------
+overall                   23 / 24       96%     0       0
+
+markdown report: /Users/anna/Dropbox/phd-stuff/CODE/2026/agent-memory-benchmarks/2026-04-27-locomo/runs/baseline_qa_20260518_075004.md

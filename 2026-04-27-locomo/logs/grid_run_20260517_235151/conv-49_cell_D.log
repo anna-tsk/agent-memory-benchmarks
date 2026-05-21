@@ -1,0 +1,572 @@
+🚀 Starting LoComo Benchmark
+📄 Loading environment from .env
+
+warning: `VIRTUAL_ENV=/Users/anna/Dropbox/phd-stuff/first-memory-benchmarks/.venv311` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead
+2026-05-19 00:57:15,841 - INFO - hindsight_api.engine.providers.openai_compatible_llm - OpenAI-compatible client initialized: provider=openai, model=Qwen/Qwen2.5-72B-Instruct, base_url=https://router.huggingface.co/v1
+2026-05-19 00:57:15,846 - INFO - hindsight_api.engine.providers.openai_compatible_llm - OpenAI-compatible client initialized: provider=openai, model=Qwen/Qwen2.5-72B-Instruct, base_url=https://router.huggingface.co/v1
+2026-05-19 00:57:15,852 - INFO - hindsight_api.engine.providers.openai_compatible_llm - OpenAI-compatible client initialized: provider=openai, model=Qwen/Qwen2.5-72B-Instruct, base_url=https://router.huggingface.co/v1
+2026-05-19 00:57:15,857 - INFO - hindsight_api.engine.providers.openai_compatible_llm - OpenAI-compatible client initialized: provider=openai, model=Qwen/Qwen2.5-72B-Instruct, base_url=https://router.huggingface.co/v1
+2026-05-19 00:57:16,115 - INFO - hindsight_api.engine.embeddings - Embeddings: initializing local provider with model BAAI/bge-small-en-v1.5
+2026-05-19 00:57:16,118 - INFO - hindsight_api.engine.providers.openai_compatible_llm - Verifying connection: openai/Qwen/Qwen2.5-72B-Instruct
+2026-05-19 00:57:16,121 - INFO - hindsight_api.engine.cross_encoder - Reranker: initializing local provider with model cross-encoder/ms-marco-MiniLM-L-6-v2
+2026-05-19 00:57:16,122 - INFO - sentence_transformers.SentenceTransformer - Load pretrained SentenceTransformer: BAAI/bge-small-en-v1.5
+2026-05-19 00:57:16,167 - INFO - hindsight_api.engine.cross_encoder - Reranker: applied transformers 5.x compatibility patch for XLM-RoBERTa
+Loading weights:   0%|          | 0/105 [00:00<?, ?it/s]Loading weights: 100%|██████████| 105/105 [00:00<00:00, 6652.70it/s]
+2026-05-19 00:57:17,261 - INFO - hindsight_api.engine.providers.openai_compatible_llm - Connection verified: openai/Qwen/Qwen2.5-72B-Instruct
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 10988.38it/s]
+2026-05-19 00:57:18,313 - INFO - hindsight_api.engine.embeddings - Embeddings: local provider initialized (dim: 384)
+2026-05-19 00:57:18,314 - INFO - hindsight_api.engine.cross_encoder - Reranker: local provider initialized (max_concurrent=4)
+2026-05-19 00:57:18,315 - INFO - hindsight_api.engine.memory_engine - Running database migrations...
+2026-05-19 00:57:18,315 - INFO - hindsight_api.engine.memory_engine - Running migrations on 1 schema(s)...
+2026-05-19 00:57:18,417 - INFO - hindsight_api.migrations - pgvector extension found in public schema - ready to use
+2026-05-19 00:57:18,417 - INFO - hindsight_api.migrations - Running database migrations to head for schema 'public'...
+2026-05-19 00:57:18,417 - INFO - hindsight_api.migrations - Database URL: postgresql://***:***@127.0.0.1:5433/hindsight
+2026-05-19 00:57:18,417 - INFO - hindsight_api.migrations - Script location: /Users/anna/Dropbox/phd-stuff/CODE/2026/hindsight/hindsight-api-slim/hindsight_api/alembic
+2026-05-19 00:57:18,424 - INFO - alembic.runtime.migration - Context impl PostgresqlImpl.
+2026-05-19 00:57:18,424 - INFO - alembic.runtime.migration - Will assume transactional DDL.
+2026-05-19 00:57:18,435 - INFO - hindsight_api.migrations - Database migrations completed successfully for schema 'public'
+2026-05-19 00:57:18,435 - INFO - hindsight_api.engine.memory_engine - Schema migrations completed
+2026-05-19 00:57:18,442 - INFO - hindsight_api.migrations - Using vector extension: pgvector
+2026-05-19 00:57:18,449 - INFO - hindsight_api.migrations - Target vector extension: pgvector
+2026-05-19 00:57:18,463 - INFO - hindsight_api.engine.memory_engine - Connecting to database at postgresql://***:***@127.0.0.1:5433/hindsight
+2026-05-19 00:57:18,473 - INFO - hindsight_api.engine.db.postgresql - PostgreSQL pool created (min=5, max=100, cmd_timeout=60s, acquire_timeout=30s)
+2026-05-19 00:57:18,774 - INFO - hindsight_api.engine.task_backend - BrokerTaskBackend initialized
+2026-05-19 00:57:18,774 - INFO - hindsight_api.engine.memory_engine - Memory system initialized (pool and task backend started)
+Mode: recall+LLM (traditional)
+2026-05-19 00:57:18,781 - INFO - hindsight_api.engine.providers.openai_compatible_llm - OpenAI-compatible client initialized: provider=openai, model=Qwen/Qwen2.5-72B-Instruct, base_url=https://router.huggingface.co/v1
+2026-05-19 00:57:18,786 - INFO - hindsight_api.engine.providers.openai_compatible_llm - OpenAI-compatible client initialized: provider=openai, model=Qwen/Qwen2.5-72B-Instruct, base_url=https://router.huggingface.co/v1
+
+Benchmark Evaluation
+================================================================================
+
+Model Configuration:
+  Hindsight:         openai/Qwen/Qwen2.5-72B-Instruct
+  Answer Generation: openai/Qwen/Qwen2.5-72B-Instruct
+  LLM Judge:         openai/Qwen/Qwen2.5-72B-Instruct
+
+
+[1] Loading dataset from /Users/anna/Dropbox/phd-stuff/CODE/2026/hindsight/hindsight-dev/benchmarks/locomo/datasets/locomo10.json...
+    ✓ Loaded 1 items
+
+[2] Initializing memory system...
+    ✓ Memory system initialized
+
+Item 1/1 (ID: conv-49)
+  [2] Evaluating 196 QA pairs (parallel)...
+2026-05-19 00:57:18,796 - INFO - root - ONLY-CAT-5 mode: restricting to 40 category=5 questions for conv-49 (HINDSIGHT_BENCHMARK_ONLY_CAT5 is set)
+2026-05-19 00:57:18,801 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: How did Sam describe the process of creating the p...
+2026-05-19 00:57:18,801 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: What movie did Evan watch that motivated him to ke...
+2026-05-19 00:57:18,803 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: What kind of writing does Evan enjoy as a form of ...
+2026-05-19 00:57:18,804 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: How did Sam get into watercolor painting? Select t...
+2026-05-19 00:57:18,804 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: What did Evan start sculpting years ago due to bei...
+2026-05-19 00:57:18,811 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: What is the motto of Sam's family? Select the corr...
+2026-05-19 00:57:18,813 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: How did Sam start his transformation journey two y...
+2026-05-19 00:57:18,815 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: What habit is Evan trying to change in terms of di...
+2026-05-19 00:57:18,816 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: What did Sam mention he had been searching for fru...
+2026-05-19 00:57:18,818 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: What did Evan and his partner keep from their exte...
+2026-05-19 00:57:18,918 - INFO - hindsight_api.engine.search.retrieval - Using LinkExpansion graph retriever
+2026-05-19 00:57:22,066 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-38804-cbfa1b] Query: 'How did Sam get into watercolor painting? Select t...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.114s
+  [2] Parallel retrieval (3 fact_types): semantic=272(0.396s), bm25=272(0.396s), graph=235(0.017s), temporal_extraction=0.095s, temporal=0(0.008s) in 0.913s | temporal_range=2026-05-16 to 2026-05-16
+  [3] RRF merge: 272 unique candidates in 0.001s
+  [4] Reranking: 272 candidates scored in 2.213s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 272 results
+  [6] Token filtering: 122 results, 4088/4096 tokens in 0.003s
+[RECALL locomo_c-38804-cbfa1b] Complete: 122 facts (4088 tok), 16 chunks (8192 tok), 64 entities (0 tok) | experience=51, world=71 | 3.262s
+2026-05-19 00:57:22,166 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-38811-5b1816] Query: 'What is the motto of Sam's family? Select the corr...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.768s
+  [2] Parallel retrieval (3 fact_types): semantic=272(0.071s), bm25=272(0.071s), graph=234(0.061s), temporal_extraction=0.080s in 0.295s
+  [3] RRF merge: 272 unique candidates in 0.001s
+  [4] Reranking: 272 candidates scored in 2.272s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 272 results
+  [6] Token filtering: 118 results, 4094/4096 tokens in 0.003s
+[RECALL locomo_c-38811-5b1816] Complete: 118 facts (4094 tok), 14 chunks (8192 tok), 66 entities (0 tok) | experience=40, world=78 | 3.355s
+2026-05-19 00:57:22,214 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-38801-b201a2] Query: 'What movie did Evan watch that motivated him to ke...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.393s
+  [2] Parallel retrieval (3 fact_types): semantic=272(0.260s), bm25=272(0.260s), graph=233(0.030s), temporal_extraction=0.085s, temporal=0(0.012s) in 0.649s | temporal_range=2026-01-19 to 2026-01-19
+  [3] RRF merge: 272 unique candidates in 0.000s
+  [4] Reranking: 272 candidates scored in 2.335s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 272 results
+  [6] Token filtering: 113 results, 4074/4096 tokens in 0.006s
+[RECALL locomo_c-38801-b201a2] Complete: 113 facts (4074 tok), 16 chunks (8192 tok), 79 entities (0 tok) | experience=56, world=57 | 3.412s
+2026-05-19 00:57:22,222 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-38818-6200ae] Query: 'What did Evan and his partner keep from their exte...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.931s
+  [2] Parallel retrieval (3 fact_types): semantic=272(0.016s), bm25=272(0.016s), graph=235(0.016s), temporal_extraction=0.027s, temporal=32(0.026s) in 0.107s | temporal_range=2024-01-05 to 2024-01-05
+  [3] RRF merge: 272 unique candidates in 0.000s
+  [4] Reranking: 272 candidates scored in 2.343s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 272 results
+  [6] Token filtering: 117 results, 4068/4096 tokens in 0.004s
+[RECALL locomo_c-38818-6200ae] Complete: 117 facts (4068 tok), 12 chunks (8192 tok), 72 entities (0 tok) | experience=36, world=81 | 3.404s
+2026-05-19 00:57:24,441 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-38803-a1c2c1] Query: 'What kind of writing does Evan enjoy as a form of ...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.476s
+  [2] Parallel retrieval (3 fact_types): semantic=272(0.222s), bm25=272(0.222s), graph=236(0.060s), temporal_extraction=0.084s, temporal=0(0.006s) in 0.598s | temporal_range=2026-01-19 to 2026-01-19
+  [3] RRF merge: 272 unique candidates in 0.000s
+  [4] Reranking: 272 candidates scored in 4.545s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 272 results
+  [6] Token filtering: 114 results, 4076/4096 tokens in 0.003s
+[RECALL locomo_c-38803-a1c2c1] Complete: 114 facts (4076 tok), 15 chunks (8192 tok), 72 entities (0 tok) | experience=48, world=66 | 5.638s
+2026-05-19 00:57:24,558 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-38816-14caed] Query: 'What did Sam mention he had been searching for fru...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.547s
+  [2] Parallel retrieval (3 fact_types): semantic=272(0.182s), bm25=272(0.182s), graph=234(0.071s), temporal_extraction=0.074s, temporal=0(0.012s) in 0.524s | temporal_range=2026-05-16 to 2026-05-16
+  [3] RRF merge: 272 unique candidates in 0.000s
+  [4] Reranking: 272 candidates scored in 4.653s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 272 results
+  [6] Token filtering: 119 results, 4074/4096 tokens in 0.003s
+[RECALL locomo_c-38816-14caed] Complete: 119 facts (4074 tok), 14 chunks (8192 tok), 68 entities (0 tok) | experience=44, world=75 | 5.742s
+2026-05-19 00:57:24,669 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-38804-865450] Query: 'What did Evan start sculpting years ago due to bei...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.307s
+  [2] Parallel retrieval (3 fact_types): semantic=272(0.308s), bm25=272(0.308s), graph=236(0.073s), temporal_extraction=0.083s, temporal=0(0.002s) in 0.779s | temporal_range=2026-05-19 to 2026-05-19
+  [3] RRF merge: 272 unique candidates in 0.000s
+  [4] Reranking: 272 candidates scored in 4.761s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 272 results
+  [6] Token filtering: 115 results, 4084/4096 tokens in 0.003s
+[RECALL locomo_c-38804-865450] Complete: 115 facts (4084 tok), 12 chunks (8192 tok), 74 entities (0 tok) | experience=53, world=62 | 5.865s
+2026-05-19 00:57:24,683 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-38813-45ca0b] Query: 'How did Sam start his transformation journey two y...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.200s
+  [2] Parallel retrieval (3 fact_types): semantic=272(0.349s), bm25=272(0.349s), graph=233(0.072s), temporal_extraction=0.098s, temporal=0(0.004s) in 0.879s | temporal_range=2024-05-19 to 2024-05-19
+  [3] RRF merge: 272 unique candidates in 0.000s
+  [4] Reranking: 272 candidates scored in 4.774s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 272 results
+  [6] Token filtering: 119 results, 4065/4096 tokens in 0.002s
+[RECALL locomo_c-38813-45ca0b] Complete: 119 facts (4065 tok), 12 chunks (8192 tok), 73 entities (0 tok) | experience=45, world=74 | 5.870s
+2026-05-19 00:57:26,048 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-38815-933628] Query: 'What habit is Evan trying to change in terms of di...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.845s
+  [2] Parallel retrieval (3 fact_types): semantic=272(0.029s), bm25=272(0.029s), graph=233(0.075s), temporal_extraction=0.089s, temporal=0(0.007s) in 0.233s | temporal_range=2026-01-19 to 2026-01-19
+  [3] RRF merge: 272 unique candidates in 0.000s
+  [4] Reranking: 272 candidates scored in 6.143s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 272 results
+  [6] Token filtering: 114 results, 4093/4096 tokens in 0.004s
+[RECALL locomo_c-38815-933628] Complete: 114 facts (4093 tok), 15 chunks (8192 tok), 82 entities (0 tok) | experience=52, world=62 | 7.233s
+2026-05-19 00:57:26,125 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-38801-ccfc44] Query: 'How did Sam describe the process of creating the p...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.636s
+  [2] Parallel retrieval (3 fact_types): semantic=272(0.115s), bm25=272(0.115s), graph=235(0.074s), temporal_extraction=0.142s, temporal=0(0.003s) in 0.456s | temporal_range=2026-05-16 to 2026-05-16
+  [3] RRF merge: 272 unique candidates in 0.000s
+  [4] Reranking: 272 candidates scored in 6.223s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 272 results
+  [6] Token filtering: 117 results, 4080/4096 tokens in 0.002s
+[RECALL locomo_c-38801-ccfc44] Complete: 117 facts (4080 tok), 17 chunks (8192 tok), 63 entities (0 tok) | experience=49, world=68 | 7.324s
+2026-05-19 00:57:35,865 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=39661, output_tokens=61, total_tokens=39722, time=13.698s, ratio out/in=0.00
+2026-05-19 00:57:35,869 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: What nature concept do watercolor painting classes...
+2026-05-19 00:57:35,998 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=40140, output_tokens=70, total_tokens=40210, time=13.931s, ratio out/in=0.00
+2026-05-19 00:57:36,000 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: What type of car did Sam get after his old Prius b...
+2026-05-19 00:57:36,138 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=40468, output_tokens=63, total_tokens=40531, time=13.915s, ratio out/in=0.00
+2026-05-19 00:57:36,141 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: What electronics issue has been frustrating Evan l...
+2026-05-19 00:57:36,612 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=39825, output_tokens=75, total_tokens=39900, time=14.397s, ratio out/in=0.00
+2026-05-19 00:57:36,613 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: What activity hindered Evan's stress and flexibili...
+2026-05-19 00:57:37,534 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=39306, output_tokens=60, total_tokens=39366, time=13.092s, ratio out/in=0.00
+2026-05-19 00:57:37,536 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: What frustrating issue did Evan face at the superm...
+2026-05-19 00:57:38,191 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-55869-ef435a] Query: 'What nature concept do watercolor painting classes...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.022s
+  [2] Parallel retrieval (3 fact_types): semantic=272(0.005s), bm25=272(0.005s), graph=237(0.006s), temporal_extraction=0.106s, temporal=0(0.001s) in 0.124s | temporal_range=2026-05-16 to 2026-05-16
+  [3] RRF merge: 272 unique candidates in 0.000s
+  [4] Reranking: 272 candidates scored in 2.154s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 272 results
+  [6] Token filtering: 120 results, 4096/4096 tokens in 0.004s
+[RECALL locomo_c-55869-ef435a] Complete: 120 facts (4096 tok), 14 chunks (8192 tok), 68 entities (0 tok) | experience=47, world=73 | 2.322s
+2026-05-19 00:57:38,354 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=39943, output_tokens=69, total_tokens=40012, time=13.683s, ratio out/in=0.00
+2026-05-19 00:57:38,357 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: What gift did Sam receive from a close friend? Sel...
+2026-05-19 00:57:38,495 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-56000-b97aef] Query: 'What type of car did Sam get after his old Prius b...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.030s
+  [2] Parallel retrieval (3 fact_types): semantic=272(0.005s), bm25=272(0.005s), graph=234(0.007s), temporal_extraction=0.079s, temporal=0(0.002s) in 0.098s | temporal_range=2026-01-19 to 2026-01-19
+  [3] RRF merge: 272 unique candidates in 0.000s
+  [4] Reranking: 272 candidates scored in 2.343s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 272 results
+  [6] Token filtering: 114 results, 4088/4096 tokens in 0.002s
+[RECALL locomo_c-56000-b97aef] Complete: 114 facts (4088 tok), 15 chunks (8192 tok), 71 entities (0 tok) | experience=44, world=70 | 2.495s
+2026-05-19 00:57:38,729 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-56141-5344f4] Query: 'What electronics issue has been frustrating Evan l...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.041s
+  [2] Parallel retrieval (3 fact_types): semantic=272(0.006s), bm25=272(0.006s), graph=236(0.008s), temporal_extraction=0.130s, temporal=0(0.002s) in 0.155s | temporal_range=2026-01-19 to 2026-01-19
+  [3] RRF merge: 272 unique candidates in 0.000s
+  [4] Reranking: 272 candidates scored in 2.377s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 272 results
+  [6] Token filtering: 113 results, 4093/4096 tokens in 0.004s
+[RECALL locomo_c-56141-5344f4] Complete: 113 facts (4093 tok), 15 chunks (8192 tok), 64 entities (0 tok) | experience=54, world=59 | 2.588s
+2026-05-19 00:57:39,056 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-56613-1ca8f1] Query: 'What activity hindered Evan's stress and flexibili...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.040s
+  [2] Parallel retrieval (3 fact_types): semantic=272(0.004s), bm25=272(0.004s), graph=233(0.015s), temporal_extraction=0.133s, temporal=0(0.005s) in 0.163s | temporal_range=2026-01-19 to 2026-01-19
+  [3] RRF merge: 272 unique candidates in 0.000s
+  [4] Reranking: 272 candidates scored in 2.225s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 272 results
+  [6] Token filtering: 114 results, 4086/4096 tokens in 0.002s
+[RECALL locomo_c-56613-1ca8f1] Complete: 114 facts (4086 tok), 15 chunks (8192 tok), 73 entities (0 tok) | experience=48, world=66 | 2.442s
+2026-05-19 00:57:39,621 - WARNING - hindsight_api.engine.providers.openai_compatible_llm - APIStatusError (openai/Qwen/Qwen2.5-72B-Instruct, scope=memory, attempt 1/11): HTTP 400: {"message": "response format json_object is not supported trace_id: 1b73acd2bc4a814880cb7c3d947c5c79", "type": "invalid_request_error"}
+2026-05-19 00:57:39,855 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=39991, output_tokens=75, total_tokens=40066, time=13.806s, ratio out/in=0.00
+2026-05-19 00:57:39,857 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: What class is Evan taking to learn how to make hea...
+2026-05-19 00:57:40,037 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-57536-315e6c] Query: 'What frustrating issue did Evan face at the superm...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.049s
+  [2] Parallel retrieval (3 fact_types): semantic=272(0.005s), bm25=272(0.005s), graph=237(0.011s), temporal_extraction=0.166s, temporal=0(0.002s) in 0.189s | temporal_range=2026-01-19 to 2026-01-19
+  [3] RRF merge: 272 unique candidates in 0.000s
+  [4] Reranking: 272 candidates scored in 2.246s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 272 results
+  [6] Token filtering: 113 results, 4091/4096 tokens in 0.002s
+[RECALL locomo_c-57536-315e6c] Complete: 113 facts (4091 tok), 15 chunks (8192 tok), 66 entities (0 tok) | experience=52, world=61 | 2.501s
+2026-05-19 00:57:40,174 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-58357-05c89a] Query: 'What gift did Sam receive from a close friend? Sel...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.043s
+  [2] Parallel retrieval (3 fact_types): semantic=272(0.005s), bm25=272(0.005s), graph=234(0.012s), temporal_extraction=0.043s, temporal=0(0.002s) in 0.068s | temporal_range=2026-05-16 to 2026-05-16
+  [3] RRF merge: 272 unique candidates in 0.000s
+  [4] Reranking: 272 candidates scored in 1.694s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 272 results
+  [6] Token filtering: 116 results, 4068/4096 tokens in 0.002s
+[RECALL locomo_c-58357-05c89a] Complete: 116 facts (4068 tok), 16 chunks (8192 tok), 65 entities (0 tok) | experience=49, world=67 | 1.817s
+2026-05-19 00:57:40,252 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=39995, output_tokens=101, total_tokens=40096, time=15.567s, ratio out/in=0.00
+2026-05-19 00:57:40,253 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: Who helped Sam get the painting published in the e...
+2026-05-19 00:57:40,388 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=39116, output_tokens=81, total_tokens=39197, time=14.262s, ratio out/in=0.00
+2026-05-19 00:57:40,390 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: What was Sam limiting himself to on his new diet? ...
+2026-05-19 00:57:41,735 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=40029, output_tokens=119, total_tokens=40148, time=17.175s, ratio out/in=0.00
+2026-05-19 00:57:41,737 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: What type of landscapes does Sam love painting the...
+2026-05-19 00:57:41,741 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-59857-42b3ad] Query: 'What class is Evan taking to learn how to make hea...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.041s
+  [2] Parallel retrieval (3 fact_types): semantic=272(0.007s), bm25=272(0.007s), graph=233(0.009s), temporal_extraction=0.122s, temporal=0(0.002s) in 0.151s | temporal_range=2026-01-19 to 2026-01-19
+  [3] RRF merge: 272 unique candidates in 0.000s
+  [4] Reranking: 272 candidates scored in 1.673s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 272 results
+  [6] Token filtering: 115 results, 4084/4096 tokens in 0.003s
+[RECALL locomo_c-59857-42b3ad] Complete: 115 facts (4084 tok), 14 chunks (8192 tok), 71 entities (0 tok) | experience=52, world=63 | 1.884s
+2026-05-19 00:57:42,274 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-60253-dc498e] Query: 'Who helped Sam get the painting published in the e...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.028s
+  [2] Parallel retrieval (3 fact_types): semantic=272(0.005s), bm25=272(0.005s), graph=236(0.008s), temporal_extraction=0.105s, temporal=0(0.001s) in 0.125s | temporal_range=2026-05-16 to 2026-05-16
+  [3] RRF merge: 272 unique candidates in 0.000s
+  [4] Reranking: 272 candidates scored in 1.856s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 272 results
+  [6] Token filtering: 121 results, 4093/4096 tokens in 0.003s
+[RECALL locomo_c-60253-dc498e] Complete: 121 facts (4093 tok), 17 chunks (8192 tok), 66 entities (0 tok) | experience=50, world=71 | 2.021s
+2026-05-19 00:57:42,472 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-60390-177d85] Query: 'What was Sam limiting himself to on his new diet? ...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.045s
+  [2] Parallel retrieval (3 fact_types): semantic=272(0.005s), bm25=272(0.005s), graph=233(0.007s), temporal_extraction=0.113s, temporal=0(0.003s) in 0.135s | temporal_range=2026-01-19 to 2026-01-19
+  [3] RRF merge: 272 unique candidates in 0.000s
+  [4] Reranking: 272 candidates scored in 1.890s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 272 results
+  [6] Token filtering: 118 results, 4074/4096 tokens in 0.002s
+[RECALL locomo_c-60390-177d85] Complete: 118 facts (4074 tok), 14 chunks (8192 tok), 73 entities (0 tok) | experience=41, world=77 | 2.082s
+2026-05-19 00:57:43,127 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-61737-e58764] Query: 'What type of landscapes does Sam love painting the...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.042s
+  [2] Parallel retrieval (3 fact_types): semantic=272(0.004s), bm25=272(0.004s), graph=236(0.009s), temporal_extraction=0.102s, temporal=0(0.006s) in 0.125s | temporal_range=2026-05-16 to 2026-05-16
+  [3] RRF merge: 272 unique candidates in 0.000s
+  [4] Reranking: 272 candidates scored in 1.211s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 272 results
+  [6] Token filtering: 120 results, 4063/4096 tokens in 0.002s
+[RECALL locomo_c-61737-e58764] Complete: 120 facts (4063 tok), 17 chunks (8192 tok), 65 entities (0 tok) | experience=45, world=75 | 1.390s
+2026-05-19 00:57:43,141 - WARNING - hindsight_api.engine.providers.openai_compatible_llm - APIStatusError (openai/Qwen/Qwen2.5-72B-Instruct, scope=memory, attempt 1/11): HTTP 429: {"message": "server overload, please try again later trace_id: 0cd01e95645149a61935fb84bfac1732", "type": "server_overload"}
+2026-05-19 00:57:51,423 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=39671, output_tokens=59, total_tokens=39730, time=12.927s, ratio out/in=0.00
+2026-05-19 00:57:51,428 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: What did Sam start doing a few years back as a str...
+2026-05-19 00:57:52,632 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-71429-d2bdd3] Query: 'What did Sam start doing a few years back as a str...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.034s
+  [2] Parallel retrieval (3 fact_types): semantic=272(0.003s), bm25=272(0.003s), graph=235(0.006s), temporal_extraction=0.096s, temporal=0(0.001s) in 0.109s | temporal_range=2026-05-19 to 2026-05-19
+  [3] RRF merge: 272 unique candidates in 0.000s
+  [4] Reranking: 272 candidates scored in 1.047s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 272 results
+  [6] Token filtering: 120 results, 4088/4096 tokens in 0.002s
+[RECALL locomo_c-71429-d2bdd3] Complete: 120 facts (4088 tok), 15 chunks (8192 tok), 60 entities (0 tok) | experience=45, world=75 | 1.203s
+2026-05-19 00:57:53,202 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=39962, output_tokens=92, total_tokens=40054, time=15.010s, ratio out/in=0.00
+2026-05-19 00:57:53,211 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: What activity did Evan quit one year ago? Select t...
+2026-05-19 00:57:53,340 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=39051, output_tokens=76, total_tokens=39127, time=14.610s, ratio out/in=0.00
+2026-05-19 00:57:53,342 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: What did Sam share a photo of that was taken on a ...
+2026-05-19 00:57:53,669 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=39508, output_tokens=73, total_tokens=39581, time=13.630s, ratio out/in=0.00
+2026-05-19 00:57:53,672 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: What novel is Sam reading that he finds gripping? ...
+2026-05-19 00:57:54,021 - WARNING - hindsight_api.engine.providers.openai_compatible_llm - APIStatusError (openai/Qwen/Qwen2.5-72B-Instruct, scope=memory, attempt 1/11): HTTP 429: {"message": "server overload, please try again later trace_id: 4e348176059b1ac2d2c64428500025c7", "type": "server_overload"}
+2026-05-19 00:57:54,770 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=39583, output_tokens=68, total_tokens=39651, time=15.713s, ratio out/in=0.00
+2026-05-19 00:57:54,772 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: How does Sam describe the island he grew up on? Se...
+2026-05-19 00:57:55,089 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-73212-f89b6b] Query: 'What activity did Evan quit one year ago? Select t...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.049s
+  [2] Parallel retrieval (3 fact_types): semantic=272(0.004s), bm25=272(0.004s), graph=233(0.007s), temporal_extraction=0.079s, temporal=0(0.001s) in 0.094s | temporal_range=2025-05-19 to 2025-05-19
+  [3] RRF merge: 272 unique candidates in 0.000s
+  [4] Reranking: 272 candidates scored in 1.711s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 272 results
+  [6] Token filtering: 113 results, 4070/4096 tokens in 0.005s
+[RECALL locomo_c-73212-f89b6b] Complete: 113 facts (4070 tok), 14 chunks (8192 tok), 73 entities (0 tok) | experience=51, world=62 | 1.877s
+2026-05-19 00:57:55,306 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=40285, output_tokens=59, total_tokens=40344, time=13.030s, ratio out/in=0.00
+2026-05-19 00:57:55,309 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: What dish did Sam make on 18 August, 2023 that tur...
+2026-05-19 00:57:55,423 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-73342-908f9c] Query: 'What did Sam share a photo of that was taken on a ...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.030s
+  [2] Parallel retrieval (3 fact_types): semantic=272(0.004s), bm25=272(0.004s), graph=234(0.006s), temporal_extraction=0.104s, temporal=0(0.001s) in 0.120s | temporal_range=2026-05-16 to 2026-05-16
+  [3] RRF merge: 272 unique candidates in 0.000s
+  [4] Reranking: 272 candidates scored in 1.916s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 272 results
+  [6] Token filtering: 119 results, 4069/4096 tokens in 0.003s
+[RECALL locomo_c-73342-908f9c] Complete: 119 facts (4069 tok), 15 chunks (8192 tok), 75 entities (0 tok) | experience=46, world=73 | 2.081s
+2026-05-19 00:57:55,527 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=39997, output_tokens=58, total_tokens=40055, time=13.054s, ratio out/in=0.00
+2026-05-19 00:57:55,529 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: How did Sam feel when he painted the piece with th...
+2026-05-19 00:57:55,571 - WARNING - hindsight_api.engine.providers.openai_compatible_llm - APIStatusError (openai/Qwen/Qwen2.5-72B-Instruct, scope=memory, attempt 2/11): HTTP 400: {"message": "response format json_object is not supported trace_id: d72e9e2181957d43eb06f3ba61472c21", "type": "invalid_request_error"}
+2026-05-19 00:57:55,866 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-73674-670623] Query: 'What novel is Sam reading that he finds gripping? ...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.037s
+  [2] Parallel retrieval (3 fact_types): semantic=272(0.004s), bm25=272(0.004s), graph=235(0.011s), temporal_extraction=0.118s, temporal=0(0.002s) in 0.139s | temporal_range=2026-05-16 to 2026-05-16
+  [3] RRF merge: 272 unique candidates in 0.000s
+  [4] Reranking: 272 candidates scored in 2.000s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 272 results
+  [6] Token filtering: 117 results, 4086/4096 tokens in 0.003s
+[RECALL locomo_c-73674-670623] Complete: 117 facts (4086 tok), 15 chunks (8192 tok), 76 entities (0 tok) | experience=42, world=75 | 2.192s
+2026-05-19 00:57:56,970 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=40010, output_tokens=69, total_tokens=40079, time=13.841s, ratio out/in=0.00
+2026-05-19 00:57:56,972 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: What dance activity did Evan and his partner try i...
+2026-05-19 00:57:57,023 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-74772-a4ffaf] Query: 'How does Sam describe the island he grew up on? Se...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.051s
+  [2] Parallel retrieval (3 fact_types): semantic=272(0.009s), bm25=272(0.009s), graph=236(0.009s), temporal_extraction=0.241s, temporal=0(0.004s) in 0.278s | temporal_range=2026-05-16 to 2026-05-16
+  [3] RRF merge: 272 unique candidates in 0.000s
+  [4] Reranking: 272 candidates scored in 1.904s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 272 results
+  [6] Token filtering: 119 results, 4093/4096 tokens in 0.003s
+[RECALL locomo_c-74772-a4ffaf] Complete: 119 facts (4093 tok), 15 chunks (8192 tok), 71 entities (0 tok) | experience=44, world=75 | 2.250s
+2026-05-19 00:57:57,285 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=39569, output_tokens=114, total_tokens=39683, time=17.110s, ratio out/in=0.00
+2026-05-19 00:57:57,289 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: What sports activity has Sam been doing to stay ac...
+2026-05-19 00:57:57,490 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=39485, output_tokens=76, total_tokens=39561, time=15.748s, ratio out/in=0.00
+2026-05-19 00:57:57,498 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: Where did Sam take his family for a road trip on 2...
+2026-05-19 00:57:57,650 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-75309-5f649b] Query: 'What dish did Sam make on 18 August, 2023 that tur...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.053s
+  [2] Parallel retrieval (3 fact_types): semantic=272(0.007s), bm25=272(0.007s), graph=234(0.011s), temporal_extraction=0.045s, temporal=0(0.005s) in 0.075s | temporal_range=2026-05-16 to 2026-05-16
+  [3] RRF merge: 272 unique candidates in 0.000s
+  [4] Reranking: 272 candidates scored in 2.057s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 272 results
+  [6] Token filtering: 113 results, 4081/4096 tokens in 0.003s
+[RECALL locomo_c-75309-5f649b] Complete: 113 facts (4081 tok), 13 chunks (8192 tok), 79 entities (0 tok) | experience=38, world=75 | 2.341s
+2026-05-19 00:57:58,003 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-75529-d01105] Query: 'How did Sam feel when he painted the piece with th...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.046s
+  [2] Parallel retrieval (3 fact_types): semantic=272(0.005s), bm25=272(0.005s), graph=235(0.009s), temporal_extraction=0.212s, temporal=0(0.004s) in 0.236s | temporal_range=2026-05-16 to 2026-05-16
+  [3] RRF merge: 272 unique candidates in 0.000s
+  [4] Reranking: 272 candidates scored in 2.176s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 272 results
+  [6] Token filtering: 116 results, 4076/4096 tokens in 0.002s
+[RECALL locomo_c-75529-d01105] Complete: 116 facts (4076 tok), 17 chunks (8192 tok), 60 entities (0 tok) | experience=44, world=72 | 2.474s
+2026-05-19 00:57:59,140 - WARNING - hindsight_api.engine.providers.openai_compatible_llm - APIStatusError (openai/Qwen/Qwen2.5-72B-Instruct, scope=memory, attempt 3/11): HTTP 429: {"message": "server overload, please try again later trace_id: 4b1643bef0a6a58d38956f338cacafa2", "type": "server_overload"}
+2026-05-19 00:57:59,372 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-76972-931338] Query: 'What dance activity did Evan and his partner try i...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.057s
+  [2] Parallel retrieval (3 fact_types): semantic=272(0.004s), bm25=272(0.004s), graph=234(0.008s), temporal_extraction=0.124s, temporal=0(0.001s) in 0.143s | temporal_range=2026-01-19 to 2026-01-19
+  [3] RRF merge: 272 unique candidates in 0.000s
+  [4] Reranking: 272 candidates scored in 2.181s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 272 results
+  [6] Token filtering: 114 results, 4072/4096 tokens in 0.003s
+[RECALL locomo_c-76972-931338] Complete: 114 facts (4072 tok), 14 chunks (8192 tok), 78 entities (0 tok) | experience=48, world=66 | 2.400s
+2026-05-19 00:57:59,559 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-77289-467ddf] Query: 'What sports activity has Sam been doing to stay ac...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.045s
+  [2] Parallel retrieval (3 fact_types): semantic=272(0.077s), bm25=272(0.077s), graph=233(0.009s), temporal_extraction=0.155s, temporal=0(0.006s) in 0.330s | temporal_range=2026-05-16 to 2026-05-16
+  [3] RRF merge: 272 unique candidates in 0.000s
+  [4] Reranking: 272 candidates scored in 1.883s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 272 results
+  [6] Token filtering: 118 results, 4082/4096 tokens in 0.002s
+[RECALL locomo_c-77289-467ddf] Complete: 118 facts (4082 tok), 15 chunks (8192 tok), 65 entities (0 tok) | experience=40, world=78 | 2.270s
+2026-05-19 00:57:59,604 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-77498-922f99] Query: 'Where did Sam take his family for a road trip on 2...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.196s
+  [2] Parallel retrieval (3 fact_types): semantic=272(0.005s), bm25=272(0.005s), graph=234(0.010s), temporal_extraction=0.035s, temporal=48(0.019s) in 0.074s | temporal_range=2023-05-24 to 2023-05-24
+  [3] RRF merge: 272 unique candidates in 0.000s
+  [4] Reranking: 272 candidates scored in 1.824s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 272 results
+  [6] Token filtering: 118 results, 4094/4096 tokens in 0.002s
+[RECALL locomo_c-77498-922f99] Complete: 118 facts (4094 tok), 14 chunks (8192 tok), 74 entities (0 tok) | experience=41, world=77 | 2.105s
+2026-05-19 00:58:00,027 - WARNING - hindsight_api.engine.providers.openai_compatible_llm - APIStatusError (openai/Qwen/Qwen2.5-72B-Instruct, scope=memory, attempt 1/11): HTTP 429: {"message": "server overload, please try again later trace_id: 315749f069882c4e2e7d6f79a9b4aafc", "type": "server_overload"}
+2026-05-19 00:58:00,579 - WARNING - hindsight_api.engine.providers.openai_compatible_llm - APIStatusError (openai/Qwen/Qwen2.5-72B-Instruct, scope=memory, attempt 1/11): HTTP 429: {"message": "server overload, please try again later trace_id: 5cb52e3c6cf02dd99c3a280968e9fcaa", "type": "server_overload"}
+2026-05-19 00:58:00,931 - WARNING - hindsight_api.engine.providers.openai_compatible_llm - APIStatusError (openai/Qwen/Qwen2.5-72B-Instruct, scope=memory, attempt 1/11): HTTP 429: {"message": "server overload, please try again later trace_id: e1a8ec7f89cd98911c7ca31ab366daad", "type": "server_overload"}
+2026-05-19 00:58:02,622 - WARNING - hindsight_api.engine.providers.openai_compatible_llm - APIStatusError (openai/Qwen/Qwen2.5-72B-Instruct, scope=memory, attempt 2/11): HTTP 400: {"message": "response format json_object is not supported trace_id: 182553d2177d2b095aad5c0fc875c7f7", "type": "invalid_request_error"}
+2026-05-19 00:58:07,641 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=39452, output_tokens=56, total_tokens=39508, time=12.551s, ratio out/in=0.00
+2026-05-19 00:58:07,645 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: Where did Sam and his mate plan to try skydiving? ...
+2026-05-19 00:58:08,864 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-87645-87f8c9] Query: 'Where did Sam and his mate plan to try skydiving? ...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.038s
+  [2] Parallel retrieval (3 fact_types): semantic=272(0.003s), bm25=272(0.003s), graph=234(0.007s), temporal_extraction=0.157s, temporal=0(0.003s) in 0.173s | temporal_range=2026-05-16 to 2026-05-16
+  [3] RRF merge: 272 unique candidates in 0.000s
+  [4] Reranking: 272 candidates scored in 0.997s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 272 results
+  [6] Token filtering: 121 results, 4073/4096 tokens in 0.002s
+[RECALL locomo_c-87645-87f8c9] Complete: 121 facts (4073 tok), 15 chunks (8192 tok), 71 entities (0 tok) | experience=39, world=82 | 1.219s
+2026-05-19 00:58:09,998 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=40477, output_tokens=66, total_tokens=40543, time=14.130s, ratio out/in=0.00
+2026-05-19 00:58:10,002 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: What does the smartwatch help Sam with? Select the...
+2026-05-19 00:58:10,278 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=40757, output_tokens=78, total_tokens=40835, time=14.854s, ratio out/in=0.00
+2026-05-19 00:58:10,279 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: What was the main reason for Evan's frustration wi...
+2026-05-19 00:58:11,026 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=40349, output_tokens=69, total_tokens=40418, time=14.002s, ratio out/in=0.00
+2026-05-19 00:58:11,030 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: What food did Evan share a photo of on 19 August, ...
+2026-05-19 00:58:11,794 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-90002-2ad2b8] Query: 'What does the smartwatch help Sam with? Select the...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.043s
+  [2] Parallel retrieval (3 fact_types): semantic=272(0.004s), bm25=272(0.004s), graph=234(0.007s), temporal_extraction=0.096s, temporal=0(0.003s) in 0.113s | temporal_range=2026-05-16 to 2026-05-16
+  [3] RRF merge: 272 unique candidates in 0.000s
+  [4] Reranking: 272 candidates scored in 1.618s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 272 results
+  [6] Token filtering: 113 results, 4070/4096 tokens in 0.006s
+[RECALL locomo_c-90002-2ad2b8] Complete: 113 facts (4070 tok), 15 chunks (8192 tok), 57 entities (0 tok) | experience=45, world=68 | 1.792s
+2026-05-19 00:58:12,299 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-90279-ee641d] Query: 'What was the main reason for Evan's frustration wi...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.026s
+  [2] Parallel retrieval (3 fact_types): semantic=272(0.005s), bm25=272(0.005s), graph=234(0.007s), temporal_extraction=0.123s, temporal=0(0.003s) in 0.142s | temporal_range=2026-01-19 to 2026-01-19
+  [3] RRF merge: 272 unique candidates in 0.000s
+  [4] Reranking: 272 candidates scored in 1.839s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 272 results
+  [6] Token filtering: 114 results, 4080/4096 tokens in 0.003s
+[RECALL locomo_c-90279-ee641d] Complete: 114 facts (4080 tok), 12 chunks (8192 tok), 68 entities (0 tok) | experience=46, world=68 | 2.020s
+2026-05-19 00:58:12,657 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=39832, output_tokens=88, total_tokens=39920, time=15.005s, ratio out/in=0.00
+2026-05-19 00:58:12,659 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: What suggestions did Evan give for high-impact exe...
+2026-05-19 00:58:12,798 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-91030-b5c852] Query: 'What food did Evan share a photo of on 19 August, ...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.044s
+  [2] Parallel retrieval (3 fact_types): semantic=272(0.005s), bm25=272(0.005s), graph=232(0.010s), temporal_extraction=0.037s, temporal=75(0.020s) in 0.078s | temporal_range=2023-08-19 to 2023-08-19
+  [3] RRF merge: 272 unique candidates in 0.000s
+  [4] Reranking: 272 candidates scored in 1.632s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 272 results
+  [6] Token filtering: 113 results, 4086/4096 tokens in 0.002s
+[RECALL locomo_c-91030-b5c852] Complete: 113 facts (4086 tok), 16 chunks (8192 tok), 88 entities (0 tok) | experience=46, world=67 | 1.768s
+2026-05-19 00:58:13,577 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=38955, output_tokens=53, total_tokens=39008, time=15.572s, ratio out/in=0.00
+2026-05-19 00:58:13,580 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: What activity does Sam do to keep himself busy whi...
+2026-05-19 00:58:13,843 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-92659-953f5c] Query: 'What suggestions did Evan give for high-impact exe...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.030s
+  [2] Parallel retrieval (3 fact_types): semantic=272(0.006s), bm25=272(0.006s), graph=233(0.006s), temporal_extraction=0.096s, temporal=0(0.001s) in 0.118s | temporal_range=2026-01-19 to 2026-01-19
+  [3] RRF merge: 272 unique candidates in 0.000s
+  [4] Reranking: 272 candidates scored in 1.023s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 272 results
+  [6] Token filtering: 114 results, 4092/4096 tokens in 0.002s
+[RECALL locomo_c-92659-953f5c] Complete: 114 facts (4092 tok), 14 chunks (8192 tok), 79 entities (0 tok) | experience=54, world=60 | 1.184s
+2026-05-19 00:58:14,712 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-93580-06d961] Query: 'What activity does Sam do to keep himself busy whi...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.038s
+  [2] Parallel retrieval (3 fact_types): semantic=272(0.004s), bm25=272(0.004s), graph=235(0.009s), temporal_extraction=0.104s, temporal=0(0.001s) in 0.122s | temporal_range=2026-05-16 to 2026-05-16
+  [3] RRF merge: 272 unique candidates in 0.000s
+  [4] Reranking: 272 candidates scored in 0.961s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 272 results
+  [6] Token filtering: 118 results, 4077/4096 tokens in 0.002s
+[RECALL locomo_c-93580-06d961] Complete: 118 facts (4077 tok), 17 chunks (8192 tok), 63 entities (0 tok) | experience=45, world=73 | 1.131s
+2026-05-19 00:58:15,936 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=39432, output_tokens=71, total_tokens=39503, time=16.376s, ratio out/in=0.00
+2026-05-19 00:58:15,946 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: What did Sam find relaxing about his road trip to ...
+2026-05-19 00:58:16,241 - WARNING - hindsight_api.engine.providers.openai_compatible_llm - APIStatusError (openai/Qwen/Qwen2.5-72B-Instruct, scope=memory, attempt 1/11): HTTP 429: {"message": "server overload, please try again later trace_id: 8fae9717686e7535055e16c32b75406e", "type": "server_overload"}
+2026-05-19 00:58:16,241 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=40539, output_tokens=83, total_tokens=40622, time=16.637s, ratio out/in=0.00
+2026-05-19 00:58:16,243 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: What digestive issue did Evan experience lately? S...
+2026-05-19 00:58:16,857 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=39545, output_tokens=66, total_tokens=39611, time=24.224s, ratio out/in=0.00
+2026-05-19 00:58:16,858 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: Why did Sam decide to get the bonsai tree? Select ...
+2026-05-19 00:58:17,675 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=40246, output_tokens=56, total_tokens=40302, time=18.302s, ratio out/in=0.00
+2026-05-19 00:58:17,679 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: What family event is Sam planning for next summer?...
+2026-05-19 00:58:17,721 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-95946-cb98d4] Query: 'What did Sam find relaxing about his road trip to ...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.048s
+  [2] Parallel retrieval (3 fact_types): semantic=272(0.004s), bm25=272(0.004s), graph=234(0.006s), temporal_extraction=0.098s, temporal=0(0.002s) in 0.114s | temporal_range=2026-05-16 to 2026-05-16
+  [3] RRF merge: 272 unique candidates in 0.000s
+  [4] Reranking: 272 candidates scored in 1.594s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 272 results
+  [6] Token filtering: 122 results, 4093/4096 tokens in 0.005s
+[RECALL locomo_c-95946-cb98d4] Complete: 122 facts (4093 tok), 14 chunks (8192 tok), 75 entities (0 tok) | experience=40, world=82 | 1.775s
+2026-05-19 00:58:18,178 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-96243-bf800c] Query: 'What digestive issue did Evan experience lately? S...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.032s
+  [2] Parallel retrieval (3 fact_types): semantic=272(0.004s), bm25=272(0.004s), graph=233(0.009s), temporal_extraction=0.105s, temporal=0(0.002s) in 0.124s | temporal_range=2026-01-19 to 2026-01-19
+  [3] RRF merge: 272 unique candidates in 0.000s
+  [4] Reranking: 272 candidates scored in 1.760s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 272 results
+  [6] Token filtering: 113 results, 4093/4096 tokens in 0.003s
+[RECALL locomo_c-96243-bf800c] Complete: 113 facts (4093 tok), 16 chunks (8192 tok), 72 entities (0 tok) | experience=50, world=63 | 1.935s
+2026-05-19 00:58:18,824 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-96858-2d37c3] Query: 'Why did Sam decide to get the bonsai tree? Select ...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.045s
+  [2] Parallel retrieval (3 fact_types): semantic=272(0.004s), bm25=272(0.004s), graph=233(0.011s), temporal_extraction=0.136s, temporal=0(0.001s) in 0.158s | temporal_range=2026-05-16 to 2026-05-16
+  [3] RRF merge: 272 unique candidates in 0.000s
+  [4] Reranking: 272 candidates scored in 1.751s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 272 results
+  [6] Token filtering: 120 results, 4078/4096 tokens in 0.002s
+[RECALL locomo_c-96858-2d37c3] Complete: 120 facts (4078 tok), 16 chunks (8192 tok), 61 entities (0 tok) | experience=40, world=80 | 1.966s
+2026-05-19 00:58:18,877 - WARNING - hindsight_api.engine.providers.openai_compatible_llm - APIStatusError (openai/Qwen/Qwen2.5-72B-Instruct, scope=memory, attempt 2/11): HTTP 429: {"message": "server overload, please try again later trace_id: 0a19c80a99e22af59acadbe6c9c47644", "type": "server_overload"}
+2026-05-19 00:58:19,199 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-97679-882b77] Query: 'What family event is Sam planning for next summer?...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.057s
+  [2] Parallel retrieval (3 fact_types): semantic=272(0.004s), bm25=272(0.004s), graph=234(0.012s), temporal_extraction=0.112s, temporal=0(0.002s) in 0.136s | temporal_range=2026-05-16 to 2026-05-16
+  [3] RRF merge: 272 unique candidates in 0.000s
+  [4] Reranking: 272 candidates scored in 1.316s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 272 results
+  [6] Token filtering: 114 results, 4074/4096 tokens in 0.002s
+[RECALL locomo_c-97679-882b77] Complete: 114 facts (4074 tok), 16 chunks (8192 tok), 69 entities (0 tok) | experience=39, world=75 | 1.520s
+2026-05-19 00:58:19,410 - WARNING - hindsight_api.engine.providers.openai_compatible_llm - APIStatusError (openai/Qwen/Qwen2.5-72B-Instruct, scope=memory, attempt 1/11): HTTP 400: {"message": "response format json_object is not supported trace_id: 997a50c0b3c2d2036f8121dfafa9de00", "type": "invalid_request_error"}
+2026-05-19 00:58:22,963 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=41047, output_tokens=50, total_tokens=41097, time=14.098s, ratio out/in=0.00
+2026-05-19 00:58:26,798 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=39794, output_tokens=53, total_tokens=39847, time=12.953s, ratio out/in=0.00
+2026-05-19 00:58:28,207 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=40869, output_tokens=81, total_tokens=40950, time=15.407s, ratio out/in=0.00
+2026-05-19 00:58:28,260 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=38266, output_tokens=108, total_tokens=38374, time=16.464s, ratio out/in=0.00
+2026-05-19 00:58:28,509 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=39595, output_tokens=85, total_tokens=39680, time=16.209s, ratio out/in=0.00
+2026-05-19 00:58:31,812 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=39491, output_tokens=53, total_tokens=39544, time=13.633s, ratio out/in=0.00
+2026-05-19 00:58:34,163 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=39478, output_tokens=85, total_tokens=39563, time=14.962s, ratio out/in=0.00
+2026-05-19 00:58:34,188 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=39360, output_tokens=61, total_tokens=39421, time=19.476s, ratio out/in=0.00
+2026-05-19 00:58:34,881 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=40963, output_tokens=98, total_tokens=41061, time=17.159s, ratio out/in=0.00
+2026-05-19 00:58:36,621 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=39521, output_tokens=110, total_tokens=39631, time=17.796s, ratio out/in=0.00
+  Evaluating QA for conv-49 - 40 questions ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100%
+  [3] Calculating metrics...
+  Judging answers with LLM (parallel, max 8)... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100%
+      ✓ Accuracy: 52.50% (21/40)
+
+✓ Benchmark Complete!
+
+Model Configuration:
+  Hindsight:         openai/Qwen/Qwen2.5-72B-Instruct
+  Answer Generation: openai/Qwen/Qwen2.5-72B-Instruct
+  LLM Judge:         openai/Qwen/Qwen2.5-72B-Instruct
+
+                        Benchmark Results                        
+╭─────────┬──────────┬───────────┬─────────┬─────────┬──────────╮
+│ Item ID │ Sessions │ Questions │ Correct │ Invalid │ Accuracy │
+├─────────┼──────────┼───────────┼─────────┼─────────┼──────────┤
+│ conv-49 │       -1 │        40 │      21 │       - │    52.5% │
+│ OVERALL │        - │        40 │      21 │       - │    52.5% │
+╰─────────┴──────────┴───────────┴─────────┴─────────┴──────────╯
+
+✓ Results saved incrementally to /Users/anna/Dropbox/phd-stuff/CODE/2026/hindsight/hindsight-dev/benchmarks/locomo/results/benchmark_results.json
+
+✓ Results table saved to /Users/anna/Dropbox/phd-stuff/CODE/2026/hindsight/hindsight-dev/benchmarks/locomo/results/results_table.md

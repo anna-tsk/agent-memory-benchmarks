@@ -1,0 +1,44 @@
+=== full-grid run started Sun May 17 23:51:51 PDT 2026 ===
+samples: conv-30 conv-49
+log dir: /Users/anna/Dropbox/phd-stuff/CODE/2026/agent-memory-benchmarks/2026-04-27-locomo/logs/grid_run_20260517_235151
+
+============================================================
+SAMPLE: conv-30   start Sun May 17 23:51:51 PDT 2026
+============================================================
+>>> cell E (graph, no MCQ) for conv-30 — start Sun May 17 23:51:51 PDT 2026
+>>> judging /Users/anna/Dropbox/phd-stuff/CODE/2026/agent-memory-benchmarks/2026-04-27-locomo/runs/baseline_qa_20260517_235152.jsonl as conv-30_cell_E
+>>> cell F (graph, MCQ) for conv-30 — start Mon May 18 07:50:03 PDT 2026
+>>> judging /Users/anna/Dropbox/phd-stuff/CODE/2026/agent-memory-benchmarks/2026-04-27-locomo/runs/baseline_qa_20260518_075004.jsonl as conv-30_cell_F
+>>> cell A (full-context, no MCQ) for conv-30 — start Mon May 18 07:54:28 PDT 2026
+>>> judging /Users/anna/Dropbox/phd-stuff/CODE/2026/agent-memory-benchmarks/2026-04-27-locomo/runs/baseline_qa_20260518_075428.jsonl as conv-30_cell_A
+>>> cell B (full-context, MCQ) for conv-30 — start Mon May 18 07:57:42 PDT 2026
+>>> judging /Users/anna/Dropbox/phd-stuff/CODE/2026/agent-memory-benchmarks/2026-04-27-locomo/runs/baseline_qa_20260518_075742.jsonl as conv-30_cell_B
+>>> cell C (Hindsight, no MCQ) for conv-30 — start Mon May 18 08:00:42 PDT 2026
+>>> saved Hindsight cell C result: conv-30_cat5_no_mcq.json
+>>> cell D (Hindsight, MCQ) for conv-30 — start Mon May 18 08:19:24 PDT 2026
+>>> saved Hindsight cell D result: conv-30_cat5_with_mcq.json
+============================================================
+SAMPLE conv-30 COMPLETE — finish Mon May 18 08:20:39 PDT 2026
+============================================================
+
+============================================================
+SAMPLE: conv-49   start Mon May 18 08:20:39 PDT 2026
+============================================================
+>>> cell E (graph, no MCQ) for conv-49 — start Mon May 18 08:20:39 PDT 2026
+>>> judging /Users/anna/Dropbox/phd-stuff/CODE/2026/agent-memory-benchmarks/2026-04-27-locomo/runs/baseline_qa_20260518_082039.jsonl as conv-49_cell_E
+>>> cell F (graph, MCQ) for conv-49 — start Tue May 19 00:19:26 PDT 2026
+>>> judging /Users/anna/Dropbox/phd-stuff/CODE/2026/agent-memory-benchmarks/2026-04-27-locomo/runs/baseline_qa_20260519_001926.jsonl as conv-49_cell_F
+>>> cell A (full-context, no MCQ) for conv-49 — start Tue May 19 00:27:16 PDT 2026
+>>> judging /Users/anna/Dropbox/phd-stuff/CODE/2026/agent-memory-benchmarks/2026-04-27-locomo/runs/baseline_qa_20260519_002716.jsonl as conv-49_cell_A
+>>> cell B (full-context, MCQ) for conv-49 — start Tue May 19 00:33:36 PDT 2026
+>>> judging /Users/anna/Dropbox/phd-stuff/CODE/2026/agent-memory-benchmarks/2026-04-27-locomo/runs/baseline_qa_20260519_003336.jsonl as conv-49_cell_B
+>>> cell C (Hindsight, no MCQ) for conv-49 — start Tue May 19 00:38:52 PDT 2026
+>>> saved Hindsight cell C result: conv-49_cat5_no_mcq.json
+>>> cell D (Hindsight, MCQ) for conv-49 — start Tue May 19 00:57:12 PDT 2026
+>>> saved Hindsight cell D result: conv-49_cat5_with_mcq.json
+============================================================
+SAMPLE conv-49 COMPLETE — finish Tue May 19 00:58:48 PDT 2026
+============================================================
+
+=== full-grid run finished Tue May 19 00:58:48 PDT 2026 ===
+logs at /Users/anna/Dropbox/phd-stuff/CODE/2026/agent-memory-benchmarks/2026-04-27-locomo/logs/grid_run_20260517_235151

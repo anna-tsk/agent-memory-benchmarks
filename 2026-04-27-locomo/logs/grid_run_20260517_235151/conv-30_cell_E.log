@@ -1,0 +1,120 @@
+backend=graph (retrieval model=Qwen/Qwen2.5-72B-Instruct)
+writing to /Users/anna/Dropbox/phd-stuff/CODE/2026/agent-memory-benchmarks/2026-04-27-locomo/runs/baseline_qa_20260517_235152.jsonl
+
+=== conv-30 (Jon & Gina) — 24 questions (filter=cat5) ===
+  ingesting 369 turns into graph (19 sessions)...
+    50/369 turns ingested, 50 claims, 118 links
+    100/369 turns ingested, 100 claims, 821 links
+    150/369 turns ingested, 150 claims, 1753 links
+    200/369 turns ingested, 200 claims, 3528 links
+    250/369 turns ingested, 250 claims, 4965 links
+    300/369 turns ingested, 300 claims, 7042 links
+    350/369 turns ingested, 350 claims, 9646 links
+  graph complete: 369 claims, 494 entities, 10973 claim links
+  saved graph cache to /Users/anna/Dropbox/phd-stuff/CODE/2026/agent-memory-benchmarks/2026-04-27-locomo/graph_cache/conv-30.pkl
+  [1/24] cat=5 ✗ (4257 tok)
+     Q: What temporary job did Jon take to cover expenses?
+     gold: "Not mentioned" (decoy: Not mentioned)
+     pred: The provided context does not contain any information about Jon taking a temporary job to cover expenses. There is no mention of such a job in the conversations between Gina and Jon. Therefore, based 
+  [2/24] cat=5 ✗ (4256 tok)
+     Q: What is Jon's favorite style of painting?
+     gold: "Not mentioned" (decoy: Contemporary)
+     pred: The provided memories do not mention Jon's favorite style of painting. The conversations primarily focus on dance, Jon's dance studio, and Gina's clothing store. There is no information regarding Jon'
+  [3/24] cat=5 ✗ (4255 tok)
+     Q: What was Jon's favorite dancing memory?
+     gold: "Not mentioned" (decoy: Winning first place at a regionals dance competition)
+     pred: The provided memories do not contain any specific information about Jon's favorite dancing memory. The conversations focus more on their plans to dance together, Jon's involvement in dance, and Gina's
+  [4/24] cat=5 ✗ (4262 tok)
+     Q: What kind of dance piece did Jon's team perform to win first place?
+     gold: "Not mentioned" (decoy: "Finding Freedom")
+     pred: The provided memories do not contain any specific information about Jon's team winning first place with a particular dance piece. The conversations focus more on their upcoming performances, rehearsal
+  [5/24] cat=5 ✗ (6043 tok)
+     Q: What is Gina's attitude towards participating in the dance festival?
+     gold: "Not mentioned" (decoy: Glad)
+     pred: The provided memories do not explicitly mention Gina's attitude towards participating in a dance festival. However, from the context, we can infer a few points:  1. Gina seems supportive and encouragi
+  [6/24] cat=5 ✗ (5644 tok)
+     Q: What kind of flooring is Gina looking for in her dance studio?
+     gold: "Not mentioned" (decoy: Marley flooring)
+     pred: The provided memories do not contain any specific information about the type of flooring Gina is looking for in her dance studio. The conversations focus more on Jon's experiences and plans for his da
+  [7/24] cat=5 ✗ (4397 tok)
+     Q: What did Jon find for his clothing store on 1 February, 2023?
+     gold: "Not mentioned" (decoy: The perfect spot for her store)
+     pred: The provided memories do not contain any information about Jon finding something for his clothing store on 1 February, 2023. The conversations are from 2026 and focus on Gina's clothing store and Jon'
+  [8/24] cat=5 ✗ (4255 tok)
+     Q: What did Jon design for his store?
+     gold: "Not mentioned" (decoy: the space, furniture, and decor)
+     pred: Based on the provided context, there is no explicit mention of Jon designing anything for his store. The context primarily revolves around Gina's activities and her encouragement of Jon, particularly 
+  [9/24] cat=5 ✗ (4259 tok)
+     Q: What did Jon want his customers to feel in her store?
+     gold: "Not mentioned" (decoy: cozy and comfortable)
+     pred: The provided context does not include any direct statement from Jon regarding what he wanted his customers to feel in his store. However, based on Gina's description of her own store, which she shared
+  [10/24] cat=5 ✗ (4259 tok)
+     Q: What made Jon choose the furniture and decor for his store?
+     gold: "Not mentioned" (decoy: personal style and customer comfort)
+     pred: The provided memories do not contain specific information about Jon choosing furniture and decor for his store. The conversations primarily focus on Gina's clothing store and her support for Jon's dan
+  [11/24] cat=5 ✗ (4254 tok)
+     Q: How is Jon's store doing?
+     gold: "Not mentioned" (decoy: The store is doing great.)
+     pred: Based on the provided context, there is no explicit mention of Jon owning a store. The conversations primarily focus on Gina's clothing store and her recent activities such as launching an ad campaign
+  [12/24] cat=5 ✗ (4255 tok)
+     Q: What does Jon's tattoo symbolize?
+     gold: "Not mentioned" (decoy: Freedom and expressing himself through dance)
+     pred: The provided memories do not contain any information about Jon having a tattoo or what it might symbolize. Therefore, I cannot provide an answer based on the given context. If you have more details or
+  [13/24] cat=5 ✗ (6040 tok)
+     Q: Why did Gina shut down her bank account?
+     gold: "Not mentioned" (decoy: for her business)
+     pred: The provided context does not contain any information about Gina shutting down her bank account. There are no mentions of Gina's financial decisions or actions related to her bank account. Therefore, 
+  [14/24] cat=5 ✗ (4375 tok)
+     Q: Why did Jon combine his clothing business with dance?
+     gold: "Not mentioned" (decoy: he is passionate about dance and fashion)
+     pred: Based on the provided context, there is no explicit statement indicating that Jon combined his clothing business with dance. However, it seems there might be a misunderstanding in the question, as Jon
+  [15/24] cat=5 ✗ (6040 tok)
+     Q: What did Gina receive from a dance contest?
+     gold: "Not mentioned" (decoy: a trophy)
+     pred: Based on the provided context, there is no explicit mention of Gina receiving anything from a dance contest. However, Jon mentions a picture from when his dance crew took home first place in a local c
+  [16/24] cat=5 ✗ (4269 tok)
+     Q: What kind of professional experience did Jon get accepted for on May 23, 2023?
+     gold: "Not mentioned" (decoy: fashion internship)
+     pred: The provided context does not contain any information about Jon getting accepted for any professional experience on May 23, 2023. All the conversations listed are from May 18, 2026, and they primarily
+  [17/24] cat=5 ✗ (6038 tok)
+     Q: Where is Gina's HR internship?
+     gold: "Not mentioned" (decoy: fashion department of an international company)
+     pred: The provided context does not mention any HR internship for Gina. There is no information about Gina's current employment or any internships she might be undertaking. The conversations primarily focus
+  [18/24] cat=5 ✗ (4254 tok)
+     Q: Where is Jon's fashion internship?
+     gold: "Not mentioned" (decoy: fashion department of an international company)
+     pred: The provided context does not mention Jon having a fashion internship. The conversations focus on Gina's clothing store and her experiences in the fashion industry, as well as Jon's involvement in dan
+  [19/24] cat=5 ✗ (6038 tok)
+     Q: What book is Gina currently reading?
+     gold: "Not mentioned" (decoy: The Lean Startup)
+     pred: The provided memories do not mention any book that Gina is currently reading. There is no information about Gina's reading habits or any specific book in the conversations between Jon and Gina. Theref
+  [20/24] cat=5 ✗ (6045 tok)
+     Q: How does Gina use the clipboard with a notepad attached to it?
+     gold: "Not mentioned" (decoy: To set goals, track achievements, and find areas for improvement)
+     pred: The provided memories do not contain any specific information about Gina using a clipboard with a notepad attached to it. Therefore, I cannot provide a detailed answer based on the given context. If y
+  [21/24] cat=5 ✗ (4257 tok)
+     Q: What did Jon take a trip to Barcelona for?
+     gold: "Not mentioned" (decoy: To clear his mind)
+     pred: The provided memories do not mention Jon taking a trip to Barcelona or any details about such a trip. Therefore, there is no information available to answer the question about why Jon went to Barcelon
+  [22/24] cat=5 ✗ (4246 tok)
+     Q: What did Jon make a limited edition line of?
+     gold: "Not mentioned" (decoy: Hoodies)
+     pred: The context does not provide specific information about Jon making a limited edition line of anything. The only mention of a limited edition line is in reference to Gina, who mentioned creating a limi
+  [23/24] cat=5 ✗ (6041 tok)
+     Q: What temporary job did Gina take to cover expenses?
+     gold: "Not mentioned" (decoy: Not mentioned)
+     pred: Based on the provided context, there is no mention of Gina taking a temporary job to cover expenses. The context primarily revolves around Jon's experiences and plans, including his intention to start
+  [24/24] cat=5 ✗ (6044 tok)
+     Q: What plans does Gina have after receiving advice at the networking event?
+     gold: "Not mentioned" (decoy: Sprucing up her business plan, tweaking her pitch to investors, and working on an online platform.)
+     pred: The provided memories do not contain specific information about Gina's plans after receiving advice at the networking event. However, we can infer a few things based on the context:  1. **Networking E
+
+============================================================
+SUMMARY (rough substring match — first-cut heuristic, not final scoring)
+============================================================
+category                hits / total   ≈acc  skip
+cat 5 (Adversarial)        0 / 24        0%     0
+------------------------------------------------------------
+overall                    0 / 24        0%     0
+
+results in /Users/anna/Dropbox/phd-stuff/CODE/2026/agent-memory-benchmarks/2026-04-27-locomo/runs/baseline_qa_20260517_235152.jsonl

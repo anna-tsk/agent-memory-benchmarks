@@ -1,0 +1,110 @@
+backend=hf_api, model=Qwen/Qwen2.5-72B-Instruct
+writing to /Users/anna/Dropbox/phd-stuff/CODE/2026/agent-memory-benchmarks/2026-04-27-locomo/runs/baseline_qa_20260518_075428.jsonl
+
+=== conv-30 (Jon & Gina) — 24 questions (filter=cat5) ===
+  [1/24] cat=5 ✗ (11716 tok)
+     Q: What temporary job did Jon take to cover expenses?
+     gold: "Not mentioned" (decoy: Not mentioned)
+     pred: In the conversation from session_18 on 21 July, 2023, Jon mentioned that he got a temp job to help cover expenses while he looks for investors for his dance studio. However, the specific type of tempo
+  [2/24] cat=5 ✗ (11715 tok)
+     Q: What is Jon's favorite style of painting?
+     gold: "Not mentioned" (decoy: Contemporary)
+     pred: There is no mention of Jon's favorite style of painting in the provided conversations. The discussions primarily revolve around their respective businesses, with a significant focus on Jon's dance stu
+  [3/24] cat=5 ✗ (11714 tok)
+     Q: What was Jon's favorite dancing memory?
+     gold: "Not mentioned" (decoy: Winning first place at a regionals dance competition)
+     pred: Based on the conversations, Jon's favorite dancing memory is when his dance crew took home first place in a local competition last year. He mentioned this in the first session, saying it was amazing t
+  [4/24] cat=5 ✗ (11721 tok)
+     Q: What kind of dance piece did Jon's team perform to win first place?
+     gold: "Not mentioned" (decoy: "Finding Freedom")
+     pred: Based on the conversation, Jon mentioned that his team performed a contemporary piece to win first place in a local competition. Specifically, he said, "We just did a contemporary piece called 'Findin
+  [5/24] cat=5 ✗ (11718 tok)
+     Q: What is Gina's attitude towards participating in the dance festival?
+     gold: "Not mentioned" (decoy: Glad)
+     pred: Gina is enthusiastic and supportive about participating in the dance festival. She expresses excitement about attending the event and shows interest in seeing the performances, including Jon's. Her po
+  [6/24] cat=5 ✗ (11719 tok)
+     Q: What kind of flooring is Gina looking for in her dance studio?
+     gold: "Not mentioned" (decoy: Marley flooring)
+     pred: It seems there might be a slight confusion in the question. Based on the conversations, it is actually Jon who is looking for flooring for his dance studio, not Gina. Jon mentions he is after Marley f
+  [7/24] cat=5 ✓ (11725 tok)
+     Q: What did Jon find for his clothing store on 1 February, 2023?
+     gold: "Not mentioned" (decoy: The perfect spot for her store)
+     pred: On 1 February, 2023, it appears there was a misunderstanding in the question. Jon was not mentioned as finding something for a clothing store; instead, Gina mentioned that she had received a positive 
+  [8/24] cat=5 ✗ (11714 tok)
+     Q: What did Jon design for his store?
+     gold: "Not mentioned" (decoy: the space, furniture, and decor)
+     pred: Based on the conversations, Jon did not mention designing anything specific for his store. Instead, he focused on setting up his dance studio, including finding a location, planning the interior, and 
+  [9/24] cat=5 ✗ (11718 tok)
+     Q: What did Jon want his customers to feel in her store?
+     gold: "Not mentioned" (decoy: cozy and comfortable)
+     pred: It seems there is a mix-up in the question as it refers to "her store" while discussing Jon, who is setting up a dance studio. However, based on the conversations, Jon wants his customers (or students
+  [10/24] cat=5 ✗ (11718 tok)
+     Q: What made Jon choose the furniture and decor for his store?
+     gold: "Not mentioned" (decoy: personal style and customer comfort)
+     pred: Jon didn't mention choosing furniture and decor for his store. However, he did discuss his plans for the dance studio, including the importance of having a good dance floor with enough bounce for safe
+  [11/24] cat=5 ✗ (11713 tok)
+     Q: How is Jon's store doing?
+     gold: "Not mentioned" (decoy: The store is doing great.)
+     pred: Jon's dance studio is facing some challenges. As of the latest update on 21 July, 2023, the studio is on "tenuous grounds," and Jon has taken a temporary job to help cover expenses while he continues 
+  [12/24] cat=5 ✗ (11714 tok)
+     Q: What does Jon's tattoo symbolize?
+     gold: "Not mentioned" (decoy: Freedom and expressing himself through dance)
+     pred: Jon's tattoo symbolizes freedom—dancing without worrying about what people think. It serves as a reminder to follow his passions and express himself freely.
+  [13/24] cat=5 ✗ (11715 tok)
+     Q: Why did Gina shut down her bank account?
+     gold: "Not mentioned" (decoy: for her business)
+     pred: There is no mention in the provided conversations of Gina shutting down her bank account. The conversation where Jon mentions shutting down his bank account for his business does not involve Gina doin
+  [14/24] cat=5 ✗ (11716 tok)
+     Q: Why did Jon combine his clothing business with dance?
+     gold: "Not mentioned" (decoy: he is passionate about dance and fashion)
+     pred: Jon did not actually combine his clothing business with dance. However, Gina combined her love for dance and fashion into her online clothing store. She mentioned, "I'm passionate about fashion trends
+  [15/24] cat=5 ✗ (11715 tok)
+     Q: What did Gina receive from a dance contest?
+     gold: "Not mentioned" (decoy: a trophy)
+     pred: Gina received a trophy from a dance contest. This is evident from her statement in session 9 on April 9, 2023, where she says, "Hey Jon! Got your back - dance is awesome for expressing yourself and fi
+  [16/24] cat=5 ✗ (11728 tok)
+     Q: What kind of professional experience did Jon get accepted for on May 23, 2023?
+     gold: "Not mentioned" (decoy: fashion internship)
+     pred: Based on the provided context, there is no mention of Jon getting accepted for any professional experience specifically on May 23, 2023. The conversations indicate that Jon has been working on his dan
+  [17/24] cat=5 ✗ (11713 tok)
+     Q: Where is Gina's HR internship?
+     gold: "Not mentioned" (decoy: fashion department of an international company)
+     pred: Gina mentioned she got accepted for a fashion internship, not an HR internship. The internship is a part-time position in the fashion department of an international company.
+  [18/24] cat=5 ✓ (11713 tok)
+     Q: Where is Jon's fashion internship?
+     gold: "Not mentioned" (decoy: fashion department of an international company)
+     pred: There seems to be a misunderstanding in the question. Jon has not mentioned a fashion internship. It is Gina who got accepted for a fashion internship, which is a part-time position in the fashion dep
+  [19/24] cat=5 ✗ (11713 tok)
+     Q: What book is Gina currently reading?
+     gold: "Not mentioned" (decoy: The Lean Startup)
+     pred: Based on the conversations provided, there is no mention of Gina currently reading any book. The book mentioned in the sessions is "The Lean Startup," which Jon is reading to gain tips for his busines
+  [20/24] cat=5 ✗ (11720 tok)
+     Q: How does Gina use the clipboard with a notepad attached to it?
+     gold: "Not mentioned" (decoy: To set goals, track achievements, and find areas for improvement)
+     pred: There is no mention of Gina using a clipboard with a notepad attached to it in the provided conversations. The closest reference is to Jon using a whiteboard to stay organized, visualize goals, and to
+  [21/24] cat=5 ✗ (11716 tok)
+     Q: What did Jon take a trip to Barcelona for?
+     gold: "Not mentioned" (decoy: To clear his mind)
+     pred: There is no mention of Jon taking a trip to Barcelona in the provided conversations. The only trips mentioned are Jon's visit to Paris on January 28, 2023, and his short trip to Rome the week of June 
+  [22/24] cat=5 ✗ (11716 tok)
+     Q: What did Jon make a limited edition line of?
+     gold: "Not mentioned" (decoy: Hoodies)
+     pred: Based on the conversations provided, there is no mention of Jon making a limited edition line. The limited edition line was actually created by Gina, as she mentioned, "I made a limited edition line l
+  [23/24] cat=5 ✗ (11716 tok)
+     Q: What temporary job did Gina take to cover expenses?
+     gold: "Not mentioned" (decoy: Not mentioned)
+     pred: Based on the conversations, there is no mention of Gina taking a temporary job to cover expenses. Instead, it was Jon who mentioned taking a temp job to help cover expenses while he looks for investor
+  [24/24] cat=5 ✗ (11719 tok)
+     Q: What plans does Gina have after receiving advice at the networking event?
+     gold: "Not mentioned" (decoy: Sprucing up her business plan, tweaking her pitch to investors, and working on an online platform.)
+     pred: Based on the conversations, after receiving advice at the networking event, Gina does not explicitly mention new plans. However, she shares that she has been working on her online store and recently b
+
+============================================================
+SUMMARY (rough substring match — first-cut heuristic, not final scoring)
+============================================================
+category                hits / total   ≈acc  skip
+cat 5 (Adversarial)        2 / 24        8%     0
+------------------------------------------------------------
+overall                    2 / 24        8%     0
+
+results in /Users/anna/Dropbox/phd-stuff/CODE/2026/agent-memory-benchmarks/2026-04-27-locomo/runs/baseline_qa_20260518_075428.jsonl

@@ -1,0 +1,55 @@
+scoring with LLM-as-judge: Qwen/Qwen2.5-72B-Instruct
+  [1/40] cat=5 ✓
+  [2/40] cat=5 ✓
+  [3/40] cat=5 ✗
+  [4/40] cat=5 ✓
+  [5/40] cat=5 ✗
+  [6/40] cat=5 ✓
+  [7/40] cat=5 ✓
+  [8/40] cat=5 ✓
+  [9/40] cat=5 ✓
+  [10/40] cat=5 ✓
+  [11/40] cat=5 ✓
+  [12/40] cat=5 ✓
+  [13/40] cat=5 ✓
+  [14/40] cat=5 ✓
+  [15/40] cat=5 ✓
+  [16/40] cat=5 ✓
+  [17/40] cat=5 ✓
+  [18/40] cat=5 ✓
+  [19/40] cat=5 ✓
+  [20/40] cat=5 ✓
+  [21/40] cat=5 ✓
+  [22/40] cat=5 ✓
+  [23/40] cat=5 ✓
+  [24/40] cat=5 ✓
+  [25/40] cat=5 ✓
+  [26/40] cat=5 ✓
+  [27/40] cat=5 ✓
+  [28/40] cat=5 ✓
+  [29/40] cat=5 ✓
+  [30/40] cat=5 ✓
+  [31/40] cat=5 ✓
+  [32/40] cat=5 ✓
+  [33/40] cat=5 ✓
+  [34/40] cat=5 ✓
+  [35/40] cat=5 ✓
+  [36/40] cat=5 ✓
+  [37/40] cat=5 ✓
+  [38/40] cat=5 ✓
+  [39/40] cat=5 ✗
+  [40/40] cat=5 ✓
+file: /Users/anna/Dropbox/phd-stuff/CODE/2026/agent-memory-benchmarks/2026-04-27-locomo/runs/baseline_qa_20260518_082039.jsonl
+rows: 40 (0 skipped)
+samples: ['conv-49']
+model:   ['Qwen/Qwen2.5-72B-Instruct']  | backend: ['graph']
+
+============================================================
+SUMMARY (LLM-as-judge (Qwen/Qwen2.5-72B-Instruct, Hindsight-style prompt))
+============================================================
+category                hits / total   ≈acc  skip invalid
+cat 5 (Adversarial)       37 / 40       92%     0       0
+------------------------------------------------------------
+overall                   37 / 40       92%     0       0
+
+markdown report: /Users/anna/Dropbox/phd-stuff/CODE/2026/agent-memory-benchmarks/2026-04-27-locomo/runs/baseline_qa_20260518_082039.md

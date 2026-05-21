@@ -1,0 +1,187 @@
+backend=graph (retrieval model=Qwen/Qwen2.5-72B-Instruct)
+writing to /Users/anna/Dropbox/phd-stuff/CODE/2026/agent-memory-benchmarks/2026-04-27-locomo/runs/baseline_qa_20260518_082039.jsonl
+
+=== conv-49 (Evan & Sam) — 40 questions (filter=cat5) ===
+  ingesting 509 turns into graph (25 sessions)...
+    50/509 turns ingested, 50 claims, 205 links
+    100/509 turns ingested, 100 claims, 750 links
+    150/509 turns ingested, 150 claims, 1736 links
+    200/509 turns ingested, 200 claims, 2838 links
+    250/509 turns ingested, 250 claims, 5151 links
+    300/509 turns ingested, 300 claims, 8039 links
+    350/509 turns ingested, 350 claims, 10422 links
+    400/509 turns ingested, 400 claims, 13184 links
+    450/509 turns ingested, 450 claims, 15558 links
+    500/509 turns ingested, 500 claims, 18586 links
+  graph complete: 509 claims, 752 entities, 19327 claim links
+  saved graph cache to /Users/anna/Dropbox/phd-stuff/CODE/2026/agent-memory-benchmarks/2026-04-27-locomo/graph_cache/conv-49.pkl
+  [1/40] cat=5 ✗ (5113 tok)
+     Q: What type of car did Sam get after his old Prius broke down?
+     gold: "Not mentioned" (decoy: new Prius)
+     pred: The context provided does not contain any information about Sam getting a new car after his old Prius broke down. The only mention of a Prius is in relation to Evan, who says, "Hey Sam! Good to see yo
+  [2/40] cat=5 ✗ (5107 tok)
+     Q: How did Sam get into watercolor painting?
+     gold: "Not mentioned" (decoy: friend's advice)
+     pred: The provided memories do not contain any specific information about how Sam got into watercolor painting. There are no direct mentions or details about Sam starting or practicing watercolor painting. 
+  [3/40] cat=5 ✗ (5113 tok)
+     Q: What did Sam start doing a few years back as a stress-buster?
+     gold: "Not mentioned" (decoy: watercolor painting)
+     pred: Based on the provided context, Sam started painting a few years back as a stress-buster. Evan mentions, "Of course, Sam! Painting is a great way to relieve stress and be creative. It gives you the fre
+  [4/40] cat=5 ✗ (5120 tok)
+     Q: Where did Sam take his family for a road trip on 24 May, 2023?
+     gold: "Not mentioned" (decoy: Jasper)
+     pred: The provided context does not include any specific mention of Sam taking a family road trip on May 24, 2023. The only road trip mentioned is Evan's trip to Jasper, which occurred in the context of mes
+  [5/40] cat=5 ✗ (5110 tok)
+     Q: What did Sam find relaxing about his road trip to Jasper?
+     gold: "Not mentioned" (decoy: fresh air, peacefulness, cozy cabin surrounded by mountains and forests)
+     pred: Based on the conversation, Sam found the following aspects relaxing about his road trip to Jasper:  - Fresh air - Peacefulness - A cozy cabin surrounded by mountains and forests, which made it feel li
+  [6/40] cat=5 ✗ (4211 tok)
+     Q: What habit is Evan trying to change in terms of diet?
+     gold: "Not mentioned" (decoy: consuming soda and candy)
+     pred: Based on the provided context, there is no explicit mention of a specific dietary habit that Evan is trying to change. However, Evan mentions yoga and diet together, suggesting he might be focusing on
+  [7/40] cat=5 ✗ (4129 tok)
+     Q: What frustrating issue did Evan face at the supermarket?
+     gold: "Not mentioned" (decoy: broken self-checkout machines)
+     pred: The provided context does not contain any specific information about Evan facing a frustrating issue at the supermarket. The conversations are mostly about Sam's experiences and responses to Evan's co
+  [8/40] cat=5 ✗ (5108 tok)
+     Q: What novel is Sam reading that he finds gripping?
+     gold: "Not mentioned" (decoy: The Great Gatsby)
+     pred: Based on the provided context, there is no mention of Sam reading any novel or finding any book gripping. The conversations primarily revolve around Sam's health, Evan's recent activities, and their g
+  [9/40] cat=5 ✗ (5107 tok)
+     Q: What does the smartwatch help Sam with?
+     gold: "Not mentioned" (decoy: tracks progress and serves as a constant reminder to keep going)
+     pred: The provided context does not mention a smartwatch or any specific assistance it provides to Sam. Therefore, based on the given information, there is no evidence to determine what a smartwatch might h
+  [10/40] cat=5 ✗ (5109 tok)
+     Q: Why did Sam decide to get the bonsai tree?
+     gold: "Not mentioned" (decoy: motivates him to keep going through tough times)
+     pred: The provided context does not explicitly state why Sam decided to get a bonsai tree. However, based on the conversation, it seems that Sam might be interested in new hobbies or activities that can pro
+  [11/40] cat=5 ✗ (5114 tok)
+     Q: What did Sam mention he had been searching for fruitlessly for half an hour?
+     gold: "Not mentioned" (decoy: his keys)
+     pred: The provided context does not include any information about Sam mentioning he had been searching for something fruitlessly for half an hour. Therefore, based on the available data, it's not possible t
+  [12/40] cat=5 ✗ (4132 tok)
+     Q: What class is Evan taking to learn how to make healthier meals?
+     gold: "Not mentioned" (decoy: cooking class)
+     pred: The provided memories do not mention Evan taking any class to learn how to make healthier meals. The conversations indicate that Evan and Sam discuss health, fitness, and trying new things, but there 
+  [13/40] cat=5 ✗ (5119 tok)
+     Q: What dish did Sam make on 18 August, 2023 that turned out bland?
+     gold: "Not mentioned" (decoy: grilled dish with salmon and vegetables)
+     pred: The provided context does not contain any information about Sam making a dish on 18 August 2023 that turned out bland. There are no mentions of specific dates related to cooking activities or any dish
+  [14/40] cat=5 ✗ (4238 tok)
+     Q: What food did Evan share a photo of on 19 August, 2023?
+     gold: "Not mentioned" (decoy: bowl of spinach, avocado, and strawberries)
+     pred: The provided context does not include any information about Evan sharing a photo of food on 19 August 2023. All the conversations listed are from 2026-05-19, and none of these mentions a specific date
+  [15/40] cat=5 ✗ (4137 tok)
+     Q: What did Evan start sculpting years ago due to being inspired by a friend's gift?
+     gold: "Not mentioned" (decoy: forest scene)
+     pred: The provided context does not contain any information about Evan starting to sculpt years ago due to being inspired by a friend's gift. There are no mentions of Evan's sculpting activities or any gift
+  [16/40] cat=5 ✗ (5111 tok)
+     Q: What nature concept do watercolor painting classes emphasize according to Sam?
+     gold: "Not mentioned" (decoy: observing nature and painting what is seen)
+     pred: The provided context does not contain any specific information about watercolor painting classes or what nature concept they emphasize according to Sam. There is a mention of painting as a hobby, but 
+  [17/40] cat=5 ✗ (5109 tok)
+     Q: What type of landscapes does Sam love painting the most?
+     gold: "Not mentioned" (decoy: sunsets over the ocean)
+     pred: Based on the provided context, there is no explicit mention of the types of landscapes Sam loves painting the most. However, given the context where Evan mentions, "Of course, Sam! Painting is a great
+  [18/40] cat=5 ✗ (5115 tok)
+     Q: What sports activity has Sam been doing to stay active while dealing with the knee injury?
+     gold: "Not mentioned" (decoy: Swimming)
+     pred: Based on the provided context, there is no explicit mention of any specific sports activity that Sam has been doing to stay active while dealing with the knee injury. However, Evan mentions that yoga 
+  [19/40] cat=5 ✗ (5112 tok)
+     Q: What activity does Sam do to keep himself busy while healing his knee?
+     gold: "Not mentioned" (decoy: Watercolor painting)
+     pred: Based on the provided context, there is no explicit mention of Sam engaging in a specific activity to keep himself busy while healing his knee. However, there are several hints that Sam might be invol
+  [20/40] cat=5 ✗ (4132 tok)
+     Q: What kind of writing does Evan enjoy as a form of expression?
+     gold: "Not mentioned" (decoy: creative writing)
+     pred: The provided memories do not contain any explicit information about what kind of writing Evan enjoys as a form of expression. There are no mentions of Evan discussing his preferences for writing or an
+  [21/40] cat=5 ✗ (4128 tok)
+     Q: What electronics issue has been frustrating Evan lately?
+     gold: "Not mentioned" (decoy: malfunctioning navigation app on the new phone)
+     pred: Based on the provided context, there is no explicit mention of any electronics issue frustrating Evan. The conversations between Sam and Evan cover various topics such as health, hobbies, family, and 
+  [22/40] cat=5 ✗ (4128 tok)
+     Q: What activity did Evan quit one year ago?
+     gold: "Not mentioned" (decoy: lifting weights)
+     pred: The provided context does not contain any information about an activity that Evan quit one year ago. There are no mentions of Evan quitting any specific activities or habits within the given conversat
+  [23/40] cat=5 ✗ (5111 tok)
+     Q: Where did Sam and his mate plan to try skydiving?
+     gold: "Not mentioned" (decoy: Lake Tahoe)
+     pred: The provided context does not mention Sam and his mate planning to try skydiving. There is no information about any skydiving plans in the given conversations. The context mostly revolves around Evan'
+  [24/40] cat=5 ✗ (4127 tok)
+     Q: What digestive issue did Evan experience lately?
+     gold: "Not mentioned" (decoy: Gastritis)
+     pred: The provided context does not mention any specific digestive issues experienced by Evan. All the messages are from Sam to Evan and do not include information about Evan's health conditions. Therefore,
+  [25/40] cat=5 ✗ (5109 tok)
+     Q: How did Sam start his transformation journey two years ago?
+     gold: "Not mentioned" (decoy: Changed his diet and started walking regularly)
+     pred: Based on the provided context, there is no explicit mention of Sam starting his transformation journey two years ago. However, we can infer some details from the conversations:  1. **Health Concerns**
+  [26/40] cat=5 ✗ (5108 tok)
+     Q: What gift did Sam receive from a close friend?
+     gold: "Not mentioned" (decoy: 1968 Kustom K-200A vintage guitar)
+     pred: The provided context does not mention any specific gift that Sam received from a close friend. There is no information about gifts or a close friend giving Sam a gift in the conversations between Evan
+  [27/40] cat=5 ✗ (5109 tok)
+     Q: How does Sam describe the island he grew up on?
+     gold: "Not mentioned" (decoy: A happy place)
+     pred: The provided memories do not contain any specific information about an island Sam grew up on. There are no mentions of Sam describing his childhood or the place where he grew up. Therefore, based on t
+  [28/40] cat=5 ✗ (4136 tok)
+     Q: What was the main reason for Evan's frustration with his new Prius getting stolen?
+     gold: "Not mentioned" (decoy: He relied on it for his active lifestyle and road trips)
+     pred: The provided context does not contain any information about Evan's frustration with his new Prius getting stolen. There are no mentions of Evan owning a Prius or any car being stolen. Therefore, I can
+  [29/40] cat=5 ✗ (5108 tok)
+     Q: What family event is Sam planning for next summer?
+     gold: "Not mentioned" (decoy: big family reunion)
+     pred: Based on the provided context, there is no specific mention of Sam planning any family event for next summer. The conversations primarily revolve around Evan's recent activities and future plans, such
+  [30/40] cat=5 ✗ (201 tok)
+     Q: What is the motto of Sam's family?
+     gold: "Not mentioned" (decoy: 'Bring it on Home')
+     pred: The provided context does not contain any information about Sam's family or their motto. Therefore, I cannot provide a specific answer based on the given information. If you have more details or memor
+  [31/40] cat=5 ✗ (5109 tok)
+     Q: Who helped Sam get the painting published in the exhibition?
+     gold: "Not mentioned" (decoy: a close friend)
+     pred: The provided memories do not contain any information about Sam getting a painting published in an exhibition or anyone helping Sam with this. Therefore, I cannot provide a specific answer based on the
+  [32/40] cat=5 ✗ (5114 tok)
+     Q: How did Sam feel when he painted the piece with the bird flying over it?
+     gold: "Not mentioned" (decoy: a sense of joy and freedom)
+     pred: The provided context does not include any specific information about Sam painting a piece with a bird flying over it or his feelings about it. There are several mentions of Sam and his activities, but
+  [33/40] cat=5 ✗ (5115 tok)
+     Q: How did Sam describe the process of creating the painting with the bird flying over it?
+     gold: "Not mentioned" (decoy: embracing the creative process without restraint)
+     pred: The provided memories do not include any specific details about Sam describing the process of creating a painting with a bird flying over it. The conversations primarily revolve around Evan's activiti
+  [34/40] cat=5 ✗ (4141 tok)
+     Q: What did Evan and his partner keep from their extended family on January 5, 2024?
+     gold: "Not mentioned" (decoy: their marriage)
+     pred: The provided memories do not contain any specific information about Evan and his partner keeping something from their extended family on January 5, 2024. The conversations are focused on various topic
+  [35/40] cat=5 ✗ (5109 tok)
+     Q: What was Sam limiting himself to on his new diet?
+     gold: "Not mentioned" (decoy: just two ginger snaps a day)
+     pred: The provided memories do not specify what Sam was limiting himself to on his new diet. However, Evan mentioned that he himself was limiting his intake to "just two ginger snaps a day" on his new diet.
+  [36/40] cat=5 ✗ (4133 tok)
+     Q: What dance activity did Evan and his partner try in a recent weekend?
+     gold: "Not mentioned" (decoy: Snowshoeing)
+     pred: Based on the provided context, there is no specific mention of Evan and his partner trying any dance activity on a recent weekend. The conversations primarily revolve around other topics such as healt
+  [37/40] cat=5 ✗ (4130 tok)
+     Q: What suggestions did Evan give for high-impact exercises?
+     gold: "Not mentioned" (decoy: swimming, yoga, walking)
+     pred: The provided context does not include any specific suggestions from Evan regarding high-impact exercises. To provide a relevant answer, we would need more information or a memory that includes Evan's 
+  [38/40] cat=5 ✗ (4134 tok)
+     Q: What movie did Evan watch that motivated him to keep up with his routine?
+     gold: "Not mentioned" (decoy: The Godfather)
+     pred: The movie that motivated Sam (not Evan) to keep up with his routine was "The Godfather." Sam mentioned watching it and being motivated by the line "I'm gonna make him an offer he can't refuse." There 
+  [39/40] cat=5 ✗ (4209 tok)
+     Q: What activity hindered Evan's stress and flexibility?
+     gold: "Not mentioned" (decoy: Yoga)
+     pred: Evan mentioned that yoga has helped him with stress and staying flexible. Therefore, the activity that hindered Evan's stress and improved his flexibility is yoga.
+  [40/40] cat=5 ✗ (5142 tok)
+     Q: What did Sam share a photo of that was taken on a camping trip?
+     gold: "Not mentioned" (decoy: a kayak)
+     pred: Based on the context provided, it appears that Evan mentioned taking a photo on a camping trip, not Sam. Evan said, "Last summer, I took this pic on a camping trip - it was such an amazing sunset." Th
+
+============================================================
+SUMMARY (rough substring match — first-cut heuristic, not final scoring)
+============================================================
+category                hits / total   ≈acc  skip
+cat 5 (Adversarial)        0 / 40        0%     0
+------------------------------------------------------------
+overall                    0 / 40        0%     0
+
+results in /Users/anna/Dropbox/phd-stuff/CODE/2026/agent-memory-benchmarks/2026-04-27-locomo/runs/baseline_qa_20260518_082039.jsonl

@@ -1,0 +1,111 @@
+backend=graph (retrieval model=Qwen/Qwen2.5-72B-Instruct)
+writing to /Users/anna/Dropbox/phd-stuff/CODE/2026/agent-memory-benchmarks/2026-04-27-locomo/runs/baseline_qa_20260518_075004.jsonl
+
+=== conv-30 (Jon & Gina) — 24 questions (filter=cat5) ===
+  loaded cached graph for conv-30: 369 claims, 494 entities, 10973 claim links (delete /Users/anna/Dropbox/phd-stuff/CODE/2026/agent-memory-benchmarks/2026-04-27-locomo/graph_cache/conv-30.pkl to rebuild)
+  [1/24] cat=5 ✓ (4287 tok)
+     Q: What temporary job did Jon take to cover expenses?
+     gold: "Not mentioned" (decoy: Not mentioned)
+     pred: The correct answer is (b) Not mentioned. There is no information in the provided conversation about Jon taking a temporary job to cover expenses.
+  [2/24] cat=5 ✓ (4285 tok)
+     Q: What is Jon's favorite style of painting?
+     gold: "Not mentioned" (decoy: Contemporary)
+     pred: The correct answer is (a) Not mentioned in the conversation. There is no mention of Jon's favorite style of painting in the provided context. The conversations primarily focus on dance and business-re
+  [3/24] cat=5 ✓ (4292 tok)
+     Q: What was Jon's favorite dancing memory?
+     gold: "Not mentioned" (decoy: Winning first place at a regionals dance competition)
+     pred: The correct answer is (a) Not mentioned in the conversation. There is no specific mention of Jon's favorite dancing memory or winning first place at a regionals dance competition in the provided conte
+  [4/24] cat=5 ✓ (4293 tok)
+     Q: What kind of dance piece did Jon's team perform to win first place?
+     gold: "Not mentioned" (decoy: "Finding Freedom")
+     pred: The correct answer is (a) Not mentioned in the conversation. There is no specific mention of a dance piece called "Finding Freedom" or any other named dance piece that Jon's team performed to win firs
+  [5/24] cat=5 ✓ (6062 tok)
+     Q: What is Gina's attitude towards participating in the dance festival?
+     gold: "Not mentioned" (decoy: Glad)
+     pred: (a) Not mentioned in the conversation  The provided memories do not contain any information about Gina's attitude towards participating in a dance festival. There are multiple conversations between Jo
+  [6/24] cat=5 ✓ (5689 tok)
+     Q: What kind of flooring is Gina looking for in her dance studio?
+     gold: "Not mentioned" (decoy: Marley flooring)
+     pred: (a) Not mentioned in the conversation  The conversation does not include any specific details about the type of flooring Gina is looking for in her dance studio. While there are many discussions about
+  [7/24] cat=5 ✓ (4431 tok)
+     Q: What did Jon find for his clothing store on 1 February, 2023?
+     gold: "Not mentioned" (decoy: The perfect spot for her store)
+     pred: (a) Not mentioned in the conversation  The provided context does not contain any information about Jon finding a spot for a clothing store, nor does it mention anything specific happening on February 
+  [8/24] cat=5 ✗ (4290 tok)
+     Q: What did Jon design for his store?
+     gold: "Not mentioned" (decoy: the space, furniture, and decor)
+     pred: The correct answer is (b) the space, furniture, and decor.  This can be inferred from the following memory: "Thanks! Glad you like it. Yeah, it's a great spot. Here's a peek at the space I designed. C
+  [9/24] cat=5 ✓ (4290 tok)
+     Q: What did Jon want his customers to feel in her store?
+     gold: "Not mentioned" (decoy: cozy and comfortable)
+     pred: The correct answer is (a) Not mentioned in the conversation. There is no specific mention of how Jon wants his customers to feel in his store within the provided context. The conversation primarily re
+  [10/24] cat=5 ✓ (4292 tok)
+     Q: What made Jon choose the furniture and decor for his store?
+     gold: "Not mentioned" (decoy: personal style and customer comfort)
+     pred: The correct answer is (a) Not mentioned in the conversation. There is no specific mention in the provided context about Jon choosing furniture and decor for his store or the criteria he used for selec
+  [11/24] cat=5 ✓ (4287 tok)
+     Q: How is Jon's store doing?
+     gold: "Not mentioned" (decoy: The store is doing great.)
+     pred: The correct answer is (a) Not mentioned in the conversation.  The conversation primarily revolves around Gina's clothing store and her recent activities, such as launching an ad campaign and building 
+  [12/24] cat=5 ✓ (4289 tok)
+     Q: What does Jon's tattoo symbolize?
+     gold: "Not mentioned" (decoy: Freedom and expressing himself through dance)
+     pred: (a) Not mentioned in the conversation  The provided context does not contain any information about Jon having a tattoo or what it might symbolize. Therefore, the correct answer is that it is not menti
+  [13/24] cat=5 ✓ (6061 tok)
+     Q: Why did Gina shut down her bank account?
+     gold: "Not mentioned" (decoy: for her business)
+     pred: (a) Not mentioned in the conversation  The provided context does not mention anything about Gina shutting down her bank account. The conversations focus on Jon's plans to start a dance studio and his 
+  [14/24] cat=5 ✗ (4410 tok)
+     Q: Why did Jon combine his clothing business with dance?
+     gold: "Not mentioned" (decoy: he is passionate about dance and fashion)
+     pred: The correct answer is (b) he is passionate about dance and fashion. While the conversation does not explicitly state that Jon combined his clothing business with dance, it is clear from the context th
+  [15/24] cat=5 ✓ (6060 tok)
+     Q: What did Gina receive from a dance contest?
+     gold: "Not mentioned" (decoy: a trophy)
+     pred: The correct answer is (a) Not mentioned in the conversation. There is no mention of Gina receiving anything from a dance contest in the provided conversation. The conversation primarily revolves aroun
+  [16/24] cat=5 ✓ (4299 tok)
+     Q: What kind of professional experience did Jon get accepted for on May 23, 2023?
+     gold: "Not mentioned" (decoy: fashion internship)
+     pred: The correct answer is (a) Not mentioned in the conversation.  The provided context does not mention any specific professional experience or acceptance for Jon on May 23, 2023. The conversations are ce
+  [17/24] cat=5 ✓ (6062 tok)
+     Q: Where is Gina's HR internship?
+     gold: "Not mentioned" (decoy: fashion department of an international company)
+     pred: (a) Not mentioned in the conversation  The provided context does not mention any HR internship for Gina. The conversations primarily focus on Jon's experiences, his plans for a dance studio, and Gina'
+  [18/24] cat=5 ✓ (4288 tok)
+     Q: Where is Jon's fashion internship?
+     gold: "Not mentioned" (decoy: fashion department of an international company)
+     pred: The correct answer is (a) Not mentioned in the conversation. There is no mention of Jon having a fashion internship in the provided context. The conversations focus on Jon's involvement in dance and G
+  [19/24] cat=5 ✓ (6059 tok)
+     Q: What book is Gina currently reading?
+     gold: "Not mentioned" (decoy: The Lean Startup)
+     pred: (a) Not mentioned in the conversation  The provided context does not mention any book that Gina is currently reading. All the conversations revolve around Jon's transition from banking to starting a d
+  [20/24] cat=5 ✓ (6075 tok)
+     Q: How does Gina use the clipboard with a notepad attached to it?
+     gold: "Not mentioned" (decoy: To set goals, track achievements, and find areas for improvement)
+     pred: (a) Not mentioned in the conversation  The provided context does not mention Gina using a clipboard with a notepad attached to it or any specific activities related to setting goals, tracking achievem
+  [21/24] cat=5 ✓ (4289 tok)
+     Q: What did Jon take a trip to Barcelona for?
+     gold: "Not mentioned" (decoy: To clear his mind)
+     pred: (a) Not mentioned in the conversation  The provided context does not mention any trip to Barcelona by Jon or the purpose of such a trip. All the conversations revolve around Jon's dance studio, Gina's
+  [22/24] cat=5 ✓ (4276 tok)
+     Q: What did Jon make a limited edition line of?
+     gold: "Not mentioned" (decoy: Hoodies)
+     pred: The correct answer is (a) Not mentioned in the conversation. The limited edition line mentioned in the conversation is Gina's, not Jon's. Gina says, "This hoodie isn't for sale, it's from my own colle
+  [23/24] cat=5 ✓ (6061 tok)
+     Q: What temporary job did Gina take to cover expenses?
+     gold: "Not mentioned" (decoy: Not mentioned)
+     pred: The correct answer is (b) Not mentioned.  In the provided conversation, there is no mention of Gina taking a temporary job to cover expenses. The conversations primarily focus on Jon's experiences, hi
+  [24/24] cat=5 ✓ (6054 tok)
+     Q: What plans does Gina have after receiving advice at the networking event?
+     gold: "Not mentioned" (decoy: Sprucing up her business plan, tweaking her pitch to investors, and working on an online platform.)
+     pred: The correct answer is (a) Not mentioned in the conversation.  In the provided context, there is no explicit mention of Gina's plans after receiving advice at the networking event. The conversations pr
+
+============================================================
+SUMMARY (rough substring match — first-cut heuristic, not final scoring)
+============================================================
+category                hits / total   ≈acc  skip
+cat 5 (Adversarial)       22 / 24       92%     0
+------------------------------------------------------------
+overall                   22 / 24       92%     0
+
+results in /Users/anna/Dropbox/phd-stuff/CODE/2026/agent-memory-benchmarks/2026-04-27-locomo/runs/baseline_qa_20260518_075004.jsonl

@@ -1,0 +1,1051 @@
+🚀 Starting LoComo Benchmark
+📄 Loading environment from .env
+
+warning: `VIRTUAL_ENV=/Users/anna/Dropbox/phd-stuff/first-memory-benchmarks/.venv311` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead
+2026-05-18 08:00:58,045 - INFO - hindsight_api.engine.providers.openai_compatible_llm - OpenAI-compatible client initialized: provider=openai, model=Qwen/Qwen2.5-72B-Instruct, base_url=https://router.huggingface.co/v1
+2026-05-18 08:00:58,052 - INFO - hindsight_api.engine.providers.openai_compatible_llm - OpenAI-compatible client initialized: provider=openai, model=Qwen/Qwen2.5-72B-Instruct, base_url=https://router.huggingface.co/v1
+2026-05-18 08:00:58,058 - INFO - hindsight_api.engine.providers.openai_compatible_llm - OpenAI-compatible client initialized: provider=openai, model=Qwen/Qwen2.5-72B-Instruct, base_url=https://router.huggingface.co/v1
+2026-05-18 08:00:58,065 - INFO - hindsight_api.engine.providers.openai_compatible_llm - OpenAI-compatible client initialized: provider=openai, model=Qwen/Qwen2.5-72B-Instruct, base_url=https://router.huggingface.co/v1
+2026-05-18 08:00:58,414 - INFO - hindsight_api.engine.providers.openai_compatible_llm - Verifying connection: openai/Qwen/Qwen2.5-72B-Instruct
+2026-05-18 08:00:58,414 - INFO - hindsight_api.engine.cross_encoder - Reranker: initializing local provider with model cross-encoder/ms-marco-MiniLM-L-6-v2
+2026-05-18 08:00:58,414 - INFO - hindsight_api.engine.embeddings - Embeddings: initializing local provider with model BAAI/bge-small-en-v1.5
+2026-05-18 08:00:58,420 - INFO - sentence_transformers.SentenceTransformer - Load pretrained SentenceTransformer: BAAI/bge-small-en-v1.5
+2026-05-18 08:00:58,457 - INFO - hindsight_api.engine.cross_encoder - Reranker: applied transformers 5.x compatibility patch for XLM-RoBERTa
+2026-05-18 08:00:58,970 - INFO - hindsight_api.pg0 - Starting embedded PostgreSQL (name=hindsight, port=auto)...
+Loading weights:   0%|          | 0/105 [00:00<?, ?it/s]Loading weights: 100%|██████████| 105/105 [00:00<00:00, 4270.56it/s]
+2026-05-18 08:00:59,365 - INFO - hindsight_api.pg0 - PostgreSQL started: postgresql://hindsight:hindsight@127.0.0.1:5433/hindsight
+2026-05-18 08:00:59,731 - INFO - hindsight_api.engine.providers.openai_compatible_llm - Connection verified: openai/Qwen/Qwen2.5-72B-Instruct
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 7321.57it/s]
+2026-05-18 08:01:00,807 - INFO - hindsight_api.engine.cross_encoder - Reranker: local provider initialized (max_concurrent=4)
+2026-05-18 08:01:01,366 - INFO - hindsight_api.engine.embeddings - Embeddings: local provider initialized (dim: 384)
+2026-05-18 08:01:01,366 - INFO - hindsight_api.engine.memory_engine - Running database migrations...
+2026-05-18 08:01:01,366 - INFO - hindsight_api.engine.memory_engine - Running migrations on 1 schema(s)...
+2026-05-18 08:01:01,899 - INFO - hindsight_api.migrations - pgvector extension found in public schema - ready to use
+2026-05-18 08:01:01,899 - INFO - hindsight_api.migrations - Running database migrations to head for schema 'public'...
+2026-05-18 08:01:01,899 - INFO - hindsight_api.migrations - Database URL: postgresql://***:***@127.0.0.1:5433/hindsight
+2026-05-18 08:01:01,899 - INFO - hindsight_api.migrations - Script location: /Users/anna/Dropbox/phd-stuff/CODE/2026/hindsight/hindsight-api-slim/hindsight_api/alembic
+2026-05-18 08:01:01,909 - INFO - alembic.runtime.migration - Context impl PostgresqlImpl.
+2026-05-18 08:01:01,909 - INFO - alembic.runtime.migration - Will assume transactional DDL.
+2026-05-18 08:01:01,930 - INFO - hindsight_api.migrations - Database migrations completed successfully for schema 'public'
+2026-05-18 08:01:01,930 - INFO - hindsight_api.engine.memory_engine - Schema migrations completed
+2026-05-18 08:01:01,940 - INFO - hindsight_api.migrations - Using vector extension: pgvector
+2026-05-18 08:01:01,949 - INFO - hindsight_api.migrations - Target vector extension: pgvector
+2026-05-18 08:01:01,993 - INFO - hindsight_api.engine.memory_engine - Connecting to database at postgresql://***:***@127.0.0.1:5433/hindsight
+2026-05-18 08:01:02,004 - INFO - hindsight_api.engine.db.postgresql - PostgreSQL pool created (min=5, max=100, cmd_timeout=60s, acquire_timeout=30s)
+2026-05-18 08:01:03,171 - INFO - hindsight_api.engine.task_backend - BrokerTaskBackend initialized
+2026-05-18 08:01:03,171 - INFO - hindsight_api.engine.memory_engine - Memory system initialized (pool and task backend started)
+Mode: recall+LLM (traditional)
+2026-05-18 08:01:03,180 - INFO - hindsight_api.engine.providers.openai_compatible_llm - OpenAI-compatible client initialized: provider=openai, model=Qwen/Qwen2.5-72B-Instruct, base_url=https://router.huggingface.co/v1
+2026-05-18 08:01:03,187 - INFO - hindsight_api.engine.providers.openai_compatible_llm - OpenAI-compatible client initialized: provider=openai, model=Qwen/Qwen2.5-72B-Instruct, base_url=https://router.huggingface.co/v1
+
+Benchmark Evaluation
+================================================================================
+
+Model Configuration:
+  Hindsight:         openai/Qwen/Qwen2.5-72B-Instruct
+  Answer Generation: openai/Qwen/Qwen2.5-72B-Instruct
+  LLM Judge:         openai/Qwen/Qwen2.5-72B-Instruct
+
+
+[1] Loading dataset from 
+/Users/anna/Dropbox/phd-stuff/CODE/2026/hindsight/hindsight-dev/benchmarks/locomo/datasets/locomo10.json...
+    ✓ Loaded 1 items
+
+[2] Initializing memory system...
+    ✓ Memory system initialized
+
+Item 1/1 (ID: conv-30)
+  [1] Clearing previous agent data...
+      ✓ Cleared 'locomo_conv-30' agent data
+  [2] Ingesting conversation (batch mode)...
+2026-05-18 08:01:03,220 - INFO - hindsight_api.engine.memory_engine - Large batch detected (20,980 tokens from 19 items). Splitting into sub-batches of ~10,000 tokens each...
+2026-05-18 08:01:03,228 - INFO - hindsight_api.engine.memory_engine - Split into 3 sub-batches: [9, 8, 2] items each
+2026-05-18 08:01:03,231 - INFO - hindsight_api.engine.memory_engine - Processing sub-batch 1/3: 9 items, 9,865 tokens
+2026-05-18 08:01:24,656 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=retain_extract_facts, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=4032, output_tokens=629, total_tokens=4661, time=21.331s, ratio out/in=0.16
+2026-05-18 08:01:38,173 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=retain_extract_facts, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=4015, output_tokens=960, total_tokens=4975, time=34.851s, ratio out/in=0.24
+2026-05-18 08:01:38,284 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Phase 1 (entity resolution): 0.054s
+2026-05-18 08:01:38,394 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Phase 2 (write txn): 0.110s
+2026-05-18 08:01:38,414 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Consumer batch 1 total (excluding fire-and-forget): 0.184s
+2026-05-18 08:01:38,426 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Final ANN chunk 1/1: 38 links in 0.012s
+2026-05-18 08:01:38,426 - INFO - hindsight_api.engine.retain.orchestrator - 
+============================================================
+RETAIN_BATCH START: locomo_conv-30
+Batch size: 1 content items, 5,275 chars
+============================================================
+[streaming] 2 chunks, batch_size 100 — 1 batch
+  Extract facts: 4 facts, 1 chunks from 1 contents in 21.336s
+  Generate embeddings: 4 embeddings in 0.241s
+  Extract facts: 6 facts, 1 chunks from 1 contents in 34.852s
+  Generate embeddings: 6 embeddings in 0.055s
+[streaming] Consumer batch 1: processing 10 facts from 2 chunks
+[streaming] Document conv-30_session_1 tracked (full content)
+  Store chunks: 2 chunks in 0.004s
+  Insert facts: 10 units in 0.000s
+  Insert unit_entities: 29 pairs in 0.007s
+  Temporal links: 72 links in 0.015s
+  Semantic links: skipped (deferred to final ANN pass)
+  Causal links: 2 links in 0.001s
+  Entity links (viz): 62 links in 0.014s
+[streaming] Final ANN: loaded 10 units with embeddings in 0.001s
+      [8.1] ANN search (Phase 1): 10 units → 38 links in 0.010s
+[streaming] Final ANN: 38 total semantic links
+[streaming] Final ANN pass: 0.012s for 10 units
+============================================================
+STREAMING RETAIN COMPLETE: 10 units across 1 batches in 35.186s
+Document: conv-30_session_1
+============================================================
+
+2026-05-18 08:02:04,043 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=retain_extract_facts, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=3393, output_tokens=572, total_tokens=3965, time=25.613s, ratio out/in=0.17
+2026-05-18 08:02:39,000 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=retain_extract_facts, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=4068, output_tokens=1531, total_tokens=5599, time=60.571s, ratio out/in=0.38
+2026-05-18 08:02:39,070 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Phase 1 (entity resolution): 0.006s
+2026-05-18 08:02:39,097 - WARNING - hindsight_api.engine.retain.link_utils - Invalid target_fact_index 15 in causal relation from fact 12
+2026-05-18 08:02:39,097 - WARNING - hindsight_api.engine.retain.link_utils - Invalid target_fact_index 17 in causal relation from fact 13
+2026-05-18 08:02:39,097 - WARNING - hindsight_api.engine.retain.link_utils - Invalid target_fact_index 19 in causal relation from fact 14
+2026-05-18 08:02:39,098 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Phase 2 (write txn): 0.028s
+2026-05-18 08:02:39,115 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Consumer batch 1 total (excluding fire-and-forget): 0.051s
+2026-05-18 08:02:39,130 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Final ANN chunk 1/1: 129 links in 0.014s
+2026-05-18 08:02:39,130 - INFO - hindsight_api.engine.retain.orchestrator - 
+============================================================
+RETAIN_BATCH START: locomo_conv-30
+Batch size: 1 content items, 3,484 chars
+============================================================
+[streaming] 2 chunks, batch_size 100 — 1 batch
+  Extract facts: 4 facts, 1 chunks from 1 contents in 25.616s
+  Generate embeddings: 4 embeddings in 0.048s
+  Extract facts: 11 facts, 1 chunks from 1 contents in 60.573s
+  Generate embeddings: 11 embeddings in 0.063s
+[streaming] Consumer batch 1: processing 15 facts from 2 chunks
+[streaming] Document conv-30_session_10 tracked (full content)
+  Store chunks: 2 chunks in 0.001s
+  Insert facts: 15 units in 0.000s
+  Insert unit_entities: 29 pairs in 0.001s
+  Temporal links: 262 links in 0.009s
+  Semantic links: skipped (deferred to final ANN pass)
+  Causal links: 6 links in 0.000s
+  Entity links (viz): 490 links in 0.016s
+[streaming] Final ANN: loaded 15 units with embeddings in 0.001s
+      [8.1] ANN search (Phase 1): 15 units → 129 links in 0.011s
+[streaming] Final ANN: 129 total semantic links
+[streaming] Final ANN pass: 0.015s for 15 units
+============================================================
+STREAMING RETAIN COMPLETE: 15 units across 1 batches in 60.704s
+Document: conv-30_session_10
+============================================================
+
+2026-05-18 08:03:06,544 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=retain_extract_facts, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=3440, output_tokens=743, total_tokens=4183, time=27.410s, ratio out/in=0.22
+2026-05-18 08:03:13,158 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=retain_extract_facts, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=4110, output_tokens=843, total_tokens=4953, time=34.026s, ratio out/in=0.21
+2026-05-18 08:03:13,217 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Phase 1 (entity resolution): 0.004s
+2026-05-18 08:03:13,239 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Phase 2 (write txn): 0.022s
+2026-05-18 08:03:13,251 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Consumer batch 1 total (excluding fire-and-forget): 0.038s
+2026-05-18 08:03:13,268 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Final ANN chunk 1/1: 135 links in 0.016s
+2026-05-18 08:03:13,268 - INFO - hindsight_api.engine.retain.orchestrator - 
+============================================================
+RETAIN_BATCH START: locomo_conv-30
+Batch size: 1 content items, 3,611 chars
+============================================================
+[streaming] 2 chunks, batch_size 100 — 1 batch
+  Extract facts: 5 facts, 1 chunks from 1 contents in 27.413s
+  Generate embeddings: 5 embeddings in 0.049s
+  Extract facts: 6 facts, 1 chunks from 1 contents in 34.027s
+  Generate embeddings: 6 embeddings in 0.054s
+[streaming] Consumer batch 1: processing 11 facts from 2 chunks
+[streaming] Document conv-30_session_11 tracked (full content)
+  Store chunks: 2 chunks in 0.001s
+  Insert facts: 11 units in 0.000s
+  Insert unit_entities: 26 pairs in 0.001s
+  Temporal links: 208 links in 0.007s
+  Semantic links: skipped (deferred to final ANN pass)
+  Causal links: 2 links in 0.000s
+  Entity links (viz): 328 links in 0.010s
+[streaming] Final ANN: loaded 11 units with embeddings in 0.001s
+      [8.1] ANN search (Phase 1): 11 units → 135 links in 0.012s
+[streaming] Final ANN: 135 total semantic links
+[streaming] Final ANN pass: 0.017s for 11 units
+============================================================
+STREAMING RETAIN COMPLETE: 11 units across 1 batches in 34.137s
+Document: conv-30_session_11
+============================================================
+
+2026-05-18 08:03:35,318 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=retain_extract_facts, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=3340, output_tokens=299, total_tokens=3639, time=22.047s, ratio out/in=0.09
+2026-05-18 08:04:27,443 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=retain_extract_facts, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=4121, output_tokens=1043, total_tokens=5164, time=74.173s, ratio out/in=0.25
+2026-05-18 08:04:27,504 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Phase 1 (entity resolution): 0.004s
+2026-05-18 08:04:27,526 - WARNING - hindsight_api.engine.retain.link_utils - Invalid target_fact_index 11 in causal relation from fact 8
+2026-05-18 08:04:27,527 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Phase 2 (write txn): 0.023s
+2026-05-18 08:04:27,536 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Consumer batch 1 total (excluding fire-and-forget): 0.036s
+2026-05-18 08:04:27,552 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Final ANN chunk 1/1: 131 links in 0.015s
+2026-05-18 08:04:27,552 - INFO - hindsight_api.engine.retain.orchestrator - 
+============================================================
+RETAIN_BATCH START: locomo_conv-30
+Batch size: 1 content items, 3,342 chars
+============================================================
+[streaming] 2 chunks, batch_size 100 — 1 batch
+  Extract facts: 2 facts, 1 chunks from 1 contents in 22.049s
+  Generate embeddings: 2 embeddings in 0.044s
+  Extract facts: 7 facts, 1 chunks from 1 contents in 74.174s
+  Generate embeddings: 7 embeddings in 0.057s
+[streaming] Consumer batch 1: processing 9 facts from 2 chunks
+[streaming] Document conv-30_session_12 tracked (full content)
+  Store chunks: 2 chunks in 0.000s
+  Insert facts: 9 units in 0.000s
+  Insert unit_entities: 22 pairs in 0.001s
+  Temporal links: 180 links in 0.008s
+  Semantic links: skipped (deferred to final ANN pass)
+  Causal links: 2 links in 0.000s
+  Entity links (viz): 224 links in 0.008s
+[streaming] Final ANN: loaded 9 units with embeddings in 0.001s
+      [8.1] ANN search (Phase 1): 9 units → 131 links in 0.012s
+[streaming] Final ANN: 131 total semantic links
+[streaming] Final ANN pass: 0.016s for 9 units
+============================================================
+STREAMING RETAIN COMPLETE: 9 units across 1 batches in 74.285s
+Document: conv-30_session_12
+============================================================
+
+2026-05-18 08:04:41,778 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=retain_extract_facts, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=3657, output_tokens=431, total_tokens=4088, time=14.221s, ratio out/in=0.12
+2026-05-18 08:05:43,610 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=retain_extract_facts, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=4063, output_tokens=1084, total_tokens=5147, time=76.055s, ratio out/in=0.27
+2026-05-18 08:05:43,673 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Phase 1 (entity resolution): 0.005s
+2026-05-18 08:05:43,696 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Phase 2 (write txn): 0.023s
+2026-05-18 08:05:43,706 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Consumer batch 1 total (excluding fire-and-forget): 0.038s
+2026-05-18 08:05:43,728 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Final ANN chunk 1/1: 183 links in 0.020s
+2026-05-18 08:05:43,728 - INFO - hindsight_api.engine.retain.orchestrator - 
+============================================================
+RETAIN_BATCH START: locomo_conv-30
+Batch size: 1 content items, 4,265 chars
+============================================================
+[streaming] 2 chunks, batch_size 100 — 1 batch
+  Extract facts: 3 facts, 1 chunks from 1 contents in 14.224s
+  Generate embeddings: 3 embeddings in 0.046s
+  Extract facts: 8 facts, 1 chunks from 1 contents in 76.056s
+  Generate embeddings: 8 embeddings in 0.057s
+[streaming] Consumer batch 1: processing 11 facts from 2 chunks
+[streaming] Document conv-30_session_13 tracked (full content)
+  Store chunks: 2 chunks in 0.000s
+  Insert facts: 11 units in 0.000s
+  Insert unit_entities: 27 pairs in 0.001s
+  Temporal links: 220 links in 0.006s
+  Semantic links: skipped (deferred to final ANN pass)
+  Causal links: 1 links in 0.000s
+  Entity links (viz): 244 links in 0.008s
+[streaming] Final ANN: loaded 11 units with embeddings in 0.001s
+      [8.1] ANN search (Phase 1): 11 units → 183 links in 0.017s
+[streaming] Final ANN: 183 total semantic links
+[streaming] Final ANN pass: 0.021s for 11 units
+============================================================
+STREAMING RETAIN COMPLETE: 11 units across 1 batches in 76.175s
+Document: conv-30_session_13
+============================================================
+
+2026-05-18 08:06:11,585 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=retain_extract_facts, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=3436, output_tokens=791, total_tokens=4227, time=27.853s, ratio out/in=0.23
+2026-05-18 08:06:44,250 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=retain_extract_facts, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=4073, output_tokens=832, total_tokens=4905, time=60.520s, ratio out/in=0.20
+2026-05-18 08:06:44,303 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Phase 1 (entity resolution): 0.005s
+2026-05-18 08:06:44,331 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Phase 2 (write txn): 0.027s
+2026-05-18 08:06:44,338 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Consumer batch 1 total (excluding fire-and-forget): 0.039s
+2026-05-18 08:06:44,366 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Final ANN chunk 1/1: 212 links in 0.027s
+2026-05-18 08:06:44,366 - INFO - hindsight_api.engine.retain.orchestrator - 
+============================================================
+RETAIN_BATCH START: locomo_conv-30
+Batch size: 1 content items, 3,513 chars
+============================================================
+[streaming] 2 chunks, batch_size 100 — 1 batch
+  Extract facts: 5 facts, 1 chunks from 1 contents in 27.856s
+  Generate embeddings: 5 embeddings in 0.051s
+  Extract facts: 6 facts, 1 chunks from 1 contents in 60.521s
+  Generate embeddings: 6 embeddings in 0.048s
+[streaming] Consumer batch 1: processing 11 facts from 2 chunks
+[streaming] Document conv-30_session_14 tracked (full content)
+  Store chunks: 2 chunks in 0.001s
+  Insert facts: 11 units in 0.000s
+  Insert unit_entities: 25 pairs in 0.001s
+  Temporal links: 220 links in 0.006s
+  Semantic links: skipped (deferred to final ANN pass)
+  Causal links: 3 links in 0.000s
+  Entity links (viz): 168 links in 0.006s
+[streaming] Final ANN: loaded 11 units with embeddings in 0.001s
+      [8.1] ANN search (Phase 1): 11 units → 212 links in 0.022s
+[streaming] Final ANN: 212 total semantic links
+[streaming] Final ANN pass: 0.028s for 11 units
+============================================================
+STREAMING RETAIN COMPLETE: 11 units across 1 batches in 60.638s
+Document: conv-30_session_14
+============================================================
+
+2026-05-18 08:06:59,013 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=retain_extract_facts, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=3406, output_tokens=369, total_tokens=3775, time=14.643s, ratio out/in=0.11
+2026-05-18 08:07:16,177 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=retain_extract_facts, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=4147, output_tokens=782, total_tokens=4929, time=31.809s, ratio out/in=0.19
+2026-05-18 08:07:16,234 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Phase 1 (entity resolution): 0.004s
+2026-05-18 08:07:16,252 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Phase 2 (write txn): 0.018s
+2026-05-18 08:07:16,260 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Consumer batch 1 total (excluding fire-and-forget): 0.031s
+2026-05-18 08:07:16,281 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Final ANN chunk 1/1: 137 links in 0.020s
+2026-05-18 08:07:16,281 - INFO - hindsight_api.engine.retain.orchestrator - 
+============================================================
+RETAIN_BATCH START: locomo_conv-30
+Batch size: 1 content items, 3,440 chars
+============================================================
+[streaming] 2 chunks, batch_size 100 — 1 batch
+  Extract facts: 2 facts, 1 chunks from 1 contents in 14.646s
+  Generate embeddings: 2 embeddings in 0.042s
+  Extract facts: 5 facts, 1 chunks from 1 contents in 31.810s
+  Generate embeddings: 5 embeddings in 0.052s
+[streaming] Consumer batch 1: processing 7 facts from 2 chunks
+[streaming] Document conv-30_session_15 tracked (full content)
+  Store chunks: 2 chunks in 0.000s
+  Insert facts: 7 units in 0.000s
+  Insert unit_entities: 18 pairs in 0.001s
+  Temporal links: 140 links in 0.004s
+  Semantic links: skipped (deferred to final ANN pass)
+  Causal links: 1 links in 0.000s
+  Entity links (viz): 204 links in 0.007s
+[streaming] Final ANN: loaded 7 units with embeddings in 0.001s
+      [8.1] ANN search (Phase 1): 7 units → 137 links in 0.017s
+[streaming] Final ANN: 137 total semantic links
+[streaming] Final ANN pass: 0.021s for 7 units
+============================================================
+STREAMING RETAIN COMPLETE: 7 units across 1 batches in 31.915s
+Document: conv-30_session_15
+============================================================
+
+2026-05-18 08:08:08,231 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=retain_extract_facts, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=4091, output_tokens=830, total_tokens=4921, time=51.948s, ratio out/in=0.20
+2026-05-18 08:08:08,288 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Phase 1 (entity resolution): 0.003s
+2026-05-18 08:08:08,307 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Phase 2 (write txn): 0.019s
+2026-05-18 08:08:08,311 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Consumer batch 1 total (excluding fire-and-forget): 0.027s
+2026-05-18 08:08:08,329 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Final ANN chunk 1/1: 124 links in 0.017s
+2026-05-18 08:08:08,329 - INFO - hindsight_api.engine.retain.orchestrator - 
+============================================================
+RETAIN_BATCH START: locomo_conv-30
+Batch size: 1 content items, 3,045 chars
+============================================================
+[streaming] 2 chunks, batch_size 100 — 1 batch
+  Extract facts: 1 facts, 1 chunks from 1 contents in 6.633s
+  Generate embeddings: 1 embeddings in 0.036s
+  Extract facts: 6 facts, 1 chunks from 1 contents in 51.949s
+  Generate embeddings: 6 embeddings in 0.053s
+[streaming] Consumer batch 1: processing 7 facts from 2 chunks
+[streaming] Document conv-30_session_16 tracked (full content)
+  Store chunks: 2 chunks in 0.000s
+  Insert facts: 7 units in 0.000s
+  Insert unit_entities: 16 pairs in 0.001s
+  Temporal links: 140 links in 0.006s
+  Semantic links: skipped (deferred to final ANN pass)
+  Causal links: 0 links in 0.000s
+  Entity links (viz): 54 links in 0.003s
+[streaming] Final ANN: loaded 7 units with embeddings in 0.001s
+      [8.1] ANN search (Phase 1): 7 units → 124 links in 0.013s
+[streaming] Final ANN: 124 total semantic links
+[streaming] Final ANN pass: 0.017s for 7 units
+============================================================
+STREAMING RETAIN COMPLETE: 7 units across 1 batches in 52.048s
+Document: conv-30_session_16
+============================================================
+
+2026-05-18 08:08:28,798 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=retain_extract_facts, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=3521, output_tokens=304, total_tokens=3825, time=20.466s, ratio out/in=0.09
+2026-05-18 08:08:43,140 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=retain_extract_facts, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=4047, output_tokens=894, total_tokens=4941, time=34.809s, ratio out/in=0.22
+2026-05-18 08:08:43,199 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Phase 1 (entity resolution): 0.004s
+2026-05-18 08:08:43,217 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Phase 2 (write txn): 0.018s
+2026-05-18 08:08:43,223 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Consumer batch 1 total (excluding fire-and-forget): 0.028s
+2026-05-18 08:08:43,244 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Final ANN chunk 1/1: 160 links in 0.020s
+2026-05-18 08:08:43,244 - INFO - hindsight_api.engine.retain.orchestrator - 
+============================================================
+RETAIN_BATCH START: locomo_conv-30
+Batch size: 1 content items, 3,708 chars
+============================================================
+[streaming] 2 chunks, batch_size 100 — 1 batch
+  Extract facts: 2 facts, 1 chunks from 1 contents in 20.468s
+  Generate embeddings: 2 embeddings in 0.027s
+  Extract facts: 6 facts, 1 chunks from 1 contents in 34.810s
+  Generate embeddings: 6 embeddings in 0.055s
+[streaming] Consumer batch 1: processing 8 facts from 2 chunks
+[streaming] Document conv-30_session_17 tracked (full content)
+  Store chunks: 2 chunks in 0.000s
+  Insert facts: 8 units in 0.000s
+  Insert unit_entities: 17 pairs in 0.001s
+  Temporal links: 160 links in 0.005s
+  Semantic links: skipped (deferred to final ANN pass)
+  Causal links: 0 links in 0.000s
+  Entity links (viz): 122 links in 0.004s
+[streaming] Final ANN: loaded 8 units with embeddings in 0.001s
+      [8.1] ANN search (Phase 1): 8 units → 160 links in 0.017s
+[streaming] Final ANN: 160 total semantic links
+[streaming] Final ANN pass: 0.021s for 8 units
+============================================================
+STREAMING RETAIN COMPLETE: 8 units across 1 batches in 34.916s
+Document: conv-30_session_17
+============================================================
+
+2026-05-18 08:08:43,247 - INFO - hindsight_api.engine.memory_engine - Processing sub-batch 2/3: 8 items, 8,442 tokens
+2026-05-18 08:09:07,818 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=retain_extract_facts, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=3842, output_tokens=642, total_tokens=4484, time=24.566s, ratio out/in=0.17
+2026-05-18 08:09:30,755 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=retain_extract_facts, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=4058, output_tokens=809, total_tokens=4867, time=47.505s, ratio out/in=0.20
+2026-05-18 08:09:30,815 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Phase 1 (entity resolution): 0.005s
+2026-05-18 08:09:30,836 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Phase 2 (write txn): 0.021s
+2026-05-18 08:09:30,844 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Consumer batch 1 total (excluding fire-and-forget): 0.034s
+2026-05-18 08:09:30,869 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Final ANN chunk 1/1: 166 links in 0.024s
+2026-05-18 08:09:30,869 - INFO - hindsight_api.engine.retain.orchestrator - 
+============================================================
+RETAIN_BATCH START: locomo_conv-30
+Batch size: 1 content items, 5,061 chars
+============================================================
+[streaming] 2 chunks, batch_size 100 — 1 batch
+  Extract facts: 4 facts, 1 chunks from 1 contents in 24.569s
+  Generate embeddings: 4 embeddings in 0.049s
+  Extract facts: 5 facts, 1 chunks from 1 contents in 47.506s
+  Generate embeddings: 5 embeddings in 0.055s
+[streaming] Consumer batch 1: processing 9 facts from 2 chunks
+[streaming] Document conv-30_session_18 tracked (full content)
+  Store chunks: 2 chunks in 0.001s
+  Insert facts: 9 units in 0.000s
+  Insert unit_entities: 30 pairs in 0.001s
+  Temporal links: 180 links in 0.006s
+  Semantic links: skipped (deferred to final ANN pass)
+  Causal links: 3 links in 0.000s
+  Entity links (viz): 132 links in 0.005s
+[streaming] Final ANN: loaded 9 units with embeddings in 0.001s
+      [8.1] ANN search (Phase 1): 9 units → 166 links in 0.021s
+[streaming] Final ANN: 166 total semantic links
+[streaming] Final ANN pass: 0.025s for 9 units
+============================================================
+STREAMING RETAIN COMPLETE: 9 units across 1 batches in 47.621s
+Document: conv-30_session_18
+============================================================
+
+2026-05-18 08:10:11,103 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=retain_extract_facts, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=3905, output_tokens=1050, total_tokens=4955, time=40.232s, ratio out/in=0.27
+2026-05-18 08:10:11,165 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Phase 1 (entity resolution): 0.005s
+2026-05-18 08:10:11,184 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Phase 2 (write txn): 0.018s
+2026-05-18 08:10:11,189 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Consumer batch 1 total (excluding fire-and-forget): 0.028s
+2026-05-18 08:10:11,212 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Final ANN chunk 1/1: 160 links in 0.022s
+2026-05-18 08:10:11,212 - INFO - hindsight_api.engine.retain.orchestrator - 
+============================================================
+RETAIN_BATCH START: locomo_conv-30
+Batch size: 1 content items, 2,163 chars
+============================================================
+[streaming] 1 chunks, batch_size 100 — 1 batch
+  Extract facts: 8 facts, 1 chunks from 1 contents in 40.233s
+  Generate embeddings: 8 embeddings in 0.057s
+[streaming] Consumer batch 1: processing 8 facts from 1 chunks
+[streaming] Document conv-30_session_19 tracked (full content)
+  Store chunks: 1 chunks in 0.000s
+  Insert facts: 8 units in 0.000s
+  Insert unit_entities: 19 pairs in 0.001s
+  Temporal links: 160 links in 0.005s
+  Semantic links: skipped (deferred to final ANN pass)
+  Causal links: 0 links in 0.000s
+  Entity links (viz): 36 links in 0.002s
+[streaming] Final ANN: loaded 8 units with embeddings in 0.001s
+      [8.1] ANN search (Phase 1): 8 units → 160 links in 0.019s
+[streaming] Final ANN: 160 total semantic links
+[streaming] Final ANN pass: 0.023s for 8 units
+============================================================
+STREAMING RETAIN COMPLETE: 8 units across 1 batches in 40.343s
+Document: conv-30_session_19
+============================================================
+
+2026-05-18 08:10:29,636 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=retain_extract_facts, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=3426, output_tokens=537, total_tokens=3963, time=18.421s, ratio out/in=0.16
+2026-05-18 08:11:00,971 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=retain_extract_facts, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=4024, output_tokens=1278, total_tokens=5302, time=49.757s, ratio out/in=0.32
+2026-05-18 08:11:01,040 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Phase 1 (entity resolution): 0.006s
+2026-05-18 08:11:01,067 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Phase 2 (write txn): 0.027s
+2026-05-18 08:11:01,076 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Consumer batch 1 total (excluding fire-and-forget): 0.042s
+2026-05-18 08:11:01,120 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Final ANN chunk 1/1: 260 links in 0.043s
+2026-05-18 08:11:01,120 - INFO - hindsight_api.engine.retain.orchestrator - 
+============================================================
+RETAIN_BATCH START: locomo_conv-30
+Batch size: 1 content items, 3,543 chars
+============================================================
+[streaming] 2 chunks, batch_size 100 — 1 batch
+  Extract facts: 4 facts, 1 chunks from 1 contents in 18.424s
+  Generate embeddings: 4 embeddings in 0.046s
+  Extract facts: 9 facts, 1 chunks from 1 contents in 49.759s
+  Generate embeddings: 9 embeddings in 0.062s
+[streaming] Consumer batch 1: processing 13 facts from 2 chunks
+[streaming] Document conv-30_session_2 tracked (full content)
+  Store chunks: 2 chunks in 0.001s
+  Insert facts: 13 units in 0.000s
+  Insert unit_entities: 29 pairs in 0.001s
+  Temporal links: 260 links in 0.006s
+  Semantic links: skipped (deferred to final ANN pass)
+  Causal links: 1 links in 0.000s
+  Entity links (viz): 232 links in 0.007s
+[streaming] Final ANN: loaded 13 units with embeddings in 0.001s
+      [8.1] ANN search (Phase 1): 13 units → 260 links in 0.038s
+[streaming] Final ANN: 260 total semantic links
+[streaming] Final ANN pass: 0.044s for 13 units
+============================================================
+STREAMING RETAIN COMPLETE: 13 units across 1 batches in 49.908s
+Document: conv-30_session_2
+============================================================
+
+2026-05-18 08:11:15,613 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=retain_extract_facts, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=3324, output_tokens=297, total_tokens=3621, time=14.490s, ratio out/in=0.09
+2026-05-18 08:11:37,118 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=retain_extract_facts, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=4071, output_tokens=831, total_tokens=4902, time=35.997s, ratio out/in=0.20
+2026-05-18 08:11:37,176 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Phase 1 (entity resolution): 0.004s
+2026-05-18 08:11:37,193 - WARNING - hindsight_api.engine.retain.link_utils - Invalid target_fact_index 7 in causal relation from fact 6
+2026-05-18 08:11:37,194 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Phase 2 (write txn): 0.018s
+2026-05-18 08:11:37,199 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Consumer batch 1 total (excluding fire-and-forget): 0.027s
+2026-05-18 08:11:37,229 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Final ANN chunk 1/1: 139 links in 0.029s
+2026-05-18 08:11:37,229 - INFO - hindsight_api.engine.retain.orchestrator - 
+============================================================
+RETAIN_BATCH START: locomo_conv-30
+Batch size: 1 content items, 3,300 chars
+============================================================
+[streaming] 2 chunks, batch_size 100 — 1 batch
+  Extract facts: 2 facts, 1 chunks from 1 contents in 14.492s
+  Generate embeddings: 2 embeddings in 0.042s
+  Extract facts: 5 facts, 1 chunks from 1 contents in 35.998s
+  Generate embeddings: 5 embeddings in 0.053s
+[streaming] Consumer batch 1: processing 7 facts from 2 chunks
+[streaming] Document conv-30_session_3 tracked (full content)
+  Store chunks: 2 chunks in 0.001s
+  Insert facts: 7 units in 0.000s
+  Insert unit_entities: 16 pairs in 0.001s
+  Temporal links: 140 links in 0.004s
+  Semantic links: skipped (deferred to final ANN pass)
+  Causal links: 1 links in 0.000s
+  Entity links (viz): 80 links in 0.003s
+[streaming] Final ANN: loaded 7 units with embeddings in 0.001s
+      [8.1] ANN search (Phase 1): 7 units → 139 links in 0.026s
+[streaming] Final ANN: 139 total semantic links
+[streaming] Final ANN pass: 0.030s for 7 units
+============================================================
+STREAMING RETAIN COMPLETE: 7 units across 1 batches in 36.109s
+Document: conv-30_session_3
+============================================================
+
+2026-05-18 08:12:05,483 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=retain_extract_facts, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=4143, output_tokens=737, total_tokens=4880, time=28.252s, ratio out/in=0.18
+2026-05-18 08:12:05,537 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Phase 1 (entity resolution): 0.005s
+2026-05-18 08:12:05,555 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Phase 2 (write txn): 0.018s
+2026-05-18 08:12:05,563 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Consumer batch 1 total (excluding fire-and-forget): 0.030s
+2026-05-18 08:12:05,583 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Final ANN chunk 1/1: 120 links in 0.019s
+2026-05-18 08:12:05,583 - INFO - hindsight_api.engine.retain.orchestrator - 
+============================================================
+RETAIN_BATCH START: locomo_conv-30
+Batch size: 1 content items, 2,999 chars
+============================================================
+[streaming] 1 chunks, batch_size 100 — 1 batch
+  Extract facts: 6 facts, 1 chunks from 1 contents in 28.253s
+  Generate embeddings: 6 embeddings in 0.049s
+[streaming] Consumer batch 1: processing 6 facts from 1 chunks
+[streaming] Document conv-30_session_4 tracked (full content)
+  Store chunks: 1 chunks in 0.000s
+  Insert facts: 6 units in 0.000s
+  Insert unit_entities: 12 pairs in 0.001s
+  Temporal links: 120 links in 0.006s
+  Semantic links: skipped (deferred to final ANN pass)
+  Causal links: 0 links in 0.000s
+  Entity links (viz): 142 links in 0.006s
+[streaming] Final ANN: loaded 6 units with embeddings in 0.001s
+      [8.1] ANN search (Phase 1): 6 units → 120 links in 0.016s
+[streaming] Final ANN: 120 total semantic links
+[streaming] Final ANN pass: 0.020s for 6 units
+============================================================
+STREAMING RETAIN COMPLETE: 6 units across 1 batches in 28.354s
+Document: conv-30_session_4
+============================================================
+
+2026-05-18 08:12:41,895 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=retain_extract_facts, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=4006, output_tokens=975, total_tokens=4981, time=36.310s, ratio out/in=0.24
+2026-05-18 08:13:12,582 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=retain_extract_facts, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=4040, output_tokens=1862, total_tokens=5902, time=66.995s, ratio out/in=0.46
+2026-05-18 08:13:12,658 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Phase 1 (entity resolution): 0.005s
+2026-05-18 08:13:12,691 - WARNING - hindsight_api.engine.retain.link_utils - Invalid target_fact_index 19 in causal relation from fact 18
+2026-05-18 08:13:12,692 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Phase 2 (write txn): 0.034s
+2026-05-18 08:13:12,708 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Consumer batch 1 total (excluding fire-and-forget): 0.055s
+2026-05-18 08:13:12,787 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Final ANN chunk 1/1: 380 links in 0.078s
+2026-05-18 08:13:12,787 - INFO - hindsight_api.engine.retain.orchestrator - 
+============================================================
+RETAIN_BATCH START: locomo_conv-30
+Batch size: 1 content items, 5,917 chars
+============================================================
+[streaming] 3 chunks, batch_size 100 — 1 batch
+  Extract facts: 1 facts, 1 chunks from 1 contents in 6.862s
+  Generate embeddings: 1 embeddings in 0.035s
+  Extract facts: 7 facts, 1 chunks from 1 contents in 36.312s
+  Generate embeddings: 7 embeddings in 0.053s
+  Extract facts: 11 facts, 1 chunks from 1 contents in 66.998s
+  Generate embeddings: 11 embeddings in 0.070s
+[streaming] Consumer batch 1: processing 19 facts from 3 chunks
+[streaming] Document conv-30_session_5 tracked (full content)
+  Store chunks: 3 chunks in 0.001s
+  Insert facts: 19 units in 0.000s
+  Insert unit_entities: 54 pairs in 0.001s
+  Temporal links: 380 links in 0.008s
+  Semantic links: skipped (deferred to final ANN pass)
+  Causal links: 6 links in 0.000s
+  Entity links (viz): 548 links in 0.014s
+[streaming] Final ANN: loaded 19 units with embeddings in 0.001s
+      [8.1] ANN search (Phase 1): 19 units → 380 links in 0.071s
+[streaming] Final ANN: 380 total semantic links
+[streaming] Final ANN pass: 0.078s for 19 units
+============================================================
+STREAMING RETAIN COMPLETE: 19 units across 1 batches in 67.203s
+Document: conv-30_session_5
+============================================================
+
+2026-05-18 08:13:32,113 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=retain_extract_facts, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=3459, output_tokens=294, total_tokens=3753, time=19.322s, ratio out/in=0.08
+2026-05-18 08:13:37,440 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=retain_extract_facts, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=4095, output_tokens=667, total_tokens=4762, time=24.651s, ratio out/in=0.16
+2026-05-18 08:13:37,496 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Phase 1 (entity resolution): 0.005s
+2026-05-18 08:13:37,512 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Phase 2 (write txn): 0.016s
+2026-05-18 08:13:37,518 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Consumer batch 1 total (excluding fire-and-forget): 0.027s
+2026-05-18 08:13:37,544 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Final ANN chunk 1/1: 109 links in 0.026s
+2026-05-18 08:13:37,544 - INFO - hindsight_api.engine.retain.orchestrator - 
+============================================================
+RETAIN_BATCH START: locomo_conv-30
+Batch size: 1 content items, 3,618 chars
+============================================================
+[streaming] 2 chunks, batch_size 100 — 1 batch
+  Extract facts: 2 facts, 1 chunks from 1 contents in 19.325s
+  Generate embeddings: 2 embeddings in 0.044s
+  Extract facts: 4 facts, 1 chunks from 1 contents in 24.652s
+  Generate embeddings: 4 embeddings in 0.050s
+[streaming] Consumer batch 1: processing 6 facts from 2 chunks
+[streaming] Document conv-30_session_6 tracked (full content)
+  Store chunks: 2 chunks in 0.001s
+  Insert facts: 6 units in 0.000s
+  Insert unit_entities: 16 pairs in 0.001s
+  Temporal links: 120 links in 0.004s
+  Semantic links: skipped (deferred to final ANN pass)
+  Causal links: 1 links in 0.000s
+  Entity links (viz): 92 links in 0.004s
+[streaming] Final ANN: loaded 6 units with embeddings in 0.001s
+      [8.1] ANN search (Phase 1): 6 units → 109 links in 0.023s
+[streaming] Final ANN: 109 total semantic links
+[streaming] Final ANN pass: 0.026s for 6 units
+============================================================
+STREAMING RETAIN COMPLETE: 6 units across 1 batches in 24.758s
+Document: conv-30_session_6
+============================================================
+
+2026-05-18 08:14:06,522 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=retain_extract_facts, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=4099, output_tokens=807, total_tokens=4906, time=28.976s, ratio out/in=0.20
+2026-05-18 08:14:06,580 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Phase 1 (entity resolution): 0.005s
+2026-05-18 08:14:06,597 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Phase 2 (write txn): 0.017s
+2026-05-18 08:14:06,601 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Consumer batch 1 total (excluding fire-and-forget): 0.026s
+2026-05-18 08:14:06,629 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Final ANN chunk 1/1: 119 links in 0.027s
+2026-05-18 08:14:06,629 - INFO - hindsight_api.engine.retain.orchestrator - 
+============================================================
+RETAIN_BATCH START: locomo_conv-30
+Batch size: 1 content items, 2,952 chars
+============================================================
+[streaming] 1 chunks, batch_size 100 — 1 batch
+  Extract facts: 6 facts, 1 chunks from 1 contents in 28.977s
+  Generate embeddings: 6 embeddings in 0.053s
+[streaming] Consumer batch 1: processing 6 facts from 1 chunks
+[streaming] Document conv-30_session_7 tracked (full content)
+  Store chunks: 1 chunks in 0.000s
+  Insert facts: 6 units in 0.000s
+  Insert unit_entities: 12 pairs in 0.001s
+  Temporal links: 120 links in 0.004s
+  Semantic links: skipped (deferred to final ANN pass)
+  Causal links: 1 links in 0.000s
+  Entity links (viz): 26 links in 0.002s
+[streaming] Final ANN: loaded 6 units with embeddings in 0.001s
+      [8.1] ANN search (Phase 1): 6 units → 119 links in 0.024s
+[streaming] Final ANN: 119 total semantic links
+[streaming] Final ANN pass: 0.027s for 6 units
+============================================================
+STREAMING RETAIN COMPLETE: 6 units across 1 batches in 29.085s
+Document: conv-30_session_7
+============================================================
+
+2026-05-18 08:14:06,630 - INFO - hindsight_api.engine.memory_engine - Processing sub-batch 3/3: 2 items, 2,673 tokens
+2026-05-18 08:14:42,880 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=retain_extract_facts, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=4004, output_tokens=1011, total_tokens=5015, time=36.248s, ratio out/in=0.25
+2026-05-18 08:15:40,834 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=retain_extract_facts, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=4110, output_tokens=1451, total_tokens=5561, time=94.200s, ratio out/in=0.35
+2026-05-18 08:15:40,912 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Phase 1 (entity resolution): 0.006s
+2026-05-18 08:15:40,941 - WARNING - hindsight_api.engine.retain.link_utils - Invalid target_fact_index 17 in causal relation from fact 16
+2026-05-18 08:15:40,942 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Phase 2 (write txn): 0.031s
+2026-05-18 08:15:40,949 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Consumer batch 1 total (excluding fire-and-forget): 0.043s
+2026-05-18 08:15:41,001 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Final ANN chunk 1/1: 335 links in 0.051s
+2026-05-18 08:15:41,001 - INFO - hindsight_api.engine.retain.orchestrator - 
+============================================================
+RETAIN_BATCH START: locomo_conv-30
+Batch size: 1 content items, 5,716 chars
+============================================================
+[streaming] 2 chunks, batch_size 100 — 1 batch
+  Extract facts: 7 facts, 1 chunks from 1 contents in 36.249s
+  Generate embeddings: 7 embeddings in 0.063s
+  Extract facts: 10 facts, 1 chunks from 1 contents in 94.203s
+  Generate embeddings: 10 embeddings in 0.070s
+[streaming] Consumer batch 1: processing 17 facts from 2 chunks
+[streaming] Document conv-30_session_8 tracked (full content)
+  Store chunks: 2 chunks in 0.000s
+  Insert facts: 17 units in 0.000s
+  Insert unit_entities: 39 pairs in 0.001s
+  Temporal links: 340 links in 0.007s
+  Semantic links: skipped (deferred to final ANN pass)
+  Causal links: 10 links in 0.001s
+  Entity links (viz): 110 links in 0.004s
+[streaming] Final ANN: loaded 17 units with embeddings in 0.001s
+      [8.1] ANN search (Phase 1): 17 units → 335 links in 0.045s
+[streaming] Final ANN: 335 total semantic links
+[streaming] Final ANN pass: 0.052s for 17 units
+============================================================
+STREAMING RETAIN COMPLETE: 17 units across 1 batches in 94.370s
+Document: conv-30_session_8
+============================================================
+
+2026-05-18 08:16:03,469 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=retain_extract_facts, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=3528, output_tokens=641, total_tokens=4169, time=22.464s, ratio out/in=0.18
+2026-05-18 08:16:16,062 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=retain_extract_facts, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=3998, output_tokens=983, total_tokens=4981, time=35.060s, ratio out/in=0.25
+2026-05-18 08:16:16,122 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Phase 1 (entity resolution): 0.005s
+2026-05-18 08:16:16,148 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Phase 2 (write txn): 0.026s
+2026-05-18 08:16:16,154 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Consumer batch 1 total (excluding fire-and-forget): 0.037s
+2026-05-18 08:16:16,196 - INFO - hindsight_api.engine.retain.orchestrator - [streaming] Final ANN chunk 1/1: 220 links in 0.041s
+2026-05-18 08:16:16,196 - INFO - hindsight_api.engine.retain.orchestrator - 
+============================================================
+RETAIN_BATCH START: locomo_conv-30
+Batch size: 1 content items, 3,659 chars
+============================================================
+[streaming] 2 chunks, batch_size 100 — 1 batch
+  Extract facts: 3 facts, 1 chunks from 1 contents in 22.467s
+  Generate embeddings: 3 embeddings in 0.045s
+  Extract facts: 8 facts, 1 chunks from 1 contents in 35.061s
+  Generate embeddings: 8 embeddings in 0.054s
+[streaming] Consumer batch 1: processing 11 facts from 2 chunks
+[streaming] Document conv-30_session_9 tracked (full content)
+  Store chunks: 2 chunks in 0.000s
+  Insert facts: 11 units in 0.000s
+  Insert unit_entities: 24 pairs in 0.001s
+  Temporal links: 220 links in 0.005s
+  Semantic links: skipped (deferred to final ANN pass)
+  Causal links: 1 links in 0.000s
+  Entity links (viz): 120 links in 0.005s
+[streaming] Final ANN: loaded 11 units with embeddings in 0.001s
+      [8.1] ANN search (Phase 1): 11 units → 220 links in 0.037s
+[streaming] Final ANN: 220 total semantic links
+[streaming] Final ANN pass: 0.042s for 11 units
+============================================================
+STREAMING RETAIN COMPLETE: 11 units across 1 batches in 35.195s
+Document: conv-30_session_9
+============================================================
+
+2026-05-18 08:16:16,196 - INFO - hindsight_api.engine.memory_engine - RETAIN_BATCH_ASYNC (chunked) COMPLETE: 19 results from 19 contents in 912.985s
+2026-05-18 08:16:16,200 - INFO - hindsight_api.engine.memory_engine - consolidation task queued for bank_id=locomo_conv-30, operation_id=e9536e72-0e39-4074-a37f-fe757ac7b455
+      ✓ Ingested 19 sessions
+  [3] Evaluating 105 QA pairs (parallel)...
+2026-05-18 08:16:16,201 - INFO - root - ONLY-CAT-5 mode: restricting to 24 category=5 questions for conv-30 (HINDSIGHT_BENCHMARK_ONLY_CAT5 is set)
+2026-05-18 08:16:16,206 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: How does Gina use the clipboard with a notepad att...
+2026-05-18 08:16:16,208 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: What kind of flooring is Gina looking for in her d...
+2026-05-18 08:16:16,216 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: How is Jon's store doing?...
+2026-05-18 08:16:16,216 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: What kind of professional experience did Jon get a...
+2026-05-18 08:16:16,218 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: What is Jon's favorite style of painting?...
+2026-05-18 08:16:16,219 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: What temporary job did Jon take to cover expenses?...
+2026-05-18 08:16:16,220 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: Where is Gina's HR internship?...
+2026-05-18 08:16:16,221 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: What does Jon's tattoo symbolize?...
+2026-05-18 08:16:16,222 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: What did Jon find for his clothing store on 1 Febr...
+2026-05-18 08:16:16,222 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: What did Jon take a trip to Barcelona for?...
+2026-05-18 08:16:16,289 - INFO - hindsight_api.engine.search.retrieval - Using LinkExpansion graph retriever
+2026-05-18 08:16:18,160 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-76220-d62d0e] Query: 'Where is Gina's HR internship?...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.506s
+  [2] Parallel retrieval (3 fact_types): semantic=191(0.045s), bm25=191(0.045s), graph=155(0.024s), temporal_extraction=0.078s, temporal=0(0.004s) in 0.198s | temporal_range=2026-05-18 to 2026-05-18
+  [3] RRF merge: 191 unique candidates in 0.000s
+  [4] Reranking: 191 candidates scored in 1.220s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 191 results
+  [6] Token filtering: 124 results, 4057/4096 tokens in 0.003s
+[RECALL locomo_c-76220-d62d0e] Complete: 124 facts (4057 tok), 18 chunks (8192 tok), 54 entities (0 tok) | experience=22, world=102 | 1.940s
+2026-05-18 08:16:18,213 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-76221-f5ee54] Query: 'What does Jon's tattoo symbolize?...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.584s
+  [2] Parallel retrieval (3 fact_types): semantic=191(0.014s), bm25=191(0.014s), graph=151(0.025s), temporal_extraction=0.052s in 0.115s
+  [3] RRF merge: 191 unique candidates in 0.001s
+  [4] Reranking: 191 candidates scored in 1.246s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 191 results
+  [6] Token filtering: 128 results, 4071/4096 tokens in 0.009s
+[RECALL locomo_c-76221-f5ee54] Complete: 128 facts (4071 tok), 15 chunks (8192 tok), 48 entities (0 tok) | experience=30, world=98 | 1.992s
+2026-05-18 08:16:18,218 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-76222-d555b1] Query: 'What did Jon find for his clothing store on 1 Febr...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.434s
+  [2] Parallel retrieval (3 fact_types): semantic=191(0.110s), bm25=191(0.110s), graph=151(0.018s), temporal_extraction=0.017s, temporal=18(0.022s) in 0.281s | temporal_range=2023-02-01 to 2023-02-01
+  [3] RRF merge: 191 unique candidates in 0.000s
+  [4] Reranking: 191 candidates scored in 1.236s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 191 results
+  [6] Token filtering: 124 results, 4082/4096 tokens in 0.003s
+[RECALL locomo_c-76222-d555b1] Complete: 124 facts (4082 tok), 15 chunks (8192 tok), 59 entities (0 tok) | experience=30, world=94 | 1.996s
+2026-05-18 08:16:18,222 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-76208-abf68a] Query: 'What kind of flooring is Gina looking for in her d...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.232s
+  [2] Parallel retrieval (3 fact_types): semantic=191(0.196s), bm25=191(0.196s), graph=156(0.048s), temporal_extraction=0.057s in 0.506s
+  [3] RRF merge: 191 unique candidates in 0.000s
+  [4] Reranking: 191 candidates scored in 1.247s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 191 results
+  [6] Token filtering: 126 results, 4096/4096 tokens in 0.003s
+[RECALL locomo_c-76208-abf68a] Complete: 126 facts (4096 tok), 11 chunks (8192 tok), 56 entities (0 tok) | experience=17, world=109 | 2.015s
+2026-05-18 08:16:19,287 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-76222-ca35fa] Query: 'What did Jon take a trip to Barcelona for?...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.380s
+  [2] Parallel retrieval (3 fact_types): semantic=191(0.118s), bm25=191(0.118s), graph=127(0.054s), temporal_extraction=0.053s, temporal=0(0.006s) in 0.352s | temporal_range=2026-05-14 to 2026-05-14
+  [3] RRF merge: 191 unique candidates in 0.000s
+  [4] Reranking: 191 candidates scored in 2.317s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 191 results
+  [6] Token filtering: 125 results, 4088/4096 tokens in 0.003s
+[RECALL locomo_c-76222-ca35fa] Complete: 125 facts (4088 tok), 12 chunks (8192 tok), 57 entities (0 tok) | experience=37, world=88 | 3.065s
+2026-05-18 08:16:19,343 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-76216-03f998] Query: 'How is Jon's store doing?...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.335s
+  [2] Parallel retrieval (3 fact_types): semantic=190(0.145s), bm25=191(0.145s), graph=152(0.055s), temporal_extraction=0.052s in 0.403s
+  [3] RRF merge: 191 unique candidates in 0.000s
+  [4] Reranking: 191 candidates scored in 2.356s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 191 results
+  [6] Token filtering: 129 results, 4090/4096 tokens in 0.003s
+[RECALL locomo_c-76216-03f998] Complete: 129 facts (4090 tok), 13 chunks (8192 tok), 47 entities (0 tok) | experience=28, world=101 | 3.127s
+2026-05-18 08:16:19,348 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-76218-b5dbed] Query: 'What is Jon's favorite style of painting?...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.454s
+  [2] Parallel retrieval (3 fact_types): semantic=185(0.081s), bm25=191(0.081s), graph=151(0.056s), temporal_extraction=0.053s in 0.281s
+  [3] RRF merge: 191 unique candidates in 0.000s
+  [4] Reranking: 191 candidates scored in 2.362s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 191 results
+  [6] Token filtering: 127 results, 4082/4096 tokens in 0.003s
+[RECALL locomo_c-76218-b5dbed] Complete: 127 facts (4082 tok), 14 chunks (8192 tok), 51 entities (0 tok) | experience=33, world=94 | 3.130s
+2026-05-18 08:16:19,352 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-76216-800ea8] Query: 'What kind of professional experience did Jon get a...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.640s
+  [2] Parallel retrieval (3 fact_types): semantic=191(0.003s), bm25=191(0.003s), graph=152(0.062s), temporal_extraction=0.017s, temporal=0(0.001s) in 0.090s | temporal_range=2026-05-16 to 2026-05-16
+  [3] RRF merge: 191 unique candidates in 0.000s
+  [4] Reranking: 191 candidates scored in 2.380s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 191 results
+  [6] Token filtering: 125 results, 4083/4096 tokens in 0.002s
+[RECALL locomo_c-76216-800ea8] Complete: 125 facts (4083 tok), 14 chunks (8192 tok), 49 entities (0 tok) | experience=35, world=90 | 3.136s
+2026-05-18 08:16:20,039 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-76219-dacf1e] Query: 'What temporary job did Jon take to cover expenses?...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.278s
+  [2] Parallel retrieval (3 fact_types): semantic=191(0.172s), bm25=191(0.172s), graph=151(0.055s), temporal_extraction=0.054s, temporal=0(0.004s) in 0.460s | temporal_range=2026-05-14 to 2026-05-14
+  [3] RRF merge: 191 unique candidates in 0.000s
+  [4] Reranking: 191 candidates scored in 3.068s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 191 results
+  [6] Token filtering: 126 results, 4074/4096 tokens in 0.002s
+[RECALL locomo_c-76219-dacf1e] Complete: 126 facts (4074 tok), 12 chunks (8192 tok), 54 entities (0 tok) | experience=34, world=92 | 3.820s
+2026-05-18 08:16:20,042 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-76206-c7f2b5] Query: 'How does Gina use the clipboard with a notepad att...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.082s
+  [2] Parallel retrieval (3 fact_types): semantic=191(0.225s), bm25=191(0.225s), graph=155(0.057s), temporal_extraction=0.151s, temporal=0(0.009s) in 0.668s | temporal_range=2026-05-14 to 2026-05-14
+  [3] RRF merge: 191 unique candidates in 0.000s
+  [4] Reranking: 191 candidates scored in 3.070s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 191 results
+  [6] Token filtering: 129 results, 4094/4096 tokens in 0.002s
+[RECALL locomo_c-76206-c7f2b5] Complete: 129 facts (4094 tok), 17 chunks (8192 tok), 52 entities (0 tok) | experience=23, world=106 | 3.836s
+2026-05-18 08:16:21,384 - WARNING - hindsight_api.engine.providers.openai_compatible_llm - APIStatusError (openai/Qwen/Qwen2.5-72B-Instruct, scope=memory, attempt 1/11): HTTP 429: {"message": "server overload, please try again later trace_id: ed97dda78139e0dbf46545a1dcbc6fe8", "type": "server_overload"}
+2026-05-18 08:16:21,446 - WARNING - hindsight_api.engine.providers.openai_compatible_llm - APIStatusError (openai/Qwen/Qwen2.5-72B-Instruct, scope=memory, attempt 1/11): HTTP 429: {"message": "server overload, please try again later trace_id: f23d921a4e79ea2e5f1461cc25d16696", "type": "server_overload"}
+2026-05-18 08:16:21,636 - WARNING - hindsight_api.engine.providers.openai_compatible_llm - APIStatusError (openai/Qwen/Qwen2.5-72B-Instruct, scope=memory, attempt 1/11): HTTP 429: {"message": "server overload, please try again later trace_id: 04575acbcc3dee7491b8cc4fa6bf91b6", "type": "server_overload"}
+2026-05-18 08:16:21,894 - WARNING - hindsight_api.engine.providers.openai_compatible_llm - APIStatusError (openai/Qwen/Qwen2.5-72B-Instruct, scope=memory, attempt 1/11): HTTP 429: {"message": "server overload, please try again later trace_id: a9bf2d564f7c680c825963da9b58b3e6", "type": "server_overload"}
+2026-05-18 08:16:22,037 - WARNING - hindsight_api.engine.providers.openai_compatible_llm - APIStatusError (openai/Qwen/Qwen2.5-72B-Instruct, scope=memory, attempt 1/11): HTTP 429: {"message": "server overload, please try again later trace_id: 1fedf7f725052c10c6df2b04301adafe", "type": "server_overload"}
+2026-05-18 08:16:22,946 - WARNING - hindsight_api.engine.providers.openai_compatible_llm - APIStatusError (openai/Qwen/Qwen2.5-72B-Instruct, scope=memory, attempt 2/11): HTTP 400: {"message": "response format json_object is not supported trace_id: da814a60aa77d6548a61a190da34797b", "type": "invalid_request_error"}
+2026-05-18 08:16:22,987 - WARNING - hindsight_api.engine.providers.openai_compatible_llm - APIStatusError (openai/Qwen/Qwen2.5-72B-Instruct, scope=memory, attempt 2/11): HTTP 400: {"message": "response format json_object is not supported trace_id: b5ef728b634b7798f916be92685bd63c", "type": "invalid_request_error"}
+2026-05-18 08:16:23,179 - WARNING - hindsight_api.engine.providers.openai_compatible_llm - APIStatusError (openai/Qwen/Qwen2.5-72B-Instruct, scope=memory, attempt 2/11): HTTP 400: {"message": "response format json_object is not supported trace_id: 16d8f5e59ba2e96806ca440532ce1345", "type": "invalid_request_error"}
+2026-05-18 08:16:23,321 - WARNING - hindsight_api.engine.providers.openai_compatible_llm - APIStatusError (openai/Qwen/Qwen2.5-72B-Instruct, scope=memory, attempt 2/11): HTTP 400: {"message": "response format json_object is not supported trace_id: b779da1af6ec80fb316876786a802a3a", "type": "invalid_request_error"}
+2026-05-18 08:16:23,449 - WARNING - hindsight_api.engine.providers.openai_compatible_llm - APIStatusError (openai/Qwen/Qwen2.5-72B-Instruct, scope=memory, attempt 2/11): HTTP 400: {"message": "response format json_object is not supported trace_id: d74a8e2f090d1b0c89e381b60b8048fb", "type": "invalid_request_error"}
+2026-05-18 08:16:26,194 - WARNING - hindsight_api.engine.providers.openai_compatible_llm - APIStatusError (openai/Qwen/Qwen2.5-72B-Instruct, scope=memory, attempt 3/11): HTTP 400: {"message": "response format json_object is not supported trace_id: becedad96808fde8219f60e647847259", "type": "invalid_request_error"}
+2026-05-18 08:16:26,211 - WARNING - hindsight_api.engine.providers.openai_compatible_llm - APIStatusError (openai/Qwen/Qwen2.5-72B-Instruct, scope=memory, attempt 3/11): HTTP 400: {"message": "response format json_object is not supported trace_id: 2337377e36520f757927339947941f17", "type": "invalid_request_error"}
+2026-05-18 08:16:32,751 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=40091, output_tokens=67, total_tokens=40158, time=14.589s, ratio out/in=0.00
+2026-05-18 08:16:32,757 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: What kind of dance piece did Jon's team perform to...
+2026-05-18 08:16:33,285 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-92758-1b92a1] Query: 'What kind of dance piece did Jon's team perform to...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.033s
+  [2] Parallel retrieval (3 fact_types): semantic=191(0.003s), bm25=191(0.003s), graph=153(0.005s), temporal_extraction=0.074s in 0.085s
+  [3] RRF merge: 191 unique candidates in 0.000s
+  [4] Reranking: 191 candidates scored in 0.399s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 191 results
+  [6] Token filtering: 127 results, 4075/4096 tokens in 0.002s
+[RECALL locomo_c-92758-1b92a1] Complete: 127 facts (4075 tok), 12 chunks (8192 tok), 47 entities (0 tok) | experience=30, world=97 | 0.527s
+2026-05-18 08:16:33,643 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=40415, output_tokens=90, total_tokens=40505, time=15.420s, ratio out/in=0.00
+2026-05-18 08:16:33,649 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: What did Jon make a limited edition line of?...
+2026-05-18 08:16:34,152 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-93649-286f57] Query: 'What did Jon make a limited edition line of?...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.038s
+  [2] Parallel retrieval (3 fact_types): semantic=191(0.002s), bm25=191(0.002s), graph=152(0.005s), temporal_extraction=0.067s, temporal=0(0.001s) in 0.077s | temporal_range=2025-06-18 to 2025-06-18
+  [3] RRF merge: 191 unique candidates in 0.000s
+  [4] Reranking: 191 candidates scored in 0.379s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 191 results
+  [6] Token filtering: 128 results, 4079/4096 tokens in 0.002s
+[RECALL locomo_c-93649-286f57] Complete: 128 facts (4079 tok), 14 chunks (8192 tok), 45 entities (0 tok) | experience=34, world=94 | 0.503s
+2026-05-18 08:16:34,333 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=40411, output_tokens=64, total_tokens=40475, time=14.988s, ratio out/in=0.00
+2026-05-18 08:16:34,336 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: What did Jon design for his store?...
+2026-05-18 08:16:34,815 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-94336-47437d] Query: 'What did Jon design for his store?...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.029s
+  [2] Parallel retrieval (3 fact_types): semantic=191(0.002s), bm25=191(0.002s), graph=151(0.005s), temporal_extraction=0.065s, temporal=0(0.001s) in 0.074s | temporal_range=2025-06-18 to 2025-06-18
+  [3] RRF merge: 191 unique candidates in 0.000s
+  [4] Reranking: 191 candidates scored in 0.366s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 191 results
+  [6] Token filtering: 127 results, 4085/4096 tokens in 0.002s
+[RECALL locomo_c-94336-47437d] Complete: 127 facts (4085 tok), 13 chunks (8192 tok), 54 entities (0 tok) | experience=29, world=98 | 0.479s
+2026-05-18 08:16:36,128 - WARNING - hindsight_api.engine.providers.openai_compatible_llm - APIStatusError (openai/Qwen/Qwen2.5-72B-Instruct, scope=memory, attempt 1/11): HTTP 429: {"message": "server overload, please try again later trace_id: 16ad370c4b9325358362626b50fc3ca1", "type": "server_overload"}
+2026-05-18 08:16:36,173 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=40670, output_tokens=113, total_tokens=40783, time=17.954s, ratio out/in=0.00
+2026-05-18 08:16:36,178 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: Why did Gina shut down her bank account?...
+2026-05-18 08:16:36,708 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-96178-b80523] Query: 'Why did Gina shut down her bank account?...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.035s
+  [2] Parallel retrieval (3 fact_types): semantic=191(0.002s), bm25=191(0.002s), graph=154(0.005s), temporal_extraction=0.082s, temporal=0(0.001s) in 0.093s | temporal_range=2026-05-17 to 2026-05-17
+  [3] RRF merge: 191 unique candidates in 0.000s
+  [4] Reranking: 191 candidates scored in 0.392s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 191 results
+  [6] Token filtering: 126 results, 4088/4096 tokens in 0.002s
+[RECALL locomo_c-96178-b80523] Complete: 126 facts (4088 tok), 17 chunks (8192 tok), 52 entities (0 tok) | experience=27, world=99 | 0.529s
+2026-05-18 08:16:40,428 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=40660, output_tokens=81, total_tokens=40741, time=20.385s, ratio out/in=0.00
+2026-05-18 08:16:40,434 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: Where is Jon's fashion internship?...
+2026-05-18 08:16:40,937 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=40172, output_tokens=73, total_tokens=40245, time=22.723s, ratio out/in=0.00
+2026-05-18 08:16:40,939 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: What was Jon's favorite dancing memory?...
+2026-05-18 08:16:41,032 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-434-42bb4a] Query: 'Where is Jon's fashion internship?...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.032s
+  [2] Parallel retrieval (3 fact_types): semantic=191(0.002s), bm25=191(0.002s), graph=152(0.005s), temporal_extraction=0.101s in 0.111s
+  [3] RRF merge: 191 unique candidates in 0.000s
+  [4] Reranking: 191 candidates scored in 0.444s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 191 results
+  [6] Token filtering: 126 results, 4071/4096 tokens in 0.002s
+[RECALL locomo_c-434-42bb4a] Complete: 126 facts (4071 tok), 15 chunks (8192 tok), 52 entities (0 tok) | experience=31, world=95 | 0.598s
+2026-05-18 08:16:41,441 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-940-cf6e08] Query: 'What was Jon's favorite dancing memory?...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.022s
+  [2] Parallel retrieval (3 fact_types): semantic=191(0.004s), bm25=191(0.004s), graph=151(0.008s), temporal_extraction=0.059s in 0.076s
+  [3] RRF merge: 191 unique candidates in 0.000s
+  [4] Reranking: 191 candidates scored in 0.393s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 191 results
+  [6] Token filtering: 128 results, 4050/4096 tokens in 0.002s
+[RECALL locomo_c-940-cf6e08] Complete: 128 facts (4050 tok), 11 chunks (8192 tok), 46 entities (0 tok) | experience=31, world=97 | 0.501s
+2026-05-18 08:16:41,686 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=40146, output_tokens=91, total_tokens=40237, time=22.397s, ratio out/in=0.00
+2026-05-18 08:16:41,691 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: What temporary job did Gina take to cover expenses...
+2026-05-18 08:16:42,220 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-1692-36192c] Query: 'What temporary job did Gina take to cover expenses...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.044s
+  [2] Parallel retrieval (3 fact_types): semantic=191(0.002s), bm25=191(0.002s), graph=153(0.005s), temporal_extraction=0.065s, temporal=0(0.001s) in 0.076s | temporal_range=2026-05-14 to 2026-05-14
+  [3] RRF merge: 191 unique candidates in 0.000s
+  [4] Reranking: 191 candidates scored in 0.399s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 191 results
+  [6] Token filtering: 127 results, 4095/4096 tokens in 0.002s
+[RECALL locomo_c-1692-36192c] Complete: 127 facts (4095 tok), 16 chunks (8192 tok), 53 entities (0 tok) | experience=26, world=101 | 0.528s
+2026-05-18 08:16:42,886 - WARNING - hindsight_api.engine.providers.openai_compatible_llm - APIStatusError (openai/Qwen/Qwen2.5-72B-Instruct, scope=memory, attempt 1/11): HTTP 429: {"message": "server overload, please try again later trace_id: 82cddebd5be441cf623922f98ca12d83", "type": "server_overload"}
+2026-05-18 08:16:43,709 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=40222, output_tokens=59, total_tokens=40281, time=24.359s, ratio out/in=0.00
+2026-05-18 08:16:43,713 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: What did Jon want his customers to feel in her sto...
+2026-05-18 08:16:44,243 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-3713-300e4c] Query: 'What did Jon want his customers to feel in her sto...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.042s
+  [2] Parallel retrieval (3 fact_types): semantic=191(0.002s), bm25=191(0.002s), graph=152(0.005s), temporal_extraction=0.065s in 0.075s
+  [3] RRF merge: 191 unique candidates in 0.000s
+  [4] Reranking: 191 candidates scored in 0.403s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 191 results
+  [6] Token filtering: 128 results, 4077/4096 tokens in 0.002s
+[RECALL locomo_c-3713-300e4c] Complete: 128 facts (4077 tok), 13 chunks (8192 tok), 50 entities (0 tok) | experience=28, world=100 | 0.530s
+2026-05-18 08:16:44,625 - WARNING - hindsight_api.engine.providers.openai_compatible_llm - APIStatusError (openai/Qwen/Qwen2.5-72B-Instruct, scope=memory, attempt 2/11): HTTP 429: {"message": "server overload, please try again later trace_id: 1a60925bc005df656d332485ad67cdb2", "type": "server_overload"}
+2026-05-18 08:16:44,756 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=40223, output_tokens=70, total_tokens=40293, time=24.716s, ratio out/in=0.00
+2026-05-18 08:16:44,761 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: Why did Jon combine his clothing business with dan...
+2026-05-18 08:16:45,348 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-4762-6d15c3] Query: 'Why did Jon combine his clothing business with dan...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.039s
+  [2] Parallel retrieval (3 fact_types): semantic=191(0.002s), bm25=191(0.002s), graph=151(0.005s), temporal_extraction=0.133s, temporal=0(0.001s) in 0.142s | temporal_range=2025-06-18 to 2025-06-18
+  [3] RRF merge: 191 unique candidates in 0.000s
+  [4] Reranking: 191 candidates scored in 0.395s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 191 results
+  [6] Token filtering: 125 results, 4092/4096 tokens in 0.002s
+[RECALL locomo_c-4762-6d15c3] Complete: 125 facts (4092 tok), 13 chunks (8192 tok), 52 entities (0 tok) | experience=35, world=90 | 0.586s
+2026-05-18 08:16:45,958 - WARNING - hindsight_api.engine.providers.openai_compatible_llm - APIStatusError (openai/Qwen/Qwen2.5-72B-Instruct, scope=memory, attempt 1/11): HTTP 400: {"message": "response format json_object is not supported trace_id: 6415c0b016bd3e24df7beb70768fd761", "type": "invalid_request_error"}
+2026-05-18 08:16:47,804 - WARNING - hindsight_api.engine.providers.openai_compatible_llm - APIStatusError (openai/Qwen/Qwen2.5-72B-Instruct, scope=memory, attempt 3/11): HTTP 429: {"message": "server overload, please try again later trace_id: a688637f9616e79452ccd22cfadb35c6", "type": "server_overload"}
+2026-05-18 08:16:48,452 - WARNING - hindsight_api.engine.providers.openai_compatible_llm - APIStatusError (openai/Qwen/Qwen2.5-72B-Instruct, scope=memory, attempt 2/11): HTTP 429: {"message": "server overload, please try again later trace_id: 87317e660e3fc9fdc8e145ea8008460c", "type": "server_overload"}
+2026-05-18 08:16:49,345 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=40085, output_tokens=73, total_tokens=40158, time=15.192s, ratio out/in=0.00
+2026-05-18 08:16:49,350 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: What book is Gina currently reading?...
+2026-05-18 08:16:49,849 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-9350-a0d9ac] Query: 'What book is Gina currently reading?...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.035s
+  [2] Parallel retrieval (3 fact_types): semantic=191(0.002s), bm25=191(0.002s), graph=154(0.005s), temporal_extraction=0.066s in 0.075s
+  [3] RRF merge: 191 unique candidates in 0.000s
+  [4] Reranking: 191 candidates scored in 0.379s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 191 results
+  [6] Token filtering: 125 results, 4090/4096 tokens in 0.002s
+[RECALL locomo_c-9350-a0d9ac] Complete: 125 facts (4090 tok), 17 chunks (8192 tok), 55 entities (0 tok) | experience=21, world=104 | 0.499s
+2026-05-18 08:16:50,260 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=40228, output_tokens=101, total_tokens=40329, time=30.907s, ratio out/in=0.00
+2026-05-18 08:16:50,267 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: What is Gina's attitude towards participating in t...
+2026-05-18 08:16:50,789 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-10267-4901a0] Query: 'What is Gina's attitude towards participating in t...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.036s
+  [2] Parallel retrieval (3 fact_types): semantic=191(0.002s), bm25=191(0.002s), graph=154(0.005s), temporal_extraction=0.071s in 0.080s
+  [3] RRF merge: 191 unique candidates in 0.000s
+  [4] Reranking: 191 candidates scored in 0.396s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 191 results
+  [6] Token filtering: 126 results, 4076/4096 tokens in 0.002s
+[RECALL locomo_c-10267-4901a0] Complete: 126 facts (4076 tok), 18 chunks (8192 tok), 57 entities (0 tok) | experience=13, world=113 | 0.522s
+2026-05-18 08:16:52,723 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=39775, output_tokens=135, total_tokens=39910, time=19.437s, ratio out/in=0.00
+2026-05-18 08:16:52,729 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: What plans does Gina have after receiving advice a...
+2026-05-18 08:16:53,266 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-12729-8afa1a] Query: 'What plans does Gina have after receiving advice a...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.037s
+  [2] Parallel retrieval (3 fact_types): semantic=191(0.002s), bm25=191(0.002s), graph=156(0.005s), temporal_extraction=0.074s in 0.082s
+  [3] RRF merge: 191 unique candidates in 0.000s
+  [4] Reranking: 191 candidates scored in 0.409s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 191 results
+  [6] Token filtering: 124 results, 4087/4096 tokens in 0.002s
+[RECALL locomo_c-12729-8afa1a] Complete: 124 facts (4087 tok), 19 chunks (8192 tok), 53 entities (0 tok) | experience=23, world=101 | 0.538s
+2026-05-18 08:16:53,415 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=40316, output_tokens=95, total_tokens=40411, time=16.707s, ratio out/in=0.00
+2026-05-18 08:16:53,419 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: What made Jon choose the furniture and decor for h...
+2026-05-18 08:16:53,863 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=40235, output_tokens=117, total_tokens=40352, time=19.047s, ratio out/in=0.00
+2026-05-18 08:16:53,864 - INFO - hindsight_api.engine.memory_engine - [RECALL locomo_c] Starting recall for query: What did Gina receive from a dance contest?...
+2026-05-18 08:16:53,973 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-13419-ab137c] Query: 'What made Jon choose the furniture and decor for h...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.032s
+  [2] Parallel retrieval (3 fact_types): semantic=191(0.002s), bm25=191(0.002s), graph=151(0.005s), temporal_extraction=0.068s, temporal=0(0.001s) in 0.077s | temporal_range=2025-06-18 to 2025-06-18
+  [3] RRF merge: 191 unique candidates in 0.000s
+  [4] Reranking: 191 candidates scored in 0.435s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 191 results
+  [6] Token filtering: 126 results, 4076/4096 tokens in 0.002s
+[RECALL locomo_c-13419-ab137c] Complete: 126 facts (4076 tok), 13 chunks (8192 tok), 51 entities (0 tok) | experience=30, world=96 | 0.554s
+2026-05-18 08:16:54,279 - WARNING - hindsight_api.engine.providers.openai_compatible_llm - APIStatusError (openai/Qwen/Qwen2.5-72B-Instruct, scope=memory, attempt 4/11): HTTP 429: {"message": "server overload, please try again later trace_id: fe54d355cae940d61ca20b252005457e", "type": "server_overload"}
+2026-05-18 08:16:54,372 - INFO - hindsight_api.engine.memory_engine - 
+[RECALL locomo_c-13864-34f985] Query: 'What did Gina receive from a dance contest?...' (budget=1000, max_tokens=4096)
+  [1] Generate query embedding: 0.026s
+  [2] Parallel retrieval (3 fact_types): semantic=191(0.004s), bm25=191(0.004s), graph=155(0.006s), temporal_extraction=0.072s, temporal=0(0.001s) in 0.090s | temporal_range=2026-05-17 to 2026-05-17
+  [3] RRF merge: 191 unique candidates in 0.000s
+  [4] Reranking: 191 candidates scored in 0.382s
+  [4.6] Combined scoring: ce * recency_boost(0.2) * temporal_boost(0.2)
+  [5] Truncated to top 191 results
+  [6] Token filtering: 126 results, 4087/4096 tokens in 0.002s
+[RECALL locomo_c-13864-34f985] Complete: 126 facts (4087 tok), 14 chunks (8192 tok), 58 entities (0 tok) | experience=12, world=114 | 0.508s
+2026-05-18 08:16:55,134 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=40336, output_tokens=67, total_tokens=40403, time=14.101s, ratio out/in=0.00
+2026-05-18 08:16:55,336 - WARNING - hindsight_api.engine.providers.openai_compatible_llm - APIStatusError (openai/Qwen/Qwen2.5-72B-Instruct, scope=memory, attempt 1/11): HTTP 429: {"message": "server overload, please try again later trace_id: 13a321845b152a7ad2fae8adc72a12d8", "type": "server_overload"}
+2026-05-18 08:16:58,967 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=40406, output_tokens=87, total_tokens=40493, time=16.746s, ratio out/in=0.00
+2026-05-18 08:17:03,059 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=40209, output_tokens=125, total_tokens=40334, time=18.815s, ratio out/in=0.00
+2026-05-18 08:17:04,393 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=40367, output_tokens=55, total_tokens=40422, time=14.543s, ratio out/in=0.00
+2026-05-18 08:17:05,418 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=40778, output_tokens=77, total_tokens=40855, time=14.627s, ratio out/in=0.00
+2026-05-18 08:17:08,896 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=40657, output_tokens=69, total_tokens=40726, time=14.523s, ratio out/in=0.00
+2026-05-18 08:17:09,308 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=39923, output_tokens=147, total_tokens=40070, time=23.960s, ratio out/in=0.00
+2026-05-18 08:17:10,535 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=40353, output_tokens=99, total_tokens=40452, time=17.268s, ratio out/in=0.00
+2026-05-18 08:17:15,966 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=39924, output_tokens=112, total_tokens=40036, time=21.992s, ratio out/in=0.00
+2026-05-18 08:17:17,295 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=memory, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=39827, output_tokens=80, total_tokens=39907, time=35.853s, ratio out/in=0.00
+  Evaluating QA for conv-30 - 24 questions ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100%
+  [4] Calculating metrics...
+2026-05-18 08:19:20,739 - WARNING - hindsight_api.engine.providers.openai_compatible_llm - APIConnectionError (HTTP None), attempt 1: Request timed out.
+2026-05-18 08:19:23,759 - INFO - hindsight_api.engine.providers.openai_compatible_llm - slow llm call: scope=judge, model=openai/Qwen/Qwen2.5-72B-Instruct, input_tokens=542, output_tokens=41, total_tokens=583, time=123.027s, ratio out/in=0.08
+  Judging answers with LLM (parallel, max 8)... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100%
+      ✓ Accuracy: 83.33% (20/24)
+
+✓ Benchmark Complete!
+
+Model Configuration:
+  Hindsight:         openai/Qwen/Qwen2.5-72B-Instruct
+  Answer Generation: openai/Qwen/Qwen2.5-72B-Instruct
+  LLM Judge:         openai/Qwen/Qwen2.5-72B-Instruct
+
+                        Benchmark Results                        
+╭─────────┬──────────┬───────────┬─────────┬─────────┬──────────╮
+│ Item ID │ Sessions │ Questions │ Correct │ Invalid │ Accuracy │
+├─────────┼──────────┼───────────┼─────────┼─────────┼──────────┤
+│ conv-30 │       19 │        24 │      20 │       - │    83.3% │
+│ OVERALL │        - │        24 │      20 │       - │    83.3% │
+╰─────────┴──────────┴───────────┴─────────┴─────────┴──────────╯
+
+✓ Results saved incrementally to 
+/Users/anna/Dropbox/phd-stuff/CODE/2026/hindsight/hindsight-dev/benchmarks/locomo/results/benchmark_results.json
+
+✓ Results table saved to 
+/Users/anna/Dropbox/phd-stuff/CODE/2026/hindsight/hindsight-dev/benchmarks/locomo/results/results_table.md
