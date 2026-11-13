@@ -1,0 +1,1109 @@
+{
+  "client_date": "2026-11-08",
+  "reviewer": "ChatGPT GPT-6",
+  "review_type": "ai_blinded_review_only",
+  "human_validated": false,
+  "independently_adjudicated": false,
+  "pooled": {
+    "full_context": {
+      "supported": {
+        "correct": 11,
+        "total": 12,
+        "rate": 0.9166666666666666
+      },
+      "unsupported": {
+        "correct": 7,
+        "total": 10,
+        "rate": 0.7
+      },
+      "contradicted_premise": {
+        "correct": 2,
+        "total": 2,
+        "rate": 1.0
+      },
+      "challenge": {
+        "correct": 9,
+        "total": 12,
+        "rate": 0.75
+      },
+      "overall": {
+        "correct": 20,
+        "total": 24,
+        "rate": 0.8333333333333334
+      },
+      "balanced_accuracy": 0.8333333333333333,
+      "pair_success": {
+        "correct": 9,
+        "total": 12,
+        "rate": 0.75
+      },
+      "complete_pair_ids": [
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P08",
+        "P09",
+        "P10",
+        "P11",
+        "P12"
+      ],
+      "flags": {
+        "unsupported_assertion": 5,
+        "abstention": 5,
+        "unnecessary_abstention": 0,
+        "ambiguous": 6
+      },
+      "flags_by_class": {
+        "supported": {
+          "unsupported_assertion": 2,
+          "abstention": 0,
+          "unnecessary_abstention": 0,
+          "ambiguous": 1,
+          "total": 12
+        },
+        "unsupported": {
+          "unsupported_assertion": 3,
+          "abstention": 5,
+          "unnecessary_abstention": 0,
+          "ambiguous": 5,
+          "total": 10
+        },
+        "contradicted_premise": {
+          "unsupported_assertion": 0,
+          "abstention": 0,
+          "unnecessary_abstention": 0,
+          "ambiguous": 0,
+          "total": 2
+        }
+      },
+      "primary_outcomes": {
+        "correct_supported_answer": 11,
+        "unsupported_assertion": 3,
+        "justified_abstention": 4,
+        "correct_premise_correction": 5,
+        "incorrect_or_incomplete": 1
+      }
+    },
+    "graph_repaired_dates_order": {
+      "supported": {
+        "correct": 0,
+        "total": 12,
+        "rate": 0.0
+      },
+      "unsupported": {
+        "correct": 8,
+        "total": 10,
+        "rate": 0.8
+      },
+      "contradicted_premise": {
+        "correct": 1,
+        "total": 2,
+        "rate": 0.5
+      },
+      "challenge": {
+        "correct": 9,
+        "total": 12,
+        "rate": 0.75
+      },
+      "overall": {
+        "correct": 9,
+        "total": 24,
+        "rate": 0.375
+      },
+      "balanced_accuracy": 0.375,
+      "pair_success": {
+        "correct": 0,
+        "total": 12,
+        "rate": 0.0
+      },
+      "complete_pair_ids": [],
+      "flags": {
+        "unsupported_assertion": 10,
+        "abstention": 23,
+        "unnecessary_abstention": 13,
+        "ambiguous": 5
+      },
+      "flags_by_class": {
+        "supported": {
+          "unsupported_assertion": 5,
+          "abstention": 12,
+          "unnecessary_abstention": 12,
+          "ambiguous": 0,
+          "total": 12
+        },
+        "unsupported": {
+          "unsupported_assertion": 3,
+          "abstention": 10,
+          "unnecessary_abstention": 0,
+          "ambiguous": 3,
+          "total": 10
+        },
+        "contradicted_premise": {
+          "unsupported_assertion": 2,
+          "abstention": 1,
+          "unnecessary_abstention": 1,
+          "ambiguous": 2,
+          "total": 2
+        }
+      },
+      "primary_outcomes": {
+        "incorrect_or_incomplete": 2,
+        "unsupported_assertion": 3,
+        "unnecessary_abstention": 10,
+        "justified_abstention": 8,
+        "correct_premise_correction": 1
+      }
+    }
+  },
+  "per_conversation": {
+    "conv-26": {
+      "full_context": {
+        "supported": {
+          "correct": 4,
+          "total": 4,
+          "rate": 1.0
+        },
+        "unsupported": {
+          "correct": 2,
+          "total": 3,
+          "rate": 0.6666666666666666
+        },
+        "contradicted_premise": {
+          "correct": 1,
+          "total": 1,
+          "rate": 1.0
+        },
+        "challenge": {
+          "correct": 3,
+          "total": 4,
+          "rate": 0.75
+        },
+        "overall": {
+          "correct": 7,
+          "total": 8,
+          "rate": 0.875
+        },
+        "balanced_accuracy": 0.875,
+        "pair_success": {
+          "correct": 3,
+          "total": 4,
+          "rate": 0.75
+        },
+        "complete_pair_ids": [
+          "P02",
+          "P03",
+          "P04"
+        ],
+        "flags": {
+          "unsupported_assertion": 2,
+          "abstention": 2,
+          "unnecessary_abstention": 0,
+          "ambiguous": 2
+        },
+        "flags_by_class": {
+          "supported": {
+            "unsupported_assertion": 1,
+            "abstention": 0,
+            "unnecessary_abstention": 0,
+            "ambiguous": 1,
+            "total": 4
+          },
+          "unsupported": {
+            "unsupported_assertion": 1,
+            "abstention": 2,
+            "unnecessary_abstention": 0,
+            "ambiguous": 1,
+            "total": 3
+          },
+          "contradicted_premise": {
+            "unsupported_assertion": 0,
+            "abstention": 0,
+            "unnecessary_abstention": 0,
+            "ambiguous": 0,
+            "total": 1
+          }
+        },
+        "primary_outcomes": {
+          "correct_supported_answer": 4,
+          "unsupported_assertion": 1,
+          "justified_abstention": 1,
+          "correct_premise_correction": 2
+        }
+      },
+      "graph_repaired_dates_order": {
+        "supported": {
+          "correct": 0,
+          "total": 4,
+          "rate": 0.0
+        },
+        "unsupported": {
+          "correct": 2,
+          "total": 3,
+          "rate": 0.6666666666666666
+        },
+        "contradicted_premise": {
+          "correct": 1,
+          "total": 1,
+          "rate": 1.0
+        },
+        "challenge": {
+          "correct": 3,
+          "total": 4,
+          "rate": 0.75
+        },
+        "overall": {
+          "correct": 3,
+          "total": 8,
+          "rate": 0.375
+        },
+        "balanced_accuracy": 0.375,
+        "pair_success": {
+          "correct": 0,
+          "total": 4,
+          "rate": 0.0
+        },
+        "complete_pair_ids": [],
+        "flags": {
+          "unsupported_assertion": 6,
+          "abstention": 7,
+          "unnecessary_abstention": 4,
+          "ambiguous": 3
+        },
+        "flags_by_class": {
+          "supported": {
+            "unsupported_assertion": 4,
+            "abstention": 4,
+            "unnecessary_abstention": 4,
+            "ambiguous": 0,
+            "total": 4
+          },
+          "unsupported": {
+            "unsupported_assertion": 1,
+            "abstention": 3,
+            "unnecessary_abstention": 0,
+            "ambiguous": 2,
+            "total": 3
+          },
+          "contradicted_premise": {
+            "unsupported_assertion": 1,
+            "abstention": 0,
+            "unnecessary_abstention": 0,
+            "ambiguous": 1,
+            "total": 1
+          }
+        },
+        "primary_outcomes": {
+          "incorrect_or_incomplete": 1,
+          "unsupported_assertion": 1,
+          "unnecessary_abstention": 3,
+          "justified_abstention": 2,
+          "correct_premise_correction": 1
+        }
+      }
+    },
+    "conv-30": {
+      "full_context": {
+        "supported": {
+          "correct": 3,
+          "total": 4,
+          "rate": 0.75
+        },
+        "unsupported": {
+          "correct": 2,
+          "total": 4,
+          "rate": 0.5
+        },
+        "contradicted_premise": {
+          "correct": 0,
+          "total": 0,
+          "rate": null
+        },
+        "challenge": {
+          "correct": 2,
+          "total": 4,
+          "rate": 0.5
+        },
+        "overall": {
+          "correct": 5,
+          "total": 8,
+          "rate": 0.625
+        },
+        "balanced_accuracy": 0.625,
+        "pair_success": {
+          "correct": 2,
+          "total": 4,
+          "rate": 0.5
+        },
+        "complete_pair_ids": [
+          "P05",
+          "P08"
+        ],
+        "flags": {
+          "unsupported_assertion": 3,
+          "abstention": 0,
+          "unnecessary_abstention": 0,
+          "ambiguous": 4
+        },
+        "flags_by_class": {
+          "supported": {
+            "unsupported_assertion": 1,
+            "abstention": 0,
+            "unnecessary_abstention": 0,
+            "ambiguous": 0,
+            "total": 4
+          },
+          "unsupported": {
+            "unsupported_assertion": 2,
+            "abstention": 0,
+            "unnecessary_abstention": 0,
+            "ambiguous": 4,
+            "total": 4
+          },
+          "contradicted_premise": {
+            "unsupported_assertion": 0,
+            "abstention": 0,
+            "unnecessary_abstention": 0,
+            "ambiguous": 0,
+            "total": 0
+          }
+        },
+        "primary_outcomes": {
+          "correct_supported_answer": 3,
+          "correct_premise_correction": 2,
+          "unsupported_assertion": 2,
+          "incorrect_or_incomplete": 1
+        }
+      },
+      "graph_repaired_dates_order": {
+        "supported": {
+          "correct": 0,
+          "total": 4,
+          "rate": 0.0
+        },
+        "unsupported": {
+          "correct": 4,
+          "total": 4,
+          "rate": 1.0
+        },
+        "contradicted_premise": {
+          "correct": 0,
+          "total": 0,
+          "rate": null
+        },
+        "challenge": {
+          "correct": 4,
+          "total": 4,
+          "rate": 1.0
+        },
+        "overall": {
+          "correct": 4,
+          "total": 8,
+          "rate": 0.5
+        },
+        "balanced_accuracy": 0.5,
+        "pair_success": {
+          "correct": 0,
+          "total": 4,
+          "rate": 0.0
+        },
+        "complete_pair_ids": [],
+        "flags": {
+          "unsupported_assertion": 2,
+          "abstention": 8,
+          "unnecessary_abstention": 4,
+          "ambiguous": 1
+        },
+        "flags_by_class": {
+          "supported": {
+            "unsupported_assertion": 1,
+            "abstention": 4,
+            "unnecessary_abstention": 4,
+            "ambiguous": 0,
+            "total": 4
+          },
+          "unsupported": {
+            "unsupported_assertion": 1,
+            "abstention": 4,
+            "unnecessary_abstention": 0,
+            "ambiguous": 1,
+            "total": 4
+          },
+          "contradicted_premise": {
+            "unsupported_assertion": 0,
+            "abstention": 0,
+            "unnecessary_abstention": 0,
+            "ambiguous": 0,
+            "total": 0
+          }
+        },
+        "primary_outcomes": {
+          "unnecessary_abstention": 3,
+          "justified_abstention": 4,
+          "incorrect_or_incomplete": 1
+        }
+      }
+    },
+    "conv-49": {
+      "full_context": {
+        "supported": {
+          "correct": 4,
+          "total": 4,
+          "rate": 1.0
+        },
+        "unsupported": {
+          "correct": 3,
+          "total": 3,
+          "rate": 1.0
+        },
+        "contradicted_premise": {
+          "correct": 1,
+          "total": 1,
+          "rate": 1.0
+        },
+        "challenge": {
+          "correct": 4,
+          "total": 4,
+          "rate": 1.0
+        },
+        "overall": {
+          "correct": 8,
+          "total": 8,
+          "rate": 1.0
+        },
+        "balanced_accuracy": 1.0,
+        "pair_success": {
+          "correct": 4,
+          "total": 4,
+          "rate": 1.0
+        },
+        "complete_pair_ids": [
+          "P09",
+          "P10",
+          "P11",
+          "P12"
+        ],
+        "flags": {
+          "unsupported_assertion": 0,
+          "abstention": 3,
+          "unnecessary_abstention": 0,
+          "ambiguous": 0
+        },
+        "flags_by_class": {
+          "supported": {
+            "unsupported_assertion": 0,
+            "abstention": 0,
+            "unnecessary_abstention": 0,
+            "ambiguous": 0,
+            "total": 4
+          },
+          "unsupported": {
+            "unsupported_assertion": 0,
+            "abstention": 3,
+            "unnecessary_abstention": 0,
+            "ambiguous": 0,
+            "total": 3
+          },
+          "contradicted_premise": {
+            "unsupported_assertion": 0,
+            "abstention": 0,
+            "unnecessary_abstention": 0,
+            "ambiguous": 0,
+            "total": 1
+          }
+        },
+        "primary_outcomes": {
+          "correct_supported_answer": 4,
+          "justified_abstention": 3,
+          "correct_premise_correction": 1
+        }
+      },
+      "graph_repaired_dates_order": {
+        "supported": {
+          "correct": 0,
+          "total": 4,
+          "rate": 0.0
+        },
+        "unsupported": {
+          "correct": 2,
+          "total": 3,
+          "rate": 0.6666666666666666
+        },
+        "contradicted_premise": {
+          "correct": 0,
+          "total": 1,
+          "rate": 0.0
+        },
+        "challenge": {
+          "correct": 2,
+          "total": 4,
+          "rate": 0.5
+        },
+        "overall": {
+          "correct": 2,
+          "total": 8,
+          "rate": 0.25
+        },
+        "balanced_accuracy": 0.25,
+        "pair_success": {
+          "correct": 0,
+          "total": 4,
+          "rate": 0.0
+        },
+        "complete_pair_ids": [],
+        "flags": {
+          "unsupported_assertion": 2,
+          "abstention": 8,
+          "unnecessary_abstention": 5,
+          "ambiguous": 1
+        },
+        "flags_by_class": {
+          "supported": {
+            "unsupported_assertion": 0,
+            "abstention": 4,
+            "unnecessary_abstention": 4,
+            "ambiguous": 0,
+            "total": 4
+          },
+          "unsupported": {
+            "unsupported_assertion": 1,
+            "abstention": 3,
+            "unnecessary_abstention": 0,
+            "ambiguous": 0,
+            "total": 3
+          },
+          "contradicted_premise": {
+            "unsupported_assertion": 1,
+            "abstention": 1,
+            "unnecessary_abstention": 1,
+            "ambiguous": 1,
+            "total": 1
+          }
+        },
+        "primary_outcomes": {
+          "unnecessary_abstention": 4,
+          "justified_abstention": 2,
+          "unsupported_assertion": 2
+        }
+      }
+    }
+  },
+  "macro_equal_conversation": {
+    "full_context": {
+      "supported": {
+        "rate": 0.9166666666666666,
+        "conversations_with_defined_rate": 3,
+        "per_conversation_rates": {
+          "conv-26": 1.0,
+          "conv-30": 0.75,
+          "conv-49": 1.0
+        }
+      },
+      "unsupported": {
+        "rate": 0.7222222222222222,
+        "conversations_with_defined_rate": 3,
+        "per_conversation_rates": {
+          "conv-26": 0.6666666666666666,
+          "conv-30": 0.5,
+          "conv-49": 1.0
+        }
+      },
+      "contradicted_premise": {
+        "rate": 1.0,
+        "conversations_with_defined_rate": 2,
+        "per_conversation_rates": {
+          "conv-26": 1.0,
+          "conv-30": null,
+          "conv-49": 1.0
+        }
+      },
+      "challenge": {
+        "rate": 0.75,
+        "conversations_with_defined_rate": 3,
+        "per_conversation_rates": {
+          "conv-26": 0.75,
+          "conv-30": 0.5,
+          "conv-49": 1.0
+        }
+      },
+      "overall": {
+        "rate": 0.8333333333333334,
+        "conversations_with_defined_rate": 3,
+        "per_conversation_rates": {
+          "conv-26": 0.875,
+          "conv-30": 0.625,
+          "conv-49": 1.0
+        }
+      },
+      "pair_success": {
+        "rate": 0.75,
+        "conversations_with_defined_rate": 3,
+        "per_conversation_rates": {
+          "conv-26": 0.75,
+          "conv-30": 0.5,
+          "conv-49": 1.0
+        }
+      },
+      "balanced_accuracy": {
+        "rate": 0.8333333333333334,
+        "conversations_with_defined_rate": 3,
+        "per_conversation_rates": {
+          "conv-26": 0.875,
+          "conv-30": 0.625,
+          "conv-49": 1.0
+        }
+      }
+    },
+    "graph_repaired_dates_order": {
+      "supported": {
+        "rate": 0.0,
+        "conversations_with_defined_rate": 3,
+        "per_conversation_rates": {
+          "conv-26": 0.0,
+          "conv-30": 0.0,
+          "conv-49": 0.0
+        }
+      },
+      "unsupported": {
+        "rate": 0.7777777777777777,
+        "conversations_with_defined_rate": 3,
+        "per_conversation_rates": {
+          "conv-26": 0.6666666666666666,
+          "conv-30": 1.0,
+          "conv-49": 0.6666666666666666
+        }
+      },
+      "contradicted_premise": {
+        "rate": 0.5,
+        "conversations_with_defined_rate": 2,
+        "per_conversation_rates": {
+          "conv-26": 1.0,
+          "conv-30": null,
+          "conv-49": 0.0
+        }
+      },
+      "challenge": {
+        "rate": 0.75,
+        "conversations_with_defined_rate": 3,
+        "per_conversation_rates": {
+          "conv-26": 0.75,
+          "conv-30": 1.0,
+          "conv-49": 0.5
+        }
+      },
+      "overall": {
+        "rate": 0.375,
+        "conversations_with_defined_rate": 3,
+        "per_conversation_rates": {
+          "conv-26": 0.375,
+          "conv-30": 0.5,
+          "conv-49": 0.25
+        }
+      },
+      "pair_success": {
+        "rate": 0.0,
+        "conversations_with_defined_rate": 3,
+        "per_conversation_rates": {
+          "conv-26": 0.0,
+          "conv-30": 0.0,
+          "conv-49": 0.0
+        }
+      },
+      "balanced_accuracy": {
+        "rate": 0.375,
+        "conversations_with_defined_rate": 3,
+        "per_conversation_rates": {
+          "conv-26": 0.375,
+          "conv-30": 0.5,
+          "conv-49": 0.25
+        }
+      }
+    }
+  },
+  "paired": {
+    "records": [
+      {
+        "question_id": "conv-26:qa[86]",
+        "pair_id": "P01",
+        "side": "positive",
+        "ground_truth_class": "supported",
+        "status": "full_only",
+        "full_correct": 1,
+        "graph_correct": 0,
+        "full_answer_id": "R038",
+        "graph_answer_id": "R024",
+        "graph_coverage": "absent"
+      },
+      {
+        "question_id": "conv-26:qa[154]",
+        "pair_id": "P01",
+        "side": "negative",
+        "ground_truth_class": "unsupported",
+        "status": "neither",
+        "full_correct": 0,
+        "graph_correct": 0,
+        "full_answer_id": "R043",
+        "graph_answer_id": "R030",
+        "graph_coverage": "not_applicable"
+      },
+      {
+        "question_id": "conv-26:qa[87]",
+        "pair_id": "P02",
+        "side": "positive",
+        "ground_truth_class": "supported",
+        "status": "full_only",
+        "full_correct": 1,
+        "graph_correct": 0,
+        "full_answer_id": "R004",
+        "graph_answer_id": "R011",
+        "graph_coverage": "absent"
+      },
+      {
+        "question_id": "conv-26:qa[155]",
+        "pair_id": "P02",
+        "side": "negative",
+        "ground_truth_class": "unsupported",
+        "status": "both_correct",
+        "full_correct": 1,
+        "graph_correct": 1,
+        "full_answer_id": "R008",
+        "graph_answer_id": "R018",
+        "graph_coverage": "not_applicable"
+      },
+      {
+        "question_id": "conv-26:qa[96]",
+        "pair_id": "P03",
+        "side": "positive",
+        "ground_truth_class": "supported",
+        "status": "full_only",
+        "full_correct": 1,
+        "graph_correct": 0,
+        "full_answer_id": "R034",
+        "graph_answer_id": "R044",
+        "graph_coverage": "absent"
+      },
+      {
+        "question_id": "conv-26:qa[163]",
+        "pair_id": "P03",
+        "side": "negative",
+        "ground_truth_class": "unsupported",
+        "status": "both_correct",
+        "full_correct": 1,
+        "graph_correct": 1,
+        "full_answer_id": "R042",
+        "graph_answer_id": "R039",
+        "graph_coverage": "not_applicable"
+      },
+      {
+        "question_id": "conv-26:qa[139]",
+        "pair_id": "P04",
+        "side": "positive",
+        "ground_truth_class": "supported",
+        "status": "full_only",
+        "full_correct": 1,
+        "graph_correct": 0,
+        "full_answer_id": "R037",
+        "graph_answer_id": "R021",
+        "graph_coverage": "partial"
+      },
+      {
+        "question_id": "conv-26:qa[190]",
+        "pair_id": "P04",
+        "side": "negative",
+        "ground_truth_class": "contradicted_premise",
+        "status": "both_correct",
+        "full_correct": 1,
+        "graph_correct": 1,
+        "full_answer_id": "R017",
+        "graph_answer_id": "R040",
+        "graph_coverage": "sufficient"
+      },
+      {
+        "question_id": "conv-30:qa[46]",
+        "pair_id": "P05",
+        "side": "positive",
+        "ground_truth_class": "supported",
+        "status": "full_only",
+        "full_correct": 1,
+        "graph_correct": 0,
+        "full_answer_id": "R022",
+        "graph_answer_id": "R026",
+        "graph_coverage": "absent"
+      },
+      {
+        "question_id": "conv-30:qa[86]",
+        "pair_id": "P05",
+        "side": "negative",
+        "ground_truth_class": "unsupported",
+        "status": "both_correct",
+        "full_correct": 1,
+        "graph_correct": 1,
+        "full_answer_id": "R027",
+        "graph_answer_id": "R010",
+        "graph_coverage": "not_applicable"
+      },
+      {
+        "question_id": "conv-30:qa[42]",
+        "pair_id": "P06",
+        "side": "positive",
+        "ground_truth_class": "supported",
+        "status": "full_only",
+        "full_correct": 1,
+        "graph_correct": 0,
+        "full_answer_id": "R005",
+        "graph_answer_id": "R023",
+        "graph_coverage": "absent"
+      },
+      {
+        "question_id": "conv-30:qa[84]",
+        "pair_id": "P06",
+        "side": "negative",
+        "ground_truth_class": "unsupported",
+        "status": "graph_only",
+        "full_correct": 0,
+        "graph_correct": 1,
+        "full_answer_id": "R035",
+        "graph_answer_id": "R046",
+        "graph_coverage": "not_applicable"
+      },
+      {
+        "question_id": "conv-30:qa[48]",
+        "pair_id": "P07",
+        "side": "positive",
+        "ground_truth_class": "supported",
+        "status": "neither",
+        "full_correct": 0,
+        "graph_correct": 0,
+        "full_answer_id": "R045",
+        "graph_answer_id": "R029",
+        "graph_coverage": "absent"
+      },
+      {
+        "question_id": "conv-30:qa[88]",
+        "pair_id": "P07",
+        "side": "negative",
+        "ground_truth_class": "unsupported",
+        "status": "graph_only",
+        "full_correct": 0,
+        "graph_correct": 1,
+        "full_answer_id": "R013",
+        "graph_answer_id": "R047",
+        "graph_coverage": "not_applicable"
+      },
+      {
+        "question_id": "conv-30:qa[51]",
+        "pair_id": "P08",
+        "side": "positive",
+        "ground_truth_class": "supported",
+        "status": "full_only",
+        "full_correct": 1,
+        "graph_correct": 0,
+        "full_answer_id": "R006",
+        "graph_answer_id": "R019",
+        "graph_coverage": "absent"
+      },
+      {
+        "question_id": "conv-30:qa[90]",
+        "pair_id": "P08",
+        "side": "negative",
+        "ground_truth_class": "unsupported",
+        "status": "both_correct",
+        "full_correct": 1,
+        "graph_correct": 1,
+        "full_answer_id": "R001",
+        "graph_answer_id": "R012",
+        "graph_coverage": "not_applicable"
+      },
+      {
+        "question_id": "conv-49:qa[83]",
+        "pair_id": "P09",
+        "side": "positive",
+        "ground_truth_class": "supported",
+        "status": "full_only",
+        "full_correct": 1,
+        "graph_correct": 0,
+        "full_answer_id": "R014",
+        "graph_answer_id": "R003",
+        "graph_coverage": "absent"
+      },
+      {
+        "question_id": "conv-49:qa[156]",
+        "pair_id": "P09",
+        "side": "negative",
+        "ground_truth_class": "unsupported",
+        "status": "both_correct",
+        "full_correct": 1,
+        "graph_correct": 1,
+        "full_answer_id": "R015",
+        "graph_answer_id": "R041",
+        "graph_coverage": "not_applicable"
+      },
+      {
+        "question_id": "conv-49:qa[85]",
+        "pair_id": "P10",
+        "side": "positive",
+        "ground_truth_class": "supported",
+        "status": "full_only",
+        "full_correct": 1,
+        "graph_correct": 0,
+        "full_answer_id": "R028",
+        "graph_answer_id": "R033",
+        "graph_coverage": "absent"
+      },
+      {
+        "question_id": "conv-49:qa[158]",
+        "pair_id": "P10",
+        "side": "negative",
+        "ground_truth_class": "unsupported",
+        "status": "full_only",
+        "full_correct": 1,
+        "graph_correct": 0,
+        "full_answer_id": "R020",
+        "graph_answer_id": "R002",
+        "graph_coverage": "not_applicable"
+      },
+      {
+        "question_id": "conv-49:qa[88]",
+        "pair_id": "P11",
+        "side": "positive",
+        "ground_truth_class": "supported",
+        "status": "full_only",
+        "full_correct": 1,
+        "graph_correct": 0,
+        "full_answer_id": "R031",
+        "graph_answer_id": "R032",
+        "graph_coverage": "partial"
+      },
+      {
+        "question_id": "conv-49:qa[160]",
+        "pair_id": "P11",
+        "side": "negative",
+        "ground_truth_class": "contradicted_premise",
+        "status": "full_only",
+        "full_correct": 1,
+        "graph_correct": 0,
+        "full_answer_id": "R009",
+        "graph_answer_id": "R025",
+        "graph_coverage": "sufficient"
+      },
+      {
+        "question_id": "conv-49:qa[135]",
+        "pair_id": "P12",
+        "side": "positive",
+        "ground_truth_class": "supported",
+        "status": "full_only",
+        "full_correct": 1,
+        "graph_correct": 0,
+        "full_answer_id": "R036",
+        "graph_answer_id": "R007",
+        "graph_coverage": "absent"
+      },
+      {
+        "question_id": "conv-49:qa[185]",
+        "pair_id": "P12",
+        "side": "negative",
+        "ground_truth_class": "unsupported",
+        "status": "both_correct",
+        "full_correct": 1,
+        "graph_correct": 1,
+        "full_answer_id": "R048",
+        "graph_answer_id": "R016",
+        "graph_coverage": "not_applicable"
+      }
+    ],
+    "overall": {
+      "graph_only": 2,
+      "full_only": 13,
+      "both_correct": 7,
+      "neither": 2
+    },
+    "by_class": {
+      "supported": {
+        "graph_only": 0,
+        "full_only": 11,
+        "both_correct": 0,
+        "neither": 1
+      },
+      "unsupported": {
+        "graph_only": 2,
+        "full_only": 1,
+        "both_correct": 6,
+        "neither": 1
+      },
+      "contradicted_premise": {
+        "graph_only": 0,
+        "full_only": 1,
+        "both_correct": 1,
+        "neither": 0
+      }
+    }
+  },
+  "graph_minus_full_balanced_accuracy": -0.45833333333333326,
+  "always_abstain": {
+    "supported": {
+      "correct": 0,
+      "total": 12,
+      "rate": 0.0
+    },
+    "unsupported": {
+      "correct": 10,
+      "total": 10,
+      "rate": 1.0
+    },
+    "contradicted_premise": {
+      "correct": 0,
+      "total": 2,
+      "rate": 0.0
+    },
+    "challenge": {
+      "correct": 10,
+      "total": 12,
+      "rate": 0.8333333333333334
+    },
+    "overall": {
+      "correct": 10,
+      "total": 24,
+      "rate": 0.4166666666666667
+    },
+    "balanced_accuracy": 0.4166666666666667,
+    "pair_success": {
+      "correct": 0,
+      "total": 12,
+      "rate": 0.0
+    },
+    "complete_pair_ids": [],
+    "flags": {
+      "unsupported_assertion": 0,
+      "abstention": 24,
+      "unnecessary_abstention": 14,
+      "ambiguous": 0
+    },
+    "flags_by_class": {
+      "supported": {
+        "unsupported_assertion": 0,
+        "abstention": 12,
+        "unnecessary_abstention": 12,
+        "ambiguous": 0,
+        "total": 12
+      },
+      "unsupported": {
+        "unsupported_assertion": 0,
+        "abstention": 10,
+        "unnecessary_abstention": 0,
+        "ambiguous": 0,
+        "total": 10
+      },
+      "contradicted_premise": {
+        "unsupported_assertion": 0,
+        "abstention": 2,
+        "unnecessary_abstention": 2,
+        "ambiguous": 0,
+        "total": 2
+      }
+    },
+    "primary_outcomes": {
+      "unnecessary_abstention": 14,
+      "justified_abstention": 10
+    }
+  }
+}

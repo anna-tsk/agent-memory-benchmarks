@@ -1,0 +1,99 @@
+{
+  "status": "saved_judge_acceptance_not_validated_source_accuracy",
+  "source": "audit_support/computed_summary.json",
+  "cells": [
+    {
+      "condition": "full_context",
+      "mcq": false,
+      "conversations": [
+        {
+          "conversation": "conv-26",
+          "n": 47,
+          "correct": 42,
+          "pct": 89.36170212765957,
+          "source": "2026-04-27-locomo/runs/baseline_qa_20260430_132557.jsonl"
+        },
+        {
+          "conversation": "conv-30",
+          "n": 24,
+          "correct": 18,
+          "pct": 75.0,
+          "source": "2026-04-27-locomo/runs/baseline_qa_20260518_075428.jsonl"
+        },
+        {
+          "conversation": "conv-49",
+          "n": 40,
+          "correct": 33,
+          "pct": 82.5,
+          "source": "2026-04-27-locomo/runs/baseline_qa_20260519_002716.jsonl"
+        }
+      ],
+      "macro_pct": 82.2872340425532,
+      "micro_correct": 93,
+      "micro_n": 111,
+      "micro_pct": 83.78378378378379
+    },
+    {
+      "condition": "hindsight",
+      "mcq": false,
+      "conversations": [
+        {
+          "conversation": "conv-26",
+          "n": 47,
+          "correct": 32,
+          "pct": 68.08510638297872,
+          "source": "../hindsight/hindsight-dev/benchmarks/locomo/results/cat5_no_mcq.json"
+        },
+        {
+          "conversation": "conv-30",
+          "n": 24,
+          "correct": 20,
+          "pct": 83.33333333333333,
+          "source": "../hindsight/hindsight-dev/benchmarks/locomo/results/conv-30_cat5_no_mcq.json"
+        },
+        {
+          "conversation": "conv-49",
+          "n": 40,
+          "correct": 21,
+          "pct": 52.5,
+          "source": "../hindsight/hindsight-dev/benchmarks/locomo/results/conv-49_cat5_no_mcq.json"
+        }
+      ],
+      "macro_pct": 67.97281323877068,
+      "micro_correct": 73,
+      "micro_n": 111,
+      "micro_pct": 65.76576576576576
+    },
+    {
+      "condition": "graph",
+      "mcq": false,
+      "conversations": [
+        {
+          "conversation": "conv-26",
+          "n": 47,
+          "correct": 45,
+          "pct": 95.74468085106383,
+          "source": "2026-04-27-locomo/runs/baseline_qa_20260515_084231.jsonl"
+        },
+        {
+          "conversation": "conv-30",
+          "n": 24,
+          "correct": 24,
+          "pct": 100.0,
+          "source": "2026-04-27-locomo/runs/baseline_qa_20260517_235152.jsonl"
+        },
+        {
+          "conversation": "conv-49",
+          "n": 40,
+          "correct": 37,
+          "pct": 92.5,
+          "source": "2026-04-27-locomo/runs/baseline_qa_20260518_082039.jsonl"
+        }
+      ],
+      "macro_pct": 96.08156028368795,
+      "micro_correct": 106,
+      "micro_n": 111,
+      "micro_pct": 95.49549549549549
+    }
+  ]
+}

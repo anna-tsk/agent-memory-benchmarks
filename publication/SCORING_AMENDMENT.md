@@ -1,0 +1,13 @@
+# Scoring amendment authorized by the user
+
+Recorded 2026-11-08. Original experiment: `matched-pairs-2026-11-05`.
+
+The experiment was originally prepared for blinded human scoring and optional independent human adjudication. The user subsequently instructed: “I've decided to use ChatGPT's blinded AI scoring as the sole provisional evaluation” and “Please proceed with unblinding and results analysis using these ratings.” The exact instruction and inline ratings are retained in `AI_REVIEW_SUBMISSION.txt`.
+
+The resulting analysis uses `reviewer = ChatGPT GPT-6` and `review_type = ai_blinded_review_only`. It does not identify these scores as human judgments. The reviewer identity, blinding and materials read are reported by the user; the external scoring conversation and model revision were not independently verified. There is no second rating set, independent adjudication or inter-rater agreement.
+
+The user required every supplied score and flag to remain unchanged, including passing scores on uncertain responses. This supersedes the original aggregator's human-only metadata requirement and refusal to accept ambiguous passes or passing/error-flag combinations. The original rubric and `score_results.py` remain unchanged. Separate AI-specific scripts validate types, IDs, hashes, class/outcome consistency and totals while recording semantic tensions instead of changing ratings. The three passing/unsupported-assertion combinations (R038, R040, R046) and the six passing/uncertainty combinations are disclosed; no automatic adjudication occurred. The submission's uncertainty flags concern scoring interpretation, not dataset label ambiguity. No unspecified rationale is invented.
+
+Before the first condition-key join, the importer verified the packet content and rubric hashes, all expected IDs, 29/48 passing ratings and 11 flagged ratings. It saved and hashed `AI_REVIEW_SCORES.json` in `AI_REVIEW_FREEZE.json`. The condition-key join is separately recorded in `UNBLINDING_LOG.json`. Binary-score sensitivity scenarios are derivative calculations and do not overwrite the preserved review or count as alternative adjudications.
+
+The selected questions, targets, replacement decisions, original rubric text, model outputs, contexts, pre-answer coverage assessments and historical reports were not changed. The old run status and human template are historical artifacts and retain their original wording; this amendment supersedes their statement that analysis is waiting for a human score file. No additional model calls, typed-relation ablation or research-note rewrite were performed.

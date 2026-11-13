@@ -1,0 +1,28 @@
+{
+  "client_date": "2026-11-09",
+  "question_count": 12,
+  "source_to_cache_turns_verified": 1297,
+  "prespecified_required_turn_occurrences": 17,
+  "unique_prespecified_required_turns": 16,
+  "unique_required_direct_stage_counts": {
+    "entity_name_matching_failed": 10,
+    "retained_top20": 1,
+    "candidate_displaced_by_recency_top20": 5
+  },
+  "unique_required_linked_stage_counts": {
+    "no_stored_link_from_selected_parent": 8,
+    "already_top_level": 1,
+    "all_links_beyond_five_link_cap": 7
+  },
+  "required_turns_without_index_entities": 0,
+  "required_turns_indexed_under_own_speaker_name": 0,
+  "required_turns_without_matching_historical_extraction": 0,
+  "graph_contexts_reconstructed_exactly": 24,
+  "sent_graph_prompts_verified": 24,
+  "sent_full_prompts_verified": 24,
+  "new_model_calls": 0,
+  "graph_or_query_mutations": 0,
+  "grade_files_read": false,
+  "historical_ingestion_log_sha256": "294f063f85a75a68faf932bca4af1726793a30f7a4e4d5d1034c7af4e42103ff",
+  "original_run_manifest_sha256": "89fd3f502d50d9402747c9a7f9b7b239080c34159efe0db9db3e0d168e37d67a"
+}

@@ -1,0 +1,51 @@
+{
+  "client_date": "2026-11-12",
+  "scope": "Selected publication package; excludes full historical replay dependencies.",
+  "commit_files": [
+    ".gitignore",
+    "README.md",
+    "DISTINGUISHING_ABSTENTION_FROM_EVIDENCE_LOSS.md",
+    "case_studies/caroline_adoption_agency.md",
+    "PUBLICATION_REPORT.md",
+    "publication/README.md",
+    "publication/SCORING_AMENDMENT.md",
+    "publication/SCORING_RUBRIC.md",
+    "publication/caroline_trace.json",
+    "publication/check_records.py",
+    "publication/execution_settings.json",
+    "publication/may_results.json",
+    "publication/november_results.json",
+    "publication/november_scores.json",
+    "publication/provenance.json",
+    "publication/retrieval_summary.json",
+    "publication/scoring_sensitivity.json",
+    "publication/MANIFEST.json"
+  ],
+  "already_tracked_link_dependencies": [
+    "2026-04-22-graph-memory/graph.py",
+    "2026-04-22-graph-memory/extractor.py",
+    "2026-04-27-locomo/graph_qa.py"
+  ],
+  "sha256": {
+    ".gitignore": "296a07923b7210590d72336f59c4edd93897ef6df52eabf00e2e383cdb415b0c",
+    "README.md": "57d5244e48f06e8ce0d1aef9dbe8c8674e3ae2815cba2f4912b56fdae5555a0e",
+    "DISTINGUISHING_ABSTENTION_FROM_EVIDENCE_LOSS.md": "266d128a3a2b45a8a6aafc675de204732048722342658beaed8a6a8726450c83",
+    "case_studies/caroline_adoption_agency.md": "4ba20472268d297476f07d50261281e69c2b85b7bedeb7886d5498e851da30eb",
+    "PUBLICATION_REPORT.md": "d14db9e28a2f26469aa5e34d7743bcac01b9b7c5ffbf5cd3b6ebbfc12b4a0c11",
+    "publication/README.md": "775f708d3496f790cde6f7147f59de437fa60f3c89b7bcf4c1e4f087838eac03",
+    "publication/SCORING_AMENDMENT.md": "a93c6d4168979cfbc12d948b660da071618b33e8d2a5da66368692d496648a4c",
+    "publication/SCORING_RUBRIC.md": "bf47f0de65ce41c6714c1105c432e90a86f6fad8676e39360b2414f65a6015b2",
+    "publication/caroline_trace.json": "3a23f302fd83d0e3c539e0cfb68d82f8a5684c88bd2500a7fc2e2289bf0749e2",
+    "publication/check_records.py": "95fa3b8610aaab92c56a832b2b4f31425ebe304ae3afeb2eae7384152517658f",
+    "publication/execution_settings.json": "ea3fd3154fa8c3500526fe0da24f09886ba25ecc47fbb2eb8e0dd3e184062526",
+    "publication/may_results.json": "05314d07a9a6c6a3522aef9ec8921abac77faa183dfa216f42d4089b0aee14e9",
+    "publication/november_results.json": "3556f0bd1c0162eb30df09118314e1b12967d5405e2687f062cc42d7532ffa8f",
+    "publication/november_scores.json": "9703d85bf8a74c8257d5ce13614ac1c46f196afeeb76e0e64df4729052bef708",
+    "publication/provenance.json": "bba9a2f834e61f18332da66330348b40282c0dbfc7d163805c025525c7423df7",
+    "publication/retrieval_summary.json": "d766fc70ad834844c3fb2b26c5eb436204923be61c8e2ff57e8c8068e0a2667d",
+    "publication/scoring_sensitivity.json": "c696fbdd4937268e18e22a57d70d45c807c262839531feb6db88c31fac7a5838",
+    "2026-04-22-graph-memory/graph.py": "4bc832d718439125483918fc483c2efac457cc655e00fc675a2c44e942cee702",
+    "2026-04-22-graph-memory/extractor.py": "4d099099cf80ef43de1e4b8628c0beb02ef1553e738298bf44386c80131483ae",
+    "2026-04-27-locomo/graph_qa.py": "9819558e0c7b7f2b292c15ff82f769b107ee577be54d4b818fdd61b3aef4698d"
+  }
+}

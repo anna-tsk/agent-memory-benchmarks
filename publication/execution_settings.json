@@ -1,0 +1,56 @@
+{
+  "release_scope": "Selected method fields, copied unchanged from the frozen execution protocol; authorization, prices and local operational status omitted.",
+  "version": "execution-2026-11-05-v1",
+  "exploratory": true,
+  "conditions": [
+    "full_context",
+    "graph_repaired_dates_order"
+  ],
+  "model": "Qwen/Qwen2.5-72B-Instruct",
+  "served_model_revision": "not recoverable before a live response; do not claim snapshot pinning",
+  "provider": "deepinfra",
+  "tokenizer_revision_only": "495f39366efef23836d0cfae4fbe635880d2be31",
+  "answer_parameters": {
+    "temperature": 0,
+    "max_tokens": 256,
+    "top_p": 1,
+    "presence_penalty": 0,
+    "frequency_penalty": 0,
+    "stream": false,
+    "n": 1
+  },
+  "extraction_parameters": {
+    "temperature": 0,
+    "max_tokens": 1024,
+    "top_p": 1,
+    "presence_penalty": 0,
+    "frequency_penalty": 0,
+    "stream": false,
+    "n": 1
+  },
+  "stop": "omitted in both; use same provider default",
+  "response_format": "plain text; no JSON answer wrapper",
+  "seed": "not requested; temperature zero is not a promise of deterministic inference",
+  "answer_system_prompt": "You are a helpful expert assistant answering questions from lme_experiment users based on the provided context.",
+  "answer_user_template": "\n# CONTEXT:\nYou have access to facts and entities from a conversation.\n\n# INSTRUCTIONS:\n1. Carefully analyze all provided memories\n2. Pay special attention to the timestamps to determine the answer\n3. If the question asks about a specific event or fact, look for direct evidence in the memories\n4. If the memories contain contradictory information or multiple instances of an event, say them all\n5. Always convert relative time references to specific dates, months, or years.\n6. Be as specific as possible when talking about people, places, and events\n7. If the answer is not explicitly stated in the memories, use logical reasoning based on the information available to answer (e.g. calculate duration of an event from different memories).\n\nContext:\n\n{context}\n\nQuestion: {question}\nAnswer:\n\n",
+  "extraction_user_template": "Extract entities and relations from this claim.\n\nClaim: \"{raw_text}\"\n\nReturn JSON only:\n{\n  \"entities\": [{\"name\": \"...\", \"type_description\": \"...\"}],\n  \"relations\": [{\"source\": \"entity name\", \"predicate\": \"exact words from claim\", \"target\": \"entity name\"}]\n}\n\nRules:\n- type_description is free text describing the entity naturally (e.g. \"a person\", \"a city\", \"an emotion\")\n- predicate must use the exact words from the claim, not a normalized form\n- only include relations between extracted entities\n- entities with no relations to other entities are still valid to include",
+  "fresh_extractions": 24,
+  "answer_requests": 48,
+  "judge_requests": 0,
+  "ingestion_requests": 0,
+  "query_input": "original question text only, separately for both members; no MCQ, category, gold, evidence or prior extraction",
+  "sort": "descending (parsed source session datetime, numeric session number, numeric turn number)",
+  "source_timezone": "unknown; UTC is an internal ordering tag only, not a timezone conversion",
+  "graph": {
+    "top_cap": 20,
+    "linked_cap_per_top": 5,
+    "links": "stored cache insertion order",
+    "name_matching": "exact after lower(); OR union; relations ignored for gating",
+    "dedup": "top-level union and suppress links to top-level claims; no global expanded-row dedup",
+    "format": "source date and speaker for top-level only; linked rows retain original lack of speaker/date",
+    "empty_marker": "(no relevant claims retrieved)",
+    "persist_cache_changes": false
+  },
+  "request_model": "Qwen/Qwen2.5-72B-Instruct:deepinfra",
+  "provenance_gap": "May PDF missing at original path before execution. All computational inputs and audit Markdown files match. PDF is not consumed by execution."
+}

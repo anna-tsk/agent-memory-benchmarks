@@ -1,0 +1,132 @@
+{
+  "prepared_client_date": "2026-11-12",
+  "status": "proposed_publication_extracts_no_new_experiment_or_scoring",
+  "historical_paths_are_identifiers_not_release_links": true,
+  "execution_checkout_head": "9aeeb1986539314e829eb42ed6b8dcd2fa3de588",
+  "locomo_commit": "3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376",
+  "locomo_sha256": "79fa87e90f04081343b8c8debecb80a9a6842b76a7aa537dc9fdf651ea698ff4",
+  "sources": {
+    "audit_support/computed_summary.json": {
+      "sha256": "b216b25782cd6ed4b0e5aa86219132c4382bbafa424ccff75ef91a56c8c066c8",
+      "included_as_original": false
+    },
+    "2026-11-05-matched-pairs-run/ai_scored_results/analysis_metrics.json": {
+      "sha256": "3556f0bd1c0162eb30df09118314e1b12967d5405e2687f062cc42d7532ffa8f",
+      "included_as_original": false
+    },
+    "2026-11-05-matched-pairs-run/ai_scored_results/question_level_outcomes.jsonl": {
+      "sha256": "4b4072881a2f3af3fa57ed0f63bd46c844aaf383dadfa585d73a7145548d00e9",
+      "included_as_original": false
+    },
+    "2026-11-05-matched-pairs-run/ai_scored_results/sensitivity_metrics.json": {
+      "sha256": "0588594ff8de763ed7c20fef47afdf04341ac3bd709605db89032078dc30f9a8",
+      "included_as_original": false
+    },
+    "2026-11-05-matched-pairs-run/retrieval_diagnosis/diagnostic_summary.json": {
+      "sha256": "d766fc70ad834844c3fb2b26c5eb436204923be61c8e2ff57e8c8068e0a2667d",
+      "included_as_original": false
+    },
+    "2026-11-05-matched-pairs-run/retrieval_diagnosis/supported_evidence_trace.jsonl": {
+      "sha256": "1488ecef28db2007188c636130cb4b4615d098ef78a8462ac18599d9050294bd",
+      "included_as_original": false
+    },
+    "2026-11-05-matched-pairs-run/operator/graph_diagnostics.jsonl": {
+      "sha256": "016677c6fdf64e0d40c2bb13ccfab698785f14e3232a2c2096a594ffc681df43",
+      "included_as_original": false
+    },
+    "2026-11-05-matched-pairs-run/calls/extraction/extraction-03.validated.json": {
+      "sha256": "daf1dbfe989b0c4231d274846d674a3e0f05cab19a659a6727268ce5cc884bb2",
+      "included_as_original": false
+    },
+    "2026-11-05-matched-pairs-run/calls/answer/answer-14.request.json": {
+      "sha256": "1a46538185f9149364a358614d833c55f2b39a89d75d9b5ad6908d1c88002026",
+      "included_as_original": false
+    },
+    "2026-11-05-matched-pairs-run/calls/answer/answer-14.request.body.json": {
+      "sha256": "b0a9afe6886c8532a185d23a6965ddb3102c29daaf6db16ed5983a1e9ef35cfe",
+      "included_as_original": false
+    },
+    "2026-11-05-matched-pairs-run/calls/answer/answer-14.response.body.json": {
+      "sha256": "c9ff6117c71be6bb49e5106948a4adb5628def1f80a6a22ba19c7a60a1f66aa2",
+      "included_as_original": false
+    },
+    "2026-11-05-matched-pairs-run/frozen/review/SCORING_RUBRIC.md": {
+      "sha256": "bf47f0de65ce41c6714c1105c432e90a86f6fad8676e39360b2414f65a6015b2",
+      "included_as_original": true,
+      "release_path": "publication/SCORING_RUBRIC.md"
+    },
+    "2026-11-05-matched-pairs-run/ai_scored_results/PROTOCOL_AMENDMENT.md": {
+      "sha256": "a93c6d4168979cfbc12d948b660da071618b33e8d2a5da66368692d496648a4c",
+      "included_as_original": true,
+      "release_path": "publication/SCORING_AMENDMENT.md"
+    },
+    "2026-11-05-matched-pairs-run/execution_protocol.json": {
+      "sha256": "52d3c3385284ad3eec49a125c66477f2886ec5a0fc65a39a8b80c3b809c69cd8",
+      "included_as_original": false
+    },
+    "AUDIT_REPORT.md": {
+      "sha256": "83418403ed594299a5968b85b7d301f896a3fc320962aa288fa33c06d487d44c",
+      "included_as_original": false
+    },
+    "EVAL_AUDIT.md": {
+      "sha256": "2aa540559cbb07038ad0c5670b1d94cf3bb03b4642ea14c425e16130628f9006",
+      "included_as_original": false
+    },
+    "MECHANISM_AUDIT.md": {
+      "sha256": "8da843d82399f8600c8b69404ae2254c933eac25dd7a935b9ae88827b6a98fef",
+      "included_as_original": false
+    },
+    "audit_support/source_manifest.json": {
+      "sha256": "bbca4746d2f7fd3c04e6eeabbe3d709e414b62dfaecfbbca978975b51590e81c",
+      "included_as_original": false
+    },
+    "2026-11-05-matched-pairs-run/RUN_MANIFEST.json": {
+      "sha256": "89fd3f502d50d9402747c9a7f9b7b239080c34159efe0db9db3e0d168e37d67a",
+      "included_as_original": false
+    },
+    "2026-11-05-matched-pairs-run/execution_freeze.json": {
+      "sha256": "22f761eddaa7561d5d1ff2a34a4d517c649cc8a36a9fb1118d55bbd5682f91b8",
+      "included_as_original": false
+    },
+    "2026-11-05-matched-pairs-run/coverage_freeze.json": {
+      "sha256": "8b1ba35fba86d0132036f8b735f8f8a44869ac45c1e6e5a06fd2c16d5594bf26",
+      "included_as_original": false
+    },
+    "2026-11-05-matched-pairs-run/ai_scored_results/AI_REVIEW_SCORES.json": {
+      "sha256": "5437099d754ed29264a8d2eda8d304d478bfe182bfcd8d06f4c605a97513e161",
+      "included_as_original": false
+    },
+    "2026-11-05-matched-pairs-run/ai_scored_results/ANALYSIS_MANIFEST.json": {
+      "sha256": "fef108811315698493d08ca22718635f041ebdfb54908e3738ab53b9430b6ed6",
+      "included_as_original": false
+    },
+    "2026-11-05-matched-pairs-run/retrieval_diagnosis/DIAGNOSTIC_MANIFEST.json": {
+      "sha256": "a7e764159bde69efc74e2f02b53dddcd782078c9293d5733afff7299c68e63b2",
+      "included_as_original": false
+    },
+    "2026-11-05-matched-pairs-run/retrieval_diagnosis/context_identity.json": {
+      "sha256": "b5379187727f4f15e4299492cfc374790098fd176e4d5a26e04972c9225cfc8b",
+      "included_as_original": false
+    },
+    "2026-11-05-matched-pairs-run/frozen/review/pairs.json": {
+      "sha256": "6bcad461b8a2cbc8cb01fe847812768e98a000ac15317585022a158dfceea584",
+      "included_as_original": false
+    },
+    "2026-11-05-matched-pairs-run/frozen/review/review_decisions.json": {
+      "sha256": "4c71317f4d8e1d4338fd5c993c2fd29241cb9ffd586a35e5a741de6609830330",
+      "included_as_original": false
+    },
+    "2026-11-05-matched-pairs-run/frozen/review/PAIR_VALIDATION.md": {
+      "sha256": "dfa47b48aa41aebd19759f5257412ebaef07e8754b3615cf3a2be9e5fb14ecc8",
+      "included_as_original": false
+    },
+    "2026-04-22-graph-memory/logs/extractor_calls.jsonl": {
+      "sha256": "294f063f85a75a68faf932bca4af1726793a30f7a4e4d5d1034c7af4e42103ff",
+      "included_as_original": false
+    },
+    "2026-04-27-locomo/graph_cache/conv-26.pkl": {
+      "sha256": "7df8a3706823589eb9fc9d0c20337b083fe0286226f8697384e2215c5988127f",
+      "included_as_original": false
+    }
+  }
+}

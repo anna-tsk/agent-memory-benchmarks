@@ -1,0 +1,2153 @@
+{
+  "pair_id": "P02",
+  "conversation_id": "conv-26",
+  "question_id": "conv-26:qa[87]",
+  "question": "Why did Caroline choose the adoption agency?",
+  "validated_target": "Because of the agency's inclusivity and support for LGBTQ+ people.",
+  "prespecified_sufficient_sets": [
+    [
+      "D2:12"
+    ]
+  ],
+  "query_extraction_file": "calls/extraction/extraction-03.validated.json",
+  "query_extraction": {
+    "entities": [
+      {
+        "name": "Caroline",
+        "type_description": "a person"
+      },
+      {
+        "name": "adoption agency",
+        "type_description": "an organization"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Caroline",
+        "predicate": "choose",
+        "target": "adoption agency"
+      }
+    ]
+  },
+  "matched_entities": [
+    {
+      "id": "b0b025bc-84f4-4050-a42c-17c5bc1d03a4",
+      "name": "Caroline"
+    },
+    {
+      "id": "917a2abd-aac1-48d1-bd47-85706b6b2b53",
+      "name": "adoption agency"
+    }
+  ],
+  "candidate_count": 130,
+  "selected_count": 20,
+  "ranked_candidates": [
+    {
+      "rank_1based": 1,
+      "claim_id": "91235487-d4ac-43e2-95d1-343e39e18ab8",
+      "dia_id": "D19:13",
+      "source_datetime": "2023-10-22T09:55:00+00:00",
+      "speaker": "Caroline",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 2,
+      "claim_id": "4d9b117c-c217-4f94-bee5-c6636533d131",
+      "dia_id": "D19:10",
+      "source_datetime": "2023-10-22T09:55:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 3,
+      "claim_id": "192f680a-531a-47d5-8787-e2b520561f6d",
+      "dia_id": "D19:8",
+      "source_datetime": "2023-10-22T09:55:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 4,
+      "claim_id": "a5ebbd6d-3bb8-4ace-a799-c78832869501",
+      "dia_id": "D19:6",
+      "source_datetime": "2023-10-22T09:55:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 5,
+      "claim_id": "02bd0881-9765-4e54-99ac-a3f587093824",
+      "dia_id": "D19:4",
+      "source_datetime": "2023-10-22T09:55:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 6,
+      "claim_id": "dabe6e6b-b603-4a00-8d07-9f59b70b671d",
+      "dia_id": "D19:2",
+      "source_datetime": "2023-10-22T09:55:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 7,
+      "claim_id": "33f9d4a8-0688-4bc7-b3ed-8f3d3ee40585",
+      "dia_id": "D18:23",
+      "source_datetime": "2023-10-20T18:55:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 8,
+      "claim_id": "218b5a03-8542-4532-bd37-84d7352ecf67",
+      "dia_id": "D18:17",
+      "source_datetime": "2023-10-20T18:55:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 9,
+      "claim_id": "cca921aa-536f-4fe3-9590-11a073e1955a",
+      "dia_id": "D18:13",
+      "source_datetime": "2023-10-20T18:55:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 10,
+      "claim_id": "ac623bd2-1abe-4e95-a9bd-85197f3d450c",
+      "dia_id": "D18:11",
+      "source_datetime": "2023-10-20T18:55:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 11,
+      "claim_id": "97e9f8d2-cbd2-462e-9286-233b6e433a0a",
+      "dia_id": "D18:5",
+      "source_datetime": "2023-10-20T18:55:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 12,
+      "claim_id": "051b8ee6-4e77-4633-9bd5-a6ef003a5821",
+      "dia_id": "D18:1",
+      "source_datetime": "2023-10-20T18:55:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 13,
+      "claim_id": "418e4621-c452-46f7-a87f-155ec3469884",
+      "dia_id": "D17:26",
+      "source_datetime": "2023-10-13T10:31:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 14,
+      "claim_id": "d8702ef0-a38a-44bd-b94d-e037fa36fc5e",
+      "dia_id": "D17:22",
+      "source_datetime": "2023-10-13T10:31:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 15,
+      "claim_id": "79898d63-f2d8-4098-beda-bfae511ee2bd",
+      "dia_id": "D17:14",
+      "source_datetime": "2023-10-13T10:31:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 16,
+      "claim_id": "caf561fd-702c-4582-ab33-1ba2b3f67c3d",
+      "dia_id": "D17:10",
+      "source_datetime": "2023-10-13T10:31:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 17,
+      "claim_id": "00e432cf-f194-47a9-a9c7-5c0dfd247661",
+      "dia_id": "D17:8",
+      "source_datetime": "2023-10-13T10:31:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 18,
+      "claim_id": "841fd32e-8c70-41cc-9360-3023a60413d3",
+      "dia_id": "D17:7",
+      "source_datetime": "2023-10-13T10:31:00+00:00",
+      "speaker": "Caroline",
+      "matching_entities": [
+        "adoption agency"
+      ]
+    },
+    {
+      "rank_1based": 19,
+      "claim_id": "31beb041-a283-43c0-b897-8f1926d88407",
+      "dia_id": "D17:6",
+      "source_datetime": "2023-10-13T10:31:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 20,
+      "claim_id": "2eba8d05-5a68-49f5-aa80-8172f1f98b89",
+      "dia_id": "D17:2",
+      "source_datetime": "2023-10-13T10:31:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 21,
+      "claim_id": "420c1bea-b0c5-4f86-9675-89b64ae1b13f",
+      "dia_id": "D16:16",
+      "source_datetime": "2023-09-13T00:09:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 22,
+      "claim_id": "56d2770d-f320-4a6e-8920-88879ffaa237",
+      "dia_id": "D16:12",
+      "source_datetime": "2023-09-13T00:09:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 23,
+      "claim_id": "ed184a0e-c224-4856-9f8a-961382633949",
+      "dia_id": "D16:10",
+      "source_datetime": "2023-09-13T00:09:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 24,
+      "claim_id": "d11bed15-c0cb-4492-9106-cdf50f64154b",
+      "dia_id": "D16:6",
+      "source_datetime": "2023-09-13T00:09:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 25,
+      "claim_id": "97d58818-c8e1-43aa-a596-651e7f0f9b25",
+      "dia_id": "D16:4",
+      "source_datetime": "2023-09-13T00:09:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 26,
+      "claim_id": "54874179-ffdc-4bf4-afbd-747384200ec5",
+      "dia_id": "D16:2",
+      "source_datetime": "2023-09-13T00:09:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 27,
+      "claim_id": "e0652e86-a6b8-4621-86a5-8f32ed44767a",
+      "dia_id": "D15:24",
+      "source_datetime": "2023-08-28T15:19:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 28,
+      "claim_id": "a6ab22bf-8c9e-454a-b0ae-c9f1e6b09a64",
+      "dia_id": "D15:12",
+      "source_datetime": "2023-08-28T15:19:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 29,
+      "claim_id": "de43baa5-e04a-487a-8c58-61306bc8fb57",
+      "dia_id": "D15:10",
+      "source_datetime": "2023-08-28T15:19:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 30,
+      "claim_id": "f185ed7c-b65c-4d74-86fc-2674280f5d33",
+      "dia_id": "D15:4",
+      "source_datetime": "2023-08-28T15:19:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 31,
+      "claim_id": "9245e939-94bc-4cd7-ab8f-ce72c6674a3e",
+      "dia_id": "D15:2",
+      "source_datetime": "2023-08-28T15:19:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 32,
+      "claim_id": "9fe57cd3-504b-4ff0-85f0-ac7737e05f5a",
+      "dia_id": "D14:34",
+      "source_datetime": "2023-08-25T13:33:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 33,
+      "claim_id": "3e61b369-b202-4dc6-a59d-299d21ec71d8",
+      "dia_id": "D14:26",
+      "source_datetime": "2023-08-25T13:33:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 34,
+      "claim_id": "a25f2a90-da53-4c75-9d23-3d4ee99939bb",
+      "dia_id": "D14:24",
+      "source_datetime": "2023-08-25T13:33:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 35,
+      "claim_id": "9b127684-966d-4afc-8029-e8caf45b3fb8",
+      "dia_id": "D14:20",
+      "source_datetime": "2023-08-25T13:33:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 36,
+      "claim_id": "9e7ebebd-c813-4f79-8194-667f05df7354",
+      "dia_id": "D14:18",
+      "source_datetime": "2023-08-25T13:33:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 37,
+      "claim_id": "262279d3-b2c9-4adb-9995-0aaae67da691",
+      "dia_id": "D14:14",
+      "source_datetime": "2023-08-25T13:33:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 38,
+      "claim_id": "e1c779d4-a00f-4c41-836f-67b4b3116ed1",
+      "dia_id": "D14:12",
+      "source_datetime": "2023-08-25T13:33:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 39,
+      "claim_id": "29ed182f-2902-416c-8959-c57cbfbaa42b",
+      "dia_id": "D14:6",
+      "source_datetime": "2023-08-25T13:33:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 40,
+      "claim_id": "64316b99-9b5d-42c5-8263-e4b5b2fe22d3",
+      "dia_id": "D14:2",
+      "source_datetime": "2023-08-25T13:33:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 41,
+      "claim_id": "2c60a83a-4bef-4936-a43b-38f736f7e0bf",
+      "dia_id": "D13:18",
+      "source_datetime": "2023-08-23T15:31:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 42,
+      "claim_id": "308b8858-824a-490f-a9cb-897a5d909ef3",
+      "dia_id": "D13:16",
+      "source_datetime": "2023-08-23T15:31:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 43,
+      "claim_id": "e1488ffa-4dad-4f5b-ad76-240737dbd1ef",
+      "dia_id": "D13:14",
+      "source_datetime": "2023-08-23T15:31:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 44,
+      "claim_id": "76aec146-ef5d-4dfa-9d96-59f20b115b0f",
+      "dia_id": "D13:12",
+      "source_datetime": "2023-08-23T15:31:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 45,
+      "claim_id": "a5e2f430-c6cd-4bce-b13d-eb49b607101d",
+      "dia_id": "D13:10",
+      "source_datetime": "2023-08-23T15:31:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 46,
+      "claim_id": "1a571eea-7597-4b81-bccf-ed72c8eb2297",
+      "dia_id": "D13:2",
+      "source_datetime": "2023-08-23T15:31:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 47,
+      "claim_id": "7b7ffe4e-359e-41ca-afa0-392adcdbe87d",
+      "dia_id": "D12:20",
+      "source_datetime": "2023-08-17T13:50:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 48,
+      "claim_id": "8883033d-9e26-435d-b96d-739ebf7e2190",
+      "dia_id": "D12:18",
+      "source_datetime": "2023-08-17T13:50:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 49,
+      "claim_id": "e2ff9208-c3ed-494e-8970-ef22c81373f5",
+      "dia_id": "D12:14",
+      "source_datetime": "2023-08-17T13:50:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 50,
+      "claim_id": "3aa87f88-8ca6-4130-b419-c126b7c27395",
+      "dia_id": "D12:12",
+      "source_datetime": "2023-08-17T13:50:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 51,
+      "claim_id": "efc3c049-16d7-4f54-a5c8-e572ea8a42bd",
+      "dia_id": "D12:10",
+      "source_datetime": "2023-08-17T13:50:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 52,
+      "claim_id": "375e0579-0bfd-487a-869c-82ba4611a182",
+      "dia_id": "D12:8",
+      "source_datetime": "2023-08-17T13:50:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 53,
+      "claim_id": "b2f30afe-ac85-4b4c-aa2f-d9cb413c74f1",
+      "dia_id": "D12:6",
+      "source_datetime": "2023-08-17T13:50:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 54,
+      "claim_id": "74100f29-80f6-43d0-af59-08b405222aac",
+      "dia_id": "D12:2",
+      "source_datetime": "2023-08-17T13:50:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 55,
+      "claim_id": "1560fb6c-31ea-4598-a5d2-b212b3aa8ce3",
+      "dia_id": "D11:15",
+      "source_datetime": "2023-08-14T14:24:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 56,
+      "claim_id": "3c6c5f9a-fe8d-4a25-9ce8-d3f62d74e6c1",
+      "dia_id": "D11:13",
+      "source_datetime": "2023-08-14T14:24:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 57,
+      "claim_id": "64251446-530d-4744-a6e7-d3ef2f172133",
+      "dia_id": "D11:11",
+      "source_datetime": "2023-08-14T14:24:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 58,
+      "claim_id": "3ea5620c-ef83-43e5-b453-8ab9a378d398",
+      "dia_id": "D11:7",
+      "source_datetime": "2023-08-14T14:24:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 59,
+      "claim_id": "bd7e2fea-6c8a-49e0-b53c-471e4b7e8d70",
+      "dia_id": "D11:3",
+      "source_datetime": "2023-08-14T14:24:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 60,
+      "claim_id": "0d48cf3d-4d2f-4b6d-aed8-4073ff9e18fa",
+      "dia_id": "D11:1",
+      "source_datetime": "2023-08-14T14:24:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 61,
+      "claim_id": "4ad0a0ab-563c-44dc-87b7-a8e7e02d9b18",
+      "dia_id": "D10:24",
+      "source_datetime": "2023-07-20T20:56:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 62,
+      "claim_id": "3000a5ae-de8e-4765-96f8-e7636121fc1f",
+      "dia_id": "D10:8",
+      "source_datetime": "2023-07-20T20:56:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 63,
+      "claim_id": "9cc35bd7-56ad-415c-aa10-78faf7a84c4d",
+      "dia_id": "D10:6",
+      "source_datetime": "2023-07-20T20:56:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 64,
+      "claim_id": "57037095-5500-41a0-a5a0-5f6fdd82173c",
+      "dia_id": "D10:4",
+      "source_datetime": "2023-07-20T20:56:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 65,
+      "claim_id": "1cd4068f-d1cf-4f0b-b2a8-b0a8ea9c79d3",
+      "dia_id": "D10:2",
+      "source_datetime": "2023-07-20T20:56:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 66,
+      "claim_id": "b21bcddb-def3-44aa-8e65-67bec813103a",
+      "dia_id": "D9:17",
+      "source_datetime": "2023-07-17T14:31:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 67,
+      "claim_id": "7429ede4-3df2-4cff-909c-08577a6f9bb3",
+      "dia_id": "D9:15",
+      "source_datetime": "2023-07-17T14:31:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 68,
+      "claim_id": "3fafe107-1f20-4644-b340-6cb772e2109c",
+      "dia_id": "D9:13",
+      "source_datetime": "2023-07-17T14:31:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 69,
+      "claim_id": "04d3fe76-e0b2-432c-bda3-fc214b2e4c3a",
+      "dia_id": "D9:11",
+      "source_datetime": "2023-07-17T14:31:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 70,
+      "claim_id": "c2464204-2006-4dce-bda7-6fc9b6d9b93c",
+      "dia_id": "D9:7",
+      "source_datetime": "2023-07-17T14:31:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 71,
+      "claim_id": "23d9f5e4-9d35-4190-b520-553eb88739b4",
+      "dia_id": "D9:5",
+      "source_datetime": "2023-07-17T14:31:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 72,
+      "claim_id": "47cc1651-4fd5-4f76-8d84-64bcade4520a",
+      "dia_id": "D9:3",
+      "source_datetime": "2023-07-17T14:31:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 73,
+      "claim_id": "93e7f183-37ae-43f1-9400-9615f8b35b9c",
+      "dia_id": "D9:1",
+      "source_datetime": "2023-07-17T14:31:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 74,
+      "claim_id": "f2b426ed-7487-4c3f-b426-c7cad2437902",
+      "dia_id": "D8:38",
+      "source_datetime": "2023-07-15T13:51:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 75,
+      "claim_id": "33c6f568-9be5-45cf-92b2-0e8f4e3365c9",
+      "dia_id": "D8:36",
+      "source_datetime": "2023-07-15T13:51:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 76,
+      "claim_id": "218fcca7-9e69-44e9-81b8-982b8a1146d7",
+      "dia_id": "D8:32",
+      "source_datetime": "2023-07-15T13:51:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 77,
+      "claim_id": "02875c85-069d-4064-a5ec-61f668d3b955",
+      "dia_id": "D8:28",
+      "source_datetime": "2023-07-15T13:51:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 78,
+      "claim_id": "adc1d1bd-efff-4d14-b4f1-6d893dbbf9bf",
+      "dia_id": "D8:22",
+      "source_datetime": "2023-07-15T13:51:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 79,
+      "claim_id": "e945eab8-2a59-4d4d-9369-2dd3eaddd942",
+      "dia_id": "D8:14",
+      "source_datetime": "2023-07-15T13:51:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 80,
+      "claim_id": "27983a0f-eb24-4432-983c-ec7d38f4c84e",
+      "dia_id": "D8:10",
+      "source_datetime": "2023-07-15T13:51:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 81,
+      "claim_id": "fdf1cd18-ab29-400b-b72f-b5c1b3b79155",
+      "dia_id": "D8:8",
+      "source_datetime": "2023-07-15T13:51:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 82,
+      "claim_id": "122edf70-a4ad-4ce7-a16e-644d1d9985aa",
+      "dia_id": "D8:2",
+      "source_datetime": "2023-07-15T13:51:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 83,
+      "claim_id": "1bfab694-c8c6-4f27-9773-d0615ba3093b",
+      "dia_id": "D7:26",
+      "source_datetime": "2023-07-12T16:33:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 84,
+      "claim_id": "0abffd56-49e9-4627-91ab-d5e8a75d898c",
+      "dia_id": "D7:24",
+      "source_datetime": "2023-07-12T16:33:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 85,
+      "claim_id": "443821a8-9e07-4e7d-8bac-30e0fdeda68d",
+      "dia_id": "D7:20",
+      "source_datetime": "2023-07-12T16:33:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 86,
+      "claim_id": "316c423a-c720-4043-82ce-3674514e0801",
+      "dia_id": "D7:14",
+      "source_datetime": "2023-07-12T16:33:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 87,
+      "claim_id": "9a6e5be3-f17c-4f77-87cc-ce3b99df04fa",
+      "dia_id": "D7:10",
+      "source_datetime": "2023-07-12T16:33:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 88,
+      "claim_id": "44f66747-23e9-4fbd-ad70-1c91e1141ae4",
+      "dia_id": "D7:8",
+      "source_datetime": "2023-07-12T16:33:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 89,
+      "claim_id": "34b361dc-58eb-4ed5-b0d2-fcf5497e170d",
+      "dia_id": "D7:6",
+      "source_datetime": "2023-07-12T16:33:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 90,
+      "claim_id": "15a4314d-4bdf-47a4-b195-8f37b5ecec86",
+      "dia_id": "D7:4",
+      "source_datetime": "2023-07-12T16:33:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 91,
+      "claim_id": "c9071f3a-feb9-4e9c-ac5a-2cbc59268513",
+      "dia_id": "D7:2",
+      "source_datetime": "2023-07-12T16:33:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 92,
+      "claim_id": "d64a9683-de5e-4460-b514-9cc8c973e8d6",
+      "dia_id": "D6:16",
+      "source_datetime": "2023-07-06T20:18:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 93,
+      "claim_id": "f50707ba-bbf9-487c-91c6-3a1351bf55fa",
+      "dia_id": "D6:14",
+      "source_datetime": "2023-07-06T20:18:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 94,
+      "claim_id": "5ced1c4b-9b48-40bb-9b98-bf6e078c8d88",
+      "dia_id": "D6:12",
+      "source_datetime": "2023-07-06T20:18:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 95,
+      "claim_id": "addce891-52cc-4e09-8d0f-cc038d42e92a",
+      "dia_id": "D6:4",
+      "source_datetime": "2023-07-06T20:18:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 96,
+      "claim_id": "4165cd6a-7da5-4d21-9c10-60c96b975f9f",
+      "dia_id": "D6:2",
+      "source_datetime": "2023-07-06T20:18:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 97,
+      "claim_id": "19fb8aba-47e8-48ab-aec7-e8dc634dc973",
+      "dia_id": "D5:16",
+      "source_datetime": "2023-07-03T13:36:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 98,
+      "claim_id": "8626b7c0-3c66-47f8-b87b-24f575541c62",
+      "dia_id": "D5:14",
+      "source_datetime": "2023-07-03T13:36:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 99,
+      "claim_id": "1144ac68-88c4-4008-a44c-58594b363a41",
+      "dia_id": "D5:12",
+      "source_datetime": "2023-07-03T13:36:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 100,
+      "claim_id": "a337b3f5-77dc-4d13-8f98-667b22de9031",
+      "dia_id": "D5:10",
+      "source_datetime": "2023-07-03T13:36:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 101,
+      "claim_id": "d93487fc-e0ad-4da2-8c0e-475f7a97aca5",
+      "dia_id": "D5:8",
+      "source_datetime": "2023-07-03T13:36:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 102,
+      "claim_id": "b74187f6-a295-47d4-bfa5-50fa59d124ac",
+      "dia_id": "D5:4",
+      "source_datetime": "2023-07-03T13:36:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 103,
+      "claim_id": "01e9dfc2-0de0-44ac-868e-2eb11dc51b9f",
+      "dia_id": "D5:2",
+      "source_datetime": "2023-07-03T13:36:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 104,
+      "claim_id": "c7825439-9109-4fd4-9c6b-8c3d8de5ca10",
+      "dia_id": "D4:18",
+      "source_datetime": "2023-06-27T10:37:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 105,
+      "claim_id": "62ff64a7-7da3-460a-a56e-ed31392cbfee",
+      "dia_id": "D4:16",
+      "source_datetime": "2023-06-27T10:37:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 106,
+      "claim_id": "94e361d7-0860-4d32-b2f8-b74dedfd4664",
+      "dia_id": "D4:14",
+      "source_datetime": "2023-06-27T10:37:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 107,
+      "claim_id": "f25797d5-d4e8-4bb9-bf25-3ec0b7b2f91e",
+      "dia_id": "D4:10",
+      "source_datetime": "2023-06-27T10:37:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 108,
+      "claim_id": "bcfd2904-aeae-4ac6-8a7c-e66481b39d5a",
+      "dia_id": "D4:8",
+      "source_datetime": "2023-06-27T10:37:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 109,
+      "claim_id": "af6a2df2-54ea-4ff3-9b1e-c8264b8d7fc5",
+      "dia_id": "D4:6",
+      "source_datetime": "2023-06-27T10:37:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 110,
+      "claim_id": "dd86588a-1a2c-42eb-b5fe-be8e7a348705",
+      "dia_id": "D4:4",
+      "source_datetime": "2023-06-27T10:37:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 111,
+      "claim_id": "dc83764c-64ee-47ff-94ba-37488022cfce",
+      "dia_id": "D4:2",
+      "source_datetime": "2023-06-27T10:37:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 112,
+      "claim_id": "dbec54c4-9e64-4528-b1de-cb83fc7cb5e6",
+      "dia_id": "D3:22",
+      "source_datetime": "2023-06-09T19:55:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 113,
+      "claim_id": "f940c796-7540-45f3-8117-ac6432677b62",
+      "dia_id": "D3:18",
+      "source_datetime": "2023-06-09T19:55:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 114,
+      "claim_id": "7b14f57d-4cc3-487f-8d77-c9d6c3dd87c1",
+      "dia_id": "D3:16",
+      "source_datetime": "2023-06-09T19:55:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 115,
+      "claim_id": "75a9bbda-3c34-4450-b028-8278a6680fb7",
+      "dia_id": "D3:10",
+      "source_datetime": "2023-06-09T19:55:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 116,
+      "claim_id": "d9bb83aa-5b3f-4a7f-bc3a-bbed732c4e11",
+      "dia_id": "D3:8",
+      "source_datetime": "2023-06-09T19:55:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 117,
+      "claim_id": "23ad50ec-6c77-4e98-a214-bb8edae020f9",
+      "dia_id": "D3:6",
+      "source_datetime": "2023-06-09T19:55:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 118,
+      "claim_id": "d87cb083-cae7-4d61-9ab0-8222f6dbe878",
+      "dia_id": "D3:4",
+      "source_datetime": "2023-06-09T19:55:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 119,
+      "claim_id": "2dcf9dbf-1258-4279-9e7a-cb94acdd6a32",
+      "dia_id": "D3:2",
+      "source_datetime": "2023-06-09T19:55:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 120,
+      "claim_id": "2902470c-767e-4106-b188-edd7437a0cef",
+      "dia_id": "D2:17",
+      "source_datetime": "2023-05-25T13:14:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 121,
+      "claim_id": "108c3fb3-e08a-45bf-a854-beed44b35de4",
+      "dia_id": "D2:13",
+      "source_datetime": "2023-05-25T13:14:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 122,
+      "claim_id": "6540f48b-cf0e-41ef-a31f-f5652c5632a9",
+      "dia_id": "D2:9",
+      "source_datetime": "2023-05-25T13:14:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 123,
+      "claim_id": "8ffa050f-4a37-4219-972c-be0a28b9d74f",
+      "dia_id": "D2:7",
+      "source_datetime": "2023-05-25T13:14:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 124,
+      "claim_id": "200066e1-4391-428a-98dd-0f80e2442e27",
+      "dia_id": "D2:3",
+      "source_datetime": "2023-05-25T13:14:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 125,
+      "claim_id": "4b7cabf4-c1cd-4757-813b-b53e7d33b026",
+      "dia_id": "D2:1",
+      "source_datetime": "2023-05-25T13:14:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 126,
+      "claim_id": "2a066aa1-e6b9-43d6-95c1-e71233c8c5ef",
+      "dia_id": "D1:18",
+      "source_datetime": "2023-05-08T13:56:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 127,
+      "claim_id": "38588481-c110-41f3-b990-2b738684dfaa",
+      "dia_id": "D1:16",
+      "source_datetime": "2023-05-08T13:56:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 128,
+      "claim_id": "175a330c-19d6-4513-a357-aa66a5f53b49",
+      "dia_id": "D1:10",
+      "source_datetime": "2023-05-08T13:56:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 129,
+      "claim_id": "95aa9083-8088-4412-81e7-4dbaba4ec648",
+      "dia_id": "D1:4",
+      "source_datetime": "2023-05-08T13:56:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    },
+    {
+      "rank_1based": 130,
+      "claim_id": "d10453dc-19d5-4ba8-9bb1-22fc7693c7f5",
+      "dia_id": "D1:2",
+      "source_datetime": "2023-05-08T13:56:00+00:00",
+      "speaker": "Melanie",
+      "matching_entities": [
+        "Caroline"
+      ]
+    }
+  ],
+  "frozen_semantic_coverage": {
+    "question_id": "conv-26:qa[87]",
+    "ground_truth_class": "supported",
+    "source_sufficient_sets": [
+      [
+        "D2:12"
+      ]
+    ],
+    "mechanical_source_set_present": false,
+    "evidence_presence": {
+      "D2:12": []
+    },
+    "semantic_coverage": "absent",
+    "alternative_support_ids": [],
+    "rationale": "The same graph context as P01 positive gives general adoption encouragement and research advice, not Caroline's selection reason of LGBTQ+ inclusion/support. Reasons to want children are not reasons for choosing this agency.",
+    "answer_seen": false,
+    "pair_id": "P02",
+    "side": "positive",
+    "coverage": "absent",
+    "relevant_source_ids": [
+      "D17:7",
+      "D19:2",
+      "D19:4"
+    ],
+    "condition": "graph_repaired_dates_order",
+    "reviewer": "Codex assistant; qualitative context review, not independent human adjudication"
+  },
+  "graph_context_sha256": "78082167f6d0c865e00102facebbbd96dae19c66392d5a9b30befecb5c77c416",
+  "wire_request_file": "calls/answer/answer-14.request.json",
+  "final_context_verified_against_sent_messages": true,
+  "required_turn": {
+    "dia_id": "D2:12",
+    "role": "prespecified_required",
+    "source": {
+      "dia_id": "D2:12",
+      "speaker": "Caroline",
+      "text": "I chose them 'cause they help LGBTQ+ folks with adoption. Their inclusivity and support really spoke to me.",
+      "session": "session_2",
+      "source_date_string": "1:14 pm on 25 May, 2023",
+      "dt": "2023-05-25T13:14:00+00:00",
+      "session_number": 2,
+      "turn_number": 12
+    },
+    "cached_claim_id": "e4f7c468-74a4-4b71-b5ce-530537061676",
+    "cached_raw_text": "I chose them 'cause they help LGBTQ+ folks with adoption. Their inclusivity and support really spoke to me.",
+    "cached_speaker": "Caroline",
+    "source_equals_cache": true,
+    "cached_entities": [
+      {
+        "id": "c75c8058-6a9c-411e-b2dc-038c3e81c2bf",
+        "name": "I",
+        "inverted_index_contains_claim": true
+      },
+      {
+        "id": "8d0f2ae9-3dd0-43c7-bf94-45f229bfa066",
+        "name": "they",
+        "inverted_index_contains_claim": true
+      },
+      {
+        "id": "68c6a340-3cd9-4c43-9efb-9275fc0ab147",
+        "name": "LGBTQ+ folks",
+        "inverted_index_contains_claim": true
+      },
+      {
+        "id": "489f0f5f-bf2a-4a7f-adc4-7324c0da4ac1",
+        "name": "adoption",
+        "inverted_index_contains_claim": true
+      }
+    ],
+    "cached_relations_not_used_for_gating": [
+      {
+        "id": "58c505b7-fd6a-4f7e-8151-3dad9e739862",
+        "source": "I",
+        "target": "they",
+        "predicate": "chose"
+      },
+      {
+        "id": "6eca2b4c-93ce-4b98-908b-46809605fdd5",
+        "source": "they",
+        "target": "LGBTQ+ folks",
+        "predicate": "help"
+      },
+      {
+        "id": "a5437542-8738-4d2f-a042-e96f6d6f673f",
+        "source": "they",
+        "target": "adoption",
+        "predicate": "with"
+      }
+    ],
+    "candidate_pool_membership": false,
+    "candidate_rank_1based": null,
+    "matched_index_entity_names": [],
+    "direct_stage": "entity_name_matching_failed",
+    "links_from_selected_parents": [],
+    "linked_stage": "no_stored_link_from_selected_parent",
+    "final_rendered_occurrences": []
+  },
+  "rendered_source_ids": [
+    {
+      "position": 0,
+      "kind": "top_level",
+      "claim_id": "91235487-d4ac-43e2-95d1-343e39e18ab8",
+      "dia_id": "D19:13"
+    },
+    {
+      "position": 1,
+      "kind": "expanded",
+      "claim_id": "d10453dc-19d5-4ba8-9bb1-22fc7693c7f5",
+      "dia_id": "D1:2"
+    },
+    {
+      "position": 2,
+      "kind": "expanded",
+      "claim_id": "95aa9083-8088-4412-81e7-4dbaba4ec648",
+      "dia_id": "D1:4"
+    },
+    {
+      "position": 3,
+      "kind": "expanded",
+      "claim_id": "175a330c-19d6-4513-a357-aa66a5f53b49",
+      "dia_id": "D1:10"
+    },
+    {
+      "position": 4,
+      "kind": "expanded",
+      "claim_id": "38588481-c110-41f3-b990-2b738684dfaa",
+      "dia_id": "D1:16"
+    },
+    {
+      "position": 5,
+      "kind": "expanded",
+      "claim_id": "2a066aa1-e6b9-43d6-95c1-e71233c8c5ef",
+      "dia_id": "D1:18"
+    },
+    {
+      "position": 6,
+      "kind": "top_level",
+      "claim_id": "4d9b117c-c217-4f94-bee5-c6636533d131",
+      "dia_id": "D19:10"
+    },
+    {
+      "position": 7,
+      "kind": "expanded",
+      "claim_id": "d10453dc-19d5-4ba8-9bb1-22fc7693c7f5",
+      "dia_id": "D1:2"
+    },
+    {
+      "position": 8,
+      "kind": "expanded",
+      "claim_id": "95aa9083-8088-4412-81e7-4dbaba4ec648",
+      "dia_id": "D1:4"
+    },
+    {
+      "position": 9,
+      "kind": "expanded",
+      "claim_id": "175a330c-19d6-4513-a357-aa66a5f53b49",
+      "dia_id": "D1:10"
+    },
+    {
+      "position": 10,
+      "kind": "expanded",
+      "claim_id": "38588481-c110-41f3-b990-2b738684dfaa",
+      "dia_id": "D1:16"
+    },
+    {
+      "position": 11,
+      "kind": "expanded",
+      "claim_id": "2a066aa1-e6b9-43d6-95c1-e71233c8c5ef",
+      "dia_id": "D1:18"
+    },
+    {
+      "position": 12,
+      "kind": "top_level",
+      "claim_id": "192f680a-531a-47d5-8787-e2b520561f6d",
+      "dia_id": "D19:8"
+    },
+    {
+      "position": 13,
+      "kind": "expanded",
+      "claim_id": "d10453dc-19d5-4ba8-9bb1-22fc7693c7f5",
+      "dia_id": "D1:2"
+    },
+    {
+      "position": 14,
+      "kind": "expanded",
+      "claim_id": "95aa9083-8088-4412-81e7-4dbaba4ec648",
+      "dia_id": "D1:4"
+    },
+    {
+      "position": 15,
+      "kind": "expanded",
+      "claim_id": "175a330c-19d6-4513-a357-aa66a5f53b49",
+      "dia_id": "D1:10"
+    },
+    {
+      "position": 16,
+      "kind": "expanded",
+      "claim_id": "38588481-c110-41f3-b990-2b738684dfaa",
+      "dia_id": "D1:16"
+    },
+    {
+      "position": 17,
+      "kind": "expanded",
+      "claim_id": "2a066aa1-e6b9-43d6-95c1-e71233c8c5ef",
+      "dia_id": "D1:18"
+    },
+    {
+      "position": 18,
+      "kind": "top_level",
+      "claim_id": "a5ebbd6d-3bb8-4ace-a799-c78832869501",
+      "dia_id": "D19:6"
+    },
+    {
+      "position": 19,
+      "kind": "expanded",
+      "claim_id": "d10453dc-19d5-4ba8-9bb1-22fc7693c7f5",
+      "dia_id": "D1:2"
+    },
+    {
+      "position": 20,
+      "kind": "expanded",
+      "claim_id": "95aa9083-8088-4412-81e7-4dbaba4ec648",
+      "dia_id": "D1:4"
+    },
+    {
+      "position": 21,
+      "kind": "expanded",
+      "claim_id": "175a330c-19d6-4513-a357-aa66a5f53b49",
+      "dia_id": "D1:10"
+    },
+    {
+      "position": 22,
+      "kind": "expanded",
+      "claim_id": "38588481-c110-41f3-b990-2b738684dfaa",
+      "dia_id": "D1:16"
+    },
+    {
+      "position": 23,
+      "kind": "expanded",
+      "claim_id": "2a066aa1-e6b9-43d6-95c1-e71233c8c5ef",
+      "dia_id": "D1:18"
+    },
+    {
+      "position": 24,
+      "kind": "top_level",
+      "claim_id": "02bd0881-9765-4e54-99ac-a3f587093824",
+      "dia_id": "D19:4"
+    },
+    {
+      "position": 25,
+      "kind": "expanded",
+      "claim_id": "d10453dc-19d5-4ba8-9bb1-22fc7693c7f5",
+      "dia_id": "D1:2"
+    },
+    {
+      "position": 26,
+      "kind": "expanded",
+      "claim_id": "95aa9083-8088-4412-81e7-4dbaba4ec648",
+      "dia_id": "D1:4"
+    },
+    {
+      "position": 27,
+      "kind": "expanded",
+      "claim_id": "175a330c-19d6-4513-a357-aa66a5f53b49",
+      "dia_id": "D1:10"
+    },
+    {
+      "position": 28,
+      "kind": "expanded",
+      "claim_id": "38588481-c110-41f3-b990-2b738684dfaa",
+      "dia_id": "D1:16"
+    },
+    {
+      "position": 29,
+      "kind": "expanded",
+      "claim_id": "2a066aa1-e6b9-43d6-95c1-e71233c8c5ef",
+      "dia_id": "D1:18"
+    },
+    {
+      "position": 30,
+      "kind": "top_level",
+      "claim_id": "dabe6e6b-b603-4a00-8d07-9f59b70b671d",
+      "dia_id": "D19:2"
+    },
+    {
+      "position": 31,
+      "kind": "expanded",
+      "claim_id": "d10453dc-19d5-4ba8-9bb1-22fc7693c7f5",
+      "dia_id": "D1:2"
+    },
+    {
+      "position": 32,
+      "kind": "expanded",
+      "claim_id": "95aa9083-8088-4412-81e7-4dbaba4ec648",
+      "dia_id": "D1:4"
+    },
+    {
+      "position": 33,
+      "kind": "expanded",
+      "claim_id": "175a330c-19d6-4513-a357-aa66a5f53b49",
+      "dia_id": "D1:10"
+    },
+    {
+      "position": 34,
+      "kind": "expanded",
+      "claim_id": "38588481-c110-41f3-b990-2b738684dfaa",
+      "dia_id": "D1:16"
+    },
+    {
+      "position": 35,
+      "kind": "expanded",
+      "claim_id": "2a066aa1-e6b9-43d6-95c1-e71233c8c5ef",
+      "dia_id": "D1:18"
+    },
+    {
+      "position": 36,
+      "kind": "top_level",
+      "claim_id": "33f9d4a8-0688-4bc7-b3ed-8f3d3ee40585",
+      "dia_id": "D18:23"
+    },
+    {
+      "position": 37,
+      "kind": "expanded",
+      "claim_id": "d10453dc-19d5-4ba8-9bb1-22fc7693c7f5",
+      "dia_id": "D1:2"
+    },
+    {
+      "position": 38,
+      "kind": "expanded",
+      "claim_id": "95aa9083-8088-4412-81e7-4dbaba4ec648",
+      "dia_id": "D1:4"
+    },
+    {
+      "position": 39,
+      "kind": "expanded",
+      "claim_id": "175a330c-19d6-4513-a357-aa66a5f53b49",
+      "dia_id": "D1:10"
+    },
+    {
+      "position": 40,
+      "kind": "expanded",
+      "claim_id": "38588481-c110-41f3-b990-2b738684dfaa",
+      "dia_id": "D1:16"
+    },
+    {
+      "position": 41,
+      "kind": "expanded",
+      "claim_id": "2a066aa1-e6b9-43d6-95c1-e71233c8c5ef",
+      "dia_id": "D1:18"
+    },
+    {
+      "position": 42,
+      "kind": "top_level",
+      "claim_id": "218b5a03-8542-4532-bd37-84d7352ecf67",
+      "dia_id": "D18:17"
+    },
+    {
+      "position": 43,
+      "kind": "expanded",
+      "claim_id": "d10453dc-19d5-4ba8-9bb1-22fc7693c7f5",
+      "dia_id": "D1:2"
+    },
+    {
+      "position": 44,
+      "kind": "expanded",
+      "claim_id": "95aa9083-8088-4412-81e7-4dbaba4ec648",
+      "dia_id": "D1:4"
+    },
+    {
+      "position": 45,
+      "kind": "expanded",
+      "claim_id": "175a330c-19d6-4513-a357-aa66a5f53b49",
+      "dia_id": "D1:10"
+    },
+    {
+      "position": 46,
+      "kind": "expanded",
+      "claim_id": "38588481-c110-41f3-b990-2b738684dfaa",
+      "dia_id": "D1:16"
+    },
+    {
+      "position": 47,
+      "kind": "expanded",
+      "claim_id": "2a066aa1-e6b9-43d6-95c1-e71233c8c5ef",
+      "dia_id": "D1:18"
+    },
+    {
+      "position": 48,
+      "kind": "top_level",
+      "claim_id": "cca921aa-536f-4fe3-9590-11a073e1955a",
+      "dia_id": "D18:13"
+    },
+    {
+      "position": 49,
+      "kind": "expanded",
+      "claim_id": "d10453dc-19d5-4ba8-9bb1-22fc7693c7f5",
+      "dia_id": "D1:2"
+    },
+    {
+      "position": 50,
+      "kind": "expanded",
+      "claim_id": "95aa9083-8088-4412-81e7-4dbaba4ec648",
+      "dia_id": "D1:4"
+    },
+    {
+      "position": 51,
+      "kind": "expanded",
+      "claim_id": "175a330c-19d6-4513-a357-aa66a5f53b49",
+      "dia_id": "D1:10"
+    },
+    {
+      "position": 52,
+      "kind": "expanded",
+      "claim_id": "38588481-c110-41f3-b990-2b738684dfaa",
+      "dia_id": "D1:16"
+    },
+    {
+      "position": 53,
+      "kind": "expanded",
+      "claim_id": "2a066aa1-e6b9-43d6-95c1-e71233c8c5ef",
+      "dia_id": "D1:18"
+    },
+    {
+      "position": 54,
+      "kind": "top_level",
+      "claim_id": "ac623bd2-1abe-4e95-a9bd-85197f3d450c",
+      "dia_id": "D18:11"
+    },
+    {
+      "position": 55,
+      "kind": "expanded",
+      "claim_id": "d10453dc-19d5-4ba8-9bb1-22fc7693c7f5",
+      "dia_id": "D1:2"
+    },
+    {
+      "position": 56,
+      "kind": "expanded",
+      "claim_id": "95aa9083-8088-4412-81e7-4dbaba4ec648",
+      "dia_id": "D1:4"
+    },
+    {
+      "position": 57,
+      "kind": "expanded",
+      "claim_id": "175a330c-19d6-4513-a357-aa66a5f53b49",
+      "dia_id": "D1:10"
+    },
+    {
+      "position": 58,
+      "kind": "expanded",
+      "claim_id": "38588481-c110-41f3-b990-2b738684dfaa",
+      "dia_id": "D1:16"
+    },
+    {
+      "position": 59,
+      "kind": "expanded",
+      "claim_id": "2a066aa1-e6b9-43d6-95c1-e71233c8c5ef",
+      "dia_id": "D1:18"
+    },
+    {
+      "position": 60,
+      "kind": "top_level",
+      "claim_id": "97e9f8d2-cbd2-462e-9286-233b6e433a0a",
+      "dia_id": "D18:5"
+    },
+    {
+      "position": 61,
+      "kind": "expanded",
+      "claim_id": "d10453dc-19d5-4ba8-9bb1-22fc7693c7f5",
+      "dia_id": "D1:2"
+    },
+    {
+      "position": 62,
+      "kind": "expanded",
+      "claim_id": "95aa9083-8088-4412-81e7-4dbaba4ec648",
+      "dia_id": "D1:4"
+    },
+    {
+      "position": 63,
+      "kind": "expanded",
+      "claim_id": "38588481-c110-41f3-b990-2b738684dfaa",
+      "dia_id": "D1:16"
+    },
+    {
+      "position": 64,
+      "kind": "expanded",
+      "claim_id": "2a066aa1-e6b9-43d6-95c1-e71233c8c5ef",
+      "dia_id": "D1:18"
+    },
+    {
+      "position": 65,
+      "kind": "expanded",
+      "claim_id": "4b7cabf4-c1cd-4757-813b-b53e7d33b026",
+      "dia_id": "D2:1"
+    },
+    {
+      "position": 66,
+      "kind": "top_level",
+      "claim_id": "051b8ee6-4e77-4633-9bd5-a6ef003a5821",
+      "dia_id": "D18:1"
+    },
+    {
+      "position": 67,
+      "kind": "expanded",
+      "claim_id": "95aa9083-8088-4412-81e7-4dbaba4ec648",
+      "dia_id": "D1:4"
+    },
+    {
+      "position": 68,
+      "kind": "expanded",
+      "claim_id": "2a066aa1-e6b9-43d6-95c1-e71233c8c5ef",
+      "dia_id": "D1:18"
+    },
+    {
+      "position": 69,
+      "kind": "expanded",
+      "claim_id": "4b7cabf4-c1cd-4757-813b-b53e7d33b026",
+      "dia_id": "D2:1"
+    },
+    {
+      "position": 70,
+      "kind": "expanded",
+      "claim_id": "6540f48b-cf0e-41ef-a31f-f5652c5632a9",
+      "dia_id": "D2:9"
+    },
+    {
+      "position": 71,
+      "kind": "expanded",
+      "claim_id": "2902470c-767e-4106-b188-edd7437a0cef",
+      "dia_id": "D2:17"
+    },
+    {
+      "position": 72,
+      "kind": "top_level",
+      "claim_id": "418e4621-c452-46f7-a87f-155ec3469884",
+      "dia_id": "D17:26"
+    },
+    {
+      "position": 73,
+      "kind": "expanded",
+      "claim_id": "d10453dc-19d5-4ba8-9bb1-22fc7693c7f5",
+      "dia_id": "D1:2"
+    },
+    {
+      "position": 74,
+      "kind": "expanded",
+      "claim_id": "95aa9083-8088-4412-81e7-4dbaba4ec648",
+      "dia_id": "D1:4"
+    },
+    {
+      "position": 75,
+      "kind": "expanded",
+      "claim_id": "175a330c-19d6-4513-a357-aa66a5f53b49",
+      "dia_id": "D1:10"
+    },
+    {
+      "position": 76,
+      "kind": "expanded",
+      "claim_id": "38588481-c110-41f3-b990-2b738684dfaa",
+      "dia_id": "D1:16"
+    },
+    {
+      "position": 77,
+      "kind": "expanded",
+      "claim_id": "2a066aa1-e6b9-43d6-95c1-e71233c8c5ef",
+      "dia_id": "D1:18"
+    },
+    {
+      "position": 78,
+      "kind": "top_level",
+      "claim_id": "d8702ef0-a38a-44bd-b94d-e037fa36fc5e",
+      "dia_id": "D17:22"
+    },
+    {
+      "position": 79,
+      "kind": "expanded",
+      "claim_id": "d10453dc-19d5-4ba8-9bb1-22fc7693c7f5",
+      "dia_id": "D1:2"
+    },
+    {
+      "position": 80,
+      "kind": "expanded",
+      "claim_id": "95aa9083-8088-4412-81e7-4dbaba4ec648",
+      "dia_id": "D1:4"
+    },
+    {
+      "position": 81,
+      "kind": "expanded",
+      "claim_id": "175a330c-19d6-4513-a357-aa66a5f53b49",
+      "dia_id": "D1:10"
+    },
+    {
+      "position": 82,
+      "kind": "expanded",
+      "claim_id": "38588481-c110-41f3-b990-2b738684dfaa",
+      "dia_id": "D1:16"
+    },
+    {
+      "position": 83,
+      "kind": "expanded",
+      "claim_id": "2a066aa1-e6b9-43d6-95c1-e71233c8c5ef",
+      "dia_id": "D1:18"
+    },
+    {
+      "position": 84,
+      "kind": "top_level",
+      "claim_id": "79898d63-f2d8-4098-beda-bfae511ee2bd",
+      "dia_id": "D17:14"
+    },
+    {
+      "position": 85,
+      "kind": "expanded",
+      "claim_id": "d10453dc-19d5-4ba8-9bb1-22fc7693c7f5",
+      "dia_id": "D1:2"
+    },
+    {
+      "position": 86,
+      "kind": "expanded",
+      "claim_id": "95aa9083-8088-4412-81e7-4dbaba4ec648",
+      "dia_id": "D1:4"
+    },
+    {
+      "position": 87,
+      "kind": "expanded",
+      "claim_id": "175a330c-19d6-4513-a357-aa66a5f53b49",
+      "dia_id": "D1:10"
+    },
+    {
+      "position": 88,
+      "kind": "expanded",
+      "claim_id": "38588481-c110-41f3-b990-2b738684dfaa",
+      "dia_id": "D1:16"
+    },
+    {
+      "position": 89,
+      "kind": "expanded",
+      "claim_id": "2a066aa1-e6b9-43d6-95c1-e71233c8c5ef",
+      "dia_id": "D1:18"
+    },
+    {
+      "position": 90,
+      "kind": "top_level",
+      "claim_id": "caf561fd-702c-4582-ab33-1ba2b3f67c3d",
+      "dia_id": "D17:10"
+    },
+    {
+      "position": 91,
+      "kind": "expanded",
+      "claim_id": "d10453dc-19d5-4ba8-9bb1-22fc7693c7f5",
+      "dia_id": "D1:2"
+    },
+    {
+      "position": 92,
+      "kind": "expanded",
+      "claim_id": "95aa9083-8088-4412-81e7-4dbaba4ec648",
+      "dia_id": "D1:4"
+    },
+    {
+      "position": 93,
+      "kind": "expanded",
+      "claim_id": "175a330c-19d6-4513-a357-aa66a5f53b49",
+      "dia_id": "D1:10"
+    },
+    {
+      "position": 94,
+      "kind": "expanded",
+      "claim_id": "38588481-c110-41f3-b990-2b738684dfaa",
+      "dia_id": "D1:16"
+    },
+    {
+      "position": 95,
+      "kind": "expanded",
+      "claim_id": "2a066aa1-e6b9-43d6-95c1-e71233c8c5ef",
+      "dia_id": "D1:18"
+    },
+    {
+      "position": 96,
+      "kind": "top_level",
+      "claim_id": "00e432cf-f194-47a9-a9c7-5c0dfd247661",
+      "dia_id": "D17:8"
+    },
+    {
+      "position": 97,
+      "kind": "expanded",
+      "claim_id": "d10453dc-19d5-4ba8-9bb1-22fc7693c7f5",
+      "dia_id": "D1:2"
+    },
+    {
+      "position": 98,
+      "kind": "expanded",
+      "claim_id": "175a330c-19d6-4513-a357-aa66a5f53b49",
+      "dia_id": "D1:10"
+    },
+    {
+      "position": 99,
+      "kind": "expanded",
+      "claim_id": "38588481-c110-41f3-b990-2b738684dfaa",
+      "dia_id": "D1:16"
+    },
+    {
+      "position": 100,
+      "kind": "expanded",
+      "claim_id": "2a066aa1-e6b9-43d6-95c1-e71233c8c5ef",
+      "dia_id": "D1:18"
+    },
+    {
+      "position": 101,
+      "kind": "expanded",
+      "claim_id": "4b7cabf4-c1cd-4757-813b-b53e7d33b026",
+      "dia_id": "D2:1"
+    },
+    {
+      "position": 102,
+      "kind": "top_level",
+      "claim_id": "841fd32e-8c70-41cc-9360-3023a60413d3",
+      "dia_id": "D17:7"
+    },
+    {
+      "position": 103,
+      "kind": "top_level",
+      "claim_id": "31beb041-a283-43c0-b897-8f1926d88407",
+      "dia_id": "D17:6"
+    },
+    {
+      "position": 104,
+      "kind": "expanded",
+      "claim_id": "d10453dc-19d5-4ba8-9bb1-22fc7693c7f5",
+      "dia_id": "D1:2"
+    },
+    {
+      "position": 105,
+      "kind": "expanded",
+      "claim_id": "95aa9083-8088-4412-81e7-4dbaba4ec648",
+      "dia_id": "D1:4"
+    },
+    {
+      "position": 106,
+      "kind": "expanded",
+      "claim_id": "175a330c-19d6-4513-a357-aa66a5f53b49",
+      "dia_id": "D1:10"
+    },
+    {
+      "position": 107,
+      "kind": "expanded",
+      "claim_id": "38588481-c110-41f3-b990-2b738684dfaa",
+      "dia_id": "D1:16"
+    },
+    {
+      "position": 108,
+      "kind": "expanded",
+      "claim_id": "2a066aa1-e6b9-43d6-95c1-e71233c8c5ef",
+      "dia_id": "D1:18"
+    },
+    {
+      "position": 109,
+      "kind": "top_level",
+      "claim_id": "2eba8d05-5a68-49f5-aa80-8172f1f98b89",
+      "dia_id": "D17:2"
+    },
+    {
+      "position": 110,
+      "kind": "expanded",
+      "claim_id": "d10453dc-19d5-4ba8-9bb1-22fc7693c7f5",
+      "dia_id": "D1:2"
+    },
+    {
+      "position": 111,
+      "kind": "expanded",
+      "claim_id": "95aa9083-8088-4412-81e7-4dbaba4ec648",
+      "dia_id": "D1:4"
+    },
+    {
+      "position": 112,
+      "kind": "expanded",
+      "claim_id": "175a330c-19d6-4513-a357-aa66a5f53b49",
+      "dia_id": "D1:10"
+    },
+    {
+      "position": 113,
+      "kind": "expanded",
+      "claim_id": "38588481-c110-41f3-b990-2b738684dfaa",
+      "dia_id": "D1:16"
+    },
+    {
+      "position": 114,
+      "kind": "expanded",
+      "claim_id": "2a066aa1-e6b9-43d6-95c1-e71233c8c5ef",
+      "dia_id": "D1:18"
+    }
+  ],
+  "answer_id": "R011",
+  "answer_model": "Qwen/Qwen2.5-72B-Instruct",
+  "model_answer": "The provided memories do not explicitly state why Caroline chose a specific adoption agency. However, based on the conversation, it can be inferred that Caroline is knowledgeable about the adoption process and is supportive of the idea. She advises Melanie to do research, find an adoption agency or lawyer, and gather necessary documents and emotional preparation. This suggests that Caroline likely chose an adoption agency based on similar criteria—reliability, support, and a thorough process to ensure the well-being of the children and the adoptive parents.",
+  "preserved_ai_rating": {
+    "strict_correct": 0,
+    "primary_outcome": "unnecessary_abstention",
+    "unsupported_assertion": true,
+    "abstention": true,
+    "unnecessary_abstention": true,
+    "ambiguous": false
+  },
+  "release_scope": "Extract of the frozen trace and answer. Full graph, raw request context, and ingestion log are not included; sent-context verification is a recorded diagnostic result, not independently reproduced by this extract.",
+  "dataset_attribution": {
+    "source": "https://github.com/snap-research/locomo",
+    "commit": "3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376",
+    "license": "CC BY-NC 4.0",
+    "excerpt_changes": "Question and D2:12 source text are verbatim; entity and retrieval fields describe the local system."
+  }
+}

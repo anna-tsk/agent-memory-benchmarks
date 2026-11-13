@@ -7,3 +7,31 @@ __pycache__/
 # graph_qa.py pickles ingested MemoryGraphs here; binary, large, and
 # tied to the dataclass schema in 2026-04-22-graph-memory/graph.py
 2026-04-27-locomo/graph_cache/
+
+# Local credentials, tooling state and render previews.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.claude/
+.codex/
+.agents/
+.aws/
+publication_preview/
+
+# Preserve the original research workspace locally. The reviewed public
+# extracts live in publication/; do not add raw runs with a blanket git add.
+/2026-11-02-matched-pairs/
+/2026-11-05-matched-pairs-run/
+/audit_support/
+/AUDIT_REPORT.md
+/EVAL_AUDIT.md
+/MECHANISM_AUDIT.md
+/PROPOSED_FOLLOWUPS.md
+/audit_question_level.csv
+/DISTINGUISHING_ABSTENTION_FROM_EVIDENCE_LOSS_v*.md
+/DISTINGUISHING_ABSTENTION_FROM_EVIDENCE_LOSS_v*.html
+/PUBLICATION_READINESS.md
+/PUBLICATION_READINESS_CHECKS_*.json
+locomo10.json
